@@ -14,9 +14,7 @@ final class MenuItemObject: Object {
 	// MARK: - Persistent properties
 
 	dynamic var title = ""
-	dynamic var day = 0
-	dynamic var month = 0
-	dynamic var year = 0
+	dynamic var day = ""
 	dynamic var order = 0
 	dynamic var orderDescription = ""
 	dynamic var priceDescription = ""

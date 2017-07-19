@@ -38,8 +38,4 @@ final class MenuTableViewController: UITableViewController {
 		return cell
 	}
 
-	// MARK: - UITableViewDelegate
-
-
-
 }
