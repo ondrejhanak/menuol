@@ -11,11 +11,12 @@ import UIKit
 private let kVenueCellIdentifier = "VenueCell"
 private let kMenuSegue = "MenuSegue"
 
-final class VenuesTableViewController: UITableViewController {
+final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating {
 
 	// MARK: - Properties
 
 	private var venues = [VenueObject]()
+	private var searchController: UISearchController!
 
 	// MARK: - Lifecycle
 
@@ -24,12 +25,24 @@ final class VenuesTableViewController: UITableViewController {
 		let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
 		let string = try! String(contentsOf: url)
 		self.venues = HTMLParser().venues(from: string)
+
+		self.searchController = UISearchController(searchResultsController: nil)
+		self.searchController.searchResultsUpdater = self
+		self.searchController.dimsBackgroundDuringPresentation = false
+		self.definesPresentationContext = true
+		self.tableView.tableHeaderView = searchController.searchBar
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == kMenuSegue, let vc = segue.destination as? MenuTableViewController, let venue = sender as? VenueObject {
 			vc.venue = venue
 		}
+	}
+
+	// MARK: - UISearchResultsUpdating
+
+	func updateSearchResults(for searchController: UISearchController) {
+		// TODO: use searchController.searchBar.text
 	}
 
 	// MARK: - UITableViewDataSource

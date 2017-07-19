@@ -68,7 +68,7 @@
                             <outlet property="delegate" destination="tkD-SZ-76g" id="MZG-jt-X8u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zBm-Ea-UmE"/>
+                    <navigationItem key="navigationItem" title="Menu" id="zBm-Ea-UmE"/>
                     <connections>
                         <segue destination="K5O-CG-rT8" kind="show" identifier="MenuSegue" id="oH8-bO-kE0"/>
                     </connections>
