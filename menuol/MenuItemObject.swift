@@ -26,7 +26,7 @@ final class MenuItemObject: Object {
 	}
 
 	override static func indexedProperties() -> [String] {
-		return ["order", "year", "month", "day"]
+		return ["order", "day"]
 	}
 
 }
