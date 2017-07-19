@@ -21,7 +21,7 @@ final class HTMLParser {
 		for element in doc.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
-				_ = self.menuItems(from: element)
+				venue.menuItems.append(objectsIn: self.menuItems(from: element))
 			}
 		}
 		return result

@@ -20,7 +20,9 @@ final class VenueObject: Object {
 	dynamic var isHidden = false
 	dynamic var isFavorited = false
 
-	// MARK: - Derive properies
+	let menuItems = List<MenuItemObject>()
+
+	// MARK: - Derived properies
 
 	var imageURL: URL? {
 		return URL(string: self.imageURLString)

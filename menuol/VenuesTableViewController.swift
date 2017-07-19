@@ -26,6 +26,12 @@ final class VenuesTableViewController: UITableViewController {
 		self.venues = HTMLParser().venues(from: string)
 	}
 
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == kMenuSegue, let vc = segue.destination as? MenuTableViewController, let venue = sender as? VenueObject {
+			vc.venue = venue
+		}
+	}
+
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +52,8 @@ final class VenuesTableViewController: UITableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.performSegue(withIdentifier: kMenuSegue, sender: nil)
+		let venue = self.venues[indexPath.row]
+		self.performSegue(withIdentifier: kMenuSegue, sender: venue)
 	}
 
 }
