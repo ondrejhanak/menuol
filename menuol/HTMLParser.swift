@@ -21,6 +21,7 @@ final class HTMLParser {
 		for element in doc.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
+				_ = self.menuItems(from: element)
 			}
 		}
 		return result
@@ -44,5 +45,25 @@ final class HTMLParser {
 		return venue
 	}
 
+	private func menuItems(from element: XMLElement) -> [MenuItemObject] {
+		var result = [MenuItemObject]()
+		let rows = element.xpath("./table//tr")
+		for (index, row) in rows.enumerated() {
+			let columns = row.xpath("td")
+			let orderDescription = columns[0].text ?? ""
+			let title = columns[1].text ?? ""
+			var priceDescription = ""
+			if columns.count >= 3 {
+				priceDescription = columns[2].text ?? ""
+			}
+			let menuItem = MenuItemObject()
+			menuItem.order = index
+			menuItem.orderDescription = orderDescription
+			menuItem.title = title
+			menuItem.priceDescription = priceDescription
+			result.append(menuItem)
+		}
+		return result
+	}
 
 }
