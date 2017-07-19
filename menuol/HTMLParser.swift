@@ -13,7 +13,7 @@ final class HTMLParser {
 
 	// MARK: - Public
 
-	func venues(from string: String) -> [VenueObject] {
+	func venues(from string: String, day: String) -> [VenueObject] {
 		guard let doc = HTML(html: string, encoding: .utf8) else {
 			return []
 		}
@@ -21,7 +21,7 @@ final class HTMLParser {
 		for element in doc.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
-				venue.menuItems.append(objectsIn: self.menuItems(from: element))
+				venue.menuItems.append(objectsIn: self.menuItems(from: element, day: day))
 			}
 		}
 		return result
@@ -45,7 +45,7 @@ final class HTMLParser {
 		return venue
 	}
 
-	private func menuItems(from element: XMLElement) -> [MenuItemObject] {
+	private func menuItems(from element: XMLElement, day: String) -> [MenuItemObject] {
 		var result = [MenuItemObject]()
 		let rows = element.xpath("./table//tr")
 		for (index, row) in rows.enumerated() {
@@ -61,6 +61,7 @@ final class HTMLParser {
 			menuItem.orderDescription = orderDescription
 			menuItem.title = title
 			menuItem.priceDescription = priceDescription
+			menuItem.day = day
 			result.append(menuItem)
 		}
 		return result

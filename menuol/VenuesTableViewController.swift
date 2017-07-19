@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let kVenueCellIdentifier = "VenueCell"
 private let kMenuSegue = "MenuSegue"
@@ -17,20 +18,41 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	private var venues = [VenueObject]()
 	private var searchController: UISearchController!
+	private var venuesManager: VenueManager!
+	private var notificationToken: NotificationToken?
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
-		let string = try! String(contentsOf: url)
-		self.venues = HTMLParser().venues(from: string)
-
+		self.venuesManager = VenueManager.shared
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
 		self.searchController.dimsBackgroundDuringPresentation = false
 		self.definesPresentationContext = true
 		self.tableView.tableHeaderView = searchController.searchBar
+		self.notificationToken = self.venuesManager.result.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+			guard let tableView = self?.tableView else {
+				return
+			}
+			switch changes {
+			case .initial:
+				tableView.reloadData()
+			case .update(_, let deletions, let insertions, let modifications):
+				// Query results have changed, so apply them to the UITableView
+				tableView.beginUpdates()
+				tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+				tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+				tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+				tableView.endUpdates()
+			case .error(let error):
+				fatalError("\(error)")
+			}
+		}
+	}
+
+	deinit {
+		notificationToken?.stop()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,12 +70,12 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.venues.count
+		return self.venuesManager.result.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: kVenueCellIdentifier, for: indexPath) as! VenueTableViewCell
-		let venue = self.venues[indexPath.row]
+		let venue = self.venue(for: indexPath)
 		cell.setup(venue: venue)
 		return cell
 	}
@@ -65,8 +87,14 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let venue = self.venues[indexPath.row]
+		let venue = self.venue(for: indexPath)
 		self.performSegue(withIdentifier: kMenuSegue, sender: venue)
+	}
+
+	// MARK - Private
+
+	private func venue(for indexPath: IndexPath) -> VenueObject {
+		return self.venuesManager.result[indexPath.row]
 	}
 
 }

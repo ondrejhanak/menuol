@@ -14,6 +14,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+		VenueManager.shared.completeUpdate(day: "2017-07-11") // SHOWCASE
+
 		return true
 	}
 
