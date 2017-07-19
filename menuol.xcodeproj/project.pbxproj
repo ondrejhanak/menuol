@@ -19,6 +19,7 @@
 		EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED81F1E3988004DA56D /* HTMLParser.swift */; };
 		EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */; };
 		EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */; };
+		EE99C1C31F1F689E00C324AE /* MenuItemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EE48EED81F1E3988004DA56D /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+oh.swift"; sourceTree = "<group>"; };
 		EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */,
 				EE48EECA1F1E132F004DA56D /* Info.plist */,
 				EE48EED21F1E3795004DA56D /* VenueObject.swift */,
+				EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
 				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
 				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
@@ -233,6 +236,7 @@
 			files = (
 				EE48EED31F1E3795004DA56D /* VenueObject.swift in Sources */,
 				EE48EEBF1F1E132E004DA56D /* AppDelegate.swift in Sources */,
+				EE99C1C31F1F689E00C324AE /* MenuItemObject.swift in Sources */,
 				EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */,
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
 				EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */,
