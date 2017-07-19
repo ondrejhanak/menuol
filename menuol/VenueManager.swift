@@ -12,13 +12,13 @@ import RealmSwift
 final class VenueManager {
 
 	static var shared = VenueManager()
-	var result: Results<VenueObject>
 
 	private var realm: Realm!
 
+	// MARK: - Public
+
 	init() {
 		self.realm = try! Realm()
-		self.result = self.realm.objects(VenueObject.self)
 
 		// SHOWCASE
 		try! realm.write {
@@ -39,7 +39,13 @@ final class VenueManager {
 		}
 	}
 
-	func getCompleteHTML(callback: @escaping (String?) -> Void) {
+	func find(name: String) -> Results<VenueObject> {
+		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name)
+	}
+
+	// MARK: - Private
+
+	private func getCompleteHTML(callback: @escaping (String?) -> Void) {
 		// SHOWCASE - get remote instead
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
 			let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!

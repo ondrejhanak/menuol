@@ -16,7 +16,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	// MARK: - Properties
 
-	private var venues = [VenueObject]()
+	private var result: Results<VenueObject>!
 	private var searchController: UISearchController!
 	private var venuesManager: VenueManager!
 	private var notificationToken: NotificationToken?
@@ -26,33 +26,17 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.venuesManager = VenueManager.shared
+		self.loadData(name: "")
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
 		self.searchController.dimsBackgroundDuringPresentation = false
 		self.definesPresentationContext = true
-		self.tableView.tableHeaderView = searchController.searchBar
-		self.notificationToken = self.venuesManager.result.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-			guard let tableView = self?.tableView else {
-				return
-			}
-			switch changes {
-			case .initial:
-				tableView.reloadData()
-			case .update(_, let deletions, let insertions, let modifications):
-				// Query results have changed, so apply them to the UITableView
-				tableView.beginUpdates()
-				tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-				tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-				tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-				tableView.endUpdates()
-			case .error(let error):
-				fatalError("\(error)")
-			}
-		}
+		self.tableView.tableHeaderView = self.searchController.searchBar
+		self.createNotificationToken()
 	}
 
 	deinit {
-		notificationToken?.stop()
+		self.notificationToken?.stop()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,13 +48,15 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - UISearchResultsUpdating
 
 	func updateSearchResults(for searchController: UISearchController) {
-		// TODO: use searchController.searchBar.text
+		let text = searchController.searchBar.text ?? ""
+		self.loadData(name: text)
+		self.createNotificationToken()
 	}
 
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.venuesManager.result.count
+		return self.result.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +80,31 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK - Private
 
 	private func venue(for indexPath: IndexPath) -> VenueObject {
-		return self.venuesManager.result[indexPath.row]
+		return self.result[indexPath.row]
+	}
+
+	private func loadData(name: String) {
+		self.result = self.venuesManager.find(name: name)
+	}
+
+	private func createNotificationToken() {
+		self.notificationToken = self.result.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+			guard let tableView = self?.tableView else {
+				return
+			}
+			switch changes {
+			case .initial:
+				tableView.reloadData()
+			case .update(_, let deletions, let insertions, let modifications):
+				tableView.beginUpdates()
+				tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+				tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+				tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+				tableView.endUpdates()
+			case .error(let error):
+				fatalError("\(error)")
+			}
+		}
 	}
 
 }
