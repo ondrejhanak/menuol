@@ -20,6 +20,8 @@
 		EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */; };
 		EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */; };
 		EE99C1C31F1F689E00C324AE /* MenuItemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */; };
+		EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */; };
+		EE99C1C71F1F7CA500C324AE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+oh.swift"; sourceTree = "<group>"; };
 		EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemObject.swift; sourceTree = "<group>"; };
+		EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,9 @@
 				EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
 				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
+				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
 				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
+				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
 				EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */,
 			);
 			path = menuol;
@@ -239,9 +245,11 @@
 				EE99C1C31F1F689E00C324AE /* MenuItemObject.swift in Sources */,
 				EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */,
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
+				EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */,
 				EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */,
 				EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */,
 				EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */,
+				EE99C1C71F1F7CA500C324AE /* MenuItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

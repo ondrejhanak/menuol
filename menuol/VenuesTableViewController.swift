@@ -9,6 +9,7 @@
 import UIKit
 
 private let kVenueCellIdentifier = "VenueCell"
+private let kMenuSegue = "MenuSegue"
 
 final class VenuesTableViewController: UITableViewController {
 
@@ -45,7 +46,7 @@ final class VenuesTableViewController: UITableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: true)
+		self.performSegue(withIdentifier: kMenuSegue, sender: nil)
 	}
 
 }
