@@ -31,7 +31,7 @@ final class HTMLParser {
 
 	private func venue(from element: XMLElement) -> VenueObject? {
 		let slug = element["class"]?.components(separatedBy: " ").last
-		let name = element.xpath(".//h3/a").first?.innerHTML
+		let name = element.xpath(".//h3/a").first?.text
 		let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"]
 		let menuTimeDescription = element.xpath(".//span[@class='vydejmenu']").first?.text
 		guard slug != nil, name != nil else {
