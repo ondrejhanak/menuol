@@ -22,7 +22,7 @@ final class VenueManager {
 	}
 
 	func completeUpdate(day: String, callback: @escaping (_ success: Bool) -> Void) {
-		self.getCompleteHTML { html in
+		self.getCompleteHTML(day: day) { html in
 			guard let html = html else {
 				callback(false)
 				return
@@ -52,15 +52,37 @@ final class VenueManager {
 		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
 	}
 
-	private func getCompleteHTML(callback: @escaping (String?) -> Void) {
-		// SHOWCASE - get remote instead
+	private func getCompleteHTML(day: String, callback: @escaping (String?) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
-			let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
-			let string = try! String(contentsOf: url)
+		let url = self.url(day: day)
+		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
+				callback(nil)
+				return
+			}
 			UIApplication.shared.isNetworkActivityIndicatorVisible = false
-			callback(string)
+			DispatchQueue.main.async {
+				callback(html)
+			}
 		}
+		task.resume()
+
+		// SHOWCASE - get remote instead
+//		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//			let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
+//			let string = try! String(contentsOf: url)
+//			callback(string)
+//		}
+	}
+
+	private func url(day: String) -> URL {
+		let parts = day.components(separatedBy: "-")
+		var urlString = "http://www.olomouc.cz/poledni-menu"
+		urlString = urlString + "/" + parts[0]
+		urlString = urlString + "/" + parts[1]
+		urlString = urlString + "/" + parts[2]
+		let url = URL(string: urlString)!
+		return url
 	}
 	
 }
