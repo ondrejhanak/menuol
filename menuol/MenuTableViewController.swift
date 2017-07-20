@@ -24,7 +24,6 @@ final class MenuTableViewController: UITableViewController {
 		super.viewDidLoad()
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
-		self.navigationItem.backBarButtonItem?.title = ""
 		self.loadData()
 	}
 
