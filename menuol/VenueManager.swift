@@ -49,9 +49,11 @@ final class VenueManager {
 
 	private func getCompleteHTML(callback: @escaping (String?) -> Void) {
 		// SHOWCASE - get remote instead
+		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
 			let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
 			let string = try! String(contentsOf: url)
+			UIApplication.shared.isNetworkActivityIndicatorVisible = false
 			callback(string)
 		}
 	}
