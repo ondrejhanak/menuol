@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.5.0)
   - Kanna (2.1.1)
   - Realm (2.8.3):
     - Realm/Headers (= 2.8.3)
@@ -11,18 +10,16 @@ PODS:
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
   - Kanna (~> 2.1.0)
   - RealmSwift (~> 2.2)
   - SDWebImage (= 4.0)
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: f9fba02a432c93068674dc5c02c514380b9b571e
+PODFILE CHECKSUM: 98cff13a9044d18c80124af490b6105d7506e63e
 
 COCOAPODS: 1.2.1
