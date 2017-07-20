@@ -20,8 +20,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.migrateRealmIfNeeded()
 
 		// Fetch content
-		let today = Date().addingTimeInterval(1*24*3600)
-		VenueManager.shared.completeUpdate(date: today) { success in }
+		//let today = Date().addingTimeInterval(1*24*3600)
+		//VenueManager.shared.completeUpdate(date: today) { success in }
 
 		return true
 	}
