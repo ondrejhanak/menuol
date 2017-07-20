@@ -26,7 +26,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.venuesManager = VenueManager.shared
-		self.loadData(name: "")
+		self.loadData()
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
 		self.searchController.dimsBackgroundDuringPresentation = false
@@ -48,8 +48,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - UISearchResultsUpdating
 
 	func updateSearchResults(for searchController: UISearchController) {
-		let text = searchController.searchBar.text ?? ""
-		self.loadData(name: text)
+		self.loadData(nameFilter: searchController.searchBar.text)
 		self.createNotificationToken()
 	}
 
@@ -84,8 +83,8 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		return self.result[indexPath.row]
 	}
 
-	private func loadData(name: String) {
-		self.result = self.venuesManager.find(name: name)
+	private func loadData(nameFilter: String? = nil) {
+		self.result = self.venuesManager.find(name: nameFilter ?? "")
 	}
 
 	private func createNotificationToken() {
