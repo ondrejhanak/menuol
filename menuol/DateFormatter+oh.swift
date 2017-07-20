@@ -16,8 +16,19 @@ extension DateFormatter {
 		return formatter
 	}()
 
+	private static var czechDateFormatter: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.locale = Locale(identifier: "cs_CZ")
+		formatter.dateFormat = "EEEE d. MMMM"
+		return formatter
+	}()
+
 	static func dateOnlyString(from: Date) -> String {
 		return self.dateOnlyFormatter.string(from: from)
+	}
+
+	static func czechDateString(from: Date) -> String {
+		return self.czechDateFormatter.string(from: from)
 	}
 	
 }

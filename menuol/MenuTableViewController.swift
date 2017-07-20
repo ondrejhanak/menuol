@@ -31,7 +31,7 @@ final class MenuTableViewController: UITableViewController {
 	// MARK: - Private
 
 	private func loadData() {
-		self.title = self.venue.name
+		self.title = DateFormatter.czechDateString(from: self.date)
 		let day = DateFormatter.dateOnlyString(from: self.date)
 		self.items = self.venue.menuItems(day: day)
 	}
