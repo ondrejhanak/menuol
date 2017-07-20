@@ -64,6 +64,12 @@ final class HTMLParser {
 			menuItem.day = day
 			result.append(menuItem)
 		}
+		if let appendix = element.xpath("./table/following-sibling::p").first?.text {
+			let menuItem = MenuItemObject()
+			menuItem.order = result.count
+			menuItem.title = appendix
+			result.append(menuItem)
+		}
 		return result
 	}
 
