@@ -15,17 +15,25 @@ final class MenuTableViewController: UITableViewController {
 	// MARK: - Properties
 
 	var venue: VenueObject!
-	private var items: [MenuItemObject]!
+	private var items = [MenuItemObject]()
+	private var date = Date()
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.title = self.venue.name
-		let day = DateFormatter.dateOnlyString(from: Date()) // SHOWCASE
-		self.items = self.venue.menuItems(day: day)
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
+		self.navigationItem.backBarButtonItem?.title = ""
+		self.loadData()
+	}
+
+	// MARK: - Private
+
+	private func loadData() {
+		self.title = self.venue.name
+		let day = DateFormatter.dateOnlyString(from: self.date)
+		self.items = self.venue.menuItems(day: day)
 	}
 
 	// MARK: - UITableViewDataSource

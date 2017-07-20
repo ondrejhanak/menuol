@@ -44,13 +44,17 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="251" image="StarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="A5I-Pz-y0m">
-                                            <rect key="frame" x="349" y="22" width="16" height="16"/>
+                                            <rect key="frame" x="339" y="12" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="PYy-EW-dxc"/>
+                                                <constraint firstAttribute="height" constant="36" id="nKl-ej-V3z"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="A5I-Pz-y0m" secondAttribute="trailing" constant="10" id="8in-fl-1Y5"/>
+                                        <constraint firstAttribute="trailing" secondItem="A5I-Pz-y0m" secondAttribute="trailing" id="8in-fl-1Y5"/>
                                         <constraint firstItem="yy7-Xp-JbV" firstAttribute="width" secondItem="2H1-wU-Ye6" secondAttribute="width" id="DoK-VB-pNm"/>
-                                        <constraint firstItem="A5I-Pz-y0m" firstAttribute="leading" secondItem="2H1-wU-Ye6" secondAttribute="trailing" constant="10" id="S2u-a4-Dbm"/>
+                                        <constraint firstItem="A5I-Pz-y0m" firstAttribute="leading" secondItem="2H1-wU-Ye6" secondAttribute="trailing" id="S2u-a4-Dbm"/>
                                         <constraint firstItem="2H1-wU-Ye6" firstAttribute="leading" secondItem="6sX-IX-yAf" secondAttribute="trailing" constant="10" id="bnC-2g-2Py"/>
                                         <constraint firstItem="6sX-IX-yAf" firstAttribute="leading" secondItem="tU7-pb-dUa" secondAttribute="leading" constant="10" id="ias-BJ-bBv"/>
                                         <constraint firstItem="2H1-wU-Ye6" firstAttribute="top" secondItem="6sX-IX-yAf" secondAttribute="top" constant="5" id="lvb-k0-U6h"/>
