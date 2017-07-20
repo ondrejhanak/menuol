@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import FSCalendar
 
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
-final class MenuTableViewController: UITableViewController {
+final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
 
 	// MARK: - Properties
 
@@ -24,7 +25,10 @@ final class MenuTableViewController: UITableViewController {
 		super.viewDidLoad()
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
-		self.loadData()
+//		self.calendar.select(date)
+//		self.calendar.delegate = self
+//			self.loadData()
+//		}
 	}
 
 	// MARK: - IBActions
@@ -57,6 +61,14 @@ final class MenuTableViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.0001 // removes extra footer
+	}
+
+	// MARK: – FSCalendarDelegate
+
+	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+		self.date = date
+		self.loadData()
+		self.tableView.reloadData()
 	}
 
 }
