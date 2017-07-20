@@ -14,6 +14,7 @@ final class VenueTableViewCell: UITableViewCell {
 	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var subtitleLabel: UILabel!
 	@IBOutlet var logoImageView: UIImageView!
+	@IBOutlet weak var favoriteImageView: UIImageView!
 
 	override func awakeFromNib() {
 		self.logoImageView?.contentMode = .scaleAspectFit
