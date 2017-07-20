@@ -41,4 +41,10 @@ final class MenuTableViewController: UITableViewController {
 		return cell
 	}
 
+	// MARK: - UITableViewDelegate
+
+	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.0001 // removes extra footer
+	}
+
 }
