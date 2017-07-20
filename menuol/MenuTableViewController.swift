@@ -28,6 +28,11 @@ final class MenuTableViewController: UITableViewController {
 		self.loadData()
 	}
 
+	// MARK: - IBActions
+
+	@IBAction func calendarTapped(_ sender: UIBarButtonItem) {
+	}
+
 	// MARK: - Private
 
 	private func loadData() {

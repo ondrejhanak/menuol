@@ -148,6 +148,13 @@
                             <outlet property="delegate" destination="K5O-CG-rT8" id="Zi6-7O-Lvi"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="Gc0-2y-91W">
+                        <barButtonItem key="rightBarButtonItem" image="CalendarIcon" id="8gS-6W-BeN">
+                            <connections>
+                                <action selector="calendarTapped:" destination="K5O-CG-rT8" id="H7g-Eg-ZVD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="099-a9-Xqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CalendarIcon" width="16" height="16"/>
         <image name="StarIcon" width="16" height="16"/>
     </resources>
 </document>
