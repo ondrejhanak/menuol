@@ -21,10 +21,10 @@ final class VenueManager {
 		self.realm = try! Realm()
 	}
 
-	func completeUpdate(day: String) {
+	func completeUpdate(day: String, callback: @escaping (_ success: Bool) -> Void) {
 		self.getCompleteHTML { html in
 			guard let html = html else {
-				// TODO: error
+				callback(false)
 				return
 			}
 			let result = HTMLParser().venues(from: html, day: day)
@@ -36,6 +36,7 @@ final class VenueManager {
 					self.realm.add(new, update: true)
 				}
 			}
+			callback(true)
 		}
 	}
 
@@ -45,11 +46,11 @@ final class VenueManager {
 		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name).sorted(by: [favDescriptor, nameDescriptor])
 	}
 
-	func find(slug: String) -> VenueObject? {
+	// MARK: - Private
+
+	private func find(slug: String) -> VenueObject? {
 		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
 	}
-
-	// MARK: - Private
 
 	private func getCompleteHTML(callback: @escaping (String?) -> Void) {
 		// SHOWCASE - get remote instead

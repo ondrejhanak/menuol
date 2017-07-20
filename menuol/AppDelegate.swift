@@ -19,7 +19,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Realm
 		self.migrateRealmIfNeeded()
 
-		VenueManager.shared.completeUpdate(day: "2017-07-11") // SHOWCASE
+		// SHOWCASE
+		VenueManager.shared.completeUpdate(day: "2017-07-11") { success in
+			print("UPDATE finished with success: \(success)")
+		}
 
 		return true
 	}
