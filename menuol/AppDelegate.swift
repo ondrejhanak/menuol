@@ -19,10 +19,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Realm
 		self.migrateRealmIfNeeded()
 
-		// SHOWCASE
-		VenueManager.shared.completeUpdate(day: "2017-07-11") { success in
-			print("UPDATE finished with success: \(success)")
-		}
+		// Fetch content
+		let today = Date().addingTimeInterval(1*24*3600)
+		VenueManager.shared.completeUpdate(date: today) { success in }
 
 		return true
 	}

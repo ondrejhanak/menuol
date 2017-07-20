@@ -28,6 +28,10 @@ final class VenueObject: Object {
 		return URL(string: self.imageURLString)
 	}
 
+	func menuItems(day: String) -> [MenuItemObject] {
+		return Array(self.menuItems.filter("day == %@", day))
+	}
+
 	// MARK: - Meta
 
 	override static func primaryKey() -> String? {

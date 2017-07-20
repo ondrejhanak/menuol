@@ -21,7 +21,8 @@ final class VenueManager {
 		self.realm = try! Realm()
 	}
 
-	func completeUpdate(day: String, callback: @escaping (_ success: Bool) -> Void) {
+	func completeUpdate(date: Date, callback: @escaping (_ success: Bool) -> Void) {
+		let day = DateFormatter.dateOnlyString(from: date)
 		self.getCompleteHTML(day: day) { html in
 			guard let html = html else {
 				callback(false)
@@ -32,6 +33,7 @@ final class VenueManager {
 				for new in result {
 					if let existing = self.find(slug: new.slug) {
 						new.isFavorited = existing.isFavorited
+						new.menuItems.append(objectsIn: existing.menuItems)
 					}
 					self.realm.add(new, update: true)
 				}

@@ -15,12 +15,15 @@ final class MenuTableViewController: UITableViewController {
 	// MARK: - Properties
 
 	var venue: VenueObject!
+	private var items: [MenuItemObject]!
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.title = self.venue.name
+		let day = DateFormatter.dateOnlyString(from: Date()) // SHOWCASE
+		self.items = self.venue.menuItems(day: day)
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
 	}
@@ -28,12 +31,12 @@ final class MenuTableViewController: UITableViewController {
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.venue.menuItems.count
+		return self.items.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: kMenuItemCellIdentifier, for: indexPath) as! MenuItemTableViewCell
-		let menuItem = self.venue.menuItems[indexPath.row]
+		let menuItem = self.items[indexPath.row]
 		cell.setup(menuItem: menuItem)
 		return cell
 	}

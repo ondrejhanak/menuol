@@ -69,6 +69,7 @@ final class HTMLParser {
 			let menuItem = MenuItemObject()
 			menuItem.order = result.count
 			menuItem.title = appendix
+			menuItem.day = day
 			menuItem.setPrimaryKey(venueSlug: slug)
 			result.append(menuItem)
 		}
