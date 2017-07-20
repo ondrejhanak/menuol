@@ -19,11 +19,6 @@ final class VenueManager {
 
 	init() {
 		self.realm = try! Realm()
-
-		// SHOWCASE
-		try! realm.write {
-			realm.deleteAll()
-		}
 	}
 
 	func completeUpdate(day: String) {
@@ -32,9 +27,14 @@ final class VenueManager {
 				// TODO: error
 				return
 			}
-			let new = HTMLParser().venues(from: html, day: day)
+			let result = HTMLParser().venues(from: html, day: day)
 			try! self.realm.write {
-				self.realm.add(new, update: true)
+				for new in result {
+					if let existing = self.find(slug: new.slug) {
+						new.isFavorited = existing.isFavorited
+					}
+					self.realm.add(new, update: true)
+				}
 			}
 		}
 	}
@@ -43,6 +43,10 @@ final class VenueManager {
 		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
 		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
 		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name).sorted(by: [favDescriptor, nameDescriptor])
+	}
+
+	func find(slug: String) -> VenueObject? {
+		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
 	}
 
 	// MARK: - Private
