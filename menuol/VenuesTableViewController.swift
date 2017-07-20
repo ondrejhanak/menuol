@@ -12,7 +12,7 @@ import RealmSwift
 private let kVenueCellIdentifier = "VenueCell"
 private let kMenuSegue = "MenuSegue"
 
-final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating {
+final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
 
 	// MARK: - Properties
 
@@ -63,6 +63,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		let cell = tableView.dequeueReusableCell(withIdentifier: kVenueCellIdentifier, for: indexPath) as! VenueTableViewCell
 		let venue = self.venue(for: indexPath)
 		cell.setup(venue: venue)
+		cell.delegate = self
 		return cell
 	}
 
@@ -104,6 +105,14 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 			case .error(let error):
 				fatalError("\(error)")
 			}
+		}
+	}
+
+	// MARK: - VenueTableViewCellDelegate
+
+	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
+		try! cell.venue.realm?.write {
+			cell.venue.isFavorited = !cell.venue.isFavorited
 		}
 	}
 

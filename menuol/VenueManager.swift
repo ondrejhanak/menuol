@@ -40,7 +40,9 @@ final class VenueManager {
 	}
 
 	func find(name: String) -> Results<VenueObject> {
-		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name)
+		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
+		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
+		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name).sorted(by: [favDescriptor, nameDescriptor])
 	}
 
 	// MARK: - Private
