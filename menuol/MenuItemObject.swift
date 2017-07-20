@@ -13,6 +13,7 @@ final class MenuItemObject: Object {
 
 	// MARK: - Persistent properties
 
+	dynamic var pk = ""
 	dynamic var title = ""
 	dynamic var day = ""
 	dynamic var order = 0
@@ -22,11 +23,19 @@ final class MenuItemObject: Object {
 	// MARK: - Meta
 
 	override static func primaryKey() -> String? {
-		return nil
+		return "pk"
 	}
 
 	override static func indexedProperties() -> [String] {
 		return ["order", "day"]
+	}
+
+	// MARK: - Public
+
+	func setPrimaryKey(venueSlug slug: String) {
+		if self.realm == nil {
+			self.pk = slug + "_" + day + "_" + String(self.order)
+		}
 	}
 
 }
