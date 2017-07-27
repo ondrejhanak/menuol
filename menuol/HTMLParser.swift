@@ -39,6 +39,10 @@ final class HTMLParser {
 		formatter.dateFormat = "EEEE d. M."
 		for header in doc.xpath("//section[@class='detail-restaurace']//h3") {
 			if let dateString = header.text, let date = formatter.date(from: dateString) {
+				let year = Calendar.current.dateComponents([.year], from: Date()).year
+				var components = Calendar.current.dateComponents([.day, .month], from: date)
+				components.year = year
+				let date = Calendar.current.date(from: components)!
 				let day = DateFormatter.dateOnlyString(from: date)
 				if let table = header.xpath("following-sibling::table").first {
 					let items = self.menuItems(from: table, day: day, venueSlug: slug)
