@@ -23,7 +23,7 @@ final class VenueManager {
 
 	func completeUpdate(date: Date, callback: @escaping (_ success: Bool) -> Void) {
 		let day = DateFormatter.dateOnlyString(from: date)
-		self.getCompleteHTML(day: day) { html in
+		self.getVenuesHTML(day: day) { html in
 			guard let html = html else {
 				callback(false)
 				return
@@ -54,9 +54,8 @@ final class VenueManager {
 		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
 	}
 
-	private func getCompleteHTML(day: String, callback: @escaping (String?) -> Void) {
+	private func getHTML(url: URL, callback: @escaping (String?) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		let url = self.venuesURL(day: day)
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				callback(nil)
@@ -68,6 +67,11 @@ final class VenueManager {
 			}
 		}
 		task.resume()
+	}
+
+	private func getVenuesHTML(day: String, callback: @escaping (String?) -> Void) {
+		let url = self.venuesURL(day: day)
+		self.getHTML(url: url, callback: callback)
 	}
 
 	private func venuesURL(day: String) -> URL {
