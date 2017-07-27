@@ -56,7 +56,7 @@ final class VenueManager {
 
 	private func getCompleteHTML(day: String, callback: @escaping (String?) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		let url = self.url(day: day)
+		let url = self.venuesURL(day: day)
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				callback(nil)
@@ -70,7 +70,7 @@ final class VenueManager {
 		task.resume()
 	}
 
-	private func url(day: String) -> URL {
+	private func venuesURL(day: String) -> URL {
 		let parts = day.components(separatedBy: "-")
 		var urlString = "http://www.olomouc.cz/poledni-menu"
 		urlString = urlString + "/" + parts[0]
