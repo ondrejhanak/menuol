@@ -68,13 +68,6 @@ final class VenueManager {
 			}
 		}
 		task.resume()
-
-		// SHOWCASE - get remote instead
-//		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//			let url = Bundle.main.url(forResource: "menu.html", withExtension: nil)!
-//			let string = try! String(contentsOf: url)
-//			callback(string)
-//		}
 	}
 
 	private func url(day: String) -> URL {
