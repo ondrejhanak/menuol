@@ -21,7 +21,9 @@ final class HTMLParser {
 		for element in doc.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
-				venue.menuItems.append(objectsIn: self.menuItems(from: element, day: day, venueSlug: venue.slug))
+				if let table = element.xpath("./table").first {
+					venue.menuItems.append(objectsIn: self.menuItems(from: table, day: day, venueSlug: venue.slug))
+				}
 			}
 		}
 		return result
@@ -47,7 +49,7 @@ final class HTMLParser {
 
 	private func menuItems(from element: XMLElement, day: String, venueSlug slug: String) -> [MenuItemObject] {
 		var result = [MenuItemObject]()
-		let rows = element.xpath("./table//tr")
+		let rows = element.xpath(".//tr")
 		for (index, row) in rows.enumerated() {
 			let columns = row.xpath("td")
 			let orderDescription = columns[0].text ?? ""
@@ -65,7 +67,7 @@ final class HTMLParser {
 			menuItem.setPrimaryKey(venueSlug: slug)
 			result.append(menuItem)
 		}
-		if let appendix = element.xpath("./table/following-sibling::p").first?.text {
+		if let appendix = element.xpath("following-sibling::p").first?.text {
 			let menuItem = MenuItemObject()
 			menuItem.order = result.count
 			menuItem.title = appendix
