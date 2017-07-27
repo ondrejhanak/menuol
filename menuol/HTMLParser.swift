@@ -29,6 +29,26 @@ final class HTMLParser {
 		return result
 	}
 
+	func menuItems(from string: String, slug: String) -> [MenuItemObject] {
+		guard let doc = HTML(html: string, encoding: .utf8) else {
+			return []
+		}
+		var result = [MenuItemObject]()
+		let formatter = DateFormatter()
+		formatter.locale = Locale(identifier: "cs_CZ")
+		formatter.dateFormat = "EEEE d. M."
+		for header in doc.xpath("//section[@class='detail-restaurace']//h3") {
+			if let dateString = header.text, let date = formatter.date(from: dateString) {
+				let day = DateFormatter.dateOnlyString(from: date)
+				if let table = header.xpath("following-sibling::table").first {
+					let items = self.menuItems(from: table, day: day, venueSlug: slug)
+					result.append(contentsOf: items)
+				}
+			}
+		}
+		return result
+	}
+
 	// MARK: - Private
 
 	private func venue(from element: XMLElement) -> VenueObject? {
