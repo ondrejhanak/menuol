@@ -23,6 +23,7 @@
 		EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */; };
 		EE99C1C71F1F7CA500C324AE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */; };
 		EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */; };
+		EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1DA1F29E7FC00C324AE /* String+oh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+oh.swift"; sourceTree = "<group>"; };
+		EE99C1DA1F29E7FC00C324AE /* String+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+oh.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
 				EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */,
 				EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */,
+				EE99C1DA1F29E7FC00C324AE /* String+oh.swift */,
 			);
 			path = menuol;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */,
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
 				EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */,
+				EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */,
 				EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */,
 				EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */,
 				EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */,

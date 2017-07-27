@@ -38,7 +38,7 @@ final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
 	// MARK: - Private
 
 	private func loadData() {
-		self.title = DateFormatter.czechDateString(from: self.date)
+		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
 		let day = DateFormatter.dateOnlyString(from: self.date)
 		self.items = self.venue.menuItems(day: day)
 	}
