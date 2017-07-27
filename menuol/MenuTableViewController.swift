@@ -27,8 +27,7 @@ final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
 		self.tableView.estimatedRowHeight = 65
 //		self.calendar.select(date)
 //		self.calendar.delegate = self
-//			self.loadData()
-//		}
+		self.loadData()
 	}
 
 	// MARK: - IBActions
