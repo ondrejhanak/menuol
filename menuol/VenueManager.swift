@@ -42,6 +42,24 @@ final class VenueManager {
 		}
 	}
 
+	func updateMenu(slug: String, callback: @escaping (_ success: Bool) -> Void) {
+		guard let venue = self.find(slug: slug) else {
+			callback(false)
+			return
+		}
+		self.getMenuHTML(slug: slug) { html in
+			guard let html = html else {
+				callback(false)
+				return
+			}
+			let items = HTMLParser().menuItems(from: html, slug: slug)
+			try! self.realm.write {
+				venue.menuItems.append(objectsIn: items)
+			}
+			callback(true)
+		}
+	}
+
 	func find(name: String) -> Results<VenueObject> {
 		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
 		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
@@ -74,12 +92,23 @@ final class VenueManager {
 		self.getHTML(url: url, callback: callback)
 	}
 
+	private func getMenuHTML(slug: String, callback: @escaping (String?) -> Void) {
+		let url = self.menuURL(slug: slug)
+		self.getHTML(url: url, callback: callback)
+	}
+
 	private func venuesURL(day: String) -> URL {
 		let parts = day.components(separatedBy: "-")
 		var urlString = "http://www.olomouc.cz/poledni-menu"
 		urlString = urlString + "/" + parts[0]
 		urlString = urlString + "/" + parts[1]
 		urlString = urlString + "/" + parts[2]
+		let url = URL(string: urlString)!
+		return url
+	}
+
+	private func menuURL(slug: String) -> URL {
+		let urlString = "http://www.olomouc.cz/poledni-menu/" + slug
 		let url = URL(string: urlString)!
 		return url
 	}
