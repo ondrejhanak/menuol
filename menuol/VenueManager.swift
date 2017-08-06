@@ -100,9 +100,9 @@ final class VenueManager {
 	private func venuesURL(day: String) -> URL {
 		let parts = day.components(separatedBy: "-")
 		var urlString = "http://www.olomouc.cz/poledni-menu"
-		urlString = urlString + "/" + parts[0]
-		urlString = urlString + "/" + parts[1]
-		urlString = urlString + "/" + parts[2]
+		urlString += "/" + parts[0]
+		urlString += "/" + parts[1]
+		urlString += "/" + parts[2]
 		let url = URL(string: urlString)!
 		return url
 	}

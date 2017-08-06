@@ -54,4 +54,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		_ = try! Realm()
 	}
 }
-
