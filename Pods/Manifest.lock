@@ -1,31 +1,31 @@
 PODS:
   - FSCalendar (2.7.9)
-  - Kanna (2.1.1)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - Kanna (2.2.1)
+  - Realm (2.9.1):
+    - Realm/Headers (= 2.9.1)
+  - Realm/Headers (2.9.1)
+  - RealmSwift (2.9.1):
+    - Realm (= 2.9.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
   - STPopup (1.8.2)
 
 DEPENDENCIES:
   - FSCalendar (~> 2.7)
-  - Kanna (~> 2.1.0)
+  - Kanna (~> 2.1)
   - RealmSwift (~> 2.2)
-  - SDWebImage (= 4.0)
+  - SDWebImage (~> 4.0)
   - STPopup (~> 1.8)
 
 SPEC CHECKSUMS:
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
-  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
+  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
+  RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
 
-PODFILE CHECKSUM: 6bec229ade614020755d1f59572a7ae98323ba9e
+PODFILE CHECKSUM: 548a7bb2cb9a7529758bc14838bb674fcd84f684
 
 COCOAPODS: 1.2.1
