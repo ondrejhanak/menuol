@@ -18,6 +18,7 @@ final class MenuTableViewController: UITableViewController {
 	var venue: VenueObject!
 	private var items = [MenuItemObject]()
 	private var date = Date()
+	private var didTryFetch = false
 
 	// MARK: - Lifecycle
 
@@ -32,6 +33,11 @@ final class MenuTableViewController: UITableViewController {
 
 	@IBAction func calendarTapped(_ sender: UIBarButtonItem) {
 		let vc = CalendarViewController()
+		vc.date = self.date
+		vc.callback = { date in
+			self.date = date
+			self.loadData()
+		}
 		let padding: CGFloat = 10
 		let size = self.view.bounds.size.width - 2 * padding
 		vc.contentSizeInPopup = CGSize(width: size, height: size)
@@ -48,18 +54,35 @@ final class MenuTableViewController: UITableViewController {
 		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
 		let day = DateFormatter.dateOnlyString(from: self.date)
 		self.items = self.venue.menuItems(day: day)
+		if self.items.isEmpty && !self.didTryFetch {
+			VenueManager.shared.updateMenu(slug: self.venue.slug) { success in
+				self.didTryFetch = true
+				self.loadData()
+			}
+			self.tableView.reloadData()
+		} else {
+			self.tableView.reloadData()
+		}
+	}
+
+	private func fetchData() {
+
 	}
 
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.items.count
+		return self.items.isEmpty ? 1 : self.items.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: kMenuItemCellIdentifier, for: indexPath) as! MenuItemTableViewCell
-		let menuItem = self.items[indexPath.row]
-		cell.setup(menuItem: menuItem)
+		if self.items.isEmpty {
+			cell.setupAsNoDataCell()
+		} else {
+			let menuItem = self.items[indexPath.row]
+			cell.setup(menuItem: menuItem)
+		}
 		return cell
 	}
 

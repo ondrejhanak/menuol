@@ -25,4 +25,10 @@ final class MenuItemTableViewCell: UITableViewCell {
 		self.priceLabel?.text = menuItem.priceDescription
 	}
 
+	func setupAsNoDataCell() {
+		self.orderLabel?.text = nil
+		self.titleLabel?.text = "Restaurace nedodala aktuální údaje"
+		self.priceLabel?.text = nil
+	}
+
 }
