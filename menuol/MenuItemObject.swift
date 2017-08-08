@@ -38,4 +38,15 @@ final class MenuItemObject: Object {
 		}
 	}
 
+	override func isEqual(_ object: Any?) -> Bool {
+		if let object = object as? MenuItemObject {
+			return self.pk == object.pk
+		}
+		return false
+	}
+
+	override var hashValue: Int {
+		return self.pk.hashValue
+	}
+
 }

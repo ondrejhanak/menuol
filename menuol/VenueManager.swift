@@ -54,7 +54,12 @@ final class VenueManager {
 			}
 			let items = HTMLParser().menuItems(from: html, slug: slug)
 			try! self.realm.write {
-				venue.menuItems.append(objectsIn: items)
+				for item in items {
+					if venue.menuItems.contains(item) {
+						continue
+					}
+					venue.menuItems.append(item)
+				}
 			}
 			callback(true)
 		}
