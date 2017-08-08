@@ -159,7 +159,7 @@
 				TargetAttributes = {
 					EE48EEBA1F1E132E004DA56D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 32AWT46CG7;
+						DevelopmentTeam = RSQZ5T9DT6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -387,7 +387,7 @@
 			baseConfigurationReference = 50FC56F983C4E9E0220A55B9 /* Pods-menuol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32AWT46CG7;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				INFOPLIST_FILE = menuol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
@@ -402,7 +402,7 @@
 			baseConfigurationReference = A06315D78DCE4B9709DD17C0 /* Pods-menuol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32AWT46CG7;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				INFOPLIST_FILE = menuol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
