@@ -9,4 +9,5 @@ target 'menuol' do
 	pod 'RealmSwift', '~> 2.2'
 	pod 'FSCalendar', '~> 2.7'
 	pod 'STPopup', '~> 1.8'
+	pod 'PureLayout', '~> 3.0'
 end

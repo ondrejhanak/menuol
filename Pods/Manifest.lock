@@ -1,6 +1,7 @@
 PODS:
   - FSCalendar (2.7.9)
   - Kanna (2.2.1)
+  - PureLayout (3.0.2)
   - Realm (2.9.1):
     - Realm/Headers (= 2.9.1)
   - Realm/Headers (2.9.1)
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - FSCalendar (~> 2.7)
   - Kanna (~> 2.1)
+  - PureLayout (~> 3.0)
   - RealmSwift (~> 2.2)
   - SDWebImage (~> 4.0)
   - STPopup (~> 1.8)
@@ -21,11 +23,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
   RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
 
-PODFILE CHECKSUM: 548a7bb2cb9a7529758bc14838bb674fcd84f684
+PODFILE CHECKSUM: 40dfec443f91c2aeff6ff036eec9dbd4f58c6b0a
 
 COCOAPODS: 1.2.1
