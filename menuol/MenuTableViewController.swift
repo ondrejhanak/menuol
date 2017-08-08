@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import FSCalendar
+import STPopup
 
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
-final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
+final class MenuTableViewController: UITableViewController {
 
 	// MARK: - Properties
 
@@ -25,14 +25,21 @@ final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
 		super.viewDidLoad()
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
-//		self.calendar.select(date)
-//		self.calendar.delegate = self
 		self.loadData()
 	}
 
 	// MARK: - IBActions
 
 	@IBAction func calendarTapped(_ sender: UIBarButtonItem) {
+		let vc = CalendarViewController()
+		let padding: CGFloat = 10
+		let size = self.view.bounds.size.width - 2 * padding
+		vc.contentSizeInPopup = CGSize(width: size, height: size)
+		let popupController = STPopupController(rootViewController: vc)
+		popupController.containerView.layer.cornerRadius = 8
+		popupController.hidesCloseButton = false
+		popupController.style = .formSheet
+		popupController.present(in: self)
 	}
 
 	// MARK: - Private
@@ -60,14 +67,6 @@ final class MenuTableViewController: UITableViewController, FSCalendarDelegate {
 
 	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.0001 // removes extra footer
-	}
-
-	// MARK: – FSCalendarDelegate
-
-	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-		self.date = date
-		self.loadData()
-		self.tableView.reloadData()
 	}
 
 }
