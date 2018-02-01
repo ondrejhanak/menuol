@@ -36,7 +36,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	deinit {
-		self.notificationToken?.stop()
+		self.notificationToken?.invalidate()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,7 +88,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	private func createNotificationToken() {
-		self.notificationToken = self.result.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+		self.notificationToken = self.result.observe { [weak self] (changes: RealmCollectionChange) in
 			guard let tableView = self?.tableView else {
 				return
 			}
