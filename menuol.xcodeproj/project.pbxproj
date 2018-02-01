@@ -102,10 +102,6 @@
 			children = (
 				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
-				EE48EEC21F1E132E004DA56D /* Main.storyboard */,
-				EE48EEC51F1E132E004DA56D /* Assets.xcassets */,
-				EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */,
-				EE48EECA1F1E132F004DA56D /* Info.plist */,
 				EE48EED21F1E3795004DA56D /* VenueObject.swift */,
 				EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
@@ -114,11 +110,31 @@
 				EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */,
 				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
 				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
+				EEA597B42023CB9C004E2B79 /* Resources */,
+				EEA597B32023CB87004E2B79 /* Extensions */,
+			);
+			path = menuol;
+			sourceTree = "<group>";
+		};
+		EEA597B32023CB87004E2B79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */,
 				EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */,
 				EE99C1DA1F29E7FC00C324AE /* String+oh.swift */,
 			);
-			path = menuol;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEA597B42023CB9C004E2B79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE48EEC21F1E132E004DA56D /* Main.storyboard */,
+				EE48EEC51F1E132E004DA56D /* Assets.xcassets */,
+				EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */,
+				EE48EECA1F1E132F004DA56D /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
-				INFOPLIST_FILE = menuol/Info.plist;
+				INFOPLIST_FILE = menuol/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
-				INFOPLIST_FILE = menuol/Info.plist;
+				INFOPLIST_FILE = menuol/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
