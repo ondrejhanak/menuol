@@ -66,7 +66,7 @@ final class HTMLParser {
 		let venue = VenueObject()
 		venue.slug = slug!
 		venue.name = name!
-		venue.imageURLString = imageURLString ?? ""
+		venue.imageURLString = "https:" + (imageURLString ?? "")
 		venue.menuTimeDescription = menuTimeDescription
 		return venue
 	}
