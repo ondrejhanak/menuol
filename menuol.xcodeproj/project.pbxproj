@@ -13,7 +13,6 @@
 		EE48EEC41F1E132E004DA56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE48EEC21F1E132E004DA56D /* Main.storyboard */; };
 		EE48EEC61F1E132E004DA56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE48EEC51F1E132E004DA56D /* Assets.xcassets */; };
 		EE48EEC91F1E132F004DA56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */; };
-		EE48EED11F1E151C004DA56D /* menu.html in Resources */ = {isa = PBXBuildFile; fileRef = EE48EED01F1E151C004DA56D /* menu.html */; };
 		EE48EED31F1E3795004DA56D /* VenueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED21F1E3795004DA56D /* VenueObject.swift */; };
 		EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED41F1E3877004DA56D /* VenueManager.swift */; };
 		EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */; };
@@ -38,7 +37,6 @@
 		EE48EEC51F1E132E004DA56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE48EEC81F1E132F004DA56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE48EECA1F1E132F004DA56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE48EED01F1E151C004DA56D /* menu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = menu.html; sourceTree = "<group>"; };
 		EE48EED21F1E3795004DA56D /* VenueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueObject.swift; sourceTree = "<group>"; };
 		EE48EED41F1E3877004DA56D /* VenueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueManager.swift; sourceTree = "<group>"; };
 		EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		EE48EEBD1F1E132E004DA56D /* menuol */ = {
 			isa = PBXGroup;
 			children = (
-				EE48EED01F1E151C004DA56D /* menu.html */,
 				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EEC21F1E132E004DA56D /* Main.storyboard */,
@@ -189,7 +186,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE48EEC91F1E132F004DA56D /* LaunchScreen.storyboard in Resources */,
-				EE48EED11F1E151C004DA56D /* menu.html in Resources */,
 				EE48EEC61F1E132E004DA56D /* Assets.xcassets in Resources */,
 				EE48EEC41F1E132E004DA56D /* Main.storyboard in Resources */,
 			);
