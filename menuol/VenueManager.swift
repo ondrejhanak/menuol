@@ -86,8 +86,8 @@ final class VenueManager {
 				callback(nil)
 				return
 			}
-			UIApplication.shared.isNetworkActivityIndicatorVisible = false
 			DispatchQueue.main.async {
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
 				callback(html)
 			}
 		}
