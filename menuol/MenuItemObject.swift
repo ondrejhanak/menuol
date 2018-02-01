@@ -13,12 +13,12 @@ final class MenuItemObject: Object {
 
 	// MARK: - Persistent properties
 
-	dynamic var pk = ""
-	dynamic var title = ""
-	dynamic var day = ""
-	dynamic var order = 0
-	dynamic var orderDescription = ""
-	dynamic var priceDescription = ""
+	@objc dynamic var pk = ""
+	@objc dynamic var title = ""
+	@objc dynamic var day = ""
+	@objc dynamic var order = 0
+	@objc dynamic var orderDescription = ""
+	@objc dynamic var priceDescription = ""
 
 	// MARK: - Meta
 

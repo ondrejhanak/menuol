@@ -13,12 +13,12 @@ final class VenueObject: Object {
 
 	// MARK: - Persistent properties
 
-	dynamic var slug = ""
-	dynamic var name = ""
-	dynamic var imageURLString = ""
-	dynamic var menuTimeDescription: String?
-	dynamic var isHidden = false
-	dynamic var isFavorited = false
+	@objc dynamic var slug = ""
+	@objc dynamic var name = ""
+	@objc dynamic var imageURLString = ""
+	@objc dynamic var menuTimeDescription: String?
+	@objc dynamic var isHidden = false
+	@objc dynamic var isFavorited = false
 
 	let menuItems = List<MenuItemObject>()
 
