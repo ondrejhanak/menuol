@@ -68,7 +68,9 @@ final class VenueManager {
 	func find(name: String) -> Results<VenueObject> {
 		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
 		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
-		return self.realm.objects(VenueObject.self).filter("name CONTAINS[cd] %@", name).sorted(by: [favDescriptor, nameDescriptor])
+		let predicate = name == "" ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "name CONTAINS[cd] %@", name)
+		let result = self.realm.objects(VenueObject.self).filter(predicate).sorted(by: [favDescriptor, nameDescriptor])
+		return result
 	}
 
 	// MARK: - Private
