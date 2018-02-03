@@ -11,8 +11,6 @@ import RealmSwift
 
 final class VenueManager {
 
-	static var shared = VenueManager()
-
 	private var realm: Realm!
 
 	// MARK: - Public
@@ -22,7 +20,7 @@ final class VenueManager {
 	}
 
 	/// Fetches list of venues along with menu for given day.
-	func completeUpdate(date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
+	func updateVenuesAndMenu(for date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
 		let day = DateFormatter.dateOnlyString(from: date)
 		self.getVenuesHTML(day: day) { html in
 			guard let html = html else {
@@ -31,7 +29,7 @@ final class VenueManager {
 				}
 				return
 			}
-			let result = HTMLParser().venues(from: html, day: day)
+			let result = HTMLParser().venuesWithMenuItems(from: html, day: day)
 			try! self.realm.write {
 				for new in result {
 					if let existing = self.find(slug: new.slug) {
@@ -57,7 +55,7 @@ final class VenueManager {
 				callback(false)
 				return
 			}
-			let items = HTMLParser().menuItems(from: html, slug: slug)
+			let items = HTMLParser().menuItems(from: html, venueSlug: slug)
 			try! self.realm.write {
 				for item in items {
 					if venue.menuItems.contains(item) {

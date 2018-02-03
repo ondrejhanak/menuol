@@ -19,13 +19,13 @@ final class MenuTableViewController: UITableViewController {
 	private var items = [MenuItemObject]()
 	private var date = Date()
 	private var didTryFetch = false
+	private var venueManager = VenueManager()
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.tableView.rowHeight = UITableViewAutomaticDimension
-		self.tableView.estimatedRowHeight = 65
+		self.setupUI()
 		self.loadData()
 	}
 
@@ -50,12 +50,17 @@ final class MenuTableViewController: UITableViewController {
 
 	// MARK: - Private
 
+	private func setupUI() {
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+		self.tableView.estimatedRowHeight = 65
+	}
+
 	private func loadData() {
 		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
 		let day = DateFormatter.dateOnlyString(from: self.date)
 		self.items = self.venue.menuItems(day: day)
 		if self.items.isEmpty && !self.didTryFetch {
-			VenueManager.shared.updateMenu(slug: self.venue.slug) { success in
+			self.venueManager.updateMenu(slug: self.venue.slug) { success in
 				self.didTryFetch = true
 				self.loadData()
 			}

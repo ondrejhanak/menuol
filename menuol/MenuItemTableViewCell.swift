@@ -17,6 +17,8 @@ final class MenuItemTableViewCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		self.orderLabel.text = nil
+		self.titleLabel?.text = nil
+		self.priceLabel?.text = nil
 	}
 
 	func setup(menuItem: MenuItemObject) {
@@ -26,9 +28,7 @@ final class MenuItemTableViewCell: UITableViewCell {
 	}
 
 	func setupAsNoDataCell() {
-		self.orderLabel?.text = nil
 		self.titleLabel?.text = "Restaurace nedodala aktuální údaje"
-		self.priceLabel?.text = nil
 	}
 
 }

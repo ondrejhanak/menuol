@@ -18,20 +18,15 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	private var result: Results<VenueObject>!
 	private var searchController: UISearchController!
-	private var venuesManager: VenueManager!
+	private var venuesManager = VenueManager()
 	private var notificationToken: NotificationToken?
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.venuesManager = VenueManager.shared
+		self.setupUI()
 		self.loadData()
-		self.searchController = UISearchController(searchResultsController: nil)
-		self.searchController.searchResultsUpdater = self
-		self.searchController.dimsBackgroundDuringPresentation = false
-		self.definesPresentationContext = true
-		self.tableView.tableHeaderView = self.searchController.searchBar
 		self.createNotificationToken()
 	}
 
@@ -78,6 +73,14 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	// MARK - Private
+
+	private func setupUI() {
+		self.searchController = UISearchController(searchResultsController: nil)
+		self.searchController.searchResultsUpdater = self
+		self.searchController.dimsBackgroundDuringPresentation = false
+		self.definesPresentationContext = true
+		self.tableView.tableHeaderView = self.searchController.searchBar
+	}
 
 	private func venue(for indexPath: IndexPath) -> VenueObject {
 		return self.result[indexPath.row]

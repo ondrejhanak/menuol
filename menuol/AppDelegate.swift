@@ -19,9 +19,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Realm
 		self.migrateRealmIfNeeded()
 
-		// Fetch content
+		// Fetch today's content
 		let today = Date()
-		VenueManager.shared.completeUpdate(date: today)
+		VenueManager().updateVenuesAndMenu(for: today)
 
 		return true
 	}

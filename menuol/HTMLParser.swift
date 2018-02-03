@@ -13,31 +13,36 @@ final class HTMLParser {
 
 	// MARK: - Public
 
-	func venues(from string: String, day: String) -> [VenueObject] {
-		guard let doc = HTML(html: string, encoding: .utf8) else {
+	func venuesWithMenuItems(from string: String, day: String) -> [VenueObject] {
+		guard let html = HTML(html: string, encoding: .utf8) else {
 			return []
 		}
 		var result = [VenueObject]()
-		for element in doc.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
+		for element in html.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
 				if let table = element.xpath("./table").first {
-					venue.menuItems.append(objectsIn: self.menuItems(from: table, day: day, venueSlug: venue.slug))
+					let items = self.menuItems(from: table)
+					for item in items {
+						item.day = day
+						item.setPrimaryKey(venueSlug: venue.slug)
+					}
+					venue.menuItems.append(objectsIn: items)
 				}
 			}
 		}
 		return result
 	}
 
-	func menuItems(from string: String, slug: String) -> [MenuItemObject] {
-		guard let doc = HTML(html: string, encoding: .utf8) else {
+	func menuItems(from string: String, venueSlug: String) -> [MenuItemObject] {
+		guard let html = HTML(html: string, encoding: .utf8) else {
 			return []
 		}
 		var result = [MenuItemObject]()
 		let formatter = DateFormatter()
 		formatter.locale = Locale(identifier: "cs_CZ")
 		formatter.dateFormat = "EEEE d. M."
-		for header in doc.xpath("//section[@class='detail-restaurace']//h3") {
+		for header in html.xpath("//section[@class='detail-restaurace']//h3") {
 			if let dateString = header.text, let date = formatter.date(from: dateString) {
 				let year = Calendar.current.dateComponents([.year], from: Date()).year
 				var components = Calendar.current.dateComponents([.day, .month], from: date)
@@ -45,7 +50,11 @@ final class HTMLParser {
 				let date = Calendar.current.date(from: components)!
 				let day = DateFormatter.dateOnlyString(from: date)
 				if let table = header.xpath("following-sibling::table").first {
-					let items = self.menuItems(from: table, day: day, venueSlug: slug)
+					let items = self.menuItems(from: table)
+					for item in items {
+						item.day = day
+						item.setPrimaryKey(venueSlug: venueSlug)
+					}
 					result.append(contentsOf: items)
 				}
 			}
@@ -71,7 +80,7 @@ final class HTMLParser {
 		return venue
 	}
 
-	private func menuItems(from element: XMLElement, day: String, venueSlug slug: String) -> [MenuItemObject] {
+	private func menuItems(from element: XMLElement) -> [MenuItemObject] {
 		var result = [MenuItemObject]()
 		let rows = element.xpath(".//tr")
 		for (index, row) in rows.enumerated() {
@@ -87,16 +96,12 @@ final class HTMLParser {
 			menuItem.orderDescription = orderDescription
 			menuItem.title = title
 			menuItem.priceDescription = priceDescription
-			menuItem.day = day
-			menuItem.setPrimaryKey(venueSlug: slug)
 			result.append(menuItem)
 		}
 		if let appendix = element.xpath("following-sibling::p").first?.text {
 			let menuItem = MenuItemObject()
 			menuItem.order = result.count
 			menuItem.title = appendix
-			menuItem.day = day
-			menuItem.setPrimaryKey(venueSlug: slug)
 			result.append(menuItem)
 		}
 		return result

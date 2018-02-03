@@ -101,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
-				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED21F1E3795004DA56D /* VenueObject.swift */,
 				EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */,
+				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
 				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
 				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
