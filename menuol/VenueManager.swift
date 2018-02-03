@@ -21,11 +21,14 @@ final class VenueManager {
 		self.realm = try! Realm()
 	}
 
-	func completeUpdate(date: Date, callback: @escaping (_ success: Bool) -> Void) {
+	/// Fetches list of venues along with menu for given day.
+	func completeUpdate(date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
 		let day = DateFormatter.dateOnlyString(from: date)
 		self.getVenuesHTML(day: day) { html in
 			guard let html = html else {
-				callback(false)
+				if let callback = callback {
+					callback(false)
+				}
 				return
 			}
 			let result = HTMLParser().venues(from: html, day: day)
@@ -33,15 +36,17 @@ final class VenueManager {
 				for new in result {
 					if let existing = self.find(slug: new.slug) {
 						new.isFavorited = existing.isFavorited
-						new.menuItems.append(objectsIn: existing.menuItems)
 					}
 					self.realm.add(new, update: true)
 				}
 			}
-			callback(true)
+			if let callback = callback {
+				callback(true)
+			}
 		}
 	}
 
+	/// Fetchches whole week menu for given venue.
 	func updateMenu(slug: String, callback: @escaping (_ success: Bool) -> Void) {
 		guard let venue = self.find(slug: slug) else {
 			callback(false)
@@ -65,6 +70,7 @@ final class VenueManager {
 		}
 	}
 
+	/// Finds venues partialy matching given name.
 	func find(name: String) -> Results<VenueObject> {
 		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
 		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
@@ -100,7 +106,7 @@ final class VenueManager {
 	}
 
 	private func getMenuHTML(slug: String, callback: @escaping (String?) -> Void) {
-		let url = self.menuURL(slug: slug)
+		let url = self.venueMenuURL(slug: slug)
 		self.getHTML(url: url, callback: callback)
 	}
 
@@ -114,7 +120,7 @@ final class VenueManager {
 		return url
 	}
 
-	private func menuURL(slug: String) -> URL {
+	private func venueMenuURL(slug: String) -> URL {
 		let urlString = "https://www.olomouc.cz/poledni-menu/" + slug
 		let url = URL(string: urlString)!
 		return url

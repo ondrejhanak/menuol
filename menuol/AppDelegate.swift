@@ -21,7 +21,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		// Fetch content
 		let today = Date()
-		VenueManager.shared.completeUpdate(date: today) { success in }
+		VenueManager.shared.completeUpdate(date: today)
 
 		return true
 	}
