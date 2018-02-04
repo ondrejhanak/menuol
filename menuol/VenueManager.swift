@@ -12,6 +12,7 @@ import RealmSwift
 final class VenueManager {
 
 	private var realm: Realm!
+	private var htmlFetcher = HTMLFetcher()
 
 	// MARK: - Public
 
@@ -21,7 +22,7 @@ final class VenueManager {
 
 	/// Fetches list of venues along with menu for given day.
 	func updateVenuesAndMenu(for date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
-		self.getVenueHTML(for: date) { html in
+		self.htmlFetcher.getVenueHTML(for: date) { html in
 			guard let html = html else {
 				if let callback = callback {
 					callback(false)
@@ -49,7 +50,7 @@ final class VenueManager {
 			callback(false)
 			return
 		}
-		self.getMenuHTML(slug: slug) { html in
+		self.htmlFetcher.getMenuHTML(slug: slug) { html in
 			guard let html = html else {
 				callback(false)
 				return
@@ -82,45 +83,4 @@ final class VenueManager {
 		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
 	}
 
-	private func getHTML(url: URL, callback: @escaping (String?) -> Void) {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
-				callback(nil)
-				return
-			}
-			DispatchQueue.main.async {
-				UIApplication.shared.isNetworkActivityIndicatorVisible = false
-				callback(html)
-			}
-		}
-		task.resume()
-	}
-
-	private func getVenueHTML(for date: Date, callback: @escaping (String?) -> Void) {
-		let url = self.venueURL(date: date)
-		self.getHTML(url: url, callback: callback)
-	}
-
-	private func getMenuHTML(slug: String, callback: @escaping (String?) -> Void) {
-		let url = self.venueMenuURL(slug: slug)
-		self.getHTML(url: url, callback: callback)
-	}
-
-	private func venueURL(date: Date) -> URL {
-		let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-		let year = components.year!
-		let month = components.month!
-		let day = components.day!
-		let urlString = "https://www.olomouc.cz/poledni-menu/\(year)/\(month)/\(day)"
-		let url = URL(string: urlString)!
-		return url
-	}
-
-	private func venueMenuURL(slug: String) -> URL {
-		let urlString = "https://www.olomouc.cz/poledni-menu/" + slug
-		let url = URL(string: urlString)!
-		return url
-	}
-	
 }
