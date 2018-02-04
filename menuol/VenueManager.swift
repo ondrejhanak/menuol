@@ -21,8 +21,7 @@ final class VenueManager {
 
 	/// Fetches list of venues along with menu for given day.
 	func updateVenuesAndMenu(for date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
-		let day = DateFormatter.dateOnlyString(from: date)
-		self.getVenuesHTML(day: day) { html in
+		self.getVenueHTML(for: date) { html in
 			guard let html = html else {
 				if let callback = callback {
 					callback(false)
@@ -98,8 +97,8 @@ final class VenueManager {
 		task.resume()
 	}
 
-	private func getVenuesHTML(day: String, callback: @escaping (String?) -> Void) {
-		let url = self.venuesURL(day: day)
+	private func getVenueHTML(for date: Date, callback: @escaping (String?) -> Void) {
+		let url = self.venueURL(date: date)
 		self.getHTML(url: url, callback: callback)
 	}
 
@@ -108,12 +107,12 @@ final class VenueManager {
 		self.getHTML(url: url, callback: callback)
 	}
 
-	private func venuesURL(day: String) -> URL {
-		let parts = day.components(separatedBy: "-")
-		var urlString = "https://www.olomouc.cz/poledni-menu"
-		urlString += "/" + parts[0]
-		urlString += "/" + parts[1]
-		urlString += "/" + parts[2]
+	private func venueURL(date: Date) -> URL {
+		let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+		let year = components.year ?? 0
+		let month = components.month ?? 0
+		let day = components.day ?? 0
+		let urlString = "https://www.olomouc.cz/poledni-menu/\(year)/\(month)/\(day)"
 		let url = URL(string: urlString)!
 		return url
 	}
