@@ -13,10 +13,22 @@ final class HTMLParser {
 
 	// MARK: - Public
 
-	func venuesWithMenuItems(from string: String, day: String) -> [VenueObject] {
+	func venuesWithMenuItems(from string: String) -> [VenueObject] {
 		guard let html = HTML(html: string, encoding: .utf8) else {
 			return []
 		}
+		// Example: "Polední menu: Sobota 3. února 2018"
+		guard let headline = html.xpath("//section[contains(@class, 'poledni-menu')]/h2[contains(@class, 'nadpis-cerveny')]").first?.text else {
+			return []
+		}
+		let dateString = String(headline.dropFirst(14))
+		let formatter = DateFormatter()
+		formatter.locale = Locale(identifier: "cs_CZ")
+		formatter.dateFormat = "EEEE d. MMMM yyyy"
+		guard let date = formatter.date(from: dateString) else {
+			return []
+		}
+		let day = DateFormatter.dateOnlyString(from: date)
 		var result = [VenueObject]()
 		for element in html.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {

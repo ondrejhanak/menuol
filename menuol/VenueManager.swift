@@ -29,7 +29,7 @@ final class VenueManager {
 				}
 				return
 			}
-			let result = HTMLParser().venuesWithMenuItems(from: html, day: day)
+			let result = HTMLParser().venuesWithMenuItems(from: html)
 			try! self.realm.write {
 				for new in result {
 					if let existing = self.find(slug: new.slug) {
