@@ -25,9 +25,9 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setupUI()
 		self.loadData()
 		self.createNotificationToken()
+		self.setupUI() // data needs to be loaded firts due to Realm internals
 	}
 
 	deinit {
