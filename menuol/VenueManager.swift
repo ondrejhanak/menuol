@@ -109,9 +109,9 @@ final class VenueManager {
 
 	private func venueURL(date: Date) -> URL {
 		let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-		let year = components.year ?? 0
-		let month = components.month ?? 0
-		let day = components.day ?? 0
+		let year = components.year!
+		let month = components.month!
+		let day = components.day!
 		let urlString = "https://www.olomouc.cz/poledni-menu/\(year)/\(month)/\(day)"
 		let url = URL(string: urlString)!
 		return url
