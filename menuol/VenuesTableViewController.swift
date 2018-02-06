@@ -30,6 +30,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == kMenuSegue, let vc = segue.destination as? MenuTableViewController, let venue = sender as? VenueObject {
 			vc.venue = venue
+			vc.venueManager = self.venuesManager
 		}
 	}
 
