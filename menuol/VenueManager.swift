@@ -36,8 +36,6 @@ final class VenueManager {
 			}
 			let result = HTMLParser().venuesWithMenuItems(from: html)
 			self.allVenues.removeAll()
-			// TODO: load favorite slugs from user defaults
-
 			for new in result {
 				new.isFavorited = self.favoriteVenues.contains(new.slug)
 				self.allVenues.append(new)
