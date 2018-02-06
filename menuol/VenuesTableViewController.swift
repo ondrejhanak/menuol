@@ -92,7 +92,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	private func loadData(nameFilter: String? = nil) {
 		self.result = self.venuesManager.find(name: nameFilter ?? "")
-		self.tableView.reloadData()
+		self.tableView.reloadDataAnimated()
 	}
 
 	// MARK: - VenueTableViewCellDelegate

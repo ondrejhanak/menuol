@@ -64,9 +64,9 @@ final class MenuTableViewController: UITableViewController {
 				self.didTryFetch = true
 				self.loadData()
 			}
-			self.tableView.reloadData()
+			self.tableView.reloadDataAnimated()
 		} else {
-			self.tableView.reloadData()
+			self.tableView.reloadDataAnimated()
 		}
 	}
 
