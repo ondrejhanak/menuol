@@ -58,7 +58,7 @@ final class MenuTableViewController: UITableViewController {
 	private func loadData() {
 		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
 		let day = DateFormatter.dateOnlyString(from: self.date)
-		self.items = self.venue.menuItems(day: day)
+		self.items = self.venue.menuItems(for: day)
 		if self.items.isEmpty && !self.didTryFetch {
 			self.venueManager.updateMenu(slug: self.venue.slug) { success in
 				self.didTryFetch = true
@@ -68,10 +68,6 @@ final class MenuTableViewController: UITableViewController {
 		} else {
 			self.tableView.reloadData()
 		}
-	}
-
-	private func fetchData() {
-
 	}
 
 	// MARK: - UITableViewDataSource

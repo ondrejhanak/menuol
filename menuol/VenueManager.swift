@@ -7,18 +7,23 @@
 //
 
 import Foundation
-import RealmSwift
+
+private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 final class VenueManager {
 
-	private var realm: Realm!
 	private var htmlFetcher = HTMLFetcher()
+	private var allVenues = [VenueObject]()
+	private var favoriteVenues: [String] {
+		get {
+			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.flatMap({ String(describing: $0) }) ?? []
+		}
+		set {
+			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
+		}
+	}
 
 	// MARK: - Public
-
-	init() {
-		self.realm = try! Realm()
-	}
 
 	/// Fetches list of venues along with menu for given day.
 	func updateVenuesAndMenu(for date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
@@ -30,13 +35,12 @@ final class VenueManager {
 				return
 			}
 			let result = HTMLParser().venuesWithMenuItems(from: html)
-			try! self.realm.write {
-				for new in result {
-					if let existing = self.find(slug: new.slug) {
-						new.isFavorited = existing.isFavorited
-					}
-					self.realm.add(new, update: true)
-				}
+			self.allVenues.removeAll()
+			// TODO: load favorite slugs from user defaults
+
+			for new in result {
+				new.isFavorited = self.favoriteVenues.contains(new.slug)
+				self.allVenues.append(new)
 			}
 			if let callback = callback {
 				callback(true)
@@ -56,31 +60,37 @@ final class VenueManager {
 				return
 			}
 			let items = HTMLParser().menuItems(from: html, venueSlug: slug)
-			try! self.realm.write {
-				for item in items {
-					if venue.menuItems.contains(item) {
-						continue
-					}
-					venue.menuItems.append(item)
-				}
-			}
+			venue.menuItems = items
 			callback(true)
 		}
 	}
-
-	/// Finds venues partialy matching given name.
-	func find(name: String) -> Results<VenueObject> {
-		let favDescriptor = SortDescriptor(keyPath: "isFavorited", ascending: false)
-		let nameDescriptor = SortDescriptor(keyPath: "name", ascending: true)
+	
+	/// Finds venues partially matching given name.
+	func find(name: String) -> [VenueObject] {
+		let favDescriptor = NSSortDescriptor(key: "isFavorited", ascending: false)
+		let nameDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		let predicate = name == "" ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "name CONTAINS[cd] %@", name)
-		let result = self.realm.objects(VenueObject.self).filter(predicate).sorted(by: [favDescriptor, nameDescriptor])
+		let result = self.allVenues.filter({ predicate.evaluate(with: $0) }).sorted(by: [favDescriptor, nameDescriptor])
 		return result
 	}
 
+	/// Toggles favorite state of given venue.
+	func toggleFavorite(_ venue: VenueObject) {
+		if venue.isFavorited {
+			venue.isFavorited = false
+			if let index = favoriteVenues.index(of: venue.slug) {
+				self.favoriteVenues.remove(at: index)
+			}
+		} else {
+			venue.isFavorited = true
+			self.favoriteVenues.append(venue.slug)
+		}
+	}
+	
 	// MARK: - Private
 
 	private func find(slug: String) -> VenueObject? {
-		return self.realm.object(ofType: VenueObject.self, forPrimaryKey: slug)
+		return self.allVenues.filter({ $0.slug == slug }).first
 	}
 
 }

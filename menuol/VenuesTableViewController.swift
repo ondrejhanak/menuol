@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 private let kVenueCellIdentifier = "VenueCell"
 private let kMenuSegue = "MenuSegue"
@@ -16,22 +15,16 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	// MARK: - Properties
 
-	private var result: Results<VenueObject>!
+	private var result = [VenueObject]()
 	private var searchController: UISearchController!
 	private var venuesManager = VenueManager()
-	private var notificationToken: NotificationToken?
 
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.loadData()
-		self.createNotificationToken()
-		self.setupUI() // data needs to be loaded firts due to Realm internals
-	}
-
-	deinit {
-		self.notificationToken?.invalidate()
+		self.setupUI()
+		self.fetchData()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,7 +37,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	func updateSearchResults(for searchController: UISearchController) {
 		self.loadData(nameFilter: searchController.searchBar.text)
-		self.createNotificationToken()
 	}
 
 	// MARK: - UITableViewDataSource
@@ -85,37 +77,28 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	private func venue(for indexPath: IndexPath) -> VenueObject {
 		return self.result[indexPath.row]
 	}
+	
+	private func fetchData() {
+		let today = Date()
+		self.venuesManager.updateVenuesAndMenu(for: today) { success in
+			if success {
+				self.loadData()
+			} else {
+				// TODO: handle error
+			}
+		}
+	}
 
 	private func loadData(nameFilter: String? = nil) {
 		self.result = self.venuesManager.find(name: nameFilter ?? "")
-	}
-
-	private func createNotificationToken() {
-		self.notificationToken = self.result.observe { [weak self] (changes: RealmCollectionChange) in
-			guard let tableView = self?.tableView else {
-				return
-			}
-			switch changes {
-			case .initial:
-				tableView.reloadData()
-			case .update(_, let deletions, let insertions, let modifications):
-				tableView.beginUpdates()
-				tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-				tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-				tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-				tableView.endUpdates()
-			case .error(let error):
-				fatalError("\(error)")
-			}
-		}
+		self.tableView.reloadData()
 	}
 
 	// MARK: - VenueTableViewCellDelegate
 
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
-		try! cell.venue.realm?.write {
-			cell.venue.isFavorited = !cell.venue.isFavorited
-		}
+		self.venuesManager.toggleFavorite(cell.venue)
+		self.loadData()
 	}
 
 }

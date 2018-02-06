@@ -7,39 +7,18 @@
 //
 
 import Foundation
-import RealmSwift
 
-final class VenueObject: Object {
-
-	// MARK: - Persistent properties
-
-	@objc dynamic var slug = ""
-	@objc dynamic var name = ""
-	@objc dynamic var imageURLString = ""
-	@objc dynamic var menuTimeDescription: String?
-	@objc dynamic var isHidden = false
-	@objc dynamic var isFavorited = false
-
-	let menuItems = List<MenuItemObject>()
-
-	// MARK: - Derived properies
-
-	var imageURL: URL? {
-		return URL(string: self.imageURLString)
-	}
-
-	func menuItems(day: String) -> [MenuItemObject] {
-		return Array(self.menuItems.filter("day == %@", day))
-	}
-
-	// MARK: - Meta
-
-	override static func primaryKey() -> String? {
-		return "slug"
-	}
-
-	override static func indexedProperties() -> [String] {
-		return ["name"]
+final class VenueObject: NSObject {
+	var slug = ""
+	@objc var name = ""
+	var imageURL: URL?
+	var menuTimeDescription: String?
+	@objc var isFavorited = false
+	
+	var menuItems = [MenuItemObject]()
+	
+	func menuItems(for day: String) -> [MenuItemObject] {
+		return self.menuItems.filter({ $0.day == day })
 	}
 
 }

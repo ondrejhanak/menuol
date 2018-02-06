@@ -17,8 +17,8 @@ final class MenuItemTableViewCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		self.orderLabel.text = nil
-		self.titleLabel?.text = nil
-		self.priceLabel?.text = nil
+		self.titleLabel.text = nil
+		self.priceLabel.text = nil
 	}
 
 	func setup(menuItem: MenuItemObject) {

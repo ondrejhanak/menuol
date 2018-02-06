@@ -37,9 +37,8 @@ final class HTMLParser {
 					let items = self.menuItems(from: table)
 					for item in items {
 						item.day = day
-						item.setPrimaryKey(venueSlug: venue.slug)
 					}
-					venue.menuItems.append(objectsIn: items)
+					venue.menuItems = items
 				}
 			}
 		}
@@ -65,7 +64,6 @@ final class HTMLParser {
 					let items = self.menuItems(from: table)
 					for item in items {
 						item.day = day
-						item.setPrimaryKey(venueSlug: venueSlug)
 					}
 					result.append(contentsOf: items)
 				}
@@ -79,7 +77,6 @@ final class HTMLParser {
 	private func venue(from element: XMLElement) -> VenueObject? {
 		let slug = element["class"]?.components(separatedBy: " ").last
 		let name = element.xpath(".//h3/a").first?.text
-		let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"]
 		let menuTimeDescription = element.xpath(".//span[@class='vydejmenu']").first?.text
 		guard slug != nil, name != nil else {
 			return nil
@@ -87,7 +84,9 @@ final class HTMLParser {
 		let venue = VenueObject()
 		venue.slug = slug!
 		venue.name = name!
-		venue.imageURLString = "https:" + (imageURLString ?? "")
+		if let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"] {
+			venue.imageURL = URL(string: "https:" + imageURLString)
+		}
 		venue.menuTimeDescription = menuTimeDescription
 		return venue
 	}
