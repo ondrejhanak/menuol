@@ -13,6 +13,7 @@ private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 final class VenueManager {
 
 	private var htmlFetcher = HTMLFetcher()
+	private var htmlParser = HTMLParser()
 	private var allVenues = [VenueObject]()
 	private var favoriteVenues: [String] {
 		get {
@@ -34,7 +35,7 @@ final class VenueManager {
 				}
 				return
 			}
-			let result = HTMLParser().venuesWithMenuItems(from: html)
+			let result = self.htmlParser.venuesWithMenuItems(from: html)
 			self.allVenues.removeAll()
 			for new in result {
 				new.isFavorited = self.favoriteVenues.contains(new.slug)
@@ -57,7 +58,7 @@ final class VenueManager {
 				callback(false)
 				return
 			}
-			let items = HTMLParser().menuItems(from: html, venueSlug: slug)
+			let items = self.htmlParser.menuItems(from: html, venueSlug: slug)
 			venue.menuItems = items
 			callback(true)
 		}
