@@ -98,7 +98,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
 		self.venuesManager.toggleFavorite(cell.venue)
-		self.loadData()
+		self.loadData(nameFilter: searchController.searchBar.text)
 	}
 
 }
