@@ -73,6 +73,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.searchController.dimsBackgroundDuringPresentation = false
 		self.definesPresentationContext = true
 		self.tableView.tableHeaderView = self.searchController.searchBar
+		self.tableView.tableFooterView = UIView()
 	}
 
 	private func venue(for indexPath: IndexPath) -> VenueObject {

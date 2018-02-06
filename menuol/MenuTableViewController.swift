@@ -53,6 +53,7 @@ final class MenuTableViewController: UITableViewController {
 	private func setupUI() {
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
+		self.tableView.tableFooterView = UIView()
 	}
 
 	private func loadData() {
@@ -85,12 +86,6 @@ final class MenuTableViewController: UITableViewController {
 			cell.setup(menuItem: menuItem)
 		}
 		return cell
-	}
-
-	// MARK: - UITableViewDelegate
-
-	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return 0.0001 // removes extra footer
 	}
 
 }
