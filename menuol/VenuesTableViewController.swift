@@ -82,11 +82,13 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	
 	private func fetchData() {
 		let today = Date()
-		self.venuesManager.updateVenuesAndMenu(for: today) { success in
-			if success {
+		self.venuesManager.updateVenuesAndMenu(for: today) { result in
+			switch result {
+			case .success(_):
 				self.loadData()
-			} else {
+			case .failure(_):
 				// TODO: handle error
+				()
 			}
 		}
 	}

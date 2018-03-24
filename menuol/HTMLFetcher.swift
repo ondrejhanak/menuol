@@ -8,33 +8,37 @@
 
 import Foundation
 import UIKit
+import Result
 
 final class HTMLFetcher {
 
+	struct HTMLFetcherError: Error {
+	}
+
 	// MARK: - Public
 
-	public func getVenueHTML(for date: Date, callback: @escaping (String?) -> Void) {
+	public func getVenueHTML(for date: Date, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		let url = self.venueURL(date: date)
 		self.getHTML(url: url, callback: callback)
 	}
 
-	public func getMenuHTML(slug: String, callback: @escaping (String?) -> Void) {
+	public func getMenuHTML(slug: String, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		let url = self.venueMenuURL(slug: slug)
 		self.getHTML(url: url, callback: callback)
 	}
 
 	// MARK: - Private
 
-	private func getHTML(url: URL, callback: @escaping (String?) -> Void) {
+	private func getHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
-				callback(nil)
+				callback(.failure(HTMLFetcherError()))
 				return
 			}
 			DispatchQueue.main.async {
 				UIApplication.shared.isNetworkActivityIndicatorVisible = false
-				callback(html)
+				callback(.success(html))
 			}
 		}
 		task.resume()

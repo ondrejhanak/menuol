@@ -9,4 +9,5 @@ target 'menuol' do
 	pod 'FSCalendar', '~> 2.7'
 	pod 'STPopup', '~> 1.8'
 	pod 'PureLayout', '~> 3.0'
+	pod 'Result', '~> 3.0.0'
 end

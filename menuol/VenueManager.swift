@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import Result
 
 private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 final class VenueManager {
+
+	struct VenueError: Error {
+	}
 
 	private var htmlFetcher = HTMLFetcher()
 	private var htmlParser = HTMLParser()
@@ -27,22 +31,23 @@ final class VenueManager {
 	// MARK: - Public
 
 	/// Fetches list of venues along with menu for given day.
-	func updateVenuesAndMenu(for date: Date, callback: ((_ success: Bool) -> Void)? = nil) {
-		self.htmlFetcher.getVenueHTML(for: date) { html in
-			guard let html = html else {
-				if let callback = callback {
-					callback(false)
+	func updateVenuesAndMenu(for date: Date, callback: ((Result<Void, VenueError>) -> Void)? = nil) {
+		self.htmlFetcher.getVenueHTML(for: date) { result in
+			switch result {
+			case let .success(html):
+				let result = self.htmlParser.venuesWithMenuItems(from: html)
+				self.allVenues.removeAll()
+				for new in result {
+					new.isFavorited = self.favoriteVenues.contains(new.slug)
+					self.allVenues.append(new)
 				}
-				return
-			}
-			let result = self.htmlParser.venuesWithMenuItems(from: html)
-			self.allVenues.removeAll()
-			for new in result {
-				new.isFavorited = self.favoriteVenues.contains(new.slug)
-				self.allVenues.append(new)
-			}
-			if let callback = callback {
-				callback(true)
+				if let callback = callback {
+					callback(.success(()))
+				}
+			case .failure(_):
+				if let callback = callback {
+					callback(.failure(VenueError()))
+				}
 			}
 		}
 	}
@@ -53,14 +58,15 @@ final class VenueManager {
 			callback(false)
 			return
 		}
-		self.htmlFetcher.getMenuHTML(slug: slug) { html in
-			guard let html = html else {
+		self.htmlFetcher.getMenuHTML(slug: slug) { result in
+			switch result {
+			case let .success(html):
+				let items = self.htmlParser.menuItems(from: html, venueSlug: slug)
+				venue.menuItems = items
+				callback(true)
+			case .failure(_):
 				callback(false)
-				return
 			}
-			let items = self.htmlParser.menuItems(from: html, venueSlug: slug)
-			venue.menuItems = items
-			callback(true)
 		}
 	}
 	
