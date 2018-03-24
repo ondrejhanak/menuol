@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'menuol' do
-	pod 'Kanna', '~> 2.1'
+	pod 'Kanna', '~> 4.0'
 	pod 'SDWebImage', '~> 4.0'
 	pod 'RealmSwift', '~> 3.0'
 	pod 'FSCalendar', '~> 2.7'

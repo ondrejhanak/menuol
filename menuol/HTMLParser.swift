@@ -14,7 +14,7 @@ final class HTMLParser {
 	// MARK: - Public
 
 	func venuesWithMenuItems(from string: String) -> [VenueObject] {
-		guard let html = HTML(html: string, encoding: .utf8) else {
+		guard let html = try? HTML(html: string, encoding: .utf8) else {
 			return []
 		}
 		// Example: "Polední menu: Sobota 3. února 2018"
@@ -46,7 +46,7 @@ final class HTMLParser {
 	}
 
 	func menuItems(from string: String, venueSlug: String) -> [MenuItemObject] {
-		guard let html = HTML(html: string, encoding: .utf8) else {
+		guard let html = try? HTML(html: string, encoding: .utf8) else {
 			return []
 		}
 		var result = [MenuItemObject]()
