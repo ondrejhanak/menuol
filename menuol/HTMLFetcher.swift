@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RealmSwift
+import UIKit
 
 final class HTMLFetcher {
 
