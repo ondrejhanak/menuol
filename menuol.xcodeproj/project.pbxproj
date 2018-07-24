@@ -27,6 +27,7 @@
 		EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */; };
 		EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1DA1F29E7FC00C324AE /* String+oh.swift */; };
 		EEA597B620279F72004E2B79 /* HTMLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA597B520279F72004E2B79 /* HTMLFetcher.swift */; };
+		EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+oh.swift"; sourceTree = "<group>"; };
 		EE99C1DA1F29E7FC00C324AE /* String+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+oh.swift"; sourceTree = "<group>"; };
 		EEA597B520279F72004E2B79 /* HTMLFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcher.swift; sourceTree = "<group>"; };
+		EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				EEA597B520279F72004E2B79 /* HTMLFetcher.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
+				EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				EEA597B620279F72004E2B79 /* HTMLFetcher.swift in Sources */,
 				EE48EED31F1E3795004DA56D /* VenueObject.swift in Sources */,
+				EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */,
 				EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */,
 				EE48EEBF1F1E132E004DA56D /* AppDelegate.swift in Sources */,
 				EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */,

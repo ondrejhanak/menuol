@@ -12,6 +12,7 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	var coordinator: AppCoordinator?
 
 	// MARK: - Lifecycle
 
@@ -24,10 +25,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	private func setWindowAndRootViewController() {
 		self.window = UIWindow()
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "VenuesTableViewController")
-		let nc = UINavigationController(rootViewController: vc)
+		let nc = UINavigationController()
 		window?.rootViewController = nc
+		self.coordinator = AppCoordinator(navigationController: nc)
+		self.coordinator?.start()
 		self.window?.makeKeyAndVisible()
 	}
 
