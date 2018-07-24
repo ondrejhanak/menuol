@@ -109,9 +109,10 @@
 		EE48EEBD1F1E132E004DA56D /* menuol */ = {
 			isa = PBXGroup;
 			children = (
-				EEFB9CDC2066EEED0035542B /* Model */,
+				EEFB9CDC2066EEED0035542B /* Models */,
+				EEBBF6A5210755BE00DA58BA /* Views */,
+				EEFB9CDD2066EEFD0035542B /* Controllers */,
 				EEFB9CDE2066EF340035542B /* Classes */,
-				EEFB9CDD2066EEFD0035542B /* ViewController */,
 				EEA597B32023CB87004E2B79 /* Extensions */,
 				EEA597B42023CB9C004E2B79 /* Resources */,
 				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
@@ -142,33 +143,40 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EEFB9CDC2066EEED0035542B /* Model */ = {
+		EEBBF6A5210755BE00DA58BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
 				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEFB9CDC2066EEED0035542B /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				EE48EED21F1E3795004DA56D /* VenueObject.swift */,
 				EE99C1C21F1F689E00C324AE /* MenuItemObject.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		EEFB9CDD2066EEFD0035542B /* ViewController */ = {
+		EEFB9CDD2066EEFD0035542B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
 				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
 				EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		EEFB9CDE2066EF340035542B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EEA597B520279F72004E2B79 /* HTMLFetcher.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
-				EEA597B520279F72004E2B79 /* HTMLFetcher.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
