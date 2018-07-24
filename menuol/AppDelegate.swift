@@ -13,8 +13,21 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
+	// MARK: - Lifecycle
+
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		self.setWindowAndRootViewController()
 		return true
+	}
+
+	// MARK: - Private
+
+	private func setWindowAndRootViewController() {
+		self.window = UIWindow()
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let root = storyboard.instantiateInitialViewController()
+		window?.rootViewController = root
+		self.window?.makeKeyAndVisible()
 	}
 
 }
