@@ -21,7 +21,7 @@ final class VenueManager {
 	private var allVenues = [VenueObject]()
 	private var favoriteVenues: [String] {
 		get {
-			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.flatMap({ String(describing: $0) }) ?? []
+			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap({ String(describing: $0) }) ?? []
 		}
 		set {
 			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
