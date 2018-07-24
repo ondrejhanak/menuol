@@ -17,19 +17,19 @@ final class HTMLFetcher {
 
 	// MARK: - Public
 
-	public func getVenueHTML(for date: Date, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	public func fetchVenueHTML(for date: Date, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		let url = self.venueURL(date: date)
-		self.getHTML(url: url, callback: callback)
+		self.fetchHTML(url: url, callback: callback)
 	}
 
-	public func getMenuHTML(slug: String, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	public func fetchMenuHTML(slug: String, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		let url = self.venueMenuURL(slug: slug)
-		self.getHTML(url: url, callback: callback)
+		self.fetchHTML(url: url, callback: callback)
 	}
 
 	// MARK: - Private
 
-	private func getHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	private func fetchHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
