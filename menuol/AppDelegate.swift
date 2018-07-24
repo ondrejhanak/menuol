@@ -25,8 +25,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	private func setWindowAndRootViewController() {
 		self.window = UIWindow()
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let root = storyboard.instantiateInitialViewController()
-		window?.rootViewController = root
+		let vc = storyboard.instantiateViewController(withIdentifier: "VenuesTableViewController")
+		let nc = UINavigationController(rootViewController: vc)
+		window?.rootViewController = nc
 		self.window?.makeKeyAndVisible()
 	}
 
