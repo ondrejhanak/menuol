@@ -17,13 +17,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Lifecycle
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		self.setWindowAndRootViewController()
+		self.setupWindowAndRootViewController()
 		return true
 	}
 
 	// MARK: - Private
 
-	private func setWindowAndRootViewController() {
+	private func setupWindowAndRootViewController() {
 		self.window = UIWindow()
 		let nc = UINavigationController()
 		window?.rootViewController = nc
