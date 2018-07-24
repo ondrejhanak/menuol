@@ -9,7 +9,6 @@
 import UIKit
 
 private let kVenueCellIdentifier = "VenueCell"
-private let kMenuSegue = "MenuSegue"
 
 final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
 
@@ -17,7 +16,9 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	private var result = [VenueObject]()
 	private var searchController: UISearchController!
-	private var venuesManager = VenueManager()
+
+	public var venueManager: VenueManager!
+	public weak var delegate: VenuesViewControllerDelegate?
 
 	// MARK: - Lifecycle
 
@@ -25,13 +26,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		super.viewDidLoad()
 		self.setupUI()
 		self.fetchData()
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == kMenuSegue, let vc = segue.destination as? MenuTableViewController, let venue = sender as? VenueObject {
-			vc.venue = venue
-			vc.venueManager = self.venuesManager
-		}
 	}
 
 	// MARK: - UISearchResultsUpdating
@@ -62,7 +56,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let venue = self.venue(for: indexPath)
-		self.performSegue(withIdentifier: kMenuSegue, sender: venue)
+		self.delegate?.didSelect(venue: venue)
 	}
 
 	// MARK: - Private
@@ -82,7 +76,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	
 	private func fetchData() {
 		let today = Date()
-		self.venuesManager.updateVenuesAndMenu(for: today) { result in
+		self.venueManager.updateVenuesAndMenu(for: today) { result in
 			switch result {
 			case .success:
 				self.loadData()
@@ -94,14 +88,14 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	private func loadData(nameFilter: String? = nil) {
-		self.result = self.venuesManager.find(name: nameFilter ?? "")
+		self.result = self.venueManager.find(name: nameFilter ?? "")
 		self.tableView.reloadDataAnimated()
 	}
 
 	// MARK: - VenueTableViewCellDelegate
 
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
-		self.venuesManager.toggleFavorite(cell.venue)
+		self.venueManager.toggleFavorite(cell.venue)
 		self.loadData(nameFilter: searchController.searchBar.text)
 	}
 
