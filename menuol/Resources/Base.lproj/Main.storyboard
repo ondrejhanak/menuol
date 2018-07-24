@@ -12,7 +12,7 @@
         <!--Venues-->
         <scene sceneID="SYQ-ps-llL">
             <objects>
-                <tableViewController id="tkD-SZ-76g" userLabel="Venues" customClass="VenuesTableViewController" customModule="VenuesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VenuesTableViewController" id="tkD-SZ-76g" userLabel="Venues" customClass="VenuesTableViewController" customModule="menuol" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VNd-17-BHs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Menu-->
         <scene sceneID="hfm-xe-kcz">
             <objects>
-                <tableViewController id="K5O-CG-rT8" userLabel="Menu" customClass="MenuTableViewController" customModule="MenuTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuTableViewController" id="K5O-CG-rT8" userLabel="Menu" customClass="MenuTableViewController" customModule="menuol" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Ee-LS-kSu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
