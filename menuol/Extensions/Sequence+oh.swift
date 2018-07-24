@@ -9,7 +9,7 @@
 import Foundation
 
 // According to https://stackoverflow.com/a/34607130/1548913
-extension Sequence where Iterator.Element : AnyObject {
+extension Sequence where Iterator.Element: AnyObject {
 	
 	/// Return an `Array` containing the sorted elements of `source` using criteria stored in a NSSortDescriptors array.
 	public func sorted(by sortDescriptors: [NSSortDescriptor]) -> [Self.Iterator.Element] {

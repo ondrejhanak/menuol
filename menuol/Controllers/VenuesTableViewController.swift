@@ -65,7 +65,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.performSegue(withIdentifier: kMenuSegue, sender: venue)
 	}
 
-	// MARK - Private
+	// MARK: - Private
 
 	private func setupUI() {
 		self.searchController = UISearchController(searchResultsController: nil)
@@ -84,9 +84,9 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		let today = Date()
 		self.venuesManager.updateVenuesAndMenu(for: today) { result in
 			switch result {
-			case .success(_):
+			case .success:
 				self.loadData()
-			case .failure(_):
+			case .failure:
 				// TODO: handle error
 				()
 			}

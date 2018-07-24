@@ -44,7 +44,7 @@ final class VenueManager {
 				if let callback = callback {
 					callback(.success(()))
 				}
-			case .failure(_):
+			case .failure:
 				if let callback = callback {
 					callback(.failure(VenueError()))
 				}
@@ -64,7 +64,7 @@ final class VenueManager {
 				let items = self.htmlParser.menuItems(from: html, venueSlug: slug)
 				venue.menuItems = items
 				callback(true)
-			case .failure(_):
+			case .failure:
 				callback(false)
 			}
 		}
