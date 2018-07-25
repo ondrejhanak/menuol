@@ -36,13 +36,13 @@ final class MenuItemTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 	
-	func setup(menuItem: MenuItem) {
+	public func setup(menuItem: MenuItem) {
 		self.orderLabel?.text = menuItem.orderDescription
 		self.titleLabel?.text = menuItem.title
 		self.priceLabel?.text = menuItem.priceDescription
 	}
 
-	func setupAsNoDataCell() {
+	public func setupAsNoDataCell() {
 		self.titleLabel?.text = "Restaurace nedodala aktuální údaje"
 	}
 

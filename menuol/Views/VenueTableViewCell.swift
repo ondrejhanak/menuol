@@ -38,7 +38,7 @@ final class VenueTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 
-	func setup(venue: Venue) {
+	public func setup(venue: Venue) {
 		self.venue = venue
 		self.titleLabel?.text = venue.name
 		self.subtitleLabel?.text = venue.menuTimeDescription
