@@ -116,8 +116,8 @@
 				EEFB9CDD2066EEFD0035542B /* Controllers */,
 				EEFB9CDE2066EF340035542B /* Classes */,
 				EEA597B32023CB87004E2B79 /* Extensions */,
+				EEBBF6AE21085C2300DA58BA /* Support */,
 				EEA597B42023CB9C004E2B79 /* Resources */,
-				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
 			);
 			path = menuol;
 			sourceTree = "<group>";
@@ -140,7 +140,6 @@
 				EE48EEC21F1E132E004DA56D /* Main.storyboard */,
 				EE48EEC51F1E132E004DA56D /* Assets.xcassets */,
 				EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */,
-				EE48EECA1F1E132F004DA56D /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -152,6 +151,15 @@
 				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EEBBF6AE21085C2300DA58BA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */,
+				EE48EECA1F1E132F004DA56D /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		EEFB9CDC2066EEED0035542B /* Models */ = {
