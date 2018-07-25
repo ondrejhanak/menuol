@@ -18,6 +18,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
 	private var result = [Venue]()
 	private var searchController: UISearchController!
+	private var refresher: UIRefreshControl!
 
 	// MARK: - Lifecycle
 
@@ -66,7 +67,12 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.searchController.dimsBackgroundDuringPresentation = false
 		self.definesPresentationContext = true
 		self.tableView.tableHeaderView = self.searchController.searchBar
+		self.tableView.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1) // same as default search bar background
 		self.tableView.tableFooterView = UIView()
+		self.refresher = UIRefreshControl()
+		self.refresher.tintColor = .black
+		self.refresher.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+		self.tableView?.addSubview(refresher)
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
@@ -76,6 +82,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	private func fetchData() {
 		let today = Date()
 		self.venueManager.updateVenuesAndMenu(for: today) { result in
+			self.refresher.endRefreshing()
 			switch result {
 			case .success:
 				self.loadData()
@@ -89,6 +96,10 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	private func loadData(nameFilter: String? = nil) {
 		self.result = self.venueManager.find(name: nameFilter ?? "")
 		self.tableView.reloadDataAnimated()
+	}
+
+	@objc private func refreshData() {
+		self.fetchData()
 	}
 
 	// MARK: - VenueTableViewCellDelegate
