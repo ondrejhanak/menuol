@@ -14,9 +14,9 @@ final class CalendarViewController: UIViewController, FSCalendarDelegate {
 
 	// MARK: - Properties
 
+	public var date = Date()
+	public var callback: ((Date) -> Void)?
 	private var calendar: FSCalendar!
-	var date = Date()
-	var callback: ((Date) -> Void)?
 
 	// MARK: - Lifecycle
 
@@ -30,7 +30,7 @@ final class CalendarViewController: UIViewController, FSCalendarDelegate {
 
 	// MARK: – FSCalendarDelegate
 
-	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+	public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		if let callback = self.callback {
 			callback(date)
 		}

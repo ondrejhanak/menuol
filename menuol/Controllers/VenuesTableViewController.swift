@@ -14,11 +14,10 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	// MARK: - Properties
 
-	private var result = [VenueObject]()
-	private var searchController: UISearchController!
-
 	public var venueManager: VenueManager!
-	public weak var delegate: VenuesViewControllerDelegate?
+	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
+	private var result = [Venue]()
+	private var searchController: UISearchController!
 
 	// MARK: - Lifecycle
 
@@ -56,7 +55,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let venue = self.venue(for: indexPath)
-		self.delegate?.didSelect(venue: venue)
+		self.coordinatorDelegate?.didSelect(venue: venue)
 	}
 
 	// MARK: - Private
@@ -70,7 +69,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.tableView.tableFooterView = UIView()
 	}
 
-	private func venue(for indexPath: IndexPath) -> VenueObject {
+	private func venue(for indexPath: IndexPath) -> Venue {
 		return self.result[indexPath.row]
 	}
 	

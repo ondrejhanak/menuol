@@ -13,7 +13,7 @@ final class HTMLParser {
 
 	// MARK: - Public
 
-	func venuesWithMenuItems(from string: String) -> [VenueObject] {
+	func venuesWithMenuItems(from string: String) -> [Venue] {
 		guard let html = try? HTML(html: string, encoding: .utf8) else {
 			return []
 		}
@@ -29,7 +29,7 @@ final class HTMLParser {
 			return []
 		}
 		let day = DateFormatter.dateOnlyString(from: date)
-		var result = [VenueObject]()
+		var result = [Venue]()
 		for element in html.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if let venue = self.venue(from: element) {
 				result.append(venue)
@@ -45,11 +45,11 @@ final class HTMLParser {
 		return result
 	}
 
-	func menuItems(from string: String, venueSlug: String) -> [MenuItemObject] {
+	func menuItems(from string: String, venueSlug: String) -> [MenuItem] {
 		guard let html = try? HTML(html: string, encoding: .utf8) else {
 			return []
 		}
-		var result = [MenuItemObject]()
+		var result = [MenuItem]()
 		let formatter = DateFormatter()
 		formatter.locale = Locale(identifier: "cs_CZ")
 		formatter.dateFormat = "EEEE d. M."
@@ -74,14 +74,14 @@ final class HTMLParser {
 
 	// MARK: - Private
 
-	private func venue(from element: XMLElement) -> VenueObject? {
+	private func venue(from element: XMLElement) -> Venue? {
 		let slug = element["class"]?.components(separatedBy: " ").last
 		let name = element.xpath(".//h3/a").first?.text
 		let menuTimeDescription = element.xpath(".//span[@class='vydejmenu']").first?.text
 		guard slug != nil, name != nil else {
 			return nil
 		}
-		let venue = VenueObject()
+		let venue = Venue()
 		venue.slug = slug!
 		venue.name = name!
 		if let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"] {
@@ -91,8 +91,8 @@ final class HTMLParser {
 		return venue
 	}
 
-	private func menuItems(from element: XMLElement) -> [MenuItemObject] {
-		var result = [MenuItemObject]()
+	private func menuItems(from element: XMLElement) -> [MenuItem] {
+		var result = [MenuItem]()
 		let rows = element.xpath(".//tr")
 		for (index, row) in rows.enumerated() {
 			let columns = row.xpath("td")
@@ -102,7 +102,7 @@ final class HTMLParser {
 			if columns.count >= 3 {
 				priceDescription = columns[2].text ?? ""
 			}
-			let menuItem = MenuItemObject()
+			let menuItem = MenuItem()
 			menuItem.order = index
 			menuItem.orderDescription = orderDescription
 			menuItem.title = title
@@ -110,7 +110,7 @@ final class HTMLParser {
 			result.append(menuItem)
 		}
 		if let appendix = element.xpath("following-sibling::p").first?.text {
-			let menuItem = MenuItemObject()
+			let menuItem = MenuItem()
 			menuItem.order = result.count
 			menuItem.title = appendix
 			result.append(menuItem)

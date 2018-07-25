@@ -9,7 +9,7 @@
 import UIKit
 
 protocol VenuesViewControllerDelegate: class {
-	func didSelect(venue: VenueObject)
+	func didSelect(venue: Venue)
 }
 
 final class AppCoordinator: VenuesViewControllerDelegate {
@@ -27,14 +27,14 @@ final class AppCoordinator: VenuesViewControllerDelegate {
 	func start() {
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let vc = storyboard.instantiateViewController(withIdentifier: "VenuesTableViewController") as! VenuesTableViewController
-		vc.delegate = self
+		vc.coordinatorDelegate = self
 		vc.venueManager = self.venueManager
 		self.navigationController.pushViewController(vc, animated: false)
 	}
 
 	// MARK: - VenuesViewControllerDelegate
 	
-	func didSelect(venue: VenueObject) {
+	func didSelect(venue: Venue) {
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let vc = storyboard.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
 		vc.venueManager = self.venueManager

@@ -14,6 +14,8 @@ final class MenuItemTableViewCell: UITableViewCell {
 	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var priceLabel: UILabel!
 
+	// MARK: - Lifecycle
+
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		self.orderLabel.text = nil
@@ -21,7 +23,9 @@ final class MenuItemTableViewCell: UITableViewCell {
 		self.priceLabel.text = nil
 	}
 
-	func setup(menuItem: MenuItemObject) {
+	// MARK: - Public
+	
+	func setup(menuItem: MenuItem) {
 		self.orderLabel?.text = menuItem.orderDescription
 		self.titleLabel?.text = menuItem.title
 		self.priceLabel?.text = menuItem.priceDescription

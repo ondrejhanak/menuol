@@ -18,7 +18,7 @@ final class VenueManager {
 
 	private var htmlFetcher = HTMLFetcher()
 	private var htmlParser = HTMLParser()
-	private var allVenues = [VenueObject]()
+	private var allVenues = [Venue]()
 	private var favoriteVenues: [String] {
 		get {
 			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap({ String(describing: $0) }) ?? []
@@ -71,7 +71,7 @@ final class VenueManager {
 	}
 	
 	/// Finds venues partially matching given name.
-	func find(name: String) -> [VenueObject] {
+	func find(name: String) -> [Venue] {
 		let favDescriptor = NSSortDescriptor(key: "isFavorited", ascending: false)
 		let nameDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		let predicate = name == "" ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "name CONTAINS[cd] %@", name)
@@ -80,7 +80,7 @@ final class VenueManager {
 	}
 
 	/// Toggles favorite state of given venue.
-	func toggleFavorite(_ venue: VenueObject) {
+	func toggleFavorite(_ venue: Venue) {
 		if venue.isFavorited {
 			venue.isFavorited = false
 			if let index = favoriteVenues.index(of: venue.slug) {
@@ -94,7 +94,7 @@ final class VenueManager {
 	
 	// MARK: - Private
 
-	private func find(slug: String) -> VenueObject? {
+	private func find(slug: String) -> Venue? {
 		return self.allVenues.filter({ $0.slug == slug }).first
 	}
 

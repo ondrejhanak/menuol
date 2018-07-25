@@ -19,9 +19,8 @@ final class VenueTableViewCell: UITableViewCell {
 	@IBOutlet weak var subtitleLabel: UILabel!
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var favoriteImageView: UIImageView!
-
-	private (set) var venue: VenueObject!
-	weak var delegate: VenueTableViewCellDelegate?
+	public weak var delegate: VenueTableViewCellDelegate?
+	private (set) var venue: Venue!
 
 	// MARK: - Lifecycle
 
@@ -38,7 +37,7 @@ final class VenueTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 
-	func setup(venue: VenueObject) {
+	func setup(venue: Venue) {
 		self.venue = venue
 		self.titleLabel?.text = venue.name
 		self.subtitleLabel?.text = venue.menuTimeDescription

@@ -15,10 +15,9 @@ final class MenuTableViewController: UITableViewController {
 
 	// MARK: - Properties
 
-	public var venue: VenueObject!
+	public var venue: Venue!
 	public var venueManager: VenueManager!
-
-	private var items = [MenuItemObject]()
+	private var items = [MenuItem]()
 	private var date = Date()
 	private var didTryFetch = false
 
