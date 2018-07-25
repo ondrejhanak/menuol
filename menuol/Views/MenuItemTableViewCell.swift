@@ -18,6 +18,17 @@ final class MenuItemTableViewCell: UITableViewCell {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
+		self.clearUI()
+	}
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		self.clearUI()
+	}
+
+	// MARK: - Private
+
+	private func clearUI() {
 		self.orderLabel.text = nil
 		self.titleLabel.text = nil
 		self.priceLabel.text = nil

@@ -25,14 +25,15 @@ final class VenueTableViewCell: UITableViewCell {
 	// MARK: - Lifecycle
 
 	override func awakeFromNib() {
-		self.logoImageView?.contentMode = .scaleAspectFit
+		super.awakeFromNib()
 		let recognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteTapped))
 		self.favoriteImageView.addGestureRecognizer(recognizer)
+		self.resetUI()
 	}
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		self.setFavorited(false)
+		self.resetUI()
 	}
 
 	// MARK: - Public
@@ -46,6 +47,10 @@ final class VenueTableViewCell: UITableViewCell {
 	}
 
 	// MARK: - Private
+
+	private func resetUI() {
+		self.setFavorited(false)
+	}
 
 	private func setFavorited(_ favorited: Bool) {
 		let alpha: CGFloat = favorited ? 0.7 : 0.1
