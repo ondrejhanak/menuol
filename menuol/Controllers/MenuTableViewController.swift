@@ -53,7 +53,8 @@ final class MenuTableViewController: UITableViewController {
 	private func setupUI() {
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
-		self.tableView.tableFooterView = UIView()
+		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+
 	}
 
 	private func loadData() {
