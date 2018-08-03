@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0705FCAA307463CDC6FDA012 /* Pods_menuol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B7C623CDA2878232DB53E5 /* Pods_menuol.framework */; };
-		EE0D20C42029C16A00C5F665 /* Sequence+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C32029C16A00C5F665 /* Sequence+oh.swift */; };
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
 		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
 		EE48EEBF1F1E132E004DA56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */; };
@@ -35,7 +34,6 @@
 		39B7C623CDA2878232DB53E5 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FC56F983C4E9E0220A55B9 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-menuol/Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
 		A06315D78DCE4B9709DD17C0 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.release.xcconfig"; path = "Pods/Target Support Files/Pods-menuol/Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
-		EE0D20C32029C16A00C5F665 /* Sequence+oh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+oh.swift"; sourceTree = "<group>"; };
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
 		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EE48EEBB1F1E132E004DA56D /* menuol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menuol.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +129,6 @@
 				EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */,
 				EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */,
 				EE99C1DA1F29E7FC00C324AE /* String+oh.swift */,
-				EE0D20C32029C16A00C5F665 /* Sequence+oh.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,7 +329,6 @@
 				EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */,
 				EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */,
 				EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */,
-				EE0D20C42029C16A00C5F665 /* Sequence+oh.swift in Sources */,
 				EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */,
 				EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */,
 				EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */,
