@@ -72,10 +72,14 @@ final class VenueManager {
 	
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
-		let favDescriptor = NSSortDescriptor(key: "isFavorited", ascending: false)
-		let nameDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		let predicate = name == "" ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "name CONTAINS[cd] %@", name)
-		let result = self.allVenues.filter({ predicate.evaluate(with: $0) }).sorted(by: [favDescriptor, nameDescriptor])
+		let result = self.allVenues.filter({ predicate.evaluate(with: $0) }).sorted {
+			// sort by (isFavorited, name)
+			if $0.isFavorited == $1.isFavorited {
+				return $0.name.lowercased() < $1.name.lowercased()
+			}
+			return $0.isFavorited && !$1.isFavorited
+		}
 		return result
 	}
 

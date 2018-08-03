@@ -10,10 +10,10 @@ import Foundation
 
 final class Venue: NSObject {
 	public var slug = ""
-	@objc public var name = ""
+	public var name = ""
 	public var imageURL: URL?
 	public var menuTimeDescription: String?
-	@objc public var isFavorited = false
+	public var isFavorited = false
 	
 	public var menuItems = [MenuItem]()
 	
