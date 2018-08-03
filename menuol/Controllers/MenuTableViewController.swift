@@ -66,7 +66,7 @@ final class MenuTableViewController: UITableViewController {
 					self.didTryFetch = true
 					self.loadData()
 				} else {
-					let alert = AlertFactory.makeGeneralErrorAlert()
+					let alert = AlertFactory.makeGeneralNetworkingError()
 					self.present(alert, animated: true, completion: nil)
 				}
 			}

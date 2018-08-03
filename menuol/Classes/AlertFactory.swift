@@ -10,8 +10,8 @@ import UIKit
 
 final class AlertFactory {
 
-	public static func makeGeneralErrorAlert() -> UIAlertController {
-		let controller = UIAlertController(title: "Chyba", message: "Data se nepodařilo stáhnout. Zkuste to, prosím, za chvíli znovu.", preferredStyle: .alert)
+	public static func makeGeneralNetworkingError() -> UIAlertController {
+		let controller = UIAlertController(title: "Chyba", message: "Data se nepodařilo načíst. Zkuste to, prosím, za chvíli znovu.", preferredStyle: .alert)
 		let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 		controller.addAction(action)
 		return controller

@@ -87,7 +87,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 			case .success:
 				self.loadData()
 			case .failure:
-				let alert = AlertFactory.makeGeneralErrorAlert()
+				let alert = AlertFactory.makeGeneralNetworkingError()
 				self.present(alert, animated: true, completion: nil)
 			}
 		}
