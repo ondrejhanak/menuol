@@ -33,7 +33,9 @@ final class HTMLFetcher {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
-				callback(.failure(HTMLFetcherError()))
+				DispatchQueue.main.async {
+					callback(.failure(HTMLFetcherError()))
+				}
 				return
 			}
 			DispatchQueue.main.async {
