@@ -63,8 +63,13 @@ final class MenuTableViewController: UITableViewController {
 		self.items = self.venue.menuItems(for: day)
 		if self.items.isEmpty && !self.didTryFetch {
 			self.venueManager.updateMenu(slug: self.venue.slug) { success in
-				self.didTryFetch = true
-				self.loadData()
+				if success {
+					self.didTryFetch = true
+					self.loadData()
+				} else {
+					let alert = AlertFactory.makeGeneralErrorAlert()
+					self.present(alert, animated: true, completion: nil)
+				}
 			}
 			self.tableView.reloadDataAnimated()
 		} else {
