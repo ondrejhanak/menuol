@@ -17,19 +17,17 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Lifecycle
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		self.setupWindowAndRootViewController()
+		self.setupWindow()
 		return true
 	}
 
 	// MARK: - Private
 
-	private func setupWindowAndRootViewController() {
+	private func setupWindow() {
 		self.window = UIWindow()
-		let nc = UINavigationController()
-		window?.rootViewController = nc
-		self.coordinator = AppCoordinator(navigationController: nc)
-		self.coordinator?.start()
 		self.window?.makeKeyAndVisible()
+		self.coordinator = AppCoordinator(window: self.window)
+		self.coordinator?.start()
 	}
 
 }

@@ -12,14 +12,17 @@ protocol VenuesViewControllerDelegate: class {
 	func didSelect(venue: Venue)
 }
 
-final class AppCoordinator: VenuesViewControllerDelegate {
+final class AppCoordinator {
 	private let navigationController: UINavigationController
+	private var window: UIWindow?
 	private let venueManager = VenueManager()
 
 	// MARK: - Lifecycle
 
-	init(navigationController: UINavigationController) {
-		self.navigationController = navigationController
+	init(window: UIWindow?) {
+		self.window = window
+		self.navigationController = UINavigationController()
+		self.window?.rootViewController = self.navigationController
 	}
 
 	// MARK: - Public
@@ -32,8 +35,11 @@ final class AppCoordinator: VenuesViewControllerDelegate {
 		self.navigationController.pushViewController(vc, animated: false)
 	}
 
-	// MARK: - VenuesViewControllerDelegate
-	
+}
+
+// MARK: - VenuesViewControllerDelegate
+
+extension AppCoordinator: VenuesViewControllerDelegate {
 	func didSelect(venue: Venue) {
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let vc = storyboard.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
