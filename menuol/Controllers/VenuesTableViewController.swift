@@ -67,10 +67,10 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.searchController.dimsBackgroundDuringPresentation = false
 		self.definesPresentationContext = true
 		self.tableView.tableHeaderView = self.searchController.searchBar
-		self.tableView.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.96, alpha: 1) // #EFEFF4, same as default search bar background
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 		self.refresher = UIRefreshControl()
 		self.refresher.tintColor = .black
+		self.refresher.backgroundColor = .white
 		self.refresher.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 		self.tableView?.addSubview(refresher)
 	}
