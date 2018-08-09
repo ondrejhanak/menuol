@@ -29,7 +29,7 @@ final class HTMLFetcher {
 
 	// MARK: - Private
 
-	private func fetchHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	internal func fetchHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
