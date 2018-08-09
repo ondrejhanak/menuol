@@ -34,4 +34,19 @@ final class unitTests: XCTestCase {
 		self.wait(for: [expectation], timeout: 10)
 	}
 
+	func testFetchHTMLFailure() {
+		let expectation = XCTestExpectation(description: "HTML fetching")
+		let fetcher = HTMLFetcher()
+		let url = URL(string: "https://asdfasdf.asdfasdfasd.fasdfasdf.com")!
+		fetcher.fetchHTML(url: url) { result in
+			switch result {
+			case .success:
+				XCTFail("HTML fetching unexpectedly succeeded.")
+			case .failure:
+				expectation.fulfill()
+			}
+		}
+		self.wait(for: [expectation], timeout: 10)
+	}
+
 }
