@@ -9,6 +9,8 @@
 import XCTest
 @testable import menuol
 
+let kNetworkTimeout = 10.0
+
 final class unitTests: XCTestCase {
 
 	override func setUp() {
@@ -31,7 +33,7 @@ final class unitTests: XCTestCase {
 				XCTFail("HTML fetching unexpectedly failed.")
 			}
 		}
-		self.wait(for: [expectation], timeout: 10)
+		self.wait(for: [expectation], timeout: kNetworkTimeout)
 	}
 
 	func testFetchHTMLFailure() {
@@ -46,7 +48,7 @@ final class unitTests: XCTestCase {
 				expectation.fulfill()
 			}
 		}
-		self.wait(for: [expectation], timeout: 10)
+		self.wait(for: [expectation], timeout: kNetworkTimeout)
 	}
 
 }
