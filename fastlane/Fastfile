@@ -29,5 +29,5 @@ lane :swift_lint do |options|
 end
 
 lane :swift_format do |options|
-	sh "swiftformat ../menuol/**/*.swift --verbose --indent tab"
+	sh "swiftformat ../menuol/**/*.swift --verbose --indent tab --self insert --disable unusedArguments"
 end
