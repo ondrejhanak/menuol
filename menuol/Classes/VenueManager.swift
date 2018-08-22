@@ -72,8 +72,11 @@ final class VenueManager {
 	
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
-		let predicate = name == "" ? NSPredicate(format: "TRUEPREDICATE") : NSPredicate(format: "name CONTAINS[cd] %@", name)
-		let result = self.allVenues.filter({ predicate.evaluate(with: $0) }).sorted {
+		var venues = self.allVenues
+		if name.isEmpty == false {
+			venues = venues.filter { $0.name.localizedCaseInsensitiveContains(name) }
+		}
+		let result = venues.sorted {
 			// sort by (isFavorited, name)
 			if $0.isFavorited == $1.isFavorited {
 				return $0.name.lowercased() < $1.name.lowercased()
