@@ -45,7 +45,7 @@ final class HTMLParser {
 		return result
 	}
 
-	func menuItems(from string: String, venueSlug: String) -> [MenuItem] {
+	func menuItems(from string: String) -> [MenuItem] {
 		guard let html = try? HTML(html: string, encoding: .utf8) else {
 			return []
 		}

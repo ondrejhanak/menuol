@@ -61,7 +61,7 @@ final class VenueManager {
 		self.htmlFetcher.fetchMenuHTML(slug: slug) { result in
 			switch result {
 			case let .success(html):
-				let items = self.htmlParser.menuItems(from: html, venueSlug: slug)
+				let items = self.htmlParser.menuItems(from: html)
 				venue.menuItems = items
 				callback(true)
 			case .failure:
