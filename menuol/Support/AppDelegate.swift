@@ -9,7 +9,6 @@
 import UIKit
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
-
 	var window: UIWindow?
 	var coordinator: AppCoordinator?
 
@@ -28,5 +27,4 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.coordinator = AppCoordinator(window: self.window)
 		self.coordinator?.start()
 	}
-
 }

@@ -33,7 +33,6 @@ final class AppCoordinator {
 		vc.venueManager = self.venueManager
 		self.navigationController.pushViewController(vc, animated: false)
 	}
-
 }
 
 // MARK: - VenuesViewControllerDelegate
@@ -45,5 +44,4 @@ extension AppCoordinator: VenuesViewControllerDelegate {
 		vc.venue = venue
 		self.navigationController.pushViewController(vc, animated: true)
 	}
-
 }

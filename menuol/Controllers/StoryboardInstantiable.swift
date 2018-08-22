@@ -18,7 +18,6 @@ extension UIViewController: StoryboardInstantiable {
 }
 
 extension StoryboardInstantiable where Self: UIViewController {
-
 	static var storyboardName: String {
 		return "Main"
 	}
@@ -34,5 +33,4 @@ extension StoryboardInstantiable where Self: UIViewController {
 		}
 		return vc
 	}
-
 }

@@ -14,11 +14,10 @@ final class Venue: NSObject {
 	public var imageURL: URL?
 	public var menuTimeDescription: String?
 	public var isFavorited = false
-	
+
 	public var menuItems = [MenuItem]()
-	
+
 	public func menuItems(for day: String) -> [MenuItem] {
 		return self.menuItems.filter { $0.day == day }
 	}
-
 }

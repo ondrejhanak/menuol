@@ -6,27 +6,26 @@
 //  Copyright © 2017 Ondrej Hanak. All rights reserved.
 //
 
-import UIKit
 import SDWebImage
+import UIKit
 
 protocol VenueTableViewCellDelegate: class {
 	func venueCellDidTapFavorite(_ cell: VenueTableViewCell)
 }
 
 final class VenueTableViewCell: UITableViewCell {
-
-	@IBOutlet weak var titleLabel: UILabel!
-	@IBOutlet weak var subtitleLabel: UILabel!
-	@IBOutlet weak var logoImageView: UIImageView!
-	@IBOutlet weak var favoriteImageView: UIImageView!
+	@IBOutlet var titleLabel: UILabel!
+	@IBOutlet var subtitleLabel: UILabel!
+	@IBOutlet var logoImageView: UIImageView!
+	@IBOutlet var favoriteImageView: UIImageView!
 	public weak var delegate: VenueTableViewCellDelegate?
-	private (set) var venue: Venue!
+	private(set) var venue: Venue!
 
 	// MARK: - Lifecycle
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		let recognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteTapped))
+		let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.favoriteTapped))
 		self.favoriteImageView.addGestureRecognizer(recognizer)
 		self.resetUI()
 	}
@@ -60,5 +59,4 @@ final class VenueTableViewCell: UITableViewCell {
 	@objc private func favoriteTapped() {
 		self.delegate?.venueCellDidTapFavorite(self)
 	}
-
 }

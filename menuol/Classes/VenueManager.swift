@@ -12,7 +12,6 @@ import Result
 private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 final class VenueManager {
-
 	struct VenueError: Error {
 	}
 
@@ -69,7 +68,7 @@ final class VenueManager {
 			}
 		}
 	}
-	
+
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
 		var venues = self.allVenues
@@ -98,11 +97,10 @@ final class VenueManager {
 			self.favoriteVenues.append(venue.slug)
 		}
 	}
-	
+
 	// MARK: - Private
 
 	private func find(slug: String) -> Venue? {
 		return self.allVenues.filter({ $0.slug == slug }).first
 	}
-
 }

@@ -6,12 +6,11 @@
 //  Copyright © 2017 Ondrej Hanak. All rights reserved.
 //
 
-import UIKit
 import FSCalendar
 import PureLayout
+import UIKit
 
 final class CalendarViewController: UIViewController, FSCalendarDelegate {
-
 	// MARK: - Properties
 
 	public var date = Date()
@@ -36,5 +35,4 @@ final class CalendarViewController: UIViewController, FSCalendarDelegate {
 		}
 		self.dismiss(animated: true, completion: nil)
 	}
-
 }

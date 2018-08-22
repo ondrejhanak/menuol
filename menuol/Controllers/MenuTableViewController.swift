@@ -6,13 +6,12 @@
 //  Copyright © 2017 Ondrej Hanak. All rights reserved.
 //
 
-import UIKit
 import STPopup
+import UIKit
 
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
 final class MenuTableViewController: UITableViewController {
-
 	// MARK: - Properties
 
 	public var venue: Venue!
@@ -92,5 +91,4 @@ final class MenuTableViewController: UITableViewController {
 		}
 		return cell
 	}
-
 }

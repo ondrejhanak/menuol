@@ -9,7 +9,6 @@
 import UIKit
 
 final class MenuItemTableViewCell: UITableViewCell {
-
 	@IBOutlet var orderLabel: UILabel!
 	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var priceLabel: UILabel!
@@ -35,7 +34,7 @@ final class MenuItemTableViewCell: UITableViewCell {
 	}
 
 	// MARK: - Public
-	
+
 	public func setup(menuItem: MenuItem) {
 		self.orderLabel?.text = menuItem.orderDescription
 		self.titleLabel?.text = menuItem.title
@@ -45,5 +44,4 @@ final class MenuItemTableViewCell: UITableViewCell {
 	public func setupAsNoDataCell() {
 		self.titleLabel?.text = "Restaurace nedodala aktuální údaje"
 	}
-
 }

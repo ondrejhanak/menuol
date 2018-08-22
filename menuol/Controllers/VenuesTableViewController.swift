@@ -11,7 +11,6 @@ import UIKit
 private let kVenueCellIdentifier = "VenueCell"
 
 final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
-
 	// MARK: - Properties
 
 	public var venueManager: VenueManager!
@@ -71,14 +70,14 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.refresher = UIRefreshControl()
 		self.refresher.tintColor = .black
 		self.refresher.backgroundColor = .white
-		self.refresher.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-		self.tableView?.addSubview(refresher)
+		self.refresher.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+		self.tableView?.addSubview(self.refresher)
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
 		return self.result[indexPath.row]
 	}
-	
+
 	private func fetchData() {
 		let today = Date()
 		self.venueManager.updateVenuesAndMenu(for: today) { result in
@@ -106,7 +105,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
 		self.venueManager.toggleFavorite(cell.venue)
-		self.loadData(nameFilter: searchController.searchBar.text)
+		self.loadData(nameFilter: self.searchController.searchBar.text)
 	}
-
 }

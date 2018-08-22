@@ -9,7 +9,6 @@
 import Foundation
 
 extension String {
-
 	func capitalizingFirstLetter() -> String {
 		let first = String(self.prefix(1)).capitalized
 		let other = String(self.dropFirst())
@@ -19,5 +18,4 @@ extension String {
 	mutating func capitalizeFirstLetter() {
 		self = self.capitalizingFirstLetter()
 	}
-
 }

@@ -9,7 +9,6 @@
 import Foundation
 
 extension DateFormatter {
-
 	private static var dateOnlyFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd"
@@ -30,5 +29,4 @@ extension DateFormatter {
 	static func czechDateString(from: Date) -> String {
 		return self.czechDateFormatter.string(from: from)
 	}
-	
 }
