@@ -28,8 +28,7 @@ final class AppCoordinator {
 	// MARK: - Public
 
 	func start() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "VenuesTableViewController") as! VenuesTableViewController
+		let vc: VenuesTableViewController = VenuesTableViewController.instantiateFromStoryboard()
 		vc.coordinatorDelegate = self
 		vc.venueManager = self.venueManager
 		self.navigationController.pushViewController(vc, animated: false)
@@ -41,8 +40,7 @@ final class AppCoordinator {
 
 extension AppCoordinator: VenuesViewControllerDelegate {
 	func didSelect(venue: Venue) {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
+		let vc: MenuTableViewController = MenuTableViewController.instantiateFromStoryboard()
 		vc.venueManager = self.venueManager
 		vc.venue = venue
 		self.navigationController.pushViewController(vc, animated: true)
