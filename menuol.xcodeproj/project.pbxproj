@@ -10,7 +10,7 @@
 		0705FCAA307463CDC6FDA012 /* Pods_menuol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B7C623CDA2878232DB53E5 /* Pods_menuol.framework */; };
 		5A53D844046978E141797E65 /* Pods_menuol_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839ADD91E8FEB4995FC31A31 /* Pods_menuol_unit_tests.framework */; };
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
-		EE172F6A211C1A9E0045B016 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* UnitTests.swift */; };
+		EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */; };
 		EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */; };
 		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
 		EE48EEBF1F1E132E004DA56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEBE1F1E132E004DA56D /* AppDelegate.swift */; };
@@ -53,7 +53,7 @@
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* menuol unit tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "menuol unit tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE172F69211C1A9E0045B016 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
+		EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcherTests.swift; sourceTree = "<group>"; };
 		EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EE48EEBB1F1E132E004DA56D /* menuol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menuol.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +121,7 @@
 		EE172F60211C1A690045B016 /* menuol unit tests */ = {
 			isa = PBXGroup;
 			children = (
-				EE172F69211C1A9E0045B016 /* UnitTests.swift */,
+				EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */,
 				EE172F63211C1A690045B016 /* Info.plist */,
 			);
 			path = "menuol unit tests";
@@ -441,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE172F6A211C1A9E0045B016 /* UnitTests.swift in Sources */,
+				EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

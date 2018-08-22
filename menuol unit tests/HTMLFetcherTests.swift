@@ -1,5 +1,5 @@
 //
-//  UnitTests.swift
+//  HTMLFetcherTests.swift
 //  menuol unit tests
 //
 //  Created by Ondřej Hanák on 09. 08. 2018.
@@ -11,15 +11,7 @@ import XCTest
 
 let kNetworkTimeout = 10.0
 
-final class unitTests: XCTestCase {
-
-	override func setUp() {
-		super.setUp()
-	}
-
-	override func tearDown() {
-		super.tearDown()
-	}
+final class HTMLFetcherTests: XCTestCase {
 
 	func testFetchHTMLSuccess() {
 		let expectation = XCTestExpectation(description: "HTML fetching")
