@@ -85,7 +85,7 @@ final class HTMLParser {
 		venue.slug = slug!
 		venue.name = name!
 		if let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"] {
-			venue.imageURL = URL(string: "https:" + imageURLString)
+			venue.imageURL = URL(string: imageURLString)
 		}
 		venue.menuTimeDescription = menuTimeDescription
 		return venue
