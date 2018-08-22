@@ -295,7 +295,7 @@
 				TargetAttributes = {
 					EE172F5E211C1A690045B016 = {
 						CreatedOnToolsVersion = 9.4.1;
-						DevelopmentTeam = 32AWT46CG7;
+						DevelopmentTeam = RSQZ5T9DT6;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EE48EEBA1F1E132E004DA56D;
@@ -521,7 +521,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32AWT46CG7;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "menuol unit tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -548,7 +548,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32AWT46CG7;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "menuol unit tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
