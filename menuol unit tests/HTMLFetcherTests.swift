@@ -9,7 +9,7 @@
 import XCTest
 @testable import menuol
 
-let kNetworkTimeout = 10.0
+private let kNetworkTimeout = 10.0
 
 final class HTMLFetcherTests: XCTestCase {
 
