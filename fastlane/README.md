@@ -25,6 +25,11 @@ fastlane swift_lint
 fastlane swift_format
 ```
 
+### unit_tests
+```
+fastlane unit_tests
+```
+Run unit tests.
 
 ----
 

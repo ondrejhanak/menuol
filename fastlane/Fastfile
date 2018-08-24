@@ -31,3 +31,8 @@ end
 lane :swift_format do |options|
 	sh "swiftformat ../menuol/**/*.swift --verbose --indent tab --self insert --disable unusedArguments"
 end
+
+desc "Run unit tests."
+lane :unit_tests do
+  run_tests(scheme: "menuol", code_coverage: true, thread_sanitizer: true, open_report: true)
+end
