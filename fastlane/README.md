@@ -19,17 +19,17 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane swift_lint
 ```
-
+Runs swiftlint tool.
 ### swift_format
 ```
 fastlane swift_format
 ```
-
+Runs swiftformat tool.
 ### unit_tests
 ```
 fastlane unit_tests
 ```
-Run unit tests.
+Runs unit tests.
 
 ----
 
