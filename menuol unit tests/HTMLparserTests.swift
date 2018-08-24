@@ -13,10 +13,7 @@ final class HTMLParserTests: XCTestCase {
 
 	func testVenuesParsing_correct() {
 		let parser = HTMLParser()
-		let fileName = "Venues.html"
-		let bundle = Bundle(for: type(of: self))
-		let path = bundle.path(forResource: fileName, ofType: nil)!
-		let html = try! String(contentsOfFile: path)
+		let html = self.loadHTML(from: "Venues.html")
 
 		// venues count
 		let venues = parser.venuesWithMenuItems(from: html)
@@ -71,6 +68,39 @@ final class HTMLParserTests: XCTestCase {
 		let html = ""
 		let venues = parser.venuesWithMenuItems(from: html)
 		XCTAssert(venues.count == 0)
+	}
+
+	func testMenuParsingCorrect() {
+		let parser = HTMLParser()
+		let html = self.loadHTML(from: "Menu.html")
+		let menuItems = parser.menuItems(from: html)
+
+		XCTAssert(menuItems.count == 12)
+
+		// first menu item
+		let firstItem = menuItems.first!
+		XCTAssert(firstItem.title == "Kmínová s vejcem")
+		XCTAssert(firstItem.day == "2018-08-23")
+		XCTAssert(firstItem.order == 0)
+		XCTAssert(firstItem.orderDescription == "")
+		XCTAssert(firstItem.priceDescription == "")
+
+		// last menu item
+		let lastItem = menuItems.last!
+		XCTAssert(lastItem.title == "Těstovinový salát s kuřecím masem")
+		XCTAssert(lastItem.day == "2018-08-24")
+		XCTAssert(lastItem.order == 5)
+		XCTAssert(lastItem.orderDescription == "5.")
+		XCTAssert(lastItem.priceDescription == "98 Kč") // hard space
+	}
+
+	// MARK: - Private
+
+	private func loadHTML(from file: String) -> String {
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: file, ofType: nil)!
+		let html = try! String(contentsOfFile: path)
+		return html
 	}
 
 }
