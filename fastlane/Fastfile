@@ -1,3 +1,6 @@
+
+fastlane_require "etc"
+
 fastlane_version "2.68.2"
 
 default_platform :ios
@@ -27,5 +30,17 @@ lane :unit_tests do
 		code_coverage: true,
 		thread_sanitizer: true,
 		open_report: true
+	)
+end
+
+desc "Creates app icons."
+lane :app_icons do
+	output_dir = "./menuol/Resources/Assets.xcassets"
+	FileUtils.rm_f(Dir.glob("../#{output_dir}/AppIcon.appiconset/*.*")) # delete previous icon files
+	home_dir = Etc.getpwuid.dir
+	appicon(
+		appicon_image_file: "#{home_dir}/Dropbox (Personal)/apps/menuol/AppIcon.png",
+		appicon_path: output_dir,
+		appicon_devices: [:ipad, :iphone, :ios_marketing]
 	)
 end
