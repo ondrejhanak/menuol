@@ -12,6 +12,7 @@
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
 		EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */; };
 		EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */; };
+		EE172F8821367C8C0045B016 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F8721367C8C0045B016 /* UITests.swift */; };
 		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
 		EE3DECB8212ED180002791E9 /* HTMLparserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLparserTests.swift */; };
 		EE3DECBA212ED455002791E9 /* Venues.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECB9212ED455002791E9 /* Venues.html */; };
@@ -49,6 +50,13 @@
 			remoteGlobalIDString = EE48EEBA1F1E132E004DA56D;
 			remoteInfo = menuol;
 		};
+		EE172F8A21367C8C0045B016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE48EEB31F1E132E004DA56D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE48EEBA1F1E132E004DA56D;
+			remoteInfo = menuol;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +71,9 @@
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcherTests.swift; sourceTree = "<group>"; };
 		EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		EE172F8521367C8C0045B016 /* ui tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ui tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE172F8721367C8C0045B016 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		EE172F8921367C8C0045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EE3DECB7212ED180002791E9 /* HTMLparserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLparserTests.swift; sourceTree = "<group>"; };
 		EE3DECB9212ED455002791E9 /* Venues.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Venues.html; sourceTree = "<group>"; };
@@ -100,6 +111,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A53D844046978E141797E65 /* Pods_menuol_unit_tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE172F8221367C8C0045B016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,11 +167,21 @@
 			path = "unit tests";
 			sourceTree = "<group>";
 		};
+		EE172F8621367C8C0045B016 /* ui tests */ = {
+			isa = PBXGroup;
+			children = (
+				EE172F8721367C8C0045B016 /* UITests.swift */,
+				EE172F8921367C8C0045B016 /* Info.plist */,
+			);
+			path = "ui tests";
+			sourceTree = "<group>";
+		};
 		EE48EEB21F1E132E004DA56D = {
 			isa = PBXGroup;
 			children = (
 				EE48EEBD1F1E132E004DA56D /* menuol */,
 				EE172F60211C1A690045B016 /* unit tests */,
+				EE172F8621367C8C0045B016 /* ui tests */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 				6600F821EF847B44AE4D10DD /* Pods */,
 				1879BB4E2B68EAD5D4E3D302 /* Frameworks */,
@@ -168,6 +196,7 @@
 			children = (
 				EE48EEBB1F1E132E004DA56D /* menuol.app */,
 				EE172F5F211C1A690045B016 /* unit tests.xctest */,
+				EE172F8521367C8C0045B016 /* ui tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,6 +311,24 @@
 			productReference = EE172F5F211C1A690045B016 /* unit tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EE172F8421367C8C0045B016 /* ui tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE172F8C21367C8C0045B016 /* Build configuration list for PBXNativeTarget "ui tests" */;
+			buildPhases = (
+				EE172F8121367C8C0045B016 /* Sources */,
+				EE172F8221367C8C0045B016 /* Frameworks */,
+				EE172F8321367C8C0045B016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE172F8B21367C8C0045B016 /* PBXTargetDependency */,
+			);
+			name = "ui tests";
+			productName = "ui tests";
+			productReference = EE172F8521367C8C0045B016 /* ui tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		EE48EEBA1F1E132E004DA56D /* menuol */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE48EECD1F1E132F004DA56D /* Build configuration list for PBXNativeTarget "menuol" */;
@@ -318,6 +365,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = EE48EEBA1F1E132E004DA56D;
 					};
+					EE172F8421367C8C0045B016 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = EE48EEBA1F1E132E004DA56D;
+					};
 					EE48EEBA1F1E132E004DA56D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RSQZ5T9DT6;
@@ -341,6 +392,7 @@
 			targets = (
 				EE48EEBA1F1E132E004DA56D /* menuol */,
 				EE172F5E211C1A690045B016 /* unit tests */,
+				EE172F8421367C8C0045B016 /* ui tests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +404,13 @@
 			files = (
 				EE3DECBA212ED455002791E9 /* Venues.html in Resources */,
 				EE3DECC2212FF65A002791E9 /* Menu.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE172F8321367C8C0045B016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +535,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE172F8121367C8C0045B016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE172F8821367C8C0045B016 /* UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE48EEB71F1E132E004DA56D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +576,11 @@
 			isa = PBXTargetDependency;
 			target = EE48EEBA1F1E132E004DA56D /* menuol */;
 			targetProxy = EE172F64211C1A690045B016 /* PBXContainerItemProxy */;
+		};
+		EE172F8B21367C8C0045B016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE48EEBA1F1E132E004DA56D /* menuol */;
+			targetProxy = EE172F8A21367C8C0045B016 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -590,6 +662,56 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/menuol.app/menuol";
+			};
+			name = Release;
+		};
+		EE172F8D21367C8C0045B016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "ui tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.ui-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = menuol;
+			};
+			name = Debug;
+		};
+		EE172F8E21367C8C0045B016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSQZ5T9DT6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "ui tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.ui-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = menuol;
 			};
 			name = Release;
 		};
@@ -751,6 +873,15 @@
 			buildConfigurations = (
 				EE172F66211C1A690045B016 /* Debug */,
 				EE172F67211C1A690045B016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE172F8C21367C8C0045B016 /* Build configuration list for PBXNativeTarget "ui tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE172F8D21367C8C0045B016 /* Debug */,
+				EE172F8E21367C8C0045B016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
