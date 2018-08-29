@@ -59,7 +59,7 @@
 		A2E4731372B81A0537D81136 /* Pods-menuol unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol unit tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-menuol unit tests/Pods-menuol unit tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1BBBC9AC5BDDD7BD55CE983 /* Pods-menuol unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol unit tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-menuol unit tests/Pods-menuol unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
-		EE172F5F211C1A690045B016 /* menuol unit tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "menuol unit tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE172F5F211C1A690045B016 /* unit tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcherTests.swift; sourceTree = "<group>"; };
 		EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		EE172F60211C1A690045B016 /* menuol unit tests */ = {
+		EE172F60211C1A690045B016 /* unit tests */ = {
 			isa = PBXGroup;
 			children = (
 				EE3DECC1212FF65A002791E9 /* Menu.html */,
@@ -146,14 +146,14 @@
 				EE3DECBF212FF38A002791E9 /* AppDelegateTests.swift */,
 				EE172F63211C1A690045B016 /* Info.plist */,
 			);
-			path = "menuol unit tests";
+			path = "unit tests";
 			sourceTree = "<group>";
 		};
 		EE48EEB21F1E132E004DA56D = {
 			isa = PBXGroup;
 			children = (
 				EE48EEBD1F1E132E004DA56D /* menuol */,
-				EE172F60211C1A690045B016 /* menuol unit tests */,
+				EE172F60211C1A690045B016 /* unit tests */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 				6600F821EF847B44AE4D10DD /* Pods */,
 				1879BB4E2B68EAD5D4E3D302 /* Frameworks */,
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				EE48EEBB1F1E132E004DA56D /* menuol.app */,
-				EE172F5F211C1A690045B016 /* menuol unit tests.xctest */,
+				EE172F5F211C1A690045B016 /* unit tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE172F5E211C1A690045B016 /* menuol unit tests */ = {
+		EE172F5E211C1A690045B016 /* unit tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "menuol unit tests" */;
+			buildConfigurationList = EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "unit tests" */;
 			buildPhases = (
 				D8574356AD930AE442D2D173 /* [CP] Check Pods Manifest.lock */,
 				EE172F5B211C1A690045B016 /* Sources */,
@@ -277,9 +277,9 @@
 			dependencies = (
 				EE172F65211C1A690045B016 /* PBXTargetDependency */,
 			);
-			name = "menuol unit tests";
+			name = "unit tests";
 			productName = "menuol unit tests";
-			productReference = EE172F5F211C1A690045B016 /* menuol unit tests.xctest */;
+			productReference = EE172F5F211C1A690045B016 /* unit tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EE48EEBA1F1E132E004DA56D /* menuol */ = {
@@ -340,7 +340,7 @@
 			projectRoot = "";
 			targets = (
 				EE48EEBA1F1E132E004DA56D /* menuol */,
-				EE172F5E211C1A690045B016 /* menuol unit tests */,
+				EE172F5E211C1A690045B016 /* unit tests */,
 			);
 		};
 /* End PBXProject section */
@@ -547,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "menuol unit tests/Info.plist";
+				INFOPLIST_FILE = "unit tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,7 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "menuol unit tests/Info.plist";
+				INFOPLIST_FILE = "unit tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -746,7 +746,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "menuol unit tests" */ = {
+		EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "unit tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE172F66211C1A690045B016 /* Debug */,
