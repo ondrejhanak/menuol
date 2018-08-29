@@ -14,7 +14,7 @@
 		EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */; };
 		EE172F8821367C8C0045B016 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F8721367C8C0045B016 /* UITests.swift */; };
 		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
-		EE3DECB8212ED180002791E9 /* HTMLparserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLparserTests.swift */; };
+		EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */; };
 		EE3DECBA212ED455002791E9 /* Venues.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECB9212ED455002791E9 /* Venues.html */; };
 		EE3DECBC212EF589002791E9 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECBB212EF589002791E9 /* ExtensionsTests.swift */; };
 		EE3DECBE212F0417002791E9 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECBD212F0417002791E9 /* AppCoordinatorTests.swift */; };
@@ -75,7 +75,7 @@
 		EE172F8721367C8C0045B016 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		EE172F8921367C8C0045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		EE3DECB7212ED180002791E9 /* HTMLparserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLparserTests.swift; sourceTree = "<group>"; };
+		EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserTests.swift; sourceTree = "<group>"; };
 		EE3DECB9212ED455002791E9 /* Venues.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Venues.html; sourceTree = "<group>"; };
 		EE3DECBB212EF589002791E9 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		EE3DECBD212F0417002791E9 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				EE3DECC1212FF65A002791E9 /* Menu.html */,
 				EE3DECB9212ED455002791E9 /* Venues.html */,
 				EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */,
-				EE3DECB7212ED180002791E9 /* HTMLparserTests.swift */,
+				EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */,
 				EE3DECBB212EF589002791E9 /* ExtensionsTests.swift */,
 				EE3DECBD212F0417002791E9 /* AppCoordinatorTests.swift */,
 				EE3DECBF212FF38A002791E9 /* AppDelegateTests.swift */,
@@ -528,7 +528,7 @@
 			files = (
 				EE3DECBE212F0417002791E9 /* AppCoordinatorTests.swift in Sources */,
 				EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */,
-				EE3DECB8212ED180002791E9 /* HTMLparserTests.swift in Sources */,
+				EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */,
 				EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */,
 				EE3DECC0212FF38A002791E9 /* AppDelegateTests.swift in Sources */,
 				EE3DECBC212EF589002791E9 /* ExtensionsTests.swift in Sources */,
