@@ -246,13 +246,13 @@
 /* Begin PBXFileReference section */
 		005AD0FC0F4EE4781F53D5AD4701E3BB /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
 		008AEE6DC69B40B63944A6BBE2EBC66B /* Pods-menuol-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-resources.sh"; sourceTree = "<group>"; };
-		02488C553A5A716B08CA517755EFC3F2 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02488C553A5A716B08CA517755EFC3F2 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04763458E7F875CB40E1702B77C7EB50 /* STPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopup.h; path = STPopup/STPopup.h; sourceTree = "<group>"; };
 		08645DC330E9D2B9264FCBBE7CEADA73 /* FSCalendarCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCell.h; path = FSCalendar/FSCalendarCell.h; sourceTree = "<group>"; };
 		089403C28FA1A8F9CDCB0482D838CDF4 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
 		0A8763BA7B186F61541A6BA3BE4FCD45 /* Pods-menuol unit tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol unit tests-resources.sh"; sourceTree = "<group>"; };
 		0BC21C0242B7B2A35A33D506D6240F0E /* Pods-menuol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-menuol-dummy.m"; sourceTree = "<group>"; };
-		0BDF6A5E5C917C95565D70A66A0D093F /* Pods_menuol_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_menuol_unit_tests.framework; path = "Pods-menuol unit tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BDF6A5E5C917C95565D70A66A0D093F /* Pods_menuol_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E14CECF33F3988350C8855DCC165742 /* NSImage+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+WebCache.m"; path = "SDWebImage/NSImage+WebCache.m"; sourceTree = "<group>"; };
 		0EC67ED5BB0628B4CF17814FAC947B3D /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationProxy.m; path = FSCalendar/FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
 		0F2A3DDF6BC831897C4EE06DFDD8503A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -276,13 +276,13 @@
 		2A016F27C3ED8EAFB43C019046D5B2F1 /* FSCalendarConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarConstants.m; path = FSCalendar/FSCalendarConstants.m; sourceTree = "<group>"; };
 		2C2096925AE9C8A3ECDE31EF2501246F /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
 		2E4412461A70C89E34E3181646994C7C /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
-		2EAB74F60B9E52EB2CBD3295CE71B035 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_menuol.framework; path = "Pods-menuol.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAB74F60B9E52EB2CBD3295CE71B035 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F86265C1D5CC93A33CD1E02DDBDC8F1 /* FSCalendarAppearance.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarAppearance.h; path = FSCalendar/FSCalendarAppearance.h; sourceTree = "<group>"; };
 		32107E1906A1AFBA9DC8B9200E87F2C3 /* SDWebImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCodersManager.m; path = SDWebImage/SDWebImageCodersManager.m; sourceTree = "<group>"; };
 		3317A1877BD00E604471737D0F085705 /* FSCalendarCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCell.m; path = FSCalendar/FSCalendarCell.m; sourceTree = "<group>"; };
 		34E9A16EDB63237AD7A4FC75FD3364FE /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
 		34F042F8675147D60DA11C250CB61177 /* Pods-menuol unit tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-menuol unit tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		354F9CEEB0B9AB30A2AFBCD554E37EAE /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		354F9CEEB0B9AB30A2AFBCD554E37EAE /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		363AE9BA8F76FD357B3AD5AC5F71195B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		366013C7434D04698ADBDB2AD04593D1 /* Result-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Result-dummy.m"; sourceTree = "<group>"; };
 		36E898537A43FA7FB0F7C259897D6C4C /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/UIView+WebCache.h"; sourceTree = "<group>"; };
@@ -351,14 +351,14 @@
 		8B1F04DE660D0607E1D920A6CFDB16EB /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		8B6DC37BA287265B2F663E6996CAA2E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8C94AA3EB674E442BA2814E3C6819398 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
-		8CFC23F0437BE55B8E19D58C28E567F8 /* STPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STPopup.framework; path = STPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFC23F0437BE55B8E19D58C28E567F8 /* STPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8E02905D12F03FC269E6CE64C4ACCA /* Pods-menuol unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol unit tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E7A8FE93DF12723D6EA9492785E2243 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		8F0B7872CFC4021106319354F52DA2ED /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
 		8FABEB8134A5E60F8350A370A6C68475 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		903F8E0BA8945D6A4FE62FD8DDB82275 /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/UIView+WebCache.m"; sourceTree = "<group>"; };
 		90B9F6695C910930D4D19B00B7DE93EE /* FSCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendar.m; path = FSCalendar/FSCalendar.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		971404AB060E19A78870A6AA8BE470C4 /* FSCalendarCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCalculator.h; path = FSCalendar/FSCalendarCalculator.h; sourceTree = "<group>"; };
 		9B3F78C32B8B98281FA49F5C088919DE /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Kanna/Deprecated.swift; sourceTree = "<group>"; };
 		9D57CD99FA957D46CDF72008E6EBFCA0 /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		C10FD92B33743A69F5D8A809960E7133 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FA8CE8E85E8614FE9BD80834039573 /* UIResponder+STPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIResponder+STPopup.h"; path = "STPopup/UIResponder+STPopup.h"; sourceTree = "<group>"; };
 		C513DD82DE4BDED7A7707B547DF840D0 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		C6BE0C30B20977D5568CBF3373E25E39 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BE0C30B20977D5568CBF3373E25E39 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7378A1856A8FCF28B144077FFF4A899 /* Pods-menuol unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		C9AA37F823F31350A79C1945F473C3C6 /* Pods-menuol unit tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-menuol unit tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CA7BC60FF61262A672710C04E440A354 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
@@ -421,14 +421,14 @@
 		E9E15BD1286265423A6C79A3918475F0 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		EA21E46F27ABCCD0602D0F21193D996C /* SDWebImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoder.m; path = SDWebImage/SDWebImageCoder.m; sourceTree = "<group>"; };
 		ECB445C78CB7845A022093BA351D816B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE06C8809C3B3E73F33BCCF1C60B7840 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE06C8809C3B3E73F33BCCF1C60B7840 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12BCCB6D45EEA7CC110257F4267A064 /* NSImage+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+WebCache.h"; path = "SDWebImage/NSImage+WebCache.h"; sourceTree = "<group>"; };
 		F54BAEAFFA2A372ACE1D079CDB28A90A /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
 		F6AC62D1696E9C621D608921499316F4 /* Pods-menuol-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-frameworks.sh"; sourceTree = "<group>"; };
 		F6BD74B5E7F9DD08979BAF6D0C37E016 /* FSCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionViewLayout.m; path = FSCalendar/FSCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
 		F6FD31494386F43042F0FF0EA13EBD10 /* AnyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyError.swift; path = Result/AnyError.swift; sourceTree = "<group>"; };
 		F71E433570A6FA509BF41CBA8DDF9D2C /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
-		F7AED5FEFEE4745CA98B78C37DA0CC80 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSCalendar.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7AED5FEFEE4745CA98B78C37DA0CC80 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8061C5C68A7B245F49707D25F01EEEE /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		F9A1035A0F39CA0436679CEA2CACBAAA /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		FE321CB3D69FE31FAC1439FFDA4F9D67 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
@@ -540,7 +540,6 @@
 				AF8CEA26F8E036F801EC5616186B7A79 /* libxmlParserOption.swift */,
 				4BA7ACC339E40691410DDFD992742050 /* Support Files */,
 			);
-			name = Kanna;
 			path = Kanna;
 			sourceTree = "<group>";
 		};
@@ -652,7 +651,6 @@
 				559952572104BB52FB7A0204E542D720 /* UIViewController+STPopup.m */,
 				3E0B7A5EE5DF85E729D90B569B35F80D /* Support Files */,
 			);
-			name = STPopup;
 			path = STPopup;
 			sourceTree = "<group>";
 		};
@@ -693,7 +691,6 @@
 				45EDDF7566AB21E0F9689D419F7FBB88 /* FSCalendarWeekdayView.m */,
 				C0C9A2C5736D8C83A7783E2879D16DFE /* Support Files */,
 			);
-			name = FSCalendar;
 			path = FSCalendar;
 			sourceTree = "<group>";
 		};
@@ -810,7 +807,6 @@
 				212620DDACB4F32CC7FBB30C7C0EA45C /* PureLayoutDefines.h */,
 				CDD14B6DF59CAEA08EDB38D3EB582D41 /* Support Files */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -832,7 +828,6 @@
 				514A56A549E5C9E87AACF90ADE4A63CF /* ResultProtocol.swift */,
 				FCD11547D402BDD5C6173251FA4864D9 /* Support Files */,
 			);
-			name = Result;
 			path = Result;
 			sourceTree = "<group>";
 		};
@@ -842,7 +837,6 @@
 				C2B05917A68F7A4184CE605A69570D44 /* Core */,
 				1EBFD6EED12B86C89B5CE8F249F701A6 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1166,7 +1160,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1484,8 +1478,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1549,8 +1542,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1777,8 +1769,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1974,8 +1965,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2038,6 +2028,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
