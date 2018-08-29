@@ -30,9 +30,9 @@ Runs swiftformat tool.
 fastlane unit_tests
 ```
 Runs unit tests.
-### make_icons
+### app_icons
 ```
-fastlane make_icons
+fastlane app_icons
 ```
 Creates app icons.
 
