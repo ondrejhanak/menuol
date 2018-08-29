@@ -1,7 +1,7 @@
 PODS:
   - FSCalendar (2.7.9)
   - Kanna (4.0.1)
-  - PureLayout (3.0.2)
+  - PureLayout (3.1.2)
   - Result (4.0.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -28,7 +28,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   Kanna: 15569a2331b79782a1753cf280c8e69e2a033654
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  PureLayout: 4634d0b61e3b5021166e8ec7c18e9e0ca0720c8b
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   STPopup: da1167250a01584af7bcccb898653185f223ec46
