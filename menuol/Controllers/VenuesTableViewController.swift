@@ -61,11 +61,12 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - Private
 
 	private func setupUI() {
+		self.navigationController?.navigationBar.prefersLargeTitles = true
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
 		self.searchController.dimsBackgroundDuringPresentation = false
+		self.navigationItem.searchController = self.searchController
 		self.definesPresentationContext = true
-		self.tableView.tableHeaderView = self.searchController.searchBar
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 		self.refresher = UIRefreshControl()
 		self.refresher.tintColor = .black

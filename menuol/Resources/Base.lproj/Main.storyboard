@@ -81,7 +81,7 @@
                             <outlet property="delegate" destination="tkD-SZ-76g" id="MZG-jt-X8u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Menu" id="zBm-Ea-UmE">
+                    <navigationItem key="navigationItem" title="Polední menu" id="zBm-Ea-UmE">
                         <barButtonItem key="backBarButtonItem" title="   " id="xB3-XK-WLQ"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

@@ -50,6 +50,7 @@ final class MenuTableViewController: UITableViewController {
 	// MARK: - Private
 
 	private func setupUI() {
+		self.navigationItem.largeTitleDisplayMode = .never
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		self.tableView.estimatedRowHeight = 65
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
