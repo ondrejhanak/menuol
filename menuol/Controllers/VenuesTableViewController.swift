@@ -17,7 +17,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
 	private var result = [Venue]()
 	private var searchController: UISearchController!
-	private var refresher: UIRefreshControl!
 
 	// MARK: - Lifecycle
 
@@ -68,11 +67,9 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.navigationItem.searchController = self.searchController
 		self.definesPresentationContext = true
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-		self.refresher = UIRefreshControl()
-		self.refresher.tintColor = .black
-		self.refresher.backgroundColor = .white
-		self.refresher.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
-		self.tableView?.addSubview(self.refresher)
+		self.refreshControl = UIRefreshControl()
+		self.refreshControl?.tintColor = .black
+		self.refreshControl?.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
@@ -82,7 +79,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	private func fetchData() {
 		let today = Date()
 		self.venueManager.updateVenuesAndMenu(for: today) { result in
-			self.refresher.endRefreshing()
+			self.refreshControl?.endRefreshing()
 			switch result {
 			case .success:
 				self.loadData()
