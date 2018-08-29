@@ -15,8 +15,8 @@ final class AppDelegateTests: XCTestCase {
 		let application = UIApplication.shared
 		let delegate = AppDelegate()
 		let result = delegate.application(application, didFinishLaunchingWithOptions: nil)
-		XCTAssert(result == true)
-		XCTAssert(delegate.window?.rootViewController != nil)
+		XCTAssertTrue(result)
+		XCTAssertNotNil(delegate.window?.rootViewController)
 	}
 
 }

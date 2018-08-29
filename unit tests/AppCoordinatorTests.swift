@@ -14,15 +14,15 @@ final class AppCoordinatorTests: XCTestCase {
 	func testInit() {
 		let window = UIWindow()
 		let coordinator = AppCoordinator(window: window)
-		XCTAssert(coordinator.window == window)
-		XCTAssert(coordinator.window!.rootViewController is UINavigationController)
+		XCTAssertEqual(coordinator.window, window)
+		XCTAssertTrue(coordinator.window!.rootViewController is UINavigationController)
 	}
 
 	func testStart() {
 		let coordinator = AppCoordinator(window: UIWindow())
 		coordinator.start()
 		let topVC = coordinator.navigationController.topViewController
-		XCTAssert(topVC is VenuesTableViewController)
+		XCTAssertTrue(topVC is VenuesTableViewController)
 	}
 
 	func testVenue() {
@@ -30,7 +30,7 @@ final class AppCoordinatorTests: XCTestCase {
 		let coordinator = AppCoordinator(window: UIWindow())
 		coordinator.didSelect(venue: venue)
 		let topVC = coordinator.navigationController.topViewController as? MenuTableViewController
-		XCTAssert(topVC?.venue == venue)
+		XCTAssertEqual(topVC?.venue, venue)
 	}
 
 }

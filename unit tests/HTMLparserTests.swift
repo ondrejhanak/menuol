@@ -17,57 +17,57 @@ final class HTMLParserTests: XCTestCase {
 
 		// venues count
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssert(venues.count == 155)
+		XCTAssertEqual(venues.count, 155)
 
 		// first venue details
 		let venue = venues[0]
-		XCTAssert(venue.slug == "Blues-Rock-CAFE-id1207")
-		XCTAssert(venue.name == "Blues Rock CAFE")
-		XCTAssert(venue.imageURL == URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
-		XCTAssert(venue.menuTimeDescription == "11:00 - 14:00")
-		XCTAssert(venue.isFavorited == false)
+		XCTAssertEqual(venue.slug, "Blues-Rock-CAFE-id1207")
+		XCTAssertEqual(venue.name, "Blues Rock CAFE")
+		XCTAssertEqual(venue.imageURL, URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
+		XCTAssertEqual(venue.menuTimeDescription, "11:00 - 14:00")
+		XCTAssertEqual(venue.isFavorited, false)
 
 		// first venue menu items
-		XCTAssert(venue.menuItems.count == 6)
-		XCTAssert(venue.menuItems(for: "2018-08-23").count == 6)
-		XCTAssert(venue.menuItems(for: "2018-08-24").count == 0)
+		XCTAssertEqual(venue.menuItems.count, 6)
+		XCTAssertEqual(venue.menuItems(for: "2018-08-23").count, 6)
+		XCTAssertEqual(venue.menuItems(for: "2018-08-24").count, 0)
 
 		// first menu item
 		let firstItem = venue.menuItems.first!
-		XCTAssert(firstItem.title == "Kmínová s vejcem")
-		XCTAssert(firstItem.day == "2018-08-23")
-		XCTAssert(firstItem.order == 0)
-		XCTAssert(firstItem.orderDescription == "")
-		XCTAssert(firstItem.priceDescription == "")
+		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
+		XCTAssertEqual(firstItem.day, "2018-08-23")
+		XCTAssertEqual(firstItem.order, 0)
+		XCTAssertEqual(firstItem.orderDescription, "")
+		XCTAssertEqual(firstItem.priceDescription, "")
 
 		// last menu item
 		let lastItem = venue.menuItems.last!
-		XCTAssert(lastItem.title == "Těstovinový salát s kuřecím masem")
-		XCTAssert(lastItem.day == "2018-08-23")
-		XCTAssert(lastItem.order == 5)
-		XCTAssert(lastItem.orderDescription == "5.")
-		XCTAssert(lastItem.priceDescription == "98 Kč") // hard space
+		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
+		XCTAssertEqual(lastItem.day, "2018-08-23")
+		XCTAssertEqual(lastItem.order, 5)
+		XCTAssertEqual(lastItem.orderDescription, "5.")
+		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
 
 		// restaurant without menu info
-		XCTAssert(venues[8].menuItems.count == 0)
+		XCTAssertEqual(venues[8].menuItems.count, 0)
 
 		// restaurant witht footer info
-		XCTAssert(venues[4].menuItems.count == 6)
-		XCTAssert(venues[4].menuItems[5].title == "Eva a Vašek, KONCERT v sále u Sklenářů 12. října 2018")
+		XCTAssertEqual(venues[4].menuItems.count, 6)
+		XCTAssertEqual(venues[4].menuItems[5].title, "Eva a Vašek, KONCERT v sále u Sklenářů 12. října 2018")
 	}
 
 	func testVenuesParsing_wrongStructure() {
 		let parser = HTMLParser()
 		let html = "HTML without proper structure"
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssert(venues.count == 0)
+		XCTAssertEqual(venues.count, 0)
 	}
 
 	func testVenuesParsing_notHTML() {
 		let parser = HTMLParser()
 		let html = ""
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssert(venues.count == 0)
+		XCTAssertEqual(venues.count, 0)
 	}
 
 	func testMenuParsingCorrect() {
@@ -75,23 +75,23 @@ final class HTMLParserTests: XCTestCase {
 		let html = self.loadHTML(from: "Menu.html")
 		let menuItems = parser.menuItems(from: html)
 
-		XCTAssert(menuItems.count == 12)
+		XCTAssertEqual(menuItems.count, 12)
 
 		// first menu item
 		let firstItem = menuItems.first!
-		XCTAssert(firstItem.title == "Kmínová s vejcem")
-		XCTAssert(firstItem.day == "2018-08-23")
-		XCTAssert(firstItem.order == 0)
-		XCTAssert(firstItem.orderDescription == "")
-		XCTAssert(firstItem.priceDescription == "")
+		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
+		XCTAssertEqual(firstItem.day, "2018-08-23")
+		XCTAssertEqual(firstItem.order, 0)
+		XCTAssertEqual(firstItem.orderDescription, "")
+		XCTAssertEqual(firstItem.priceDescription, "")
 
 		// last menu item
 		let lastItem = menuItems.last!
-		XCTAssert(lastItem.title == "Těstovinový salát s kuřecím masem")
-		XCTAssert(lastItem.day == "2018-08-24")
-		XCTAssert(lastItem.order == 5)
-		XCTAssert(lastItem.orderDescription == "5.")
-		XCTAssert(lastItem.priceDescription == "98 Kč") // hard space
+		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
+		XCTAssertEqual(lastItem.day, "2018-08-24")
+		XCTAssertEqual(lastItem.order, 5)
+		XCTAssertEqual(lastItem.orderDescription, "5.")
+		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
 	}
 
 	// MARK: - Private

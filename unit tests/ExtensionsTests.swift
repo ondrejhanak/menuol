@@ -14,23 +14,23 @@ final class ExtensionsTests: XCTestCase {
 	func testStringCapitalization() {
 		var original = "hello world!"
 		let new = original.capitalizingFirstLetter()
-		XCTAssert(new == "Hello world!")
+		XCTAssertEqual(new, "Hello world!")
 		original.capitalizeFirstLetter()
-		XCTAssert(original == "Hello world!")
+		XCTAssertEqual(original, "Hello world!")
 	}
 
 	func testDateStringOnly() {
 		let components = DateComponents(year: 2018, month: 08, day: 23, hour: 16, minute: 4, second: 10)
 		let date = Calendar.current.date(from: components)!
 		let string = DateFormatter.dateOnlyString(from: date)
-		XCTAssert(string == "2018-08-23")
+		XCTAssertEqual(string, "2018-08-23")
 	}
 
 	func testCzechDateString() {
 		let components = DateComponents(year: 2018, month: 08, day: 23, hour: 16, minute: 4, second: 10)
 		let date = Calendar.current.date(from: components)!
 		let string = DateFormatter.czechDateString(from: date)
-		XCTAssert(string == "čtvrtek 23. srpna")
+		XCTAssertEqual(string, "čtvrtek 23. srpna")
 	}
 
 	func testImageWithColor() {
@@ -43,13 +43,13 @@ final class ExtensionsTests: XCTestCase {
 
 		// check size
 		let image = UIImage(color: color, size: size)!
-		XCTAssert(image.size == size)
+		XCTAssertEqual(image.size, size)
 
 		// check color (data are stored as [b, g, r, a])
 		let data: UnsafePointer<UInt8> = CFDataGetBytePtr(image.cgImage!.dataProvider!.data)
-		XCTAssert(UInt8(red) == data[2])
-		XCTAssert(UInt8(green) == data[1])
-		XCTAssert(UInt8(blue) == data[0])
-		XCTAssert(UInt8(alpha) == data[3])
+		XCTAssertEqual(UInt8(red), data[2])
+		XCTAssertEqual(UInt8(green), data[1])
+		XCTAssertEqual(UInt8(blue), data[0])
+		XCTAssertEqual(UInt8(alpha), data[3])
 	}
 }
