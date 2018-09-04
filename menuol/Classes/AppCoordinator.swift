@@ -13,15 +13,16 @@ protocol VenuesViewControllerDelegate: class {
 }
 
 final class AppCoordinator {
-	internal let navigationController: UINavigationController
-	internal var window: UIWindow?
-	internal let venueManager = VenueManager()
+	private(set) var navigationController: UINavigationController
+	private(set) var window: UIWindow?
+	private let venueManager: VenueManager
 
 	// MARK: - Lifecycle
 
 	init(window: UIWindow?) {
 		self.window = window
 		self.navigationController = UINavigationController()
+		self.venueManager = VenueManager()
 		self.window?.rootViewController = self.navigationController
 	}
 
