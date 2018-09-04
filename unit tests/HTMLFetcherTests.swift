@@ -13,21 +13,6 @@ private let kNetworkTimeout = 10.0
 
 final class HTMLFetcherTests: XCTestCase {
 
-	func testFetchHTMLFailure() {
-		let expectation = XCTestExpectation(description: "HTML fetching")
-		let fetcher = HTMLFetcher()
-		let url = URL(string: "https://some.hopefully.non.existing.url.com")!
-		fetcher.fetchHTML(url: url) { result in
-			switch result {
-			case .success:
-				XCTFail("HTML fetching unexpectedly succeeded.")
-			case .failure:
-				expectation.fulfill()
-			}
-		}
-		self.wait(for: [expectation], timeout: kNetworkTimeout)
-	}
-
 	func testFetchVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching venue HTML")
 		let fetcher = HTMLFetcher()
