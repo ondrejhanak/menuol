@@ -91,7 +91,8 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	private func loadData(nameFilter: String? = nil) {
-		self.result = self.venueManager.find(name: nameFilter ?? "")
+		let name = nameFilter ?? ""
+		self.result = self.venueManager.find(name: name)
 		self.tableView.reloadDataAnimated()
 	}
 
