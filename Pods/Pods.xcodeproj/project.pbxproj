@@ -40,7 +40,7 @@
 		30F2737896C43BA38C50D0896AAD5678 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC67ED5BB0628B4CF17814FAC947B3D /* FSCalendarDelegationProxy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		35E8D1D1313F808410177127026A7313 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C513DD82DE4BDED7A7707B547DF840D0 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3A3BAF362CE7E478F887336DCAA72EE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363AE9BA8F76FD357B3AD5AC5F71195B /* Foundation.framework */; };
-		3AB4FE6E3DEDA892A3C7BF677B0902B7 /* Pods-menuol-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CA0B704530277728E067FAD077B345 /* Pods-menuol-dummy.m */; };
+		3AB4FE6E3DEDA892A3C7BF677B0902B7 /* Pods-menuol-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 800B179FCCF635347A50FED94749FD01 /* Pods-menuol-dummy.m */; };
 		3B352F36B04A10AA167B50DD99BB8A9A /* NSButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E1D93F799E6F61B687BD5A4DB5677B /* NSButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CB3FD7C6B80863957FA840993FB15CA /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 005AD0FC0F4EE4781F53D5AD4701E3BB /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3D5DD7BBC11C432A8859A4FD1374B19D /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D57CD99FA957D46CDF72008E6EBFCA0 /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,7 +86,6 @@
 		8430771DAC32C6BE1901A5026A40E674 /* SDWebImageGIFCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 10898B4EA674FCB3B680D49789689C26 /* SDWebImageGIFCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		847CFF402E58284ACC92C787ABB61D5B /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A52E4844730A1136DA0EAA8BABEDB8B /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87FE8F4C6E5D8D206CFF0832CAF25689 /* Result-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0B7872CFC4021106319354F52DA2ED /* Result-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89D36815B82109A571ACF4FA6783FD99 /* Pods-ui tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F6E41C9FD8D30CD5C7F5483790FD728 /* Pods-ui tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DF0CCCEA15DD6B26D1910E87AABAAC0 /* STPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 649D637A301E3CE0420AB28407116C93 /* STPopup-dummy.m */; };
 		9193E785CC4866737101F95BE6FB7BE6 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = C0DF4D9FCA7304EEF4AA8C49623109CE /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		930905E4CA54211CEC4E0A7A2A4BEE46 /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8CEA26F8E036F801EC5616186B7A79 /* libxmlParserOption.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -121,11 +120,10 @@
 		C1BCF35FB7C38FF9FB0B71F2B6F8175D /* FSCalendarCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F51E0B2BE7CFF3D68AE84929870C3CD /* FSCalendarCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C26FF26ADF71AC8392801C9627F2F061 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363AE9BA8F76FD357B3AD5AC5F71195B /* Foundation.framework */; };
 		C3707394C5E73EC63EB4F42D940A615D /* FSCalendarDynamicHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 41E311D426AAD4547A84A57803398E8F /* FSCalendarDynamicHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C41A9AF38DA98D52866804DC219D53A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363AE9BA8F76FD357B3AD5AC5F71195B /* Foundation.framework */; };
 		C5FEBE167D7B3B61E70C4032142F1A5B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B480AA9642357F9B8785F7667708486 /* UIView+WebCacheOperation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C666D2021209FCED0414A44795630B86 /* FSCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A921F3A7A89D04B8595FE6787D2A01F /* FSCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C79D9FA66C9EAE8EAE42870FA7C5AB74 /* SDWebImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = DE42CC44283287B10EDA9FDD30846C83 /* SDWebImageFrame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C83EF41CDA3B4F33A71EE23F3B2B155D /* Pods-unit tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D93529BBC28228331933AD453453FCA3 /* Pods-unit tests-dummy.m */; };
+		C83EF41CDA3B4F33A71EE23F3B2B155D /* Pods-unit tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DFB99A99C779C21DD430CB1A9F0522 /* Pods-unit tests-dummy.m */; };
 		C894180746D22757EC122D66E32630D9 /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BD74B5E7F9DD08979BAF6D0C37E016 /* FSCalendarCollectionViewLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C8966B12AEA4D6FFBD9B428041D5BF5F /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F29D04299F9D72B7A7B97C8DD17DF2 /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9F76AE915B4B5181D29DC29585465DA /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EDDF7566AB21E0F9689D419F7FBB88 /* FSCalendarWeekdayView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -136,15 +134,14 @@
 		D7F5D3C520BDACF4B0CE25196A90CD73 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A1035A0F39CA0436679CEA2CACBAAA /* NSData+ImageContentType.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D9419D72FC2C2A70AC189DE9568BC9E8 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3317A1877BD00E604471737D0F085705 /* FSCalendarCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D990645699663E8ACB2E21D0873FDEF5 /* FSCalendarTransitionCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8EA10AF7B557B83A4E0266099FEBFE /* FSCalendarTransitionCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC3DE0A1FCF9C216E79409D120363E08 /* Pods-unit tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C318AE71BC370CD81E5100FFD19C0102 /* Pods-unit tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3DE0A1FCF9C216E79409D120363E08 /* Pods-unit tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B0F225536BED11B897267D55E0453D /* Pods-unit tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E08F3931495C78FBFEB5D73392739276 /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413FC41EDFB9CFBBF27EFAB9B8A083C /* libxmlHTMLDocument.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E127933A534A6E833904A525146582DF /* SDImageCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 59982167435DB380D8010F3465CFC15A /* SDImageCacheConfig.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E247DC1C9514597D905978B800EA72A7 /* Pods-menuol-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F61F630FFE8ADDD9D32C0E15B2AA868E /* Pods-menuol-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E247DC1C9514597D905978B800EA72A7 /* Pods-menuol-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C460F2A09D8BA23ABFC83D756252B5 /* Pods-menuol-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E77A6D3B9BE307082C5BD3DE8A558974 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E9E15BD1286265423A6C79A3918475F0 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E97730C5AA2CA3D0781DDA979107D954 /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A56A549E5C9E87AACF90ADE4A63CF /* ResultProtocol.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EB101A55B2DBF3E042B2E0D8C674BF89 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 88563E1E311CE75C9D9ED07DF5D690F5 /* SDWebImageCompat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EBADBD25F22E9018CB494C7C1E92F7F9 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 5375D23A75B689F36C0836F730EBE5FD /* STPopupControllerTransitioningSlideVertical.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EF65670D791D588F6A630AFACD14B0AF /* Pods-ui tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F515A4F99B0C4E98379FD9508D405D8 /* Pods-ui tests-dummy.m */; };
 		EFE965A2C358DD7037CFED7F6A699626 /* FSCalendarCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 971404AB060E19A78870A6AA8BE470C4 /* FSCalendarCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F06075DD847840531987A7544C0BA50B /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E4412461A70C89E34E3181646994C7C /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F265F1E6F01CE0462AEB9E63588E581F /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712F5E6F127A183CEED07D87EA4351E /* STPopupControllerTransitioningFade.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -160,13 +157,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1483CAB5CADF9F9E4186F820F3C271FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62F513DE25B0CB032F5550F1222C2785;
-			remoteInfo = STPopup;
-		};
 		1DCB81543562C58DA0D248426FB88E7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -175,20 +165,6 @@
 			remoteInfo = STPopup;
 		};
 		25EC9291961026BC79711F40CCA3FE7B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07A12B7F0BCF1035EC223902CB48A020;
-			remoteInfo = Result;
-		};
-		38E305B65DBF177060DE3FDEE293FE0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BEF0464B247AA9886380F09E03C021E;
-			remoteInfo = Kanna;
-		};
-		423DA361D9C6FE3DE8DEF199BBC7BDBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -223,33 +199,12 @@
 			remoteGlobalIDString = 62F513DE25B0CB032F5550F1222C2785;
 			remoteInfo = STPopup;
 		};
-		887FE3E5D03814406EC63CFA4CB0130A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8EDD1F506ABF028D968F0566FC891ABA;
-			remoteInfo = SDWebImage;
-		};
-		934954015F8972F63178731E726689CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B51BAEDF9EC83B12927A5D5F816C0646;
-			remoteInfo = FSCalendar;
-		};
 		94BA579B758930E515961654E704ACB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8EDD1F506ABF028D968F0566FC891ABA;
 			remoteInfo = SDWebImage;
-		};
-		A20A62718A640458FFB93EFFC0ABD47B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 296CEB0042E5B75CAA6B8A72FD2F37AA;
-			remoteInfo = PureLayout;
 		};
 		C939E7918E827EFCEBCFCD6FF2C3BC8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -290,18 +245,14 @@
 
 /* Begin PBXFileReference section */
 		005AD0FC0F4EE4781F53D5AD4701E3BB /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
-		02AE0C5CA3990E2D37C952B6E8D6D5EB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04763458E7F875CB40E1702B77C7EB50 /* STPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopup.h; path = STPopup/STPopup.h; sourceTree = "<group>"; };
 		08645DC330E9D2B9264FCBBE7CEADA73 /* FSCalendarCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCell.h; path = FSCalendar/FSCalendarCell.h; sourceTree = "<group>"; };
 		089403C28FA1A8F9CDCB0482D838CDF4 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
-		0DF3EE5113763918949A61C1C1DC2537 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E14CECF33F3988350C8855DCC165742 /* NSImage+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+WebCache.m"; path = "SDWebImage/NSImage+WebCache.m"; sourceTree = "<group>"; };
 		0EC67ED5BB0628B4CF17814FAC947B3D /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationProxy.m; path = FSCalendar/FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
 		0F2A3DDF6BC831897C4EE06DFDD8503A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		0F515A4F99B0C4E98379FD9508D405D8 /* Pods-ui tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ui tests-dummy.m"; sourceTree = "<group>"; };
 		10898B4EA674FCB3B680D49789689C26 /* SDWebImageGIFCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageGIFCoder.h; path = SDWebImage/SDWebImageGIFCoder.h; sourceTree = "<group>"; };
 		10C9DBF7A369AC5BCD4E63C17B92DAFC /* STPopup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STPopup-prefix.pch"; sourceTree = "<group>"; };
-		10FB6BBFF41CBFE8B8CAD58C9D42E806 /* Pods-unit tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-unit tests-resources.sh"; sourceTree = "<group>"; };
 		1169713C696F54C247C59504D33C55EA /* FSCalendarTransitionCoordinator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarTransitionCoordinator.m; path = FSCalendar/FSCalendarTransitionCoordinator.m; sourceTree = "<group>"; };
 		1591DD321BE2438C4BDF08ED17E5FF34 /* Kanna.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kanna.swift; path = Sources/Kanna/Kanna.swift; sourceTree = "<group>"; };
 		15C4E56F921820772628585F3B2514F5 /* SDWebImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageTransition.m; path = SDWebImage/SDWebImageTransition.m; sourceTree = "<group>"; };
@@ -326,7 +277,6 @@
 		366013C7434D04698ADBDB2AD04593D1 /* Result-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Result-dummy.m"; sourceTree = "<group>"; };
 		36E898537A43FA7FB0F7C259897D6C4C /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/UIView+WebCache.h"; sourceTree = "<group>"; };
 		39159C117D59DAC2F10C6A9F88194E69 /* Kanna-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kanna-dummy.m"; sourceTree = "<group>"; };
-		3B5B75033845C07CEE00E730CD0CF57A /* Pods-unit tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-unit tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3C4F44726FCC3FD158D2A80C0F053A43 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		3CFD19BE60A527671FAE2B219BE52360 /* Kanna.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kanna.h; path = Sources/Kanna/Kanna.h; sourceTree = "<group>"; };
 		3E1FEF9BF0A4BC85CFF35A24D9DFDC88 /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionView.m; path = FSCalendar/FSCalendarCollectionView.m; sourceTree = "<group>"; };
@@ -336,7 +286,6 @@
 		42C761D290CEB0A60F71C0EDD38D70EB /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		45EDDF7566AB21E0F9689D419F7FBB88 /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		465E95B748E2CB3F4A58E66FE533A413 /* STPopupController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopupController.h; path = STPopup/STPopupController.h; sourceTree = "<group>"; };
-		481411FF9E900871C3A69E4EF8A539E2 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		486B1E4773E94AFB03F39CC99B7EE5C8 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		486E46DDF66BFB423D0FB59FD284E047 /* FSCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSCalendar.xcconfig; sourceTree = "<group>"; };
 		4A52E4844730A1136DA0EAA8BABEDB8B /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
@@ -347,7 +296,6 @@
 		514A56A549E5C9E87AACF90ADE4A63CF /* ResultProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultProtocol.swift; path = Result/ResultProtocol.swift; sourceTree = "<group>"; };
 		5375D23A75B689F36C0836F730EBE5FD /* STPopupControllerTransitioningSlideVertical.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPopupControllerTransitioningSlideVertical.m; path = STPopup/STPopupControllerTransitioningSlideVertical.m; sourceTree = "<group>"; };
 		54AEAA0B422D37EC7C7363B579903C4C /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
-		54FB38E3BE876807C3595159E32C3943 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559952572104BB52FB7A0204E542D720 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+STPopup.m"; path = "STPopup/UIViewController+STPopup.m"; sourceTree = "<group>"; };
 		5630F40F9A360E1C167406D72365BDB6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CAF2EA132EECBB16D793D5127F23E2 /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
@@ -359,43 +307,43 @@
 		5AADBD6789D0434B7AF9124E59D3176F /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		5C49342EE8EBEB45FA601A686FB1287C /* STPopupLeftBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopupLeftBarItem.h; path = STPopup/STPopupLeftBarItem.h; sourceTree = "<group>"; };
 		5C8ADB747820088E36ECE4A1EFA8E41B /* SDWebImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCodersManager.h; path = SDWebImage/SDWebImageCodersManager.h; sourceTree = "<group>"; };
-		5EDF29F43BAD477F79FB065AEB6494BB /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F779B1DC2CA28255BB2D0E2DAC90DA8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		619BBEA7FA07C9C01FA93178CA8B262E /* STPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STPopup.framework; path = STPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6276ABE3C626DFFA4D34A7291DA56362 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		63A02FFCED1638D6947145C322F113D6 /* FSCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FSCalendar.modulemap; sourceTree = "<group>"; };
-		64626B3CC300B068B15C1819BF825F86 /* Pods-menuol-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-menuol-acknowledgements.markdown"; sourceTree = "<group>"; };
 		649D637A301E3CE0420AB28407116C93 /* STPopup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STPopup-dummy.m"; sourceTree = "<group>"; };
 		6530BDC000285D790A5EBB106CDB3FE0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		656F8E2C12A7E87444E9E83313CF1579 /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		6712F5E6F127A183CEED07D87EA4351E /* STPopupControllerTransitioningFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPopupControllerTransitioningFade.m; path = STPopup/STPopupControllerTransitioningFade.m; sourceTree = "<group>"; };
-		68E03F2BBB4768E6C11B1E46606A29F8 /* Pods-unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		69D9DA61845C0C299BF3B8B066D53E69 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarWeekdayView.h; path = FSCalendar/FSCalendarWeekdayView.h; sourceTree = "<group>"; };
-		6BECA6B8F1C5B0D378B9C6BE27B44414 /* Pods-unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-unit tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C35BA67807C774117803AC9E9F3926B /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C90A66E1FA1B050766822FA93DF81B7 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
 		6DB7EFA9CB0B591DE6D44A872F8B4713 /* FSCalendarDelegationFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationFactory.m; path = FSCalendar/FSCalendarDelegationFactory.m; sourceTree = "<group>"; };
-		6F6E41C9FD8D30CD5C7F5483790FD728 /* Pods-ui tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ui tests-umbrella.h"; sourceTree = "<group>"; };
 		6FED5DA519E2A51EF7530958055B0740 /* SDWebImageCoderHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoderHelper.m; path = SDWebImage/SDWebImageCoderHelper.m; sourceTree = "<group>"; };
 		70FB6337BBF3340395C6BCFA297348C5 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		714976D1D7537EF2C83BA4108761DD3A /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		7187073DE5BB77F76D94C54CAF982B1B /* Pods-unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-unit tests.debug.xcconfig"; sourceTree = "<group>"; };
+		71DE87A3103C1056C1321958E011D758 /* Pods-unit tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-unit tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		71DEF77DDFC2982A3E7001DCEB03161F /* FSCalendarStickyHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarStickyHeader.m; path = FSCalendar/FSCalendarStickyHeader.m; sourceTree = "<group>"; };
 		74B4338F2AFDD7379D1836AE5B164EAE /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/SDAnimatedImageRep.m; sourceTree = "<group>"; };
 		782F42317C569E4F71EB56DE2D1C6D1D /* STPopupNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopupNavigationBar.h; path = STPopup/STPopupNavigationBar.h; sourceTree = "<group>"; };
 		786AE37CA3B1F29A4B0E4C53CA924605 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
-		79885F7889249594C798158B53853677 /* Pods_ui_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ui_tests.framework; path = "Pods-ui tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AB36EAAB1E3445C945BE47A24B20069 /* STPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STPopup.framework; path = STPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C968ED07C6CCE298E112BE71CFA341E /* Pods-menuol-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-resources.sh"; sourceTree = "<group>"; };
-		7D46625A2AAEA0646A26D3D81647C059 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_unit_tests.framework; path = "Pods-unit tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F35C66F9C890F1D259CFE8FBC3FD8A1 /* Pods-menuol-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-frameworks.sh"; sourceTree = "<group>"; };
+		7994F58459246FD965B76A6B98FEEC65 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
+		7B568933B4B3766E5361707E53E01669 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
+		7CD71F992234F8B11522B65CE4F84044 /* Pods-unit tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-unit tests-resources.sh"; sourceTree = "<group>"; };
 		7F6DCB53F46814A23DA16010A3A6590C /* STPopupControllerTransitioningSlideVertical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPopupControllerTransitioningSlideVertical.h; path = STPopup/STPopupControllerTransitioningSlideVertical.h; sourceTree = "<group>"; };
+		800B179FCCF635347A50FED94749FD01 /* Pods-menuol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-menuol-dummy.m"; sourceTree = "<group>"; };
 		8124CFD0E2A719C2431AE6E58A94EC37 /* FSCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCollectionViewLayout.h; path = FSCalendar/FSCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
+		82E71C7C98C2A6FA85BF6E1E770158D4 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSCalendar.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8413FC41EDFB9CFBBF27EFAB9B8A083C /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLDocument.swift; path = Sources/Kanna/libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		84341BD9FC5F867FAEB400E656F64D18 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E1E34F42E314D5A64ED6C929458C7F /* Pods-menuol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-menuol.modulemap"; sourceTree = "<group>"; };
+		852B95D0400772D7C477652AB3B6CC67 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_unit_tests.framework; path = "Pods-unit tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85362DD2978023B22EF9F51018B986E0 /* Result.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Result.modulemap; sourceTree = "<group>"; };
-		8639B7FB69E04CB00E895F1482148FCB /* Pods-ui tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ui tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		86ACE03DFF178DCEEB8525172F466E1F /* FSCalendarExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarExtensions.m; path = FSCalendar/FSCalendarExtensions.m; sourceTree = "<group>"; };
+		879122E4E00BC79915AB30003EA676BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88563E1E311CE75C9D9ED07DF5D690F5 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
-		892366EB17AB96F7643245AEF794A93E /* Pods-unit tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-unit tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8A1733714AB98882E3085450E98BD95F /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		8A5863FC9B64B1FA7A284E1CB73996A5 /* Pods-ui tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ui tests-frameworks.sh"; sourceTree = "<group>"; };
 		8B1F04DE660D0607E1D920A6CFDB16EB /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		8B6DC37BA287265B2F663E6996CAA2E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8C94AA3EB674E442BA2814E3C6819398 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
@@ -404,10 +352,12 @@
 		8FABEB8134A5E60F8350A370A6C68475 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		903F8E0BA8945D6A4FE62FD8DDB82275 /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/UIView+WebCache.m"; sourceTree = "<group>"; };
 		90B9F6695C910930D4D19B00B7DE93EE /* FSCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendar.m; path = FSCalendar/FSCalendar.m; sourceTree = "<group>"; };
-		923E20B5FDFAE3F8390783F657A79082 /* Pods-menuol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-menuol.modulemap"; sourceTree = "<group>"; };
-		93047044FF56CD8B8D7AD718EAC44860 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91EAE2E19047D8F95981ABE50F9C1F76 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_menuol.framework; path = "Pods-menuol.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93DFB99A99C779C21DD430CB1A9F0522 /* Pods-unit tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-unit tests-dummy.m"; sourceTree = "<group>"; };
 		971404AB060E19A78870A6AA8BE470C4 /* FSCalendarCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCalculator.h; path = FSCalendar/FSCalendarCalculator.h; sourceTree = "<group>"; };
+		9A665CD89640C13B94383E65C15ECB9E /* Pods-menuol-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-resources.sh"; sourceTree = "<group>"; };
+		9A7221B42AE1C1F693739DC5234A4C8C /* Pods-menuol-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-menuol-acknowledgements.plist"; sourceTree = "<group>"; };
 		9B3F78C32B8B98281FA49F5C088919DE /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Kanna/Deprecated.swift; sourceTree = "<group>"; };
 		9D57CD99FA957D46CDF72008E6EBFCA0 /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
 		9D619996A420E6D3E3AC480F4E05A815 /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SDWebImage.modulemap; sourceTree = "<group>"; };
@@ -417,11 +367,15 @@
 		A13EB0118AD31B62A1A83F0D515D7684 /* Kanna.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kanna.modulemap; sourceTree = "<group>"; };
 		A1D914B3F282A50841ED6B69A3704FCC /* FSCalendarDelegationProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDelegationProxy.h; path = FSCalendar/FSCalendarDelegationProxy.h; sourceTree = "<group>"; };
 		A1F29D04299F9D72B7A7B97C8DD17DF2 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
+		A563C0AA61E7FA020836C60DC7C899E4 /* Pods-unit tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-unit tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A8C9B3F79B31C6A703812E2E92EDC1C3 /* FSCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSCalendar-dummy.m"; sourceTree = "<group>"; };
 		A98D4A5E5AE20090AE64D6372580BBAF /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Result/Result.swift; sourceTree = "<group>"; };
+		AA1C87BDD56CF64010A265A278757A75 /* Pods-menuol-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-menuol-frameworks.sh"; sourceTree = "<group>"; };
 		AA61F77B1F6662CB8871F034C4DCED8D /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		AB2F8AB04481C61AD9447A3DED1D5549 /* Kanna.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kanna.xcconfig; sourceTree = "<group>"; };
+		AC0EFAAF24B6F969DA69CCEB5CF478F6 /* Pods-unit tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-unit tests-frameworks.sh"; sourceTree = "<group>"; };
 		AC8F884BF7C6BFE0B31EE01FA085B05D /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		ADECF8CA2BC45722C1FF4D2D87A31361 /* Pods-unit tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-unit tests.modulemap"; sourceTree = "<group>"; };
 		AEB8013366DD1D578831CB42EEB6D957 /* FSCalendarStickyHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarStickyHeader.h; path = FSCalendar/FSCalendarStickyHeader.h; sourceTree = "<group>"; };
 		AF8CEA26F8E036F801EC5616186B7A79 /* libxmlParserOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlParserOption.swift; path = Sources/Kanna/libxmlParserOption.swift; sourceTree = "<group>"; };
 		B00E6D9BE4F9DF299A1DC54839DAD75B /* SDWebImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoder.h; path = SDWebImage/SDWebImageCoder.h; sourceTree = "<group>"; };
@@ -430,65 +384,55 @@
 		B4CFB76D51C81E97E51400E683CC93F5 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+STPopup.h"; path = "STPopup/UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		B592441DAF80FC3D07480DDB9B5ED890 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		B7EDD4F8BC5AAB397CA70690A4672E4C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9FEA264B581C07E5383365DEF3F6D89 /* Pods-ui tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ui tests.release.xcconfig"; sourceTree = "<group>"; };
 		BA25371D25757B0284185F5DABB40704 /* SDWebImageGIFCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageGIFCoder.m; path = SDWebImage/SDWebImageGIFCoder.m; sourceTree = "<group>"; };
-		BA52623BB200322CE31AB22FD8CE1777 /* Pods-ui tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ui tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BB215A3D0316DC4F658C307891C16E24 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_menuol.framework; path = "Pods-menuol.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09A1AFEB81ED31C5CFFD5961278BB98 /* FSCalendarScopeHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarScopeHandle.m; path = FSCalendar/FSCalendarScopeHandle.m; sourceTree = "<group>"; };
 		C0DF4D9FCA7304EEF4AA8C49623109CE /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
 		C1FA8CE8E85E8614FE9BD80834039573 /* UIResponder+STPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIResponder+STPopup.h"; path = "STPopup/UIResponder+STPopup.h"; sourceTree = "<group>"; };
-		C318AE71BC370CD81E5100FFD19C0102 /* Pods-unit tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-unit tests-umbrella.h"; sourceTree = "<group>"; };
 		C513DD82DE4BDED7A7707B547DF840D0 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		C6DCC31C8BFD62A4A37CBE5C2AD724E9 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7BC60FF61262A672710C04E440A354 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		CD2E7389E39CF8B033740A37000549B8 /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLNode.swift; path = Sources/Kanna/libxmlHTMLNode.swift; sourceTree = "<group>"; };
 		CEDA8717D8409BBC0FBEB0D6458E8CF8 /* FSCalendarAppearance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarAppearance.m; path = FSCalendar/FSCalendarAppearance.m; sourceTree = "<group>"; };
 		CEFCDFB4143F78FC31FF6DED419409A2 /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/SDWebImageTransition.h; sourceTree = "<group>"; };
+		D04BF17B609DFF474E5AD1470CDB3962 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22B6B95248F1D24A87873B5ADEB586A /* FSCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSCalendar-umbrella.h"; sourceTree = "<group>"; };
-		D4A037C705114078DF6CF725A061075F /* Pods-ui tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ui tests-resources.sh"; sourceTree = "<group>"; };
 		D50F7F914EFDF11711A187F9864F00F8 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
 		D53AFB6C4C29F01D10535A526934CE44 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		D5CA0B704530277728E067FAD077B345 /* Pods-menuol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-menuol-dummy.m"; sourceTree = "<group>"; };
 		D670D6BC35C0AE7B88B7BA27F086CE8F /* SDWebImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoderHelper.h; path = SDWebImage/SDWebImageCoderHelper.h; sourceTree = "<group>"; };
-		D714A4DF1F52EB0A6B735692E9BDD639 /* Pods-unit tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-unit tests-frameworks.sh"; sourceTree = "<group>"; };
 		D72F119C26412B43B9138918F0B9D9F8 /* STPopupLeftBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPopupLeftBarItem.m; path = STPopup/STPopupLeftBarItem.m; sourceTree = "<group>"; };
 		D74014DE244BE878BBC9FF8B0A30DC41 /* STPopupController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPopupController.m; path = STPopup/STPopupController.m; sourceTree = "<group>"; };
-		D93529BBC28228331933AD453453FCA3 /* Pods-unit tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-unit tests-dummy.m"; sourceTree = "<group>"; };
+		D7C460F2A09D8BA23ABFC83D756252B5 /* Pods-menuol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-menuol-umbrella.h"; sourceTree = "<group>"; };
 		D98B81FE1D9CED0CBF1CAE628B7E7B12 /* SDWebImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageFrame.h; path = SDWebImage/SDWebImageFrame.h; sourceTree = "<group>"; };
 		DA69D066C8C1A3D84BBBE17B6225A8B1 /* SDAnimatedImageRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageRep.h; path = SDWebImage/SDAnimatedImageRep.h; sourceTree = "<group>"; };
 		DB8EA10AF7B557B83A4E0266099FEBFE /* FSCalendarTransitionCoordinator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarTransitionCoordinator.h; path = FSCalendar/FSCalendarTransitionCoordinator.h; sourceTree = "<group>"; };
-		DDA89476BC114AE4BB91B54A7832FF72 /* Pods-ui tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ui tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDE444A0682DA85E51A3C033FE044FAC /* NoError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoError.swift; path = Result/NoError.swift; sourceTree = "<group>"; };
 		DE42CC44283287B10EDA9FDD30846C83 /* SDWebImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageFrame.m; path = SDWebImage/SDWebImageFrame.m; sourceTree = "<group>"; };
 		DE492B9E23D4D75F1212827DE29CC90A /* FSCalendarHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarHeaderView.h; path = FSCalendar/FSCalendarHeaderView.h; sourceTree = "<group>"; };
 		DF3665450F24A1B0D588D3A3FBBD07DF /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		E0174AED2724B6B02DC27A1A8B114F9B /* FSCalendarConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarConstants.h; path = FSCalendar/FSCalendarConstants.h; sourceTree = "<group>"; };
 		E05F95468513A293DE6CD60CBCDF6D06 /* STPopupNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPopupNavigationBar.m; path = STPopup/STPopupNavigationBar.m; sourceTree = "<group>"; };
-		E1E2DA2F3F43ECCBD51B5AA9243CB113 /* Pods-menuol-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-menuol-acknowledgements.plist"; sourceTree = "<group>"; };
 		E2DEBB906B9B4D6884FC060B6E21F66C /* FSCalendarHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarHeaderView.m; path = FSCalendar/FSCalendarHeaderView.m; sourceTree = "<group>"; };
 		E39E21D8F89F35CFB590C2A8AC495EEB /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
+		E3E69B9B3C42133867269EE902BA4C6C /* Pods-menuol-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-menuol-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E55839E204D3E308A68B85EBA394B58E /* UIResponder+STPopup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+STPopup.m"; path = "STPopup/UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		E588602BCEF9584B6333B48C0AEF6C71 /* FSCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSCalendar-prefix.pch"; sourceTree = "<group>"; };
 		E5E18B362BA4E9947065A61C24C93C6D /* Kanna-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-prefix.pch"; sourceTree = "<group>"; };
-		E964080C3111EFA05BDB5AA69B04426B /* Pods-unit tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-unit tests.modulemap"; sourceTree = "<group>"; };
 		E97B5914B17E5D74710694D3F9F2C901 /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		E9E15BD1286265423A6C79A3918475F0 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-		EA1666912977AC7E1005F2C58DD22290 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
 		EA21E46F27ABCCD0602D0F21193D996C /* SDWebImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoder.m; path = SDWebImage/SDWebImageCoder.m; sourceTree = "<group>"; };
 		ECB445C78CB7845A022093BA351D816B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDACF70789695631743463D69D5692BA /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F058CD45DA80533FACF32593A088E54E /* Pods-ui tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ui tests.modulemap"; sourceTree = "<group>"; };
 		F12BCCB6D45EEA7CC110257F4267A064 /* NSImage+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+WebCache.h"; path = "SDWebImage/NSImage+WebCache.h"; sourceTree = "<group>"; };
+		F3B0F225536BED11B897267D55E0453D /* Pods-unit tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-unit tests-umbrella.h"; sourceTree = "<group>"; };
 		F54BAEAFFA2A372ACE1D079CDB28A90A /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
-		F61F630FFE8ADDD9D32C0E15B2AA868E /* Pods-menuol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-menuol-umbrella.h"; sourceTree = "<group>"; };
 		F6BD74B5E7F9DD08979BAF6D0C37E016 /* FSCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionViewLayout.m; path = FSCalendar/FSCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
 		F6FD31494386F43042F0FF0EA13EBD10 /* AnyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyError.swift; path = Result/AnyError.swift; sourceTree = "<group>"; };
 		F71E433570A6FA509BF41CBA8DDF9D2C /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
 		F8061C5C68A7B245F49707D25F01EEEE /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
+		F935F894D5D4FD1C1E964B992D6F4BFD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A1035A0F39CA0436679CEA2CACBAAA /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		F9C5045EB849E904FD3AAB79374FBEC3 /* Pods-unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE321CB3D69FE31FAC1439FFDA4F9D67 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
-		FE7E59C827924FB4C290BC1102703331 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSCalendar.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE154C987F5E8546EB5F93EA08E2E77 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF001F09B92AB0F4B7AAE3509D37F847 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,14 +441,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEFF56A66D0AFE1FCD6120ADB337DF3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18106FDBD25159640DEE379F2D677468 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C41A9AF38DA98D52866804DC219D53A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,22 +528,6 @@
 			path = "../Target Support Files/SDWebImage";
 			sourceTree = "<group>";
 		};
-		2006A642FDCF70D9FDDB4D9E17C79B29 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FE7E59C827924FB4C290BC1102703331 /* FSCalendar.framework */,
-				93047044FF56CD8B8D7AD718EAC44860 /* Kanna.framework */,
-				BB215A3D0316DC4F658C307891C16E24 /* Pods_menuol.framework */,
-				79885F7889249594C798158B53853677 /* Pods_ui_tests.framework */,
-				7D46625A2AAEA0646A26D3D81647C059 /* Pods_unit_tests.framework */,
-				481411FF9E900871C3A69E4EF8A539E2 /* PureLayout.framework */,
-				EDACF70789695631743463D69D5692BA /* Result.framework */,
-				5EDF29F43BAD477F79FB065AEB6494BB /* SDWebImage.framework */,
-				7AB36EAAB1E3445C945BE47A24B20069 /* STPopup.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2356C5A39F513909D8E381976512DE67 /* Kanna */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,22 +572,22 @@
 			path = "../Target Support Files/Kanna";
 			sourceTree = "<group>";
 		};
-		52A04C534863BDE90CAED69008C71760 /* Pods-unit tests */ = {
+		7AA552A1D5D28B5B58A01D9FC4531C47 /* Pods-menuol */ = {
 			isa = PBXGroup;
 			children = (
-				54FB38E3BE876807C3595159E32C3943 /* Info.plist */,
-				E964080C3111EFA05BDB5AA69B04426B /* Pods-unit tests.modulemap */,
-				892366EB17AB96F7643245AEF794A93E /* Pods-unit tests-acknowledgements.markdown */,
-				3B5B75033845C07CEE00E730CD0CF57A /* Pods-unit tests-acknowledgements.plist */,
-				D93529BBC28228331933AD453453FCA3 /* Pods-unit tests-dummy.m */,
-				D714A4DF1F52EB0A6B735692E9BDD639 /* Pods-unit tests-frameworks.sh */,
-				10FB6BBFF41CBFE8B8CAD58C9D42E806 /* Pods-unit tests-resources.sh */,
-				C318AE71BC370CD81E5100FFD19C0102 /* Pods-unit tests-umbrella.h */,
-				6BECA6B8F1C5B0D378B9C6BE27B44414 /* Pods-unit tests.debug.xcconfig */,
-				68E03F2BBB4768E6C11B1E46606A29F8 /* Pods-unit tests.release.xcconfig */,
+				879122E4E00BC79915AB30003EA676BF /* Info.plist */,
+				84E1E34F42E314D5A64ED6C929458C7F /* Pods-menuol.modulemap */,
+				E3E69B9B3C42133867269EE902BA4C6C /* Pods-menuol-acknowledgements.markdown */,
+				9A7221B42AE1C1F693739DC5234A4C8C /* Pods-menuol-acknowledgements.plist */,
+				800B179FCCF635347A50FED94749FD01 /* Pods-menuol-dummy.m */,
+				AA1C87BDD56CF64010A265A278757A75 /* Pods-menuol-frameworks.sh */,
+				9A665CD89640C13B94383E65C15ECB9E /* Pods-menuol-resources.sh */,
+				D7C460F2A09D8BA23ABFC83D756252B5 /* Pods-menuol-umbrella.h */,
+				7994F58459246FD965B76A6B98FEEC65 /* Pods-menuol.debug.xcconfig */,
+				7B568933B4B3766E5361707E53E01669 /* Pods-menuol.release.xcconfig */,
 			);
-			name = "Pods-unit tests";
-			path = "Target Support Files/Pods-unit tests";
+			name = "Pods-menuol";
+			path = "Target Support Files/Pods-menuol";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -676,37 +596,24 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
 				9E46A841039A2C3D028C2A6BF9AD1597 /* Pods */,
-				2006A642FDCF70D9FDDB4D9E17C79B29 /* Products */,
-				93E1723EEAD83846BC39192E9E20719D /* Targets Support Files */,
+				96F270C8687EA7A5094CE4A5BE72B310 /* Products */,
+				FADBB0FADE6DC7573B9F5CA904B03E65 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E3168CFD7B8D71C768117565DAE8D82 /* Pods-ui tests */ = {
+		96F270C8687EA7A5094CE4A5BE72B310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DF3EE5113763918949A61C1C1DC2537 /* Info.plist */,
-				F058CD45DA80533FACF32593A088E54E /* Pods-ui tests.modulemap */,
-				8639B7FB69E04CB00E895F1482148FCB /* Pods-ui tests-acknowledgements.markdown */,
-				BA52623BB200322CE31AB22FD8CE1777 /* Pods-ui tests-acknowledgements.plist */,
-				0F515A4F99B0C4E98379FD9508D405D8 /* Pods-ui tests-dummy.m */,
-				8A5863FC9B64B1FA7A284E1CB73996A5 /* Pods-ui tests-frameworks.sh */,
-				D4A037C705114078DF6CF725A061075F /* Pods-ui tests-resources.sh */,
-				6F6E41C9FD8D30CD5C7F5483790FD728 /* Pods-ui tests-umbrella.h */,
-				DDA89476BC114AE4BB91B54A7832FF72 /* Pods-ui tests.debug.xcconfig */,
-				B9FEA264B581C07E5383365DEF3F6D89 /* Pods-ui tests.release.xcconfig */,
+				82E71C7C98C2A6FA85BF6E1E770158D4 /* FSCalendar.framework */,
+				6C35BA67807C774117803AC9E9F3926B /* Kanna.framework */,
+				91EAE2E19047D8F95981ABE50F9C1F76 /* Pods_menuol.framework */,
+				852B95D0400772D7C477652AB3B6CC67 /* Pods_unit_tests.framework */,
+				C6DCC31C8BFD62A4A37CBE5C2AD724E9 /* PureLayout.framework */,
+				D04BF17B609DFF474E5AD1470CDB3962 /* Result.framework */,
+				84341BD9FC5F867FAEB400E656F64D18 /* SDWebImage.framework */,
+				619BBEA7FA07C9C01FA93178CA8B262E /* STPopup.framework */,
 			);
-			name = "Pods-ui tests";
-			path = "Target Support Files/Pods-ui tests";
-			sourceTree = "<group>";
-		};
-		93E1723EEAD83846BC39192E9E20719D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A23BE17E7ED0CEE236E14641DAC0ED61 /* Pods-menuol */,
-				7E3168CFD7B8D71C768117565DAE8D82 /* Pods-ui tests */,
-				52A04C534863BDE90CAED69008C71760 /* Pods-unit tests */,
-			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9E46A841039A2C3D028C2A6BF9AD1597 /* Pods */ = {
@@ -720,24 +627,6 @@
 				AAEFB6A71C67E160B44E8D9600E63A7C /* STPopup */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		A23BE17E7ED0CEE236E14641DAC0ED61 /* Pods-menuol */ = {
-			isa = PBXGroup;
-			children = (
-				02AE0C5CA3990E2D37C952B6E8D6D5EB /* Info.plist */,
-				923E20B5FDFAE3F8390783F657A79082 /* Pods-menuol.modulemap */,
-				64626B3CC300B068B15C1819BF825F86 /* Pods-menuol-acknowledgements.markdown */,
-				E1E2DA2F3F43ECCBD51B5AA9243CB113 /* Pods-menuol-acknowledgements.plist */,
-				D5CA0B704530277728E067FAD077B345 /* Pods-menuol-dummy.m */,
-				7F35C66F9C890F1D259CFE8FBC3FD8A1 /* Pods-menuol-frameworks.sh */,
-				7C968ED07C6CCE298E112BE71CFA341E /* Pods-menuol-resources.sh */,
-				F61F630FFE8ADDD9D32C0E15B2AA868E /* Pods-menuol-umbrella.h */,
-				FF001F09B92AB0F4B7AAE3509D37F847 /* Pods-menuol.debug.xcconfig */,
-				EA1666912977AC7E1005F2C58DD22290 /* Pods-menuol.release.xcconfig */,
-			);
-			name = "Pods-menuol";
-			path = "Target Support Files/Pods-menuol";
 			sourceTree = "<group>";
 		};
 		AAEFB6A71C67E160B44E8D9600E63A7C /* STPopup */ = {
@@ -935,6 +824,24 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		E9843B9321E36BF88654853068BBCBA0 /* Pods-unit tests */ = {
+			isa = PBXGroup;
+			children = (
+				F935F894D5D4FD1C1E964B992D6F4BFD /* Info.plist */,
+				ADECF8CA2BC45722C1FF4D2D87A31361 /* Pods-unit tests.modulemap */,
+				A563C0AA61E7FA020836C60DC7C899E4 /* Pods-unit tests-acknowledgements.markdown */,
+				71DE87A3103C1056C1321958E011D758 /* Pods-unit tests-acknowledgements.plist */,
+				93DFB99A99C779C21DD430CB1A9F0522 /* Pods-unit tests-dummy.m */,
+				AC0EFAAF24B6F969DA69CCEB5CF478F6 /* Pods-unit tests-frameworks.sh */,
+				7CD71F992234F8B11522B65CE4F84044 /* Pods-unit tests-resources.sh */,
+				F3B0F225536BED11B897267D55E0453D /* Pods-unit tests-umbrella.h */,
+				7187073DE5BB77F76D94C54CAF982B1B /* Pods-unit tests.debug.xcconfig */,
+				F9C5045EB849E904FD3AAB79374FBEC3 /* Pods-unit tests.release.xcconfig */,
+			);
+			name = "Pods-unit tests";
+			path = "Target Support Files/Pods-unit tests";
+			sourceTree = "<group>";
+		};
 		F486C92C827CC914C073B8C60857A304 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +850,15 @@
 			);
 			name = SDWebImage;
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		FADBB0FADE6DC7573B9F5CA904B03E65 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AA552A1D5D28B5B58A01D9FC4531C47 /* Pods-menuol */,
+				E9843B9321E36BF88654853068BBCBA0 /* Pods-unit tests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		FCD11547D402BDD5C6173251FA4864D9 /* Support Files */ = {
@@ -1068,14 +984,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9A1265E2BBC5B903A963B3C3FB2605F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89D36815B82109A571ACF4FA6783FD99 /* Pods-ui tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D6943D2384F27FDB57B5944B086E504E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1110,7 +1018,7 @@
 			);
 			name = Result;
 			productName = Result;
-			productReference = EDACF70789695631743463D69D5692BA /* Result.framework */;
+			productReference = D04BF17B609DFF474E5AD1470CDB3962 /* Result.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		296CEB0042E5B75CAA6B8A72FD2F37AA /* PureLayout */ = {
@@ -1128,7 +1036,7 @@
 			);
 			name = PureLayout;
 			productName = PureLayout;
-			productReference = 481411FF9E900871C3A69E4EF8A539E2 /* PureLayout.framework */;
+			productReference = C6DCC31C8BFD62A4A37CBE5C2AD724E9 /* PureLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		38817307E3406D738C5FD45458FD70BC /* Pods-menuol */ = {
@@ -1152,7 +1060,7 @@
 			);
 			name = "Pods-menuol";
 			productName = "Pods-menuol";
-			productReference = BB215A3D0316DC4F658C307891C16E24 /* Pods_menuol.framework */;
+			productReference = 91EAE2E19047D8F95981ABE50F9C1F76 /* Pods_menuol.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BEF0464B247AA9886380F09E03C021E /* Kanna */ = {
@@ -1170,7 +1078,7 @@
 			);
 			name = Kanna;
 			productName = Kanna;
-			productReference = 93047044FF56CD8B8D7AD718EAC44860 /* Kanna.framework */;
+			productReference = 6C35BA67807C774117803AC9E9F3926B /* Kanna.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		62F513DE25B0CB032F5550F1222C2785 /* STPopup */ = {
@@ -1188,31 +1096,7 @@
 			);
 			name = STPopup;
 			productName = STPopup;
-			productReference = 7AB36EAAB1E3445C945BE47A24B20069 /* STPopup.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7D16E44AB40327CDC42FAA4B3EDE94D5 /* Pods-ui tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 13E85BAA45A3F809E3D647A100AB12F4 /* Build configuration list for PBXNativeTarget "Pods-ui tests" */;
-			buildPhases = (
-				B9A1265E2BBC5B903A963B3C3FB2605F /* Headers */,
-				FF3F12942A13BC62584D5ADC3EDB0A63 /* Sources */,
-				18106FDBD25159640DEE379F2D677468 /* Frameworks */,
-				0E352D1A5821A2A4BAD329774CE1FAD7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E76660C5DEDAEBB3A64631592FACF3A5 /* PBXTargetDependency */,
-				28B55844CFA323C3C115CFE953D6ADF6 /* PBXTargetDependency */,
-				D6A1F36587D0A7625ACA356409EA480B /* PBXTargetDependency */,
-				941E661D2B29B9F7A95988120D4F9FBC /* PBXTargetDependency */,
-				C9EAB454D64377EC16A8B04103F41365 /* PBXTargetDependency */,
-				A9BB53F02BC5B4C9FD415F675CD5D832 /* PBXTargetDependency */,
-			);
-			name = "Pods-ui tests";
-			productName = "Pods-ui tests";
-			productReference = 79885F7889249594C798158B53853677 /* Pods_ui_tests.framework */;
+			productReference = 619BBEA7FA07C9C01FA93178CA8B262E /* STPopup.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8EDD1F506ABF028D968F0566FC891ABA /* SDWebImage */ = {
@@ -1230,7 +1114,7 @@
 			);
 			name = SDWebImage;
 			productName = SDWebImage;
-			productReference = 5EDF29F43BAD477F79FB065AEB6494BB /* SDWebImage.framework */;
+			productReference = 84341BD9FC5F867FAEB400E656F64D18 /* SDWebImage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B51BAEDF9EC83B12927A5D5F816C0646 /* FSCalendar */ = {
@@ -1248,7 +1132,7 @@
 			);
 			name = FSCalendar;
 			productName = FSCalendar;
-			productReference = FE7E59C827924FB4C290BC1102703331 /* FSCalendar.framework */;
+			productReference = 82E71C7C98C2A6FA85BF6E1E770158D4 /* FSCalendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B5694292645CAE5171F85EDF556E5896 /* Pods-unit tests */ = {
@@ -1272,7 +1156,7 @@
 			);
 			name = "Pods-unit tests";
 			productName = "Pods-unit tests";
-			productReference = 7D46625A2AAEA0646A26D3D81647C059 /* Pods_unit_tests.framework */;
+			productReference = 852B95D0400772D7C477652AB3B6CC67 /* Pods_unit_tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1292,14 +1176,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2006A642FDCF70D9FDDB4D9E17C79B29 /* Products */;
+			productRefGroup = 96F270C8687EA7A5094CE4A5BE72B310 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B51BAEDF9EC83B12927A5D5F816C0646 /* FSCalendar */,
 				5BEF0464B247AA9886380F09E03C021E /* Kanna */,
 				38817307E3406D738C5FD45458FD70BC /* Pods-menuol */,
-				7D16E44AB40327CDC42FAA4B3EDE94D5 /* Pods-ui tests */,
 				B5694292645CAE5171F85EDF556E5896 /* Pods-unit tests */,
 				296CEB0042E5B75CAA6B8A72FD2F37AA /* PureLayout */,
 				07A12B7F0BCF1035EC223902CB48A020 /* Result */,
@@ -1311,13 +1194,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		0882D570CF944F498D011CF27036F024 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E352D1A5821A2A4BAD329774CE1FAD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1502,23 +1378,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF3F12942A13BC62584D5ADC3EDB0A63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF65670D791D588F6A630AFACD14B0AF /* Pods-ui tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		28B55844CFA323C3C115CFE953D6ADF6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kanna;
-			target = 5BEF0464B247AA9886380F09E03C021E /* Kanna */;
-			targetProxy = 38E305B65DBF177060DE3FDEE293FE0D /* PBXContainerItemProxy */;
-		};
 		372CD55F1DC80BD9A50C56E376FEED45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FSCalendar;
@@ -1561,41 +1423,11 @@
 			target = 296CEB0042E5B75CAA6B8A72FD2F37AA /* PureLayout */;
 			targetProxy = CF858A3D8FD013DF8896EF2E4A83F73B /* PBXContainerItemProxy */;
 		};
-		941E661D2B29B9F7A95988120D4F9FBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Result;
-			target = 07A12B7F0BCF1035EC223902CB48A020 /* Result */;
-			targetProxy = 423DA361D9C6FE3DE8DEF199BBC7BDBD /* PBXContainerItemProxy */;
-		};
-		A9BB53F02BC5B4C9FD415F675CD5D832 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = STPopup;
-			target = 62F513DE25B0CB032F5550F1222C2785 /* STPopup */;
-			targetProxy = 1483CAB5CADF9F9E4186F820F3C271FF /* PBXContainerItemProxy */;
-		};
 		BE7D90934B56FB0B0C640812B19E0F77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
 			target = 8EDD1F506ABF028D968F0566FC891ABA /* SDWebImage */;
 			targetProxy = 94BA579B758930E515961654E704ACB0 /* PBXContainerItemProxy */;
-		};
-		C9EAB454D64377EC16A8B04103F41365 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SDWebImage;
-			target = 8EDD1F506ABF028D968F0566FC891ABA /* SDWebImage */;
-			targetProxy = 887FE3E5D03814406EC63CFA4CB0130A /* PBXContainerItemProxy */;
-		};
-		D6A1F36587D0A7625ACA356409EA480B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PureLayout;
-			target = 296CEB0042E5B75CAA6B8A72FD2F37AA /* PureLayout */;
-			targetProxy = A20A62718A640458FFB93EFFC0ABD47B /* PBXContainerItemProxy */;
-		};
-		E76660C5DEDAEBB3A64631592FACF3A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FSCalendar;
-			target = B51BAEDF9EC83B12927A5D5F816C0646 /* FSCalendar */;
-			targetProxy = 934954015F8972F63178731E726689CC /* PBXContainerItemProxy */;
 		};
 		EDBD544682229601722344F3BE5EC709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1626,7 +1458,7 @@
 /* Begin XCBuildConfiguration section */
 		030D5BE678BCD9BDFFAD00351E1139BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA1666912977AC7E1005F2C58DD22290 /* Pods-menuol.release.xcconfig */;
+			baseConfigurationReference = 7B568933B4B3766E5361707E53E01669 /* Pods-menuol.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1705,7 +1537,7 @@
 		};
 		19CB5A76D812F91E883DA2C4FDF7E631 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF001F09B92AB0F4B7AAE3509D37F847 /* Pods-menuol.debug.xcconfig */;
+			baseConfigurationReference = 7994F58459246FD965B76A6B98FEEC65 /* Pods-menuol.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1781,7 +1613,7 @@
 		};
 		1EF8AB249500AEF9E16453AC1F742772 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BECA6B8F1C5B0D378B9C6BE27B44414 /* Pods-unit tests.debug.xcconfig */;
+			baseConfigurationReference = 7187073DE5BB77F76D94C54CAF982B1B /* Pods-unit tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1997,47 +1829,6 @@
 			};
 			name = Release;
 		};
-		5F41A7E39E2AA612BD2942237AA253A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9FEA264B581C07E5383365DEF3F6D89 /* Pods-ui tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ui tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ui tests/Pods-ui tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		796031BB5865F2A5DA2F395CA5031780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 656F8E2C12A7E87444E9E83313CF1579 /* PureLayout.xcconfig */;
@@ -2067,46 +1858,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7E0E58098F801009114B4DDC2E172B5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDA89476BC114AE4BB91B54A7832FF72 /* Pods-ui tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ui tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ui tests/Pods-ui tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2383,7 +2134,7 @@
 		};
 		F8866AB883303356227DCE8D55B0366F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68E03F2BBB4768E6C11B1E46606A29F8 /* Pods-unit tests.release.xcconfig */;
+			baseConfigurationReference = F9C5045EB849E904FD3AAB79374FBEC3 /* Pods-unit tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2425,15 +2176,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13E85BAA45A3F809E3D647A100AB12F4 /* Build configuration list for PBXNativeTarget "Pods-ui tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E0E58098F801009114B4DDC2E172B5F /* Debug */,
-				5F41A7E39E2AA612BD2942237AA253A9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		270C5C144F6FB64B336F262D08436C13 /* Build configuration list for PBXNativeTarget "Pods-menuol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

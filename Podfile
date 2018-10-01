@@ -19,7 +19,3 @@ end
 target 'unit tests' do
 	pods
 end
-
-target 'ui tests' do
-	pods
-end
