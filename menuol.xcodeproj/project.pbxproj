@@ -361,18 +361,19 @@
 					EE172F5E211C1A690045B016 = {
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = RSQZ5T9DT6;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EE48EEBA1F1E132E004DA56D;
 					};
 					EE172F8421367C8C0045B016 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = EE48EEBA1F1E132E004DA56D;
 					};
 					EE48EEBA1F1E132E004DA56D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RSQZ5T9DT6;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -629,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.menuol-unit-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/menuol.app/menuol";
 			};
@@ -659,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.menuol-unit-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/menuol.app/menuol";
 			};
@@ -684,7 +685,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.ui-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = menuol;
 			};
@@ -709,7 +710,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ondrejhanak.ui-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = menuol;
 			};
@@ -840,8 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -859,8 +859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ondrejhanak.menuol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
