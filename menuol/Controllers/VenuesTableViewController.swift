@@ -11,6 +11,7 @@ import UIKit
 private let kVenueCellIdentifier = "VenueCell"
 
 final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
+
 	// MARK: - Properties
 
 	public var venueManager: VenueManager!

@@ -12,6 +12,7 @@ import UIKit
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
 final class MenuTableViewController: UITableViewController {
+
 	// MARK: - Properties
 
 	public var venue: Venue!

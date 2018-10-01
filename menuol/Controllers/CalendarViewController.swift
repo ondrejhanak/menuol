@@ -11,6 +11,7 @@ import PureLayout
 import UIKit
 
 final class CalendarViewController: UIViewController, FSCalendarDelegate {
+
 	// MARK: - Properties
 
 	public var date = Date()
