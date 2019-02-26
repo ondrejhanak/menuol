@@ -35,6 +35,11 @@ Runs unit tests.
 fastlane app_icons
 ```
 Creates app icons.
+### find_unused
+```
+fastlane find_unused
+```
+Searches unused code.
 
 ----
 

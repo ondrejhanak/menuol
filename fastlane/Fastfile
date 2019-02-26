@@ -45,3 +45,12 @@ lane :app_icons do
 		appicon_devices: [:ipad, :iphone, :ios_marketing]
 	)
 end
+
+desc "Searches unused code."
+lane :find_unused do
+	sh("periphery scan \
+  --workspace \"../menuol.xcworkspace/\" \
+  --schemes \"menuol\" \
+  --targets \"menuol\" \
+  --no-retain-public")
+end
