@@ -404,7 +404,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
@@ -423,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97491FDA6890D136B5A11903 /* [CP] Embed Pods Frameworks */ = {
@@ -432,7 +432,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-unit tests/Pods-unit tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-unit tests/Pods-unit tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
@@ -451,7 +451,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-unit tests/Pods-unit tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unit tests/Pods-unit tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8574356AD930AE442D2D173 /* [CP] Check Pods Manifest.lock */ = {

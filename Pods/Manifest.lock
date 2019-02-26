@@ -1,11 +1,11 @@
 PODS:
-  - FSCalendar (2.7.9)
-  - Kanna (4.0.2)
-  - PureLayout (3.1.2)
-  - Result (4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - FSCalendar (2.8.0)
+  - Kanna (4.0.3)
+  - PureLayout (3.1.4)
+  - Result (4.1.0)
+  - SDWebImage (5.0.0-beta5):
+    - SDWebImage/Core (= 5.0.0-beta5)
+  - SDWebImage/Core (5.0.0-beta5)
   - STPopup (1.8.3)
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - Kanna (~> 4.0)
   - PureLayout (~> 3.0)
   - Result (~> 4.0)
-  - SDWebImage (~> 4.0)
+  - SDWebImage (~> 5.0.0-beta5)
   - STPopup (~> 1.8)
 
 SPEC REPOS:
@@ -26,13 +26,13 @@ SPEC REPOS:
     - STPopup
 
 SPEC CHECKSUMS:
-  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
-  Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
-  PureLayout: 4634d0b61e3b5021166e8ec7c18e9e0ca0720c8b
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SDWebImage: fd609df53c0f55fdcd4705bd14c01c9d5c348d0c
   STPopup: da1167250a01584af7bcccb898653185f223ec46
 
-PODFILE CHECKSUM: acfbf6803984ed952912488b2c22a24bbdcae69a
+PODFILE CHECKSUM: b4c07a7a9cde83888e442c0ddf80c06e9a13d04f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
