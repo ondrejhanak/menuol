@@ -86,7 +86,7 @@ final class MenuTableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: kMenuItemCellIdentifier, for: indexPath) as! MenuItemTableViewCell
 		if self.items.isEmpty {
-			cell.setupAsNoDataCell()
+			cell.setupWithNoData()
 		} else {
 			let menuItem = self.items[indexPath.row]
 			cell.setup(menuItem: menuItem)
