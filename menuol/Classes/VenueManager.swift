@@ -89,7 +89,7 @@ final class VenueManager {
 	func toggleFavorite(_ venue: Venue) {
 		if venue.isFavorited {
 			venue.isFavorited = false
-			if let index = favoriteVenues.index(of: venue.slug) {
+			if let index = favoriteVenues.firstIndex(of: venue.slug) {
 				self.favoriteVenues.remove(at: index)
 			}
 		} else {
