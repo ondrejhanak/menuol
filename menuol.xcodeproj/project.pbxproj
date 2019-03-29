@@ -52,16 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A8774E2FF50173B2F70F7F8 /* Pods-ui tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ui tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ui tests/Pods-ui tests.debug.xcconfig"; sourceTree = "<group>"; };
-		10FC3B1ACC2FECE047230590 /* Pods-ui tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ui tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ui tests/Pods-ui tests.release.xcconfig"; sourceTree = "<group>"; };
 		39B7C623CDA2878232DB53E5 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA536A8AD3521388847EA68 /* Pods_ui_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ui_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FC56F983C4E9E0220A55B9 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-menuol/Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
 		7AC6D7F6F6835B164C20D3E1 /* Pods-unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit tests/Pods-unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		839ADD91E8FEB4995FC31A31 /* Pods_menuol_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06315D78DCE4B9709DD17C0 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.release.xcconfig"; path = "Pods/Target Support Files/Pods-menuol/Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
-		A2E4731372B81A0537D81136 /* Pods-menuol unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol unit tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-menuol unit tests/Pods-menuol unit tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C1BBBC9AC5BDDD7BD55CE983 /* Pods-menuol unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol unit tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-menuol unit tests/Pods-menuol unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED81724BE53D4A98F6E5D851 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* unit tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,10 +132,6 @@
 			children = (
 				50FC56F983C4E9E0220A55B9 /* Pods-menuol.debug.xcconfig */,
 				A06315D78DCE4B9709DD17C0 /* Pods-menuol.release.xcconfig */,
-				A2E4731372B81A0537D81136 /* Pods-menuol unit tests.debug.xcconfig */,
-				C1BBBC9AC5BDDD7BD55CE983 /* Pods-menuol unit tests.release.xcconfig */,
-				0A8774E2FF50173B2F70F7F8 /* Pods-ui tests.debug.xcconfig */,
-				10FC3B1ACC2FECE047230590 /* Pods-ui tests.release.xcconfig */,
 				F0ADE6AA72F487F148DE56A6 /* Pods-unit tests.debug.xcconfig */,
 				7AC6D7F6F6835B164C20D3E1 /* Pods-unit tests.release.xcconfig */,
 			);

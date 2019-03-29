@@ -3,10 +3,10 @@ PODS:
   - Kanna (4.0.3)
   - PureLayout (3.1.4)
   - Result (4.1.0)
-  - SDWebImage (5.0.0-beta5):
-    - SDWebImage/Core (= 5.0.0-beta5)
-  - SDWebImage/Core (5.0.0-beta5)
-  - STPopup (1.8.3)
+  - SDWebImage (5.0.0-beta6):
+    - SDWebImage/Core (= 5.0.0-beta6)
+  - SDWebImage/Core (5.0.0-beta6)
+  - STPopup (1.8.6)
 
 DEPENDENCIES:
   - FSCalendar (~> 2.7)
@@ -30,8 +30,8 @@ SPEC CHECKSUMS:
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SDWebImage: fd609df53c0f55fdcd4705bd14c01c9d5c348d0c
-  STPopup: da1167250a01584af7bcccb898653185f223ec46
+  SDWebImage: 2840a50a41156efccf460df67218b32029177897
+  STPopup: c2c8c153672c8899b59ceba0804cc63fc5ac7483
 
 PODFILE CHECKSUM: b4c07a7a9cde83888e442c0ddf80c06e9a13d04f
 
