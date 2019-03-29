@@ -10,7 +10,7 @@ import UIKit
 
 private let kVenueCellIdentifier = "VenueCell"
 
-final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
+final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate, StoryboardInstantiable {
 
 	// MARK: - Properties
 

@@ -8,16 +8,15 @@
 
 import UIKit
 
-protocol StoryboardInstantiable: class {
+// based on https://github.com/Peterek/storyboard-instantiable
+
+protocol StoryboardInstantiable where Self: UIViewController {
 	static var storyboardName: String { get }
 	static var controllerIdentifier: String { get }
-	static func instantiateFromStoryboard<T: UIViewController>() -> T
+	static func instantiateFromStoryboard() -> Self
 }
 
-extension UIViewController: StoryboardInstantiable {
-}
-
-extension StoryboardInstantiable where Self: UIViewController {
+extension StoryboardInstantiable {
 	static var storyboardName: String {
 		return String(describing: self)
 	}
@@ -26,10 +25,10 @@ extension StoryboardInstantiable where Self: UIViewController {
 		return String(describing: self)
 	}
 
-	static func instantiateFromStoryboard<T: UIViewController>() -> T {
-		let storyboard = UIStoryboard(name: T.storyboardName, bundle: nil)
-		guard let vc = storyboard.instantiateViewController(withIdentifier: T.controllerIdentifier) as? T else {
-			fatalError("Could not instantiate storyboard named \(T.storyboardName).")
+	static func instantiateFromStoryboard() -> Self {
+		let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+		guard let vc = storyboard.instantiateViewController(withIdentifier: self.controllerIdentifier) as? Self else {
+			fatalError("Could not instantiate storyboard named \(self.storyboardName).")
 		}
 		return vc
 	}

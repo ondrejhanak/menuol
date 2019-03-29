@@ -11,7 +11,7 @@ import UIKit
 
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
-final class MenuTableViewController: UITableViewController {
+final class MenuTableViewController: UITableViewController, StoryboardInstantiable {
 
 	// MARK: - Properties
 
