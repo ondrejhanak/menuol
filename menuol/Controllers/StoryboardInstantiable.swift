@@ -19,7 +19,7 @@ extension UIViewController: StoryboardInstantiable {
 
 extension StoryboardInstantiable where Self: UIViewController {
 	static var storyboardName: String {
-		return "Main"
+		return String(describing: self)
 	}
 
 	static var controllerIdentifier: String {
