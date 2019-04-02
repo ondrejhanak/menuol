@@ -42,9 +42,10 @@ As such, we have moved/built new modules to [SDWebImage org](https://github.com/
 
 #### Coders for additional image formats
 - [SDWebImageWebPCoder](https://github.com/SDWebImage/SDWebImageWebPCoder) - coder for WebP image format. Based on [libwebp](https://chromium.googlesource.com/webm/libwebp)
-- [SDWebImageHEIFCoder](https://github.com/SDWebImage/SDWebImageHEIFCoder) - coder to support HEIF image without Apple's `Image/IO framework`
-- [SDWebImageAPNGCoder](https://github.com/SDWebImage/SDWebImageAPNGCoder) - coder for APNG format (animated PNG)
+- [SDWebImageHEIFCoder](https://github.com/SDWebImage/SDWebImageHEIFCoder) - coder to support HEIF image without Apple's `Image/IO framework`, iOS 8+/macOS 10.10+ support.
 - [SDWebImageBPGCoder](https://github.com/SDWebImage/SDWebImageBPGCoder) - coder for BPG format
+- [SDWebImageFLIFCoder](https://github.com/SDWebImage/SDWebImageFLIFCoder) - coder for FLIF format
+- and more from community!
 
 #### Loaders
 - [SDWebImagePhotosPlugin](https://github.com/SDWebImage/SDWebImagePhotosPlugin) - plugin to support loading images from Photos (using `Photos.framework`) 
@@ -59,12 +60,6 @@ As such, we have moved/built new modules to [SDWebImage org](https://github.com/
 
 You can use those directly, or create similar components of your own.
 
-## Beta version
-
-SDWebImage's 5.0 version is nearing completion. Which introduce many new features like Animated ImageView and Transformer. We also provide a more modularized design used for advanced user customization.
-
-You can check the latest [5.x branch](https://github.com/SDWebImage/SDWebImage/tree/5.x) to know about the current status. We'd love you to have a try with the beta version and provide any feedback. If you'd love, check [SDWebImage 5.0 Migration Guide](https://github.com/SDWebImage/SDWebImage/wiki/5.0-Migration-guide) and prepare for the migration.
-
 ## Requirements
 
 - iOS 8.0 or later
@@ -75,7 +70,7 @@ You can check the latest [5.x branch](https://github.com/SDWebImage/SDWebImage/t
 
 #### Backwards compatibility
 
-- For iOS 7, macOS 10.9 or Xcode < 8, use [any 4.x version up to 4.3.3](https://github.com/SDWebImage/SDWebImage/releases/tag/4.3.3)
+- For iOS 7, macOS 10.9 or Xcode < 8, use [any 4.x version up to 4.4.6](https://github.com/SDWebImage/SDWebImage/releases/tag/4.4.6)
 - For macOS 10.8, use [any 4.x version up to 4.3.0](https://github.com/SDWebImage/SDWebImage/releases/tag/4.3.0)
 - For iOS 5 and 6, use [any 3.x version up to 3.7.6](https://github.com/SDWebImage/SDWebImage/tag/3.7.6)
 - For iOS < 5.0, please use the last [2.0 version](https://github.com/SDWebImage/SDWebImage/tree/2.0-compat).
@@ -87,7 +82,7 @@ You can check the latest [5.x branch](https://github.com/SDWebImage/SDWebImage/t
 - Read the [Documentation @ CocoaDocs](http://cocoadocs.org/docsets/SDWebImage/)
 - Try the example by downloading the project from Github or even easier using CocoaPods try `pod try SDWebImage`
 - Read the [Installation Guide](https://github.com/SDWebImage/SDWebImage/wiki/Installation-Guide)
-- Read the [SDWebImage 5.0 Migration Guide](https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/SDWebImage-5.0-Migration-guide.md) to get an idea of the changes from 4.x to 5.x
+- Read the [SDWebImage 5.0 Migration Guide](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/SDWebImage-5.0-Migration-guide.md) to get an idea of the changes from 4.x to 5.x
 - Read the [SDWebImage 4.0 Migration Guide](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/SDWebImage-4.0-Migration-guide.md) to get an idea of the changes from 3.x to 4.x
 - Read the [Common Problems](https://github.com/SDWebImage/SDWebImage/wiki/Common-Problems) to find the solution for common problems 
 - Go to the [Wiki Page](https://github.com/SDWebImage/SDWebImage/wiki) for more information such as [Advanced Usage](https://github.com/SDWebImage/SDWebImage/wiki/Advanced-Usage)
@@ -108,7 +103,7 @@ You can check the latest [5.x branch](https://github.com/SDWebImage/SDWebImage/t
 * Objective-C
 
 ```objective-c
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDWebImage.h>
 ...
 [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
              placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
@@ -200,10 +195,10 @@ If this is your first time using Carthage in the project, you'll need to go thro
 
 ### Import headers in your source files
 
-In the source files where you need to use the library, import the header file:
+In the source files where you need to use the library, import the umbrella header file:
 
 ```objective-c
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDWebImage.h>
 ```
 
 ### Build Project
@@ -229,26 +224,26 @@ All source code is licensed under the [MIT License](https://raw.github.com/SDWeb
 
 #### High Level Diagram
 <p align="center" >
-    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageHighLevelDiagram.jpeg" title="SDWebImage high level diagram">
+    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageHighLevelDiagram.jpeg" title="SDWebImage high level diagram">
 </p>
 
 #### Overall Class Diagram
 <p align="center" >
-    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageClassDiagram.png" title="SDWebImage overall class diagram">
+    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageClassDiagram.png" title="SDWebImage overall class diagram">
 </p>
 
 #### Top Level API Diagram
 <p align="center" >
-    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageTopLevelClassDiagram.png" title="SDWebImage top level API diagram">
+    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageTopLevelClassDiagram.png" title="SDWebImage top level API diagram">
 </p>
 
 #### Main Sequence Diagram
 <p align="center" >
-    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageSequenceDiagram.png" title="SDWebImage sequence diagram">
+    <img src="https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageSequenceDiagram.png" title="SDWebImage sequence diagram">
 </p>
 
 #### More detailed diagrams
-- [Manager API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageManagerClassDiagram.png)
-- [Coders API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageCodersClassDiagram.png)
-- [Loader API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageLoaderClassDiagram.png)
-- [Cache API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/5.x/Docs/Diagrams/SDWebImageCacheClassDiagram.png)
+- [Manager API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageManagerClassDiagram.png)
+- [Coders API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageCodersClassDiagram.png)
+- [Loader API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageLoaderClassDiagram.png)
+- [Cache API Diagram](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageCacheClassDiagram.png)

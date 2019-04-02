@@ -1,15 +1,15 @@
 PODS:
   - FSCalendar (2.8.0)
-  - Kanna (4.0.3)
+  - Kanna (5.0.0)
   - PureLayout (3.1.4)
-  - SDWebImage (5.0.0-beta6):
-    - SDWebImage/Core (= 5.0.0-beta6)
-  - SDWebImage/Core (5.0.0-beta6)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
   - STPopup (1.8.6)
 
 DEPENDENCIES:
   - FSCalendar (~> 2.7)
-  - Kanna (~> 4.0)
+  - Kanna (~> 5.0)
   - PureLayout (~> 3.0)
   - SDWebImage (~> 5.0.0-beta5)
   - STPopup (~> 1.8)
@@ -24,11 +24,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
-  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
-  SDWebImage: 2840a50a41156efccf460df67218b32029177897
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   STPopup: c2c8c153672c8899b59ceba0804cc63fc5ac7483
 
-PODFILE CHECKSUM: a63e4e7217f20864e5022dc030cacd277c363c59
+PODFILE CHECKSUM: 1f77d04a934dca1a129a445a7a20f544d33623cf
 
 COCOAPODS: 1.6.1

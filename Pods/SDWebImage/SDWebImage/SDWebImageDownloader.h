@@ -85,8 +85,10 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageDownloaderOptions) {
     SDWebImageDownloaderPreloadAllFrames = 1 << 11
 };
 
-FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadStartNotification;
-FOUNDATION_EXPORT NSString * _Nonnull const SDWebImageDownloadStopNotification;
+FOUNDATION_EXPORT NSNotificationName _Nonnull const SDWebImageDownloadStartNotification;
+FOUNDATION_EXPORT NSNotificationName _Nonnull const SDWebImageDownloadReceiveResponseNotification;
+FOUNDATION_EXPORT NSNotificationName _Nonnull const SDWebImageDownloadStopNotification;
+FOUNDATION_EXPORT NSNotificationName _Nonnull const SDWebImageDownloadFinishNotification;
 
 typedef SDImageLoaderProgressBlock SDWebImageDownloaderProgressBlock;
 typedef SDImageLoaderCompletedBlock SDWebImageDownloaderCompletedBlock;
@@ -182,6 +184,28 @@ typedef SDImageLoaderCompletedBlock SDWebImageDownloaderCompletedBlock;
  * @return The value associated with the header field field, or `nil` if there is no corresponding header field.
  */
 - (nullable NSString *)valueForHTTPHeaderField:(nullable NSString *)field;
+
+/**
+ * Creates a SDWebImageDownloader async downloader instance with a given URL
+ *
+ * The delegate will be informed when the image is finish downloaded or an error has happen.
+ *
+ * @see SDWebImageDownloaderDelegate
+ *
+ * @param url            The URL to the image to download
+ * @param completedBlock A block called once the download is completed.
+ *                       If the download succeeded, the image parameter is set, in case of error,
+ *                       error parameter is set with the error. The last parameter is always YES
+ *                       if SDWebImageDownloaderProgressiveDownload isn't use. With the
+ *                       SDWebImageDownloaderProgressiveDownload option, this block is called
+ *                       repeatedly with the partial image object and the finished argument set to NO
+ *                       before to be called a last time with the full image and finished argument
+ *                       set to YES. In case of error, the finished argument is always YES.
+ *
+ * @return A token (SDWebImageDownloadToken) that can be used to cancel this operation
+ */
+- (nullable SDWebImageDownloadToken *)downloadImageWithURL:(nullable NSURL *)url
+                                                 completed:(nullable SDWebImageDownloaderCompletedBlock)completedBlock;
 
 /**
  * Creates a SDWebImageDownloader async downloader instance with a given URL

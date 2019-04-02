@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def pods
-	pod 'Kanna', '~> 4.0'
+	pod 'Kanna', '~> 5.0'
 	pod 'SDWebImage', '~> 5.0.0-beta5'
 	pod 'FSCalendar', '~> 2.7'
 	pod 'STPopup', '~> 1.8'
