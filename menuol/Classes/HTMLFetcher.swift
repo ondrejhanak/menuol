@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 final class HTMLFetcher {
-	struct HTMLFetcherError: Error {
-	}
+	struct HTMLFetcherError: Error {}
 
 	// MARK: - Public
 

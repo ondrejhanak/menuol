@@ -11,15 +11,14 @@ import Foundation
 private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 final class VenueManager {
-	struct VenueError: Error {
-	}
+	struct VenueError: Error {}
 
 	private var htmlFetcher = HTMLFetcher()
 	private var htmlParser = HTMLParser()
 	private var allVenues = [Venue]()
 	private var favoriteVenues: [String] {
 		get {
-			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap({ String(describing: $0) }) ?? []
+			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap { String(describing: $0) } ?? []
 		}
 		set {
 			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
@@ -100,6 +99,6 @@ final class VenueManager {
 	// MARK: - Private
 
 	private func find(slug: String) -> Venue? {
-		return self.allVenues.filter({ $0.slug == slug }).first
+		return self.allVenues.filter { $0.slug == slug }.first
 	}
 }

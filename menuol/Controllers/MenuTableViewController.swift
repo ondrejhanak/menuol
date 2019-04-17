@@ -12,7 +12,6 @@ import UIKit
 private let kMenuItemCellIdentifier = "MenuItemCell"
 
 final class MenuTableViewController: UITableViewController, StoryboardInstantiable {
-
 	// MARK: - Properties
 
 	public var venue: Venue!
@@ -61,7 +60,7 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
 		let day = DateFormatter.dateOnlyString(from: self.date)
 		self.items = self.venue.menuItems(for: day)
-		if self.items.isEmpty && !self.didTryFetch {
+		if self.items.isEmpty, !self.didTryFetch {
 			self.venueManager.updateMenu(slug: self.venue.slug) { success in
 				if success {
 					self.didTryFetch = true

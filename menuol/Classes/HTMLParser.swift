@@ -10,7 +10,6 @@ import Foundation
 import Kanna
 
 final class HTMLParser {
-
 	// MARK: - Public
 
 	func venuesWithMenuItems(from string: String) -> [Venue] {
