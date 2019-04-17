@@ -6,11 +6,10 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
-import XCTest
 @testable import menuol
+import XCTest
 
 final class HTMLParserTests: XCTestCase {
-
 	func testVenuesParsing_correct() {
 		let parser = HTMLParser()
 		let html = self.loadHTML(from: "Venues.html")
@@ -102,5 +101,4 @@ final class HTMLParserTests: XCTestCase {
 		let html = try! String(contentsOfFile: path)
 		return html
 	}
-
 }

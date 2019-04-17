@@ -6,11 +6,10 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
-import XCTest
 @testable import menuol
+import XCTest
 
 final class ExtensionsTests: XCTestCase {
-
 	func testStringCapitalization() {
 		var original = "hello world!"
 		let new = original.capitalizingFirstLetter()

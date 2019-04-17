@@ -6,11 +6,10 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
-import XCTest
 @testable import menuol
+import XCTest
 
 final class AppCoordinatorTests: XCTestCase {
-
 	func testInit() {
 		let window = UIWindow()
 		let coordinator = AppCoordinator(window: window)
@@ -32,5 +31,4 @@ final class AppCoordinatorTests: XCTestCase {
 		let topVC = coordinator.navigationController.topViewController as? MenuTableViewController
 		XCTAssertEqual(topVC?.venue, venue)
 	}
-
 }

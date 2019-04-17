@@ -6,11 +6,10 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
-import XCTest
 @testable import menuol
+import XCTest
 
 final class AppDelegateTests: XCTestCase {
-
 	func testDelegate() {
 		let application = UIApplication.shared
 		let delegate = AppDelegate()
@@ -18,5 +17,4 @@ final class AppDelegateTests: XCTestCase {
 		XCTAssertTrue(result)
 		XCTAssertNotNil(delegate.window?.rootViewController)
 	}
-
 }

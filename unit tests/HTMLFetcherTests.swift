@@ -6,17 +6,16 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
-import XCTest
 @testable import menuol
+import XCTest
 
 private let kNetworkTimeout = 10.0
 
 final class HTMLFetcherTests: XCTestCase {
-
 	func testFetchVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching venue HTML")
 		let fetcher = HTMLFetcher()
-		fetcher.fetchVenueHTML(for: Date()) { (result) in
+		fetcher.fetchVenueHTML(for: Date()) { result in
 			switch result {
 			case .success:
 				expectation.fulfill()
@@ -30,7 +29,7 @@ final class HTMLFetcherTests: XCTestCase {
 	func testMenuVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching menu HTML")
 		let fetcher = HTMLFetcher()
-		fetcher.fetchMenuHTML(slug: "JAZZ-TIBET-CLUB-id38") { (result) in
+		fetcher.fetchMenuHTML(slug: "JAZZ-TIBET-CLUB-id38") { result in
 			switch result {
 			case .success:
 				expectation.fulfill()
@@ -40,5 +39,4 @@ final class HTMLFetcherTests: XCTestCase {
 		}
 		self.wait(for: [expectation], timeout: kNetworkTimeout)
 	}
-
 }
