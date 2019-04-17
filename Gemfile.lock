@@ -64,7 +64,7 @@ GEM
       xcodeproj (>= 1.8.1, < 2.0.0)
       xcpretty (~> 0.3.0)
       xcpretty-travis-formatter (>= 0.0.3)
-    fastlane-plugin-appicon (0.13.0)
+    fastlane-plugin-appicon (0.14.0)
       json
       mini_magick (~> 4.5.1)
     gh_inspector (1.1.3)
