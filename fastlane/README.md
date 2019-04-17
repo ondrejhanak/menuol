@@ -40,6 +40,11 @@ Creates app icons.
 fastlane find_unused
 ```
 Searches unused code.
+### list_longs
+```
+fastlane list_longs
+```
+Lists logest source files.
 
 ----
 

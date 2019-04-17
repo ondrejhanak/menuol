@@ -54,3 +54,8 @@ lane :find_unused do
   --targets \"menuol\" \
   --no-retain-public")
 end
+
+desc "Lists logest source files."
+lane :list_longs do
+	sh("find ../menuol \\( -name '*.swift' -o -name '*.m' -o -name '*.h' \\) -type f -print0 | xargs -0 wc -l | sort -rn | head -n 20")
+end
