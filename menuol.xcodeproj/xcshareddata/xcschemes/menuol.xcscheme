@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EE172F5E211C1A690045B016"
-               BuildableName = "unit tests.xctest"
-               BlueprintName = "unit tests"
+               BuildableName = "unittests.xctest"
+               BlueprintName = "unittests"
                ReferencedContainer = "container:menuol.xcodeproj">
             </BuildableReference>
          </TestableReference>

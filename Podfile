@@ -15,6 +15,6 @@ target 'menuol' do
 	pods
 end
 
-target 'unit tests' do
+target 'unittests' do
 	pods
 end
