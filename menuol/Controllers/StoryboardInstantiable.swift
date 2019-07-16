@@ -13,6 +13,7 @@ import UIKit
 protocol StoryboardInstantiable where Self: UIViewController {
 	static var storyboardName: String { get }
 	static var controllerIdentifier: String { get }
+
 	static func instantiateFromStoryboard() -> Self
 }
 

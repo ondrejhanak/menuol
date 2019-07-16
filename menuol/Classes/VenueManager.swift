@@ -99,6 +99,6 @@ final class VenueManager {
 	// MARK: - Private
 
 	private func find(slug: String) -> Venue? {
-		return self.allVenues.filter { $0.slug == slug }.first
+		return self.allVenues.first { $0.slug == slug }
 	}
 }

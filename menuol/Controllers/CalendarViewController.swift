@@ -20,6 +20,7 @@ final class CalendarViewController: UIViewController, FSCalendarDelegate {
 	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		self.calendar = FSCalendar(frame: .zero)
 		self.calendar.delegate = self
 		self.calendar.select(self.date)
