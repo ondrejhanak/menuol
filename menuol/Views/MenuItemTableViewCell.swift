@@ -9,7 +9,6 @@
 import UIKit
 
 final class MenuItemTableViewCell: UITableViewCell {
-	@IBOutlet var orderLabel: UILabel!
 	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var priceLabel: UILabel!
 
@@ -28,7 +27,6 @@ final class MenuItemTableViewCell: UITableViewCell {
 	// MARK: - Private
 
 	private func clearUI() {
-		self.orderLabel.text = nil
 		self.titleLabel.text = nil
 		self.priceLabel.text = nil
 	}
@@ -36,7 +34,6 @@ final class MenuItemTableViewCell: UITableViewCell {
 	// MARK: - Public
 
 	public func setup(menuItem: MenuItem) {
-		self.orderLabel?.text = menuItem.orderDescription
 		self.titleLabel?.text = menuItem.title
 		self.priceLabel?.text = menuItem.priceDescription
 	}

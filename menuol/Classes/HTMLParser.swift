@@ -95,7 +95,6 @@ final class HTMLParser {
 		let rows = element.xpath(".//tr")
 		for (index, row) in rows.enumerated() {
 			let columns = row.xpath("td")
-			let orderDescription = columns[0].text ?? ""
 			let title = columns[1].text ?? ""
 			var priceDescription = ""
 			if columns.count >= 3 {
@@ -103,7 +102,6 @@ final class HTMLParser {
 			}
 			let menuItem = MenuItem()
 			menuItem.order = index
-			menuItem.orderDescription = orderDescription
 			menuItem.title = title
 			menuItem.priceDescription = priceDescription
 			result.append(menuItem)

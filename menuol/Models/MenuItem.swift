@@ -12,6 +12,5 @@ final class MenuItem {
 	public var title = ""
 	public var day = ""
 	public var order = 0
-	public var orderDescription = ""
 	public var priceDescription = ""
 }

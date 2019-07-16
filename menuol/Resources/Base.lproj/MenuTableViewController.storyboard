@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Maso, uho, rýže" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqe-EX-4OR">
-                                            <rect key="frame" x="40" y="10" width="121.5" height="23.5"/>
+                                            <rect key="frame" x="10" y="10" width="121.5" height="23.5"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -43,33 +43,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="19." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smS-Jz-WJc">
-                                            <rect key="frame" x="10" y="13" width="20" height="18"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                            </accessibility>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="7A4-X9-E3J"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="hqe-EX-4OR" secondAttribute="bottom" constant="10" id="5DJ-6e-mVf"/>
                                         <constraint firstItem="jek-Ca-Ee1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hqe-EX-4OR" secondAttribute="trailing" constant="10" id="DsW-hv-x2f"/>
-                                        <constraint firstItem="smS-Jz-WJc" firstAttribute="leading" secondItem="wP3-Vo-wVd" secondAttribute="leading" constant="10" id="NAz-2F-CHS"/>
                                         <constraint firstItem="jek-Ca-Ee1" firstAttribute="centerY" secondItem="wP3-Vo-wVd" secondAttribute="centerY" id="Su8-lK-8eA"/>
-                                        <constraint firstItem="hqe-EX-4OR" firstAttribute="leading" secondItem="smS-Jz-WJc" secondAttribute="trailing" constant="10" id="V4d-2t-obg"/>
                                         <constraint firstItem="hqe-EX-4OR" firstAttribute="centerY" secondItem="wP3-Vo-wVd" secondAttribute="centerY" id="XxW-0k-aqs"/>
-                                        <constraint firstItem="smS-Jz-WJc" firstAttribute="centerY" secondItem="wP3-Vo-wVd" secondAttribute="centerY" id="ghE-gq-2qO"/>
                                         <constraint firstItem="hqe-EX-4OR" firstAttribute="top" secondItem="wP3-Vo-wVd" secondAttribute="top" constant="10" id="kpT-0Y-OBZ"/>
                                         <constraint firstAttribute="trailing" secondItem="jek-Ca-Ee1" secondAttribute="trailing" constant="10" id="mcQ-EA-iRZ"/>
+                                        <constraint firstItem="hqe-EX-4OR" firstAttribute="leading" secondItem="wP3-Vo-wVd" secondAttribute="leading" constant="10" id="pue-6b-iuS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="orderLabel" destination="smS-Jz-WJc" id="C3L-ZA-9TJ"/>
                                     <outlet property="priceLabel" destination="jek-Ca-Ee1" id="Oiy-D8-gl7"/>
                                     <outlet property="titleLabel" destination="hqe-EX-4OR" id="cg2-hp-F6L"/>
                                 </connections>

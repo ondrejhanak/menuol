@@ -36,7 +36,6 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
 		XCTAssertEqual(firstItem.day, "2018-08-23")
 		XCTAssertEqual(firstItem.order, 0)
-		XCTAssertEqual(firstItem.orderDescription, "")
 		XCTAssertEqual(firstItem.priceDescription, "")
 
 		// last menu item
@@ -44,7 +43,6 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
 		XCTAssertEqual(lastItem.day, "2018-08-23")
 		XCTAssertEqual(lastItem.order, 5)
-		XCTAssertEqual(lastItem.orderDescription, "5.")
 		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
 
 		// restaurant without menu info
@@ -81,7 +79,6 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
 		XCTAssertEqual(firstItem.day, "2018-08-23")
 		XCTAssertEqual(firstItem.order, 0)
-		XCTAssertEqual(firstItem.orderDescription, "")
 		XCTAssertEqual(firstItem.priceDescription, "")
 
 		// last menu item
@@ -89,7 +86,6 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
 		XCTAssertEqual(lastItem.day, "2018-08-24")
 		XCTAssertEqual(lastItem.order, 5)
-		XCTAssertEqual(lastItem.orderDescription, "5.")
 		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
 	}
 
