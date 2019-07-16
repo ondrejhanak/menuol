@@ -48,10 +48,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 
 	// MARK: - UITableViewDelegate
 
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 60
-	}
-
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let venue = self.venue(for: indexPath)
 		self.coordinatorDelegate?.didSelect(venue: venue)
@@ -67,6 +63,8 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.navigationItem.searchController = self.searchController
 		self.definesPresentationContext = true
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+		self.tableView.rowHeight = UITableView.automaticDimension
+		self.tableView.estimatedRowHeight = 60
 		self.refreshControl = UIRefreshControl()
 		self.refreshControl?.tintColor = .black
 		self.refreshControl?.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
