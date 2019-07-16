@@ -40,7 +40,6 @@
 		EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */; };
 		EEB612F2212D808800AA0C90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612F1212D808800AA0C90 /* main.swift */; };
 		EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */; };
-		F82BE77FF5B6E084E4B410C7 /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842260163E8047A186169CC0 /* Pods_unit_tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		16DF94F2C5B7D40479B16C91 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.release.xcconfig"; path = "Target Support Files/Pods-menuol/Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
 		469FDF86A7304BCB8AA39F4A /* Pods-unittests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unittests.debug.xcconfig"; path = "Target Support Files/Pods-unittests/Pods-unittests.debug.xcconfig"; sourceTree = "<group>"; };
 		582AE08FDB8C9583A9CE31BB /* Pods-unittests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unittests.release.xcconfig"; path = "Target Support Files/Pods-unittests/Pods-unittests.release.xcconfig"; sourceTree = "<group>"; };
-		842260163E8047A186169CC0 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99749FF44C45B5EE324424A4 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.debug.xcconfig"; path = "Target Support Files/Pods-menuol/Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
 		AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unittests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA40788484C6B8D7D166731 /* Pods-unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit tests.debug.xcconfig"; path = "Target Support Files/Pods-unit tests/Pods-unit tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82BE77FF5B6E084E4B410C7 /* Pods_unit_tests.framework in Frameworks */,
 				6E1F7996106120A4AF421D48 /* Pods_unittests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				B2B29F96D21F9856631771B5 /* Pods_menuol.framework */,
-				842260163E8047A186169CC0 /* Pods_unit_tests.framework */,
 				AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */,
 			);
 			name = Frameworks;
@@ -387,24 +383,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/STPopup/STPopup.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STPopup.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,24 +444,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/STPopup/STPopup.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STPopup.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
