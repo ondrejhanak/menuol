@@ -9,7 +9,7 @@
 import SDWebImage
 import UIKit
 
-protocol VenueTableViewCellDelegate: class {
+protocol VenueTableViewCellDelegate: AnyObject {
 	func venueCellDidTapFavorite(_ cell: VenueTableViewCell)
 }
 

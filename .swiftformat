@@ -1,9 +1,9 @@
+--swiftversion 5
+
 # formating options
 --indent tab
-
-# file options
---exclude Unapp/StyleKit.swift
 
 # rules https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
 --disable redundantSelf
 --disable unusedArguments
+--disable specifiers

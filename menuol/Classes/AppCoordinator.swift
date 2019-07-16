@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol VenuesViewControllerDelegate: class {
+protocol VenuesViewControllerDelegate: AnyObject {
 	func didSelect(venue: Venue)
 }
 
