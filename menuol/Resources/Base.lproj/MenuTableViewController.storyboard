@@ -66,7 +66,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="Gc0-2y-91W">
-                        <barButtonItem key="rightBarButtonItem" image="CalendarIcon" id="8gS-6W-BeN">
+                        <barButtonItem key="rightBarButtonItem" title="Calendar" image="CalendarIcon" id="8gS-6W-BeN">
                             <connections>
                                 <action selector="calendarTapped:" destination="K5O-CG-rT8" id="H7g-Eg-ZVD"/>
                             </connections>
