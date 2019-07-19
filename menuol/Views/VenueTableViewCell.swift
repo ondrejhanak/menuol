@@ -53,13 +53,12 @@ final class VenueTableViewCell: UITableViewCell {
 	// MARK: - Private
 
 	private func resetUI() {
-		self.setFavorited(false)
 	}
 
 	private func setFavorited(_ favorited: Bool) {
 		let alpha: CGFloat = favorited ? 0.7 : 0.1
 		self.favoriteImageView.alpha = alpha
-		self.favoriteImageView.accessibilityLabel = favorited ? "Remove from favorites" : "Add to favorites"
+		self.favoriteImageView.accessibilityLabel = favorited ? "Remove \(self.venue.name) from favorites" : "Add \(self.venue.name) to favorites"
 	}
 
 	@objc private func favoriteTapped() {
