@@ -41,6 +41,11 @@ final class VenueTableViewCell: UITableViewCell {
 		self.venue = venue
 		self.titleLabel?.text = venue.name
 		self.subtitleLabel?.text = venue.menuTimeDescription
+		if let time = venue.menuTimeDescription {
+			self.subtitleLabel?.accessibilityLabel = "Opening hours " + time
+		} else {
+			self.subtitleLabel?.accessibilityLabel = nil
+		}
 		self.logoImageView?.sd_setImage(with: venue.imageURL, placeholderImage: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
 		self.setFavorited(venue.isFavorited)
 	}
@@ -54,6 +59,7 @@ final class VenueTableViewCell: UITableViewCell {
 	private func setFavorited(_ favorited: Bool) {
 		let alpha: CGFloat = favorited ? 0.7 : 0.1
 		self.favoriteImageView.alpha = alpha
+		self.favoriteImageView.accessibilityLabel = favorited ? "Remove from favorites" : "Add to favorites"
 	}
 
 	@objc private func favoriteTapped() {
