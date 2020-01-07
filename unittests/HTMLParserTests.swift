@@ -77,14 +77,14 @@ final class HTMLParserTests: XCTestCase {
 		// first menu item
 		let firstItem = menuItems.first!
 		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
-		XCTAssertEqual(firstItem.day, "2018-08-23")
+		XCTAssertEqual(firstItem.day.suffix(5), "08-23")
 		XCTAssertEqual(firstItem.order, 0)
 		XCTAssertEqual(firstItem.priceDescription, "")
 
 		// last menu item
 		let lastItem = menuItems.last!
 		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
-		XCTAssertEqual(lastItem.day, "2018-08-24")
+		XCTAssertEqual(lastItem.day.suffix(5), "08-24")
 		XCTAssertEqual(lastItem.order, 5)
 		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
 	}
