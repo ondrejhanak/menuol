@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ondrej Hanak. All rights reserved.
 //
 
-import SDWebImage
+import Kingfisher
 import UIKit
 
 protocol VenueTableViewCellDelegate: AnyObject {
@@ -46,7 +46,7 @@ final class VenueTableViewCell: UITableViewCell {
 		} else {
 			self.subtitleLabel?.accessibilityLabel = nil
 		}
-		self.logoImageView?.sd_setImage(with: venue.imageURL, placeholderImage: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
+		self.logoImageView?.kf.setImage(with: venue.imageURL, placeholder: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
 		self.setFavorited(venue.isFavorited)
 	}
 
