@@ -1,5 +1,5 @@
 PODS:
-  - FSCalendar (2.8.0)
+  - FSCalendar (2.8.1)
   - Kanna (5.0.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
@@ -15,16 +15,15 @@ DEPENDENCIES:
   - STPopup (~> 1.8)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - FSCalendar
     - Kanna
-    - STPopup
-  trunk:
     - Kingfisher
     - SnapKit
+    - STPopup
 
 SPEC CHECKSUMS:
-  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
