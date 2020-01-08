@@ -7,7 +7,7 @@
 //
 
 import FSCalendar
-import PureLayout
+import SnapKit
 import UIKit
 
 final class CalendarViewController: UIViewController, FSCalendarDelegate {
@@ -25,7 +25,9 @@ final class CalendarViewController: UIViewController, FSCalendarDelegate {
 		self.calendar.delegate = self
 		self.calendar.select(self.date)
 		self.view.addSubview(self.calendar)
-		self.calendar.autoPinEdgesToSuperviewEdges()
+		self.calendar.snp.makeConstraints { make in
+			make.edges.equalToSuperview()
+		}
 	}
 
 	// MARK: – FSCalendarDelegate

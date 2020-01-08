@@ -8,7 +8,7 @@ def pods
 	pod 'Kingfisher', '~> 5'
 	pod 'FSCalendar', '~> 2.7'
 	pod 'STPopup', '~> 1.8'
-	pod 'PureLayout', '~> 3'
+	pod 'SnapKit', '~> 5'
 end
 
 target 'menuol' do
