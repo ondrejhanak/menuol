@@ -27,12 +27,6 @@ final class VenueTableViewCell: UITableViewCell {
 		super.awakeFromNib()
 		let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.favoriteTapped))
 		self.favoriteImageView.addGestureRecognizer(recognizer)
-		self.resetUI()
-	}
-
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		self.resetUI()
 	}
 
 	// MARK: - Public
@@ -51,9 +45,6 @@ final class VenueTableViewCell: UITableViewCell {
 	}
 
 	// MARK: - Private
-
-	private func resetUI() {
-	}
 
 	private func setFavorited(_ favorited: Bool) {
 		let alpha: CGFloat = favorited ? 0.7 : 0.1
