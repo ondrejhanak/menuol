@@ -15,14 +15,14 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-### swift_lint
+### lint
 ```
-fastlane swift_lint
+fastlane lint
 ```
 Runs swiftlint tool.
-### swift_format
+### format
 ```
-fastlane swift_format
+fastlane format
 ```
 Runs swiftformat tool.
 ### unit_tests
@@ -35,14 +35,14 @@ Runs unit tests.
 fastlane app_icons
 ```
 Creates app icons.
-### find_unused
+### unused
 ```
-fastlane find_unused
+fastlane unused
 ```
 Searches unused code.
-### list_longs
+### longs
 ```
-fastlane list_longs
+fastlane longs
 ```
 Lists logest source files.
 

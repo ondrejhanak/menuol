@@ -5,7 +5,7 @@ fastlane_version "2.68.2"
 default_platform :ios
 
 desc "Runs swiftlint tool."
-lane :swift_lint do |options|
+lane :lint do |options|
 	output_file = "swiftlint.html"
 	mode = :lint # :lint or :autocorrect
 	swiftlint(
@@ -18,7 +18,7 @@ lane :swift_lint do |options|
 end
 
 desc "Runs swiftformat tool."
-lane :swift_format do |options|
+lane :format do |options|
 	sh("swiftformat ../menuol/**/*.swift ../unittests/*.swift")
 end
 
@@ -47,7 +47,7 @@ lane :app_icons do
 end
 
 desc "Searches unused code."
-lane :find_unused do
+lane :unused do
 	sh("periphery scan \
   --workspace \"../menuol.xcworkspace/\" \
   --schemes \"menuol\" \
@@ -56,6 +56,6 @@ lane :find_unused do
 end
 
 desc "Lists logest source files."
-lane :list_longs do
+lane :longs do
 	sh("find ../menuol \\( -name '*.swift' -o -name '*.m' -o -name '*.h' \\) -type f -print0 | xargs -0 wc -l | sort -rn | head -n 20")
 end
