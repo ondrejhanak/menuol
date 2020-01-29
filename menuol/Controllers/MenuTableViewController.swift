@@ -79,7 +79,7 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.items.isEmpty ? 1 : self.items.count
+		self.items.isEmpty ? 1 : self.items.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

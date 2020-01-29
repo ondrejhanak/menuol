@@ -18,6 +18,6 @@ final class Venue: NSObject {
 	public var menuItems = [MenuItem]()
 
 	public func menuItems(for day: String) -> [MenuItem] {
-		return self.menuItems.filter { $0.day == day }
+		self.menuItems.filter { $0.day == day }
 	}
 }

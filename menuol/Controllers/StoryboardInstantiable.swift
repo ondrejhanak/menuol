@@ -19,11 +19,11 @@ protocol StoryboardInstantiable where Self: UIViewController {
 
 extension StoryboardInstantiable {
 	static var storyboardName: String {
-		return String(describing: self)
+		String(describing: self)
 	}
 
 	static var controllerIdentifier: String {
-		return String(describing: self)
+		String(describing: self)
 	}
 
 	static func instantiateFromStoryboard() -> Self {

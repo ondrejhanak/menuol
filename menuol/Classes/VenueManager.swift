@@ -18,7 +18,7 @@ final class VenueManager {
 	private var allVenues = [Venue]()
 	private var favoriteVenues: [String] {
 		get {
-			return UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap { String(describing: $0) } ?? []
+			UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap { String(describing: $0) } ?? []
 		}
 		set {
 			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
@@ -99,6 +99,6 @@ final class VenueManager {
 	// MARK: - Private
 
 	private func find(slug: String) -> Venue? {
-		return self.allVenues.first { $0.slug == slug }
+		self.allVenues.first { $0.slug == slug }
 	}
 }

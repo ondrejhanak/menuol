@@ -35,7 +35,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.result.count
+		self.result.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +71,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
-		return self.result[indexPath.row]
+		self.result[indexPath.row]
 	}
 
 	private func fetchData() {

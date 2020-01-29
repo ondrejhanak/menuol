@@ -23,10 +23,10 @@ extension DateFormatter {
 	}()
 
 	static func dateOnlyString(from: Date) -> String {
-		return self.dateOnlyFormatter.string(from: from)
+		self.dateOnlyFormatter.string(from: from)
 	}
 
 	static func czechDateString(from: Date) -> String {
-		return self.czechDateFormatter.string(from: from)
+		self.czechDateFormatter.string(from: from)
 	}
 }
