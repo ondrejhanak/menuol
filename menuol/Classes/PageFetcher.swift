@@ -19,12 +19,12 @@ final class PageFetcher {
 
 	// MARK: - Public
 
-	public func fetchVenuePage(for date: Date, callback: @escaping (Result<String, Error>) -> Void) {
+	public func fetchVenuePage(for date: Date, callback: @escaping HTTPClient.HTTPCallback) {
 		let url = self.venueURL(date: date)
 		self.httpClient.get(url: url, callback: callback)
 	}
 
-	public func fetchMenuPage(slug: String, callback: @escaping (Result<String, Error>) -> Void) {
+	public func fetchMenuPage(slug: String, callback: @escaping HTTPClient.HTTPCallback) {
 		let url = self.venueMenuURL(slug: slug)
 		self.httpClient.get(url: url, callback: callback)
 	}

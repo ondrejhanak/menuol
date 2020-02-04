@@ -10,9 +10,10 @@ import Foundation
 
 final class HTTPClient {
 
-	struct HTTPError: Error {}
-
-	typealias Callback = (Result<String, Error>) -> Void
+	struct HTTPError: Error, Equatable {}
+	
+	typealias HTTPResult = Result<String, HTTPError>
+	typealias HTTPCallback = (HTTPResult) -> Void
 
 	private var session: URLSession
 
@@ -20,7 +21,7 @@ final class HTTPClient {
 		self.session = session
 	}
 
-	func get(url: URL, callback: @escaping Callback) {
+	func get(url: URL, callback: @escaping HTTPCallback) {
 		let task = self.session.dataTask(with: url) { data, _, error in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				DispatchQueue.main.async {
