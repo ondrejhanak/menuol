@@ -31,6 +31,7 @@
 		EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */; };
 		EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */; };
 		EE7894082114794700A1E18A /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7894072114794700A1E18A /* AlertFactory.swift */; };
+		EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79CC9F23E994C50074AB3D /* HTTPClient.swift */; };
 		EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItem.swift */; };
 		EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */; };
 		EE99C1C71F1F7CA500C324AE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */; };
@@ -87,6 +88,7 @@
 		EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+oh.swift"; sourceTree = "<group>"; };
 		EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		EE7894072114794700A1E18A /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		EE79CC9F23E994C50074AB3D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		EE99C1C21F1F689E00C324AE /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		EEFB9CDE2066EF340035542B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EE79CC9F23E994C50074AB3D /* HTTPClient.swift */,
 				EEA597B520279F72004E2B79 /* PageFetcher.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
@@ -478,6 +481,7 @@
 				EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */,
 				EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */,
 				EE48EEBF1F1E132E004DA56D /* AppDelegate.swift in Sources */,
+				EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */,
 				EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */,
 				EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */,
 				EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */,

@@ -10,37 +10,23 @@ import Foundation
 import UIKit
 
 final class PageFetcher {
-	struct PageFetcherError: Error {}
+
+	private var httpClient: HTTPClient
+
+	init(httpClient: HTTPClient = HTTPClient()) {
+		self.httpClient = httpClient
+	}
 
 	// MARK: - Public
 
-	public func fetchVenuePage(for date: Date, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
+	public func fetchVenuePage(for date: Date, callback: @escaping (Result<String, Error>) -> Void) {
 		let url = self.venueURL(date: date)
-		self.fetchPage(url: url, callback: callback)
+		self.httpClient.get(url: url, callback: callback)
 	}
 
-	public func fetchMenuPage(slug: String, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
+	public func fetchMenuPage(slug: String, callback: @escaping (Result<String, Error>) -> Void) {
 		let url = self.venueMenuURL(slug: slug)
-		self.fetchPage(url: url, callback: callback)
-	}
-
-	// MARK: - Private
-
-	private func fetchPage(url: URL, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		let task = URLSession.shared.dataTask(with: url) { data, _, error in
-			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
-				DispatchQueue.main.async {
-					callback(.failure(PageFetcherError()))
-				}
-				return
-			}
-			DispatchQueue.main.async {
-				UIApplication.shared.isNetworkActivityIndicatorVisible = false
-				callback(.success(html))
-			}
-		}
-		task.resume()
+		self.httpClient.get(url: url, callback: callback)
 	}
 
 	private func venueURL(date: Date) -> URL {
