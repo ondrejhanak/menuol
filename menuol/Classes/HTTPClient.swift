@@ -12,8 +12,16 @@ final class HTTPClient {
 
 	struct HTTPError: Error {}
 
-	func get(url: URL, callback: @escaping (Result<String, Error>) -> Void) {
-		let task = URLSession.shared.dataTask(with: url) { data, _, error in
+	typealias Callback = (Result<String, Error>) -> Void
+
+	private var session: URLSession
+
+	init(session: URLSession = URLSession.shared) {
+		self.session = session
+	}
+
+	func get(url: URL, callback: @escaping Callback) {
+		let task = self.session.dataTask(with: url) { data, _, error in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				DispatchQueue.main.async {
 					callback(.failure(HTTPError()))
