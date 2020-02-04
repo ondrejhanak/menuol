@@ -12,6 +12,8 @@ final class MenuItemTableViewCell: UITableViewCell {
 	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var priceLabel: UILabel!
 
+	static let noDataText = "Restaurace nedodala aktuální údaje"
+
 	// MARK: - Lifecycle
 
 	override func prepareForReuse() {
@@ -39,6 +41,6 @@ final class MenuItemTableViewCell: UITableViewCell {
 	}
 
 	public func setupWithNoData() {
-		self.titleLabel?.text = "Restaurace nedodala aktuální údaje"
+		self.titleLabel?.text = MenuItemTableViewCell.noDataText
 	}
 }

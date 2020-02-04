@@ -30,6 +30,7 @@
 		EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED81F1E3988004DA56D /* HTMLParser.swift */; };
 		EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */; };
 		EE48EEDD1F1E423E004DA56D /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */; };
+		EE73B8B723E9A82200541E42 /* MenuItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE73B8B623E9A82200541E42 /* MenuItemTableViewCellTests.swift */; };
 		EE7894082114794700A1E18A /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7894072114794700A1E18A /* AlertFactory.swift */; };
 		EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79CC9F23E994C50074AB3D /* HTTPClient.swift */; };
 		EE79CCA223E99AAF0074AB3D /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */; };
@@ -88,6 +89,7 @@
 		EE48EED81F1E3988004DA56D /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		EE48EEDA1F1E4137004DA56D /* UIImage+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+oh.swift"; sourceTree = "<group>"; };
 		EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		EE73B8B623E9A82200541E42 /* MenuItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCellTests.swift; sourceTree = "<group>"; };
 		EE7894072114794700A1E18A /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		EE79CC9F23E994C50074AB3D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				EE3DECBB212EF589002791E9 /* ExtensionsTests.swift */,
 				EE3DECBD212F0417002791E9 /* AppCoordinatorTests.swift */,
 				EE3DECBF212FF38A002791E9 /* AppDelegateTests.swift */,
+				EE73B8B623E9A82200541E42 /* MenuItemTableViewCellTests.swift */,
 				EE172F63211C1A690045B016 /* Info.plist */,
 			);
 			path = unittests;
@@ -475,6 +478,7 @@
 			files = (
 				EE3DECBE212F0417002791E9 /* AppCoordinatorTests.swift in Sources */,
 				EE172F6A211C1A9E0045B016 /* PageFetcherTests.swift in Sources */,
+				EE73B8B723E9A82200541E42 /* MenuItemTableViewCellTests.swift in Sources */,
 				EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */,
 				EE79CCA223E99AAF0074AB3D /* HTTPClientTests.swift in Sources */,
 				EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */,
