@@ -147,8 +147,7 @@
 		EE172F60211C1A690045B016 /* unittests */ = {
 			isa = PBXGroup;
 			children = (
-				EE3DECC1212FF65A002791E9 /* Menu.html */,
-				EE3DECB9212ED455002791E9 /* Venues.html */,
+				EE73B8B523E9A31800541E42 /* Resources */,
 				EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */,
 				EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */,
 				EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */,
@@ -195,6 +194,15 @@
 				EEA597B42023CB9C004E2B79 /* Resources */,
 			);
 			path = menuol;
+			sourceTree = "<group>";
+		};
+		EE73B8B523E9A31800541E42 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE3DECC1212FF65A002791E9 /* Menu.html */,
+				EE3DECB9212ED455002791E9 /* Venues.html */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EEA597B32023CB87004E2B79 /* Extensions */ = {
