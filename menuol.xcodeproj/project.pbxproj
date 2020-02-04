@@ -10,7 +10,7 @@
 		6E1F7996106120A4AF421D48 /* Pods_unittests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */; };
 		887679DD066284D7867E26C6 /* Pods_menuol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B29F96D21F9856631771B5 /* Pods_menuol.framework */; };
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
-		EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */; };
+		EE172F6A211C1A9E0045B016 /* PageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */; };
 		EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */; };
 		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
 		EE32E44C224E455400CC916A /* MenuTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E44A224E455400CC916A /* MenuTableViewController.storyboard */; };
@@ -36,7 +36,7 @@
 		EE99C1C71F1F7CA500C324AE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */; };
 		EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */; };
 		EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1DA1F29E7FC00C324AE /* String+oh.swift */; };
-		EEA597B620279F72004E2B79 /* HTMLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA597B520279F72004E2B79 /* HTMLFetcher.swift */; };
+		EEA597B620279F72004E2B79 /* PageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA597B520279F72004E2B79 /* PageFetcher.swift */; };
 		EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */; };
 		EEB612F2212D808800AA0C90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612F1212D808800AA0C90 /* main.swift */; };
 		EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */; };
@@ -64,7 +64,7 @@
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* unittests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unittests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcherTests.swift; sourceTree = "<group>"; };
+		EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFetcherTests.swift; sourceTree = "<group>"; };
 		EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EE32E44B224E455400CC916A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MenuTableViewController.storyboard; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+oh.swift"; sourceTree = "<group>"; };
 		EE99C1DA1F29E7FC00C324AE /* String+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+oh.swift"; sourceTree = "<group>"; };
-		EEA597B520279F72004E2B79 /* HTMLFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFetcher.swift; sourceTree = "<group>"; };
+		EEA597B520279F72004E2B79 /* PageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFetcher.swift; sourceTree = "<group>"; };
 		EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		EEB612F1212D808800AA0C90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			children = (
 				EE3DECC1212FF65A002791E9 /* Menu.html */,
 				EE3DECB9212ED455002791E9 /* Venues.html */,
-				EE172F69211C1A9E0045B016 /* HTMLFetcherTests.swift */,
+				EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */,
 				EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */,
 				EE3DECBB212EF589002791E9 /* ExtensionsTests.swift */,
 				EE3DECBD212F0417002791E9 /* AppCoordinatorTests.swift */,
@@ -257,7 +257,7 @@
 		EEFB9CDE2066EF340035542B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EEA597B520279F72004E2B79 /* HTMLFetcher.swift */,
+				EEA597B520279F72004E2B79 /* PageFetcher.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
 				EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */,
@@ -460,7 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE3DECBE212F0417002791E9 /* AppCoordinatorTests.swift in Sources */,
-				EE172F6A211C1A9E0045B016 /* HTMLFetcherTests.swift in Sources */,
+				EE172F6A211C1A9E0045B016 /* PageFetcherTests.swift in Sources */,
 				EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */,
 				EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */,
 				EE3DECC0212FF38A002791E9 /* AppDelegateTests.swift in Sources */,
@@ -472,7 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEA597B620279F72004E2B79 /* HTMLFetcher.swift in Sources */,
+				EEA597B620279F72004E2B79 /* PageFetcher.swift in Sources */,
 				EE48EED31F1E3795004DA56D /* Venue.swift in Sources */,
 				EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */,
 				EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */,

@@ -13,7 +13,7 @@ private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 final class VenueManager {
 	struct VenueError: Error {}
 
-	private var htmlFetcher = HTMLFetcher()
+	private var pageFetcher = PageFetcher()
 	private var htmlParser = HTMLParser()
 	private var allVenues = [Venue]()
 	private var favoriteVenues: [String] {
@@ -29,7 +29,7 @@ final class VenueManager {
 
 	/// Fetches list of venues along with menu for given day.
 	func updateVenuesAndMenu(for date: Date, callback: ((Result<Void, VenueError>) -> Void)? = nil) {
-		self.htmlFetcher.fetchVenueHTML(for: date) { result in
+		self.pageFetcher.fetchVenuePage(for: date) { result in
 			switch result {
 			case let .success(html):
 				let result = self.htmlParser.venuesWithMenuItems(from: html)
@@ -55,7 +55,7 @@ final class VenueManager {
 			callback(false)
 			return
 		}
-		self.htmlFetcher.fetchMenuHTML(slug: slug) { result in
+		self.pageFetcher.fetchMenuPage(slug: slug) { result in
 			switch result {
 			case let .success(html):
 				let items = self.htmlParser.menuItems(from: html)

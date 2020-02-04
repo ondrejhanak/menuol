@@ -1,5 +1,5 @@
 //
-//  HTMLFetcherTests.swift
+//  PageFetcherTests.swift
 //  unit tests
 //
 //  Created by Ondřej Hanák on 09. 08. 2018.
@@ -11,11 +11,11 @@ import XCTest
 
 private let kNetworkTimeout = 10.0
 
-final class HTMLFetcherTests: XCTestCase {
+final class PageFetcherTests: XCTestCase {
 	func testFetchVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching venue HTML")
-		let fetcher = HTMLFetcher()
-		fetcher.fetchVenueHTML(for: Date()) { result in
+		let fetcher = PageFetcher()
+		fetcher.fetchVenuePage(for: Date()) { result in
 			switch result {
 			case .success:
 				expectation.fulfill()
@@ -28,8 +28,8 @@ final class HTMLFetcherTests: XCTestCase {
 
 	func testMenuVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching menu HTML")
-		let fetcher = HTMLFetcher()
-		fetcher.fetchMenuHTML(slug: "JAZZ-TIBET-CLUB-id38") { result in
+		let fetcher = PageFetcher()
+		fetcher.fetchMenuPage(slug: "JAZZ-TIBET-CLUB-id38") { result in
 			switch result {
 			case .success:
 				expectation.fulfill()

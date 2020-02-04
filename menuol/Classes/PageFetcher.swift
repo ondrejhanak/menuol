@@ -1,5 +1,5 @@
 //
-//  HTMLFetcher.swift
+//  PageFetcher.swift
 //  menuol
 //
 //  Created by Ondrej Hanak on 04/02/2018.
@@ -9,29 +9,29 @@
 import Foundation
 import UIKit
 
-final class HTMLFetcher {
-	struct HTMLFetcherError: Error {}
+final class PageFetcher {
+	struct PageFetcherError: Error {}
 
 	// MARK: - Public
 
-	public func fetchVenueHTML(for date: Date, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	public func fetchVenuePage(for date: Date, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
 		let url = self.venueURL(date: date)
-		self.fetchHTML(url: url, callback: callback)
+		self.fetchPage(url: url, callback: callback)
 	}
 
-	public func fetchMenuHTML(slug: String, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	public func fetchMenuPage(slug: String, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
 		let url = self.venueMenuURL(slug: slug)
-		self.fetchHTML(url: url, callback: callback)
+		self.fetchPage(url: url, callback: callback)
 	}
 
 	// MARK: - Private
 
-	private func fetchHTML(url: URL, callback: @escaping (Result<String, HTMLFetcherError>) -> Void) {
+	private func fetchPage(url: URL, callback: @escaping (Result<String, PageFetcherError>) -> Void) {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		let task = URLSession.shared.dataTask(with: url) { data, _, error in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				DispatchQueue.main.async {
-					callback(.failure(HTMLFetcherError()))
+					callback(.failure(PageFetcherError()))
 				}
 				return
 			}
