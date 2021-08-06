@@ -8,16 +8,24 @@
 
 import UIKit
 
-final class MenuTableViewController: UITableViewController, StoryboardInstantiable {
-	// MARK: - Properties
-
-	public var venue: Venue!
-	public var venueManager: VenueManager!
-	private var items = [MenuItem]()
+final class MenuTableViewController: UITableViewController {
+	private var venue: Venue
+	private var venueManager: VenueManager
+	private var items: [MenuItem] = []
 	private var date = Date()
 	private var didTryFetch = false
 
 	// MARK: - Lifecycle
+
+	init(venue: Venue, venueManager: VenueManager) {
+		self.venue = venue
+		self.venueManager = venueManager
+		super.init(style: .grouped)
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -70,5 +78,15 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 			cell.setup(menuItem: menuItem)
 		}
 		return cell
+	}
+
+	// MARK: - UITableViewDelegate
+
+	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		0
+	}
+
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		nil
 	}
 }
