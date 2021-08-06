@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,49 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" id="bOR-h9-kGC" customClass="MenuItemTableViewCell" customModule="menuol" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bOR-h9-kGC" id="wP3-Vo-wVd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Maso, uho, rýže" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqe-EX-4OR">
-                                            <rect key="frame" x="10" y="10" width="102.5" height="24"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                            </accessibility>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="999 Kč" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jek-Ca-Ee1">
-                                            <rect key="frame" x="324.5" y="15" width="40.5" height="14.5"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                            </accessibility>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="hqe-EX-4OR" secondAttribute="bottom" constant="10" id="5DJ-6e-mVf"/>
-                                        <constraint firstItem="jek-Ca-Ee1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hqe-EX-4OR" secondAttribute="trailing" constant="10" id="DsW-hv-x2f"/>
-                                        <constraint firstItem="jek-Ca-Ee1" firstAttribute="centerY" secondItem="wP3-Vo-wVd" secondAttribute="centerY" id="Su8-lK-8eA"/>
-                                        <constraint firstItem="hqe-EX-4OR" firstAttribute="centerY" secondItem="wP3-Vo-wVd" secondAttribute="centerY" id="XxW-0k-aqs"/>
-                                        <constraint firstItem="hqe-EX-4OR" firstAttribute="top" secondItem="wP3-Vo-wVd" secondAttribute="top" constant="10" id="kpT-0Y-OBZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="jek-Ca-Ee1" secondAttribute="trailing" constant="10" id="mcQ-EA-iRZ"/>
-                                        <constraint firstItem="hqe-EX-4OR" firstAttribute="leading" secondItem="wP3-Vo-wVd" secondAttribute="leading" constant="10" id="pue-6b-iuS"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="priceLabel" destination="jek-Ca-Ee1" id="Oiy-D8-gl7"/>
-                                    <outlet property="titleLabel" destination="hqe-EX-4OR" id="cg2-hp-F6L"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="K5O-CG-rT8" id="xyw-xp-0pC"/>
                             <outlet property="delegate" destination="K5O-CG-rT8" id="Zi6-7O-Lvi"/>

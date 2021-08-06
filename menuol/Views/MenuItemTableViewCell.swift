@@ -9,38 +9,74 @@
 import UIKit
 
 final class MenuItemTableViewCell: UITableViewCell {
-	@IBOutlet var titleLabel: UILabel!
-	@IBOutlet var priceLabel: UILabel!
-
+	static let reuseIdentifier = "MenuItemCell"
 	static let noDataText = "Restaurace nedodala aktuální údaje"
+
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.font = UIFont.preferredFont(forTextStyle: .body)
+		label.numberOfLines = 0
+		label.textColor = .darkText
+		label.adjustsFontForContentSizeCategory = true
+		label.translatesAutoresizingMaskIntoConstraints = false
+		return label
+	}()
+
+	private lazy var priceLabel: UILabel = {
+		let label = UILabel()
+		label.font = UIFont.preferredFont(forTextStyle: .caption1)
+		label.textColor = .darkText
+		label.adjustsFontForContentSizeCategory = true
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+		return label
+	}()
 
 	// MARK: - Lifecycle
 
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		self.clearUI()
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.setupUI()
 	}
 
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		self.clearUI()
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		self.titleLabel.text = nil
+		self.priceLabel.text = nil
 	}
 
 	// MARK: - Private
 
-	private func clearUI() {
-		self.titleLabel.text = nil
-		self.priceLabel.text = nil
+	private func setupUI() {
+		self.contentView.addSubview(self.titleLabel)
+		self.contentView.addSubview(self.priceLabel)
+
+		self.titleLabel.snp.makeConstraints { make in
+			make.leading.equalTo(self.contentView.layoutMarginsGuide)
+			make.top.bottom.equalToSuperview().inset(8)
+			make.centerY.equalToSuperview()
+		}
+
+		self.priceLabel.snp.makeConstraints { make in
+			make.leading.greaterThanOrEqualTo(self.titleLabel.snp.trailing).offset(10)
+			make.trailing.equalTo(self.contentView.layoutMarginsGuide)
+			make.centerY.equalToSuperview()
+		}
 	}
 
 	// MARK: - Public
 
 	public func setup(menuItem: MenuItem) {
-		self.titleLabel?.text = menuItem.title
-		self.priceLabel?.text = menuItem.priceDescription
+		self.titleLabel.text = menuItem.title
+		self.priceLabel.text = menuItem.priceDescription
 	}
 
 	public func setupWithNoData() {
-		self.titleLabel?.text = MenuItemTableViewCell.noDataText
+		self.titleLabel.text = MenuItemTableViewCell.noDataText
+		self.priceLabel.text = nil
 	}
 }

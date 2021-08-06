@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let kMenuItemCellIdentifier = "MenuItemCell"
-
 final class MenuTableViewController: UITableViewController, StoryboardInstantiable {
 	// MARK: - Properties
 
@@ -34,6 +32,7 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 		self.tableView.rowHeight = UITableView.automaticDimension
 		self.tableView.estimatedRowHeight = 65
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+		self.tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.reuseIdentifier)
 	}
 
 	private func loadData() {
@@ -63,7 +62,7 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: kMenuItemCellIdentifier, for: indexPath) as! MenuItemTableViewCell
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.reuseIdentifier, for: indexPath) as? MenuItemTableViewCell else { fatalError("Unexpected cell type") }
 		if self.items.isEmpty {
 			cell.setupWithNoData()
 		} else {
