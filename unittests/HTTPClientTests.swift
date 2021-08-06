@@ -23,11 +23,12 @@ class URLSessionDataTaskMock: URLSessionDataTask {
 
 class URLSessionMock: URLSession {
 	typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+
 	var data: Data?
 	var error: Error?
 
 	override func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask {
-		return URLSessionDataTaskMock { completionHandler(self.data, nil, self.error) }
+		URLSessionDataTaskMock { completionHandler(self.data, nil, self.error) }
 	}
 }
 
