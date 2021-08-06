@@ -16,9 +16,13 @@ final class HTTPClient {
 
 	private var session: URLSession
 
+	// MARK: - Lifecycle
+
 	init(session: URLSession = URLSession.shared) {
 		self.session = session
 	}
+
+	// MARK: - Public
 
 	func get(url: URL, callback: @escaping HTTPCallback) {
 		let task = self.session.dataTask(with: url) { data, _, error in

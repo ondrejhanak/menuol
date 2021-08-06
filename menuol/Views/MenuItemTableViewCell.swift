@@ -39,6 +39,7 @@ final class MenuItemTableViewCell: UITableViewCell {
 		self.setupUI()
 	}
 
+	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -70,12 +71,12 @@ final class MenuItemTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 
-	public func setup(menuItem: MenuItem) {
+	func setup(menuItem: MenuItem) {
 		self.titleLabel.text = menuItem.title
 		self.priceLabel.text = menuItem.priceDescription
 	}
 
-	public func setupWithNoData() {
+	func setupWithNoData() {
 		self.titleLabel.text = MenuItemTableViewCell.noDataText
 		self.priceLabel.text = nil
 	}

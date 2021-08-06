@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol VenuesViewControllerDelegate: AnyObject {
-	func didSelect(venue: Venue)
-}
-
 final class AppCoordinator {
 	private(set) var navigationController: UINavigationController
 	private(set) var window: UIWindow?

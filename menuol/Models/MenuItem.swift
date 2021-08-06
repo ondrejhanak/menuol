@@ -9,8 +9,8 @@
 import Foundation
 
 final class MenuItem {
-	public var title = ""
-	public var day = ""
-	public var order = 0
-	public var priceDescription = ""
+	var title = ""
+	var day = ""
+	var order = 0
+	var priceDescription = ""
 }

@@ -8,8 +8,12 @@
 
 import UIKit
 
-final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
-	public var venueManager: VenueManager
+protocol VenuesViewControllerDelegate: AnyObject {
+	func didSelect(venue: Venue)
+}
+
+final class VenuesTableViewController: UITableViewController {
+	var venueManager: VenueManager
 	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
 	private var result: [Venue] = []
 	private lazy var searchController: UISearchController = {
@@ -34,12 +38,6 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		super.viewDidLoad()
 		self.setupUI()
 		self.fetchData()
-	}
-
-	// MARK: - UISearchResultsUpdating
-
-	func updateSearchResults(for searchController: UISearchController) {
-		self.loadData(nameFilter: searchController.searchBar.text)
 	}
 
 	// MARK: - UITableViewDataSource
@@ -107,11 +105,21 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	private func refreshData() {
 		self.fetchData()
 	}
+}
 
-	// MARK: - VenueTableViewCellDelegate
+// MARK: - VenueTableViewCellDelegate
 
+extension VenuesTableViewController: VenueTableViewCellDelegate {
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
 		self.venueManager.toggleFavorite(cell.venue)
 		self.loadData(nameFilter: self.searchController.searchBar.text)
+	}
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension VenuesTableViewController: UISearchResultsUpdating {
+	func updateSearchResults(for searchController: UISearchController) {
+		self.loadData(nameFilter: searchController.searchBar.text)
 	}
 }

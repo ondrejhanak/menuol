@@ -9,15 +9,14 @@
 import Foundation
 
 final class Venue: NSObject {
-	public var slug = ""
-	public var name = ""
-	public var imageURL: URL?
-	public var menuTimeDescription: String?
-	public var isFavorited = false
+	var slug = ""
+	var name = ""
+	var imageURL: URL?
+	var menuTimeDescription: String?
+	var isFavorited = false
+	var menuItems = [MenuItem]()
 
-	public var menuItems = [MenuItem]()
-
-	public func menuItems(for day: String) -> [MenuItem] {
+	func menuItems(for day: String) -> [MenuItem] {
 		self.menuItems.filter { $0.day == day }
 	}
 }

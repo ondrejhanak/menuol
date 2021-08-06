@@ -12,21 +12,25 @@ import UIKit
 final class PageFetcher {
 	private var httpClient: HTTPClient
 
+	// MARK: - Lifecycle
+
 	init(httpClient: HTTPClient = HTTPClient()) {
 		self.httpClient = httpClient
 	}
 
 	// MARK: - Public
 
-	public func fetchVenuePage(for date: Date, callback: @escaping HTTPClient.HTTPCallback) {
+	func fetchVenuePage(for date: Date, callback: @escaping HTTPClient.HTTPCallback) {
 		let url = self.venueURL(date: date)
 		self.httpClient.get(url: url, callback: callback)
 	}
 
-	public func fetchMenuPage(slug: String, callback: @escaping HTTPClient.HTTPCallback) {
+	func fetchMenuPage(slug: String, callback: @escaping HTTPClient.HTTPCallback) {
 		let url = self.venueMenuURL(slug: slug)
 		self.httpClient.get(url: url, callback: callback)
 	}
+
+	// MARK: - Private
 
 	private func venueURL(date: Date) -> URL {
 		let components = Calendar.current.dateComponents([.year, .month, .day], from: date)

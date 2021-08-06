@@ -7,8 +7,8 @@
 //
 
 import Kingfisher
-import UIKit
 import SnapKit
+import UIKit
 
 protocol VenueTableViewCellDelegate: AnyObject {
 	func venueCellDidTapFavorite(_ cell: VenueTableViewCell)
@@ -78,7 +78,7 @@ final class VenueTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 
-	public func setup(venue: Venue) {
+	func setup(venue: Venue) {
 		self.venue = venue
 		self.titleLabel.text = venue.name
 		self.subtitleLabel.text = venue.menuTimeDescription
@@ -134,7 +134,8 @@ final class VenueTableViewCell: UITableViewCell {
 		self.favoriteImageView.accessibilityLabel = favorited ? "Remove \(self.venue.name) from favorites" : "Add \(self.venue.name) to favorites"
 	}
 
-	@objc private func favoriteTapped() {
+	@objc
+	private func favoriteTapped() {
 		self.delegate?.venueCellDidTapFavorite(self)
 	}
 }
