@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let kVenueCellIdentifier = "VenueCell"
-
 final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate, StoryboardInstantiable {
 	// MARK: - Properties
 
@@ -39,7 +37,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: kVenueCellIdentifier, for: indexPath) as! VenueTableViewCell
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: VenueTableViewCell.reuseIdentifier, for: indexPath) as? VenueTableViewCell else { fatalError("Unexpected cell type.") }
 		let venue = self.venue(for: indexPath)
 		cell.setup(venue: venue)
 		cell.delegate = self
@@ -63,6 +61,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.definesPresentationContext = true
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 		self.tableView.rowHeight = UITableView.automaticDimension
+		self.tableView.register(VenueTableViewCell.self, forCellReuseIdentifier: VenueTableViewCell.reuseIdentifier)
 		self.tableView.estimatedRowHeight = 60
 		self.refreshControl = UIRefreshControl()
 		self.refreshControl?.tintColor = .black
