@@ -9,6 +9,4 @@
 @testable import menuol
 import XCTest
 
-final class MenuItemTableViewCellTests: XCTestCase {
-
-}
+final class MenuItemTableViewCellTests: XCTestCase {}

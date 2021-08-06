@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 final class PageFetcher {
-
 	private var httpClient: HTTPClient
 
 	init(httpClient: HTTPClient = HTTPClient()) {

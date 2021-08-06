@@ -9,9 +9,8 @@
 import Foundation
 
 final class HTTPClient {
-
 	struct HTTPError: Error, Equatable {}
-	
+
 	typealias HTTPResult = Result<String, HTTPError>
 	typealias HTTPCallback = (HTTPResult) -> Void
 
@@ -35,5 +34,4 @@ final class HTTPClient {
 		}
 		task.resume()
 	}
-	
 }

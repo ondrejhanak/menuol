@@ -32,7 +32,6 @@ class URLSessionMock: URLSession {
 }
 
 final class HTTPClientTests: XCTestCase {
-
 	func testSuccess() {
 		let string = "hello"
 		let data = string.data(using: .utf8)!
