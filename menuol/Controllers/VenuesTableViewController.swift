@@ -8,15 +8,27 @@
 
 import UIKit
 
-final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate, StoryboardInstantiable {
-	// MARK: - Properties
-
-	public var venueManager: VenueManager!
+final class VenuesTableViewController: UITableViewController, UISearchResultsUpdating, VenueTableViewCellDelegate {
+	public var venueManager: VenueManager
 	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
-	private var result = [Venue]()
-	private var searchController: UISearchController!
+	private var result: [Venue] = []
+	private lazy var searchController: UISearchController = {
+		let controller = UISearchController(searchResultsController: nil)
+		controller.searchResultsUpdater = self
+		return controller
+	}()
 
 	// MARK: - Lifecycle
+
+	init(venueManager: VenueManager) {
+		self.venueManager = venueManager
+		super.init(style: .grouped)
+	}
+
+	@available(*, unavailable)
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,9 +66,8 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 	// MARK: - Private
 
 	private func setupUI() {
+		self.title = "Polední menu"
 		self.navigationController?.navigationBar.prefersLargeTitles = true
-		self.searchController = UISearchController(searchResultsController: nil)
-		self.searchController.searchResultsUpdater = self
 		self.navigationItem.searchController = self.searchController
 		self.definesPresentationContext = true
 		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -65,7 +76,7 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.tableView.estimatedRowHeight = 60
 		self.refreshControl = UIRefreshControl()
 		self.refreshControl?.tintColor = .black
-		self.refreshControl?.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+		self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
@@ -92,7 +103,8 @@ final class VenuesTableViewController: UITableViewController, UISearchResultsUpd
 		self.tableView.reloadDataAnimated()
 	}
 
-	@objc private func refreshData() {
+	@objc
+	private func refreshData() {
 		self.fetchData()
 	}
 

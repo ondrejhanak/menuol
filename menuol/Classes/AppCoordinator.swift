@@ -29,9 +29,8 @@ final class AppCoordinator {
 	// MARK: - Public
 
 	func start() {
-		let vc = VenuesTableViewController.instantiateFromStoryboard()
+		let vc = VenuesTableViewController(venueManager: self.venueManager)
 		vc.coordinatorDelegate = self
-		vc.venueManager = self.venueManager
 		self.navigationController.pushViewController(vc, animated: false)
 	}
 }
