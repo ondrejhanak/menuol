@@ -12,7 +12,6 @@
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
 		EE172F6A211C1A9E0045B016 /* PageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */; };
 		EE172F6C211D5C690045B016 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */; };
-		EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */; };
 		EE32E44C224E455400CC916A /* MenuTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E44A224E455400CC916A /* MenuTableViewController.storyboard */; };
 		EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */; };
 		EE3DECBA212ED455002791E9 /* Venues.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECB9212ED455002791E9 /* Venues.html */; };
@@ -68,7 +67,6 @@
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFetcherTests.swift; sourceTree = "<group>"; };
 		EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
-		EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EE32E44B224E455400CC916A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MenuTableViewController.storyboard; sourceTree = "<group>"; };
 		EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserTests.swift; sourceTree = "<group>"; };
 		EE3DECB9212ED455002791E9 /* Venues.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Venues.html; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 				EE172F6B211D5C690045B016 /* StoryboardInstantiable.swift */,
 				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
 				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
-				EE326F561F39CB6A00D28C75 /* CalendarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -500,7 +497,6 @@
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
 				EE99C1C51F1F7C5B00C324AE /* MenuTableViewController.swift in Sources */,
 				EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */,
-				EE326F571F39CB6A00D28C75 /* CalendarViewController.swift in Sources */,
 				EE48EED71F1E3946004DA56D /* VenuesTableViewController.swift in Sources */,
 				EE48EEDB1F1E4137004DA56D /* UIImage+oh.swift in Sources */,
 				EEB612F2212D808800AA0C90 /* main.swift in Sources */,

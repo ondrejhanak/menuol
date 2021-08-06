@@ -6,7 +6,6 @@
 //  Copyright © 2017 Ondrej Hanak. All rights reserved.
 //
 
-import STPopup
 import UIKit
 
 private let kMenuItemCellIdentifier = "MenuItemCell"
@@ -26,25 +25,6 @@ final class MenuTableViewController: UITableViewController, StoryboardInstantiab
 		super.viewDidLoad()
 		self.setupUI()
 		self.loadData()
-	}
-
-	// MARK: - IBActions
-
-	@IBAction func calendarTapped(_ sender: UIBarButtonItem) {
-		let vc = CalendarViewController()
-		vc.date = self.date
-		vc.callback = { date in
-			self.date = date
-			self.loadData()
-		}
-		let padding: CGFloat = 10
-		let size = self.view.bounds.size.width - 2 * padding
-		vc.contentSizeInPopup = CGSize(width: size, height: size)
-		let popupController = STPopupController(rootViewController: vc)
-		popupController.containerView.layer.cornerRadius = 8
-		popupController.hidesCloseButton = false
-		popupController.style = .formSheet
-		popupController.present(in: self)
 	}
 
 	// MARK: - Private

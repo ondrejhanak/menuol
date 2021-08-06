@@ -8,8 +8,6 @@ inhibit_all_warnings!
 def pods
 	pod 'Kanna', '~> 5'
 	pod 'Kingfisher', '~> 6'
-	pod 'FSCalendar', '~> 2.7'
-	pod 'STPopup', '~> 1.8'
 	pod 'SnapKit', '~> 5'
 end
 
