@@ -69,6 +69,7 @@ final class VenueTableViewCell: UITableViewCell {
 	}
 
 	override func prepareForReuse() {
+		super.prepareForReuse()
 		self.logoImageView.kf.cancelDownloadTask()
 		self.logoImageView.image = nil
 		self.titleLabel.text = nil
