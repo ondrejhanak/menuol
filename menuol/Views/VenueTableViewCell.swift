@@ -15,8 +15,8 @@ protocol VenueTableViewCellDelegate: AnyObject {
 }
 
 final class VenueTableViewCell: UITableViewCell {
-	static var reuseIdentifier = "VenueCell"
-	public weak var delegate: VenueTableViewCellDelegate?
+	static let reuseIdentifier = "VenueCell"
+	weak var delegate: VenueTableViewCellDelegate?
 	private(set) var venue: Venue!
 
 	private lazy var titleLabel: UILabel = {

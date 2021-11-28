@@ -14,7 +14,7 @@ protocol VenuesViewControllerDelegate: AnyObject {
 
 final class VenuesTableViewController: UITableViewController {
 	var venueManager: VenueManager
-	public weak var coordinatorDelegate: VenuesViewControllerDelegate?
+	weak var coordinatorDelegate: VenuesViewControllerDelegate?
 	private var result: [Venue] = []
 	private lazy var searchController: UISearchController = {
 		let controller = UISearchController(searchResultsController: nil)
