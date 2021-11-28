@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E1F7996106120A4AF421D48 /* Pods_unittests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */; };
-		887679DD066284D7867E26C6 /* Pods_menuol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B29F96D21F9856631771B5 /* Pods_menuol.framework */; };
 		EE0D20C62029E04B00C5F665 /* UITableView+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */; };
 		EE172F6A211C1A9E0045B016 /* PageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */; };
 		EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */; };
@@ -36,6 +34,9 @@
 		EE99C1CB1F20F5C800C324AE /* DateFormatter+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1CA1F20F5C800C324AE /* DateFormatter+oh.swift */; };
 		EE99C1DB1F29E7FC00C324AE /* String+oh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1DA1F29E7FC00C324AE /* String+oh.swift */; };
 		EEA597B620279F72004E2B79 /* PageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA597B520279F72004E2B79 /* PageFetcher.swift */; };
+		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
+		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
+		EEADFE22275424FE00D21622 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE21275424FE00D21622 /* SnapKit */; };
 		EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */; };
 		EEB612F2212D808800AA0C90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612F1212D808800AA0C90 /* main.swift */; };
 		EEBBF6AD210772DE00DA58BA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF6AC210772DE00DA58BA /* AppCoordinator.swift */; };
@@ -52,14 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16DF94F2C5B7D40479B16C91 /* Pods-menuol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.release.xcconfig"; path = "Target Support Files/Pods-menuol/Pods-menuol.release.xcconfig"; sourceTree = "<group>"; };
-		469FDF86A7304BCB8AA39F4A /* Pods-unittests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unittests.debug.xcconfig"; path = "Target Support Files/Pods-unittests/Pods-unittests.debug.xcconfig"; sourceTree = "<group>"; };
-		582AE08FDB8C9583A9CE31BB /* Pods-unittests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unittests.release.xcconfig"; path = "Target Support Files/Pods-unittests/Pods-unittests.release.xcconfig"; sourceTree = "<group>"; };
-		99749FF44C45B5EE324424A4 /* Pods-menuol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuol.debug.xcconfig"; path = "Target Support Files/Pods-menuol/Pods-menuol.debug.xcconfig"; sourceTree = "<group>"; };
-		AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unittests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA40788484C6B8D7D166731 /* Pods-unit tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit tests.debug.xcconfig"; path = "Target Support Files/Pods-unit tests/Pods-unit tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B2B29F96D21F9856631771B5 /* Pods_menuol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB95502C46DBC36AA760F85F /* Pods-unit tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit tests.release.xcconfig"; path = "Target Support Files/Pods-unit tests/Pods-unit tests.release.xcconfig"; sourceTree = "<group>"; };
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* unittests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unittests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1F7996106120A4AF421D48 /* Pods_unittests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,35 +101,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887679DD066284D7867E26C6 /* Pods_menuol.framework in Frameworks */,
+				EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */,
+				EEADFE22275424FE00D21622 /* SnapKit in Frameworks */,
+				EEADFE1C275424E000D21622 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03810A1A613A349ECC2F71E4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B2B29F96D21F9856631771B5 /* Pods_menuol.framework */,
-				AAA6D1A9FC6E428BCC5DFD89 /* Pods_unittests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		504869417DE7E7E940D4A1DC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				99749FF44C45B5EE324424A4 /* Pods-menuol.debug.xcconfig */,
-				16DF94F2C5B7D40479B16C91 /* Pods-menuol.release.xcconfig */,
-				AFA40788484C6B8D7D166731 /* Pods-unit tests.debug.xcconfig */,
-				EB95502C46DBC36AA760F85F /* Pods-unit tests.release.xcconfig */,
-				469FDF86A7304BCB8AA39F4A /* Pods-unittests.debug.xcconfig */,
-				582AE08FDB8C9583A9CE31BB /* Pods-unittests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		EE172F60211C1A690045B016 /* unittests */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +132,6 @@
 				EE48EEBD1F1E132E004DA56D /* menuol */,
 				EE172F60211C1A690045B016 /* unittests */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
-				504869417DE7E7E940D4A1DC /* Pods */,
-				03810A1A613A349ECC2F71E4 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -278,11 +248,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "unittests" */;
 			buildPhases = (
-				BBC433ACED40E00B497E88E6 /* [CP] Check Pods Manifest.lock */,
 				EE172F5B211C1A690045B016 /* Sources */,
 				EE172F5C211C1A690045B016 /* Frameworks */,
 				EE172F5D211C1A690045B016 /* Resources */,
-				DC155A3A266D15347DAD4132 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,17 +266,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE48EECD1F1E132F004DA56D /* Build configuration list for PBXNativeTarget "menuol" */;
 			buildPhases = (
-				DBB1F732E7E707C985EBFC99 /* [CP] Check Pods Manifest.lock */,
 				EE48EEB71F1E132E004DA56D /* Sources */,
 				EE48EEB81F1E132E004DA56D /* Frameworks */,
 				EE48EEB91F1E132E004DA56D /* Resources */,
-				B20ED84686A4DB3B48D6F303 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = menuol;
+			packageProductDependencies = (
+				EEADFE1B275424E000D21622 /* Kanna */,
+				EEADFE1E275424F000D21622 /* Kingfisher */,
+				EEADFE21275424FE00D21622 /* SnapKit */,
+			);
 			productName = menuol;
 			productReference = EE48EEBB1F1E132E004DA56D /* menuol.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +316,11 @@
 				Base,
 			);
 			mainGroup = EE48EEB21F1E132E004DA56D;
+			packageReferences = (
+				EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */,
+				EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EEADFE20275424FE00D21622 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EE48EEBC1F1E132E004DA56D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,87 +351,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B20ED84686A4DB3B48D6F303 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-menuol/Pods-menuol-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBC433ACED40E00B497E88E6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-unittests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBB1F732E7E707C985EBFC99 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-menuol-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC155A3A266D15347DAD4132 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unittests/Pods-unittests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE172F5B211C1A690045B016 /* Sources */ = {
@@ -522,7 +417,6 @@
 /* Begin XCBuildConfiguration section */
 		EE172F66211C1A690045B016 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 469FDF86A7304BCB8AA39F4A /* Pods-unittests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -556,7 +450,6 @@
 		};
 		EE172F67211C1A690045B016 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 582AE08FDB8C9583A9CE31BB /* Pods-unittests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -705,7 +598,6 @@
 		};
 		EE48EECE1F1E132F004DA56D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99749FF44C45B5EE324424A4 /* Pods-menuol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
@@ -723,7 +615,6 @@
 		};
 		EE48EECF1F1E132F004DA56D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16DF94F2C5B7D40479B16C91 /* Pods-menuol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
@@ -770,6 +661,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		EEADFE20275424FE00D21622 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EEADFE1B275424E000D21622 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+		EEADFE1E275424F000D21622 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		EEADFE21275424FE00D21622 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEADFE20275424FE00D21622 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE48EEB31F1E132E004DA56D /* Project object */;
 }
