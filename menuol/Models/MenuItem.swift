@@ -8,9 +8,8 @@
 
 import Foundation
 
-final class MenuItem {
-	var title = ""
-	var day = ""
-	var order = 0
-	var priceDescription = ""
+struct MenuItem {
+	let title: String
+	let order: Int
+	let priceDescription: String?
 }

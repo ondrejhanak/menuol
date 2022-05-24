@@ -27,15 +27,14 @@ final class VenueManager {
 
 	// MARK: - Public
 
-	/// Fetches list of venues along with menu for given day.
-	func updateVenuesAndMenu(for date: Date, callback: ((Result<Void, VenueError>) -> Void)? = nil) {
-		pageFetcher.fetchVenuePage(for: date) { result in
+	/// Fetches list of venues along with menu.
+	func fetchVenues(callback: ((Result<Void, VenueError>) -> Void)? = nil) {
+		pageFetcher.fetchVenuePage { result in
 			switch result {
 			case let .success(html):
 				let result = self.htmlParser.venuesWithMenuItems(from: html)
 				self.allVenues.removeAll()
 				for new in result {
-					new.isFavorited = self.favoriteVenues.contains(new.slug)
 					self.allVenues.append(new)
 				}
 				if let callback = callback {
@@ -49,56 +48,34 @@ final class VenueManager {
 		}
 	}
 
-	/// Fetchches whole week menu for given venue.
-	func updateMenu(slug: String, callback: @escaping (_ success: Bool) -> Void) {
-		guard let venue = find(slug: slug) else {
-			callback(false)
-			return
-		}
-		pageFetcher.fetchMenuPage(slug: slug) { result in
-			switch result {
-			case let .success(html):
-				let items = self.htmlParser.menuItems(from: html)
-				venue.menuItems = items
-				callback(true)
-			case .failure:
-				callback(false)
-			}
-		}
-	}
-
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
 		var venues = allVenues
 		if name.isEmpty == false {
 			venues = venues.filter { $0.name.localizedCaseInsensitiveContains(name) }
 		}
-		let result = venues.sorted {
-			// sort by (isFavorited, name)
-			if $0.isFavorited == $1.isFavorited {
-				return $0.name.lowercased() < $1.name.lowercased()
+		let favourites = venues.map { isFavourited($0) }
+		let pairs = zip(favourites, venues)
+		let result = pairs.sorted { pair1, pair2 in
+			// sort by (favourited, venue.name)
+			if pair1.0 == pair2.0 {
+				return pair1.1.name.lowercased() < pair2.1.name.lowercased()
 			}
-			return $0.isFavorited && !$1.isFavorited
+			return pair1.0 && !pair2.0
 		}
-		return result
+		return result.map { $0.1 }
 	}
 
 	/// Toggles favorite state of given venue.
 	func toggleFavorite(_ venue: Venue) {
-		if venue.isFavorited {
-			venue.isFavorited = false
-			if let index = favoriteVenues.firstIndex(of: venue.slug) {
-				favoriteVenues.remove(at: index)
-			}
+		if let index = favoriteVenues.firstIndex(of: venue.slug) {
+			favoriteVenues.remove(at: index)
 		} else {
-			venue.isFavorited = true
 			favoriteVenues.append(venue.slug)
 		}
 	}
 
-	// MARK: - Private
-
-	private func find(slug: String) -> Venue? {
-		allVenues.first { $0.slug == slug }
+	func isFavourited(_ venue: Venue) -> Bool {
+		favoriteVenues.contains(venue.slug)
 	}
 }

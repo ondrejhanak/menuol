@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EE172F5E211C1A690045B016"
-               BuildableName = "unittests.xctest"
+               BuildableName = "tests.xctest"
                BlueprintName = "tests"
                ReferencedContainer = "container:menuol.xcodeproj">
             </BuildableReference>

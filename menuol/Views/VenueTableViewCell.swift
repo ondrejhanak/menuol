@@ -78,7 +78,7 @@ final class VenueTableViewCell: UITableViewCell {
 
 	// MARK: - Public
 
-	func setup(venue: Venue) {
+	func setup(venue: Venue, favourited: Bool) {
 		self.venue = venue
 		titleLabel.text = venue.name
 		subtitleLabel.text = venue.menuTimeDescription
@@ -88,7 +88,7 @@ final class VenueTableViewCell: UITableViewCell {
 			subtitleLabel.accessibilityLabel = nil
 		}
 		logoImageView.kf.setImage(with: venue.imageURL, placeholder: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
-		setFavorited(venue.isFavorited)
+		setFavorited(favourited)
 	}
 
 	// MARK: - Private

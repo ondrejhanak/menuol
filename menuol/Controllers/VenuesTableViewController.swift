@@ -16,6 +16,7 @@ final class VenuesTableViewController: UITableViewController {
 	var venueManager: VenueManager
 	weak var coordinatorDelegate: VenuesViewControllerDelegate?
 	private var result: [Venue] = []
+
 	private lazy var searchController: UISearchController = {
 		let controller = UISearchController(searchResultsController: nil)
 		controller.searchResultsUpdater = self
@@ -48,8 +49,9 @@ final class VenuesTableViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: VenueTableViewCell.reuseIdentifier, for: indexPath) as? VenueTableViewCell else { fatalError("Unexpected cell type.") }
-		let venue = self.venue(for: indexPath)
-		cell.setup(venue: venue)
+		let venue = venue(for: indexPath)
+		let favourited = venueManager.isFavourited(venue)
+		cell.setup(venue: venue, favourited: favourited)
 		cell.delegate = self
 		return cell
 	}
@@ -57,7 +59,7 @@ final class VenuesTableViewController: UITableViewController {
 	// MARK: - UITableViewDelegate
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let venue = self.venue(for: indexPath)
+		let venue = venue(for: indexPath)
 		coordinatorDelegate?.didSelect(venue: venue)
 	}
 
@@ -82,8 +84,7 @@ final class VenuesTableViewController: UITableViewController {
 	}
 
 	private func fetchData() {
-		let today = Date()
-		venueManager.updateVenuesAndMenu(for: today) { result in
+		venueManager.fetchVenues { result in
 			self.refreshControl?.endRefreshing()
 			switch result {
 			case .success:

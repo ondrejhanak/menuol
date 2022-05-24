@@ -8,15 +8,10 @@
 
 import Foundation
 
-final class Venue: NSObject {
+struct Venue {
 	var slug = ""
 	var name = ""
 	var imageURL: URL?
 	var menuTimeDescription: String?
-	var isFavorited = false
-	var menuItems = [MenuItem]()
-
-	func menuItems(for day: String) -> [MenuItem] {
-		menuItems.filter { $0.day == day }
-	}
+	var menuItems: [MenuItem] = []
 }

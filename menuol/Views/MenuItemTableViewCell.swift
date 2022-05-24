@@ -57,14 +57,14 @@ final class MenuItemTableViewCell: UITableViewCell {
 		contentView.addSubview(priceLabel)
 
 		titleLabel.snp.makeConstraints { make in
-			make.leading.equalTo(self.contentView.layoutMarginsGuide)
+			make.leading.equalTo(contentView.layoutMarginsGuide)
 			make.top.bottom.equalToSuperview().inset(8)
 			make.centerY.equalToSuperview()
 		}
 
 		priceLabel.snp.makeConstraints { make in
-			make.leading.greaterThanOrEqualTo(self.titleLabel.snp.trailing).offset(10)
-			make.trailing.equalTo(self.contentView.layoutMarginsGuide)
+			make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
+			make.trailing.equalTo(contentView.layoutMarginsGuide)
 			make.centerY.equalToSuperview()
 		}
 	}

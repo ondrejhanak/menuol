@@ -25,18 +25,4 @@ final class PageFetcherTests: XCTestCase {
 		}
 		wait(for: [expectation], timeout: kNetworkTimeout)
 	}
-
-	func testMenuVenueHTML() {
-		let expectation = XCTestExpectation(description: "Fetching menu HTML")
-		let fetcher = PageFetcher()
-		fetcher.fetchMenuPage(slug: "JAZZ-TIBET-CLUB-id38") { result in
-			switch result {
-			case .success:
-				expectation.fulfill()
-			case .failure:
-				XCTFail("Menu HTML fetching unexpectedly failed.")
-			}
-		}
-		wait(for: [expectation], timeout: kNetworkTimeout)
-	}
 }

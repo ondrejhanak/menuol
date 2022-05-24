@@ -35,7 +35,7 @@ final class AppCoordinator {
 
 extension AppCoordinator: VenuesViewControllerDelegate {
 	func didSelect(venue: Venue) {
-		let vc = MenuTableViewController(venue: venue, venueManager: venueManager)
+		let vc = MenuTableViewController(venue: venue)
 		navigationController.pushViewController(vc, animated: true)
 	}
 }
