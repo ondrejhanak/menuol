@@ -19,11 +19,11 @@ end
 
 desc "Runs swiftformat tool."
 lane :format do |options|
-	sh("swiftformat ../menuol/**/*.swift ../unittests/*.swift")
+	sh("swiftformat ../menuol/**/*.swift ../tests/*.swift")
 end
 
 desc "Runs unit tests."
-lane :unit_tests do
+lane :test do
 	run_tests(
 		scheme: "menuol",
 		code_coverage: true,

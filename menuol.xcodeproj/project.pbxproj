@@ -54,7 +54,7 @@
 
 /* Begin PBXFileReference section */
 		EE0D20C52029E04B00C5F665 /* UITableView+oh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+oh.swift"; sourceTree = "<group>"; };
-		EE172F5F211C1A690045B016 /* unittests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unittests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE172F5F211C1A690045B016 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE172F69211C1A9E0045B016 /* PageFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFetcherTests.swift; sourceTree = "<group>"; };
 		EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserTests.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE172F60211C1A690045B016 /* unittests */ = {
+		EE172F60211C1A690045B016 /* tests */ = {
 			isa = PBXGroup;
 			children = (
 				EE73B8B523E9A31800541E42 /* Resources */,
@@ -123,14 +123,14 @@
 				EE73B8B623E9A82200541E42 /* MenuItemTableViewCellTests.swift */,
 				EE172F63211C1A690045B016 /* Info.plist */,
 			);
-			path = unittests;
+			path = tests;
 			sourceTree = "<group>";
 		};
 		EE48EEB21F1E132E004DA56D = {
 			isa = PBXGroup;
 			children = (
 				EE48EEBD1F1E132E004DA56D /* menuol */,
-				EE172F60211C1A690045B016 /* unittests */,
+				EE172F60211C1A690045B016 /* tests */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 			);
 			indentWidth = 2;
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EE48EEBB1F1E132E004DA56D /* menuol.app */,
-				EE172F5F211C1A690045B016 /* unittests.xctest */,
+				EE172F5F211C1A690045B016 /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE172F5E211C1A690045B016 /* unittests */ = {
+		EE172F5E211C1A690045B016 /* tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "unittests" */;
+			buildConfigurationList = EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "tests" */;
 			buildPhases = (
 				EE172F5B211C1A690045B016 /* Sources */,
 				EE172F5C211C1A690045B016 /* Frameworks */,
@@ -257,9 +257,9 @@
 			dependencies = (
 				EE172F65211C1A690045B016 /* PBXTargetDependency */,
 			);
-			name = unittests;
+			name = tests;
 			productName = "menuol unit tests";
-			productReference = EE172F5F211C1A690045B016 /* unittests.xctest */;
+			productReference = EE172F5F211C1A690045B016 /* tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EE48EEBA1F1E132E004DA56D /* menuol */ = {
@@ -326,7 +326,7 @@
 			projectRoot = "";
 			targets = (
 				EE48EEBA1F1E132E004DA56D /* menuol */,
-				EE172F5E211C1A690045B016 /* unittests */,
+				EE172F5E211C1A690045B016 /* tests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = unittests/Info.plist;
+				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +462,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RSQZ5T9DT6;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = unittests/Info.plist;
+				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +631,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "unittests" */ = {
+		EE172F68211C1A690045B016 /* Build configuration list for PBXNativeTarget "tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE172F66211C1A690045B016 /* Debug */,
