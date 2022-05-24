@@ -1,9 +1,3 @@
-# paths to ignore during linting, takes precedence over `included`
-excluded:
-  - Pods
-  - Unapp/Google-Maps-iOS-Utils
-  - Unapp/StyleKit.swift
-
 # rules with explicit opt-in
 opt_in_rules:
   - anyobject_protocol
@@ -96,7 +90,7 @@ disabled_rules:
   - force_try
   - unused_closure_parameter
   - todo
-  
+
 #rules config
 file_length:
   warning: 500
