@@ -9,7 +9,7 @@
 import UIKit
 
 final class MenuTableViewController: UITableViewController {
-	private var venue: Venue
+	var venue: Venue
 	private var venueManager: VenueManager
 	private var items: [MenuItem] = []
 	private var date = Date()
