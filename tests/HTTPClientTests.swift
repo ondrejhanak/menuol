@@ -17,7 +17,7 @@ class URLSessionDataTaskMock: URLSessionDataTask {
 	}
 
 	override func resume() {
-		self.closure()
+		closure()
 	}
 }
 
@@ -46,7 +46,7 @@ final class HTTPClientTests: XCTestCase {
 			r = result
 			expectation.fulfill()
 		}
-		self.wait(for: [expectation], timeout: 1)
+		wait(for: [expectation], timeout: 1)
 		XCTAssertEqual(r, HTTPClient.HTTPResult.success(string))
 	}
 
@@ -61,7 +61,7 @@ final class HTTPClientTests: XCTestCase {
 			r = result
 			expectation.fulfill()
 		}
-		self.wait(for: [expectation], timeout: 1)
+		wait(for: [expectation], timeout: 1)
 		XCTAssertEqual(r, HTTPClient.HTTPResult.failure(HTTPClient.HTTPError()))
 	}
 }

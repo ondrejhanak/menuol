@@ -25,7 +25,7 @@ final class HTTPClient {
 	// MARK: - Public
 
 	func get(url: URL, callback: @escaping HTTPCallback) {
-		let task = self.session.dataTask(with: url) { data, _, error in
+		let task = session.dataTask(with: url) { data, _, error in
 			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
 				DispatchQueue.main.async {
 					callback(.failure(HTTPError()))

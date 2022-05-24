@@ -36,14 +36,14 @@ final class VenuesTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setupUI()
-		self.fetchData()
+		setupUI()
+		fetchData()
 	}
 
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		self.result.count
+		result.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,32 +58,32 @@ final class VenuesTableViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let venue = self.venue(for: indexPath)
-		self.coordinatorDelegate?.didSelect(venue: venue)
+		coordinatorDelegate?.didSelect(venue: venue)
 	}
 
 	// MARK: - Private
 
 	private func setupUI() {
-		self.title = "Polední menu"
-		self.navigationController?.navigationBar.prefersLargeTitles = true
-		self.navigationItem.searchController = self.searchController
-		self.definesPresentationContext = true
-		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-		self.tableView.rowHeight = UITableView.automaticDimension
-		self.tableView.register(VenueTableViewCell.self, forCellReuseIdentifier: VenueTableViewCell.reuseIdentifier)
-		self.tableView.estimatedRowHeight = 60
-		self.refreshControl = UIRefreshControl()
-		self.refreshControl?.tintColor = .black
-		self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+		title = "Polední menu"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.searchController = searchController
+		definesPresentationContext = true
+		tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.register(VenueTableViewCell.self, forCellReuseIdentifier: VenueTableViewCell.reuseIdentifier)
+		tableView.estimatedRowHeight = 60
+		refreshControl = UIRefreshControl()
+		refreshControl?.tintColor = .black
+		refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 	}
 
 	private func venue(for indexPath: IndexPath) -> Venue {
-		self.result[indexPath.row]
+		result[indexPath.row]
 	}
 
 	private func fetchData() {
 		let today = Date()
-		self.venueManager.updateVenuesAndMenu(for: today) { result in
+		venueManager.updateVenuesAndMenu(for: today) { result in
 			self.refreshControl?.endRefreshing()
 			switch result {
 			case .success:
@@ -97,13 +97,13 @@ final class VenuesTableViewController: UITableViewController {
 
 	private func loadData(nameFilter: String? = nil) {
 		let name = nameFilter ?? ""
-		self.result = self.venueManager.find(name: name)
-		self.tableView.reloadDataAnimated()
+		result = venueManager.find(name: name)
+		tableView.reloadDataAnimated()
 	}
 
 	@objc
 	private func refreshData() {
-		self.fetchData()
+		fetchData()
 	}
 }
 
@@ -111,8 +111,8 @@ final class VenuesTableViewController: UITableViewController {
 
 extension VenuesTableViewController: VenueTableViewCellDelegate {
 	internal func venueCellDidTapFavorite(_ cell: VenueTableViewCell) {
-		self.venueManager.toggleFavorite(cell.venue)
-		self.loadData(nameFilter: self.searchController.searchBar.text)
+		venueManager.toggleFavorite(cell.venue)
+		loadData(nameFilter: searchController.searchBar.text)
 	}
 }
 
@@ -120,6 +120,6 @@ extension VenuesTableViewController: VenueTableViewCellDelegate {
 
 extension VenuesTableViewController: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
-		self.loadData(nameFilter: searchController.searchBar.text)
+		loadData(nameFilter: searchController.searchBar.text)
 	}
 }

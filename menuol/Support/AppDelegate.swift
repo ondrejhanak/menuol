@@ -15,16 +15,16 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Lifecycle
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		self.setupWindow()
+		setupWindow()
 		return true
 	}
 
 	// MARK: - Private
 
 	private func setupWindow() {
-		self.window = UIWindow()
-		self.window?.makeKeyAndVisible()
-		self.coordinator = AppCoordinator(window: self.window)
-		self.coordinator?.start()
+		window = UIWindow()
+		window?.makeKeyAndVisible()
+		coordinator = AppCoordinator(window: window)
+		coordinator?.start()
 	}
 }

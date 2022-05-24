@@ -30,26 +30,26 @@ final class MenuTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setupUI()
-		self.loadData()
+		setupUI()
+		loadData()
 	}
 
 	// MARK: - Private
 
 	private func setupUI() {
-		self.navigationItem.largeTitleDisplayMode = .never
-		self.tableView.rowHeight = UITableView.automaticDimension
-		self.tableView.estimatedRowHeight = 65
-		self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-		self.tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.reuseIdentifier)
+		navigationItem.largeTitleDisplayMode = .never
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.estimatedRowHeight = 65
+		tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+		tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.reuseIdentifier)
 	}
 
 	private func loadData() {
-		self.title = DateFormatter.czechDateString(from: self.date).capitalizingFirstLetter()
-		let day = DateFormatter.dateOnlyString(from: self.date)
-		self.items = self.venue.menuItems(for: day)
-		if self.items.isEmpty, !self.didTryFetch {
-			self.venueManager.updateMenu(slug: self.venue.slug) { success in
+		title = DateFormatter.czechDateString(from: date).capitalizingFirstLetter()
+		let day = DateFormatter.dateOnlyString(from: date)
+		items = venue.menuItems(for: day)
+		if items.isEmpty, !didTryFetch {
+			venueManager.updateMenu(slug: venue.slug) { success in
 				if success {
 					self.didTryFetch = true
 					self.loadData()
@@ -58,24 +58,24 @@ final class MenuTableViewController: UITableViewController {
 					self.present(alert, animated: true, completion: nil)
 				}
 			}
-			self.tableView.reloadDataAnimated()
+			tableView.reloadDataAnimated()
 		} else {
-			self.tableView.reloadDataAnimated()
+			tableView.reloadDataAnimated()
 		}
 	}
 
 	// MARK: - UITableViewDataSource
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		self.items.isEmpty ? 1 : self.items.count
+		items.isEmpty ? 1 : items.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.reuseIdentifier, for: indexPath) as? MenuItemTableViewCell else { fatalError("Unexpected cell type") }
-		if self.items.isEmpty {
+		if items.isEmpty {
 			cell.setupWithNoData()
 		} else {
-			let menuItem = self.items[indexPath.row]
+			let menuItem = items[indexPath.row]
 			cell.setup(menuItem: menuItem)
 		}
 		return cell

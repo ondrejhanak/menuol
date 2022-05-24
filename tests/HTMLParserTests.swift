@@ -12,7 +12,7 @@ import XCTest
 final class HTMLParserTests: XCTestCase {
 	func testVenuesParsing_correct() {
 		let parser = HTMLParser()
-		let html = self.loadHTML(from: "Venues.html")
+		let html = loadHTML(from: "Venues.html")
 
 		// venues count
 		let venues = parser.venuesWithMenuItems(from: html)
@@ -69,7 +69,7 @@ final class HTMLParserTests: XCTestCase {
 
 	func testMenuParsingCorrect() {
 		let parser = HTMLParser()
-		let html = self.loadHTML(from: "Menu.html")
+		let html = loadHTML(from: "Menu.html")
 		let menuItems = parser.menuItems(from: html)
 
 		XCTAssertEqual(menuItems.count, 12)

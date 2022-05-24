@@ -60,7 +60,7 @@ final class VenueTableViewCell: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		self.setupUI()
+		setupUI()
 	}
 
 	@available(*, unavailable)
@@ -70,25 +70,25 @@ final class VenueTableViewCell: UITableViewCell {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		self.logoImageView.kf.cancelDownloadTask()
-		self.logoImageView.image = nil
-		self.titleLabel.text = nil
-		self.subtitleLabel.text = nil
+		logoImageView.kf.cancelDownloadTask()
+		logoImageView.image = nil
+		titleLabel.text = nil
+		subtitleLabel.text = nil
 	}
 
 	// MARK: - Public
 
 	func setup(venue: Venue) {
 		self.venue = venue
-		self.titleLabel.text = venue.name
-		self.subtitleLabel.text = venue.menuTimeDescription
+		titleLabel.text = venue.name
+		subtitleLabel.text = venue.menuTimeDescription
 		if let time = venue.menuTimeDescription {
-			self.subtitleLabel.accessibilityLabel = "Opening hours " + time
+			subtitleLabel.accessibilityLabel = "Opening hours " + time
 		} else {
-			self.subtitleLabel.accessibilityLabel = nil
+			subtitleLabel.accessibilityLabel = nil
 		}
-		self.logoImageView.kf.setImage(with: venue.imageURL, placeholder: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
-		self.setFavorited(venue.isFavorited)
+		logoImageView.kf.setImage(with: venue.imageURL, placeholder: UIImage(color: .lightGray, size: CGSize(width: 50, height: 50)))
+		setFavorited(venue.isFavorited)
 	}
 
 	// MARK: - Private
@@ -100,13 +100,13 @@ final class VenueTableViewCell: UITableViewCell {
 		stack.alignment = .leading
 		stack.distribution = .equalSpacing
 		stack.spacing = 2
-		stack.addArrangedSubview(self.titleLabel)
-		stack.addArrangedSubview(self.subtitleLabel)
-		self.contentView.addSubview(self.logoImageView)
-		self.contentView.addSubview(stack)
-		self.contentView.addSubview(self.favoriteImageView)
+		stack.addArrangedSubview(titleLabel)
+		stack.addArrangedSubview(subtitleLabel)
+		contentView.addSubview(logoImageView)
+		contentView.addSubview(stack)
+		contentView.addSubview(favoriteImageView)
 
-		self.logoImageView.snp.makeConstraints { make in
+		logoImageView.snp.makeConstraints { make in
 			make.width.height.equalTo(50)
 			make.leading.equalTo(self.contentView.layoutMarginsGuide)
 			make.centerY.equalToSuperview()
@@ -120,7 +120,7 @@ final class VenueTableViewCell: UITableViewCell {
 			make.top.bottom.greaterThanOrEqualToSuperview().inset(8)
 		}
 
-		self.favoriteImageView.snp.makeConstraints { make in
+		favoriteImageView.snp.makeConstraints { make in
 			make.width.height.equalTo(44)
 			make.trailing.equalToSuperview()
 			make.centerY.equalToSuperview()
@@ -130,12 +130,12 @@ final class VenueTableViewCell: UITableViewCell {
 
 	private func setFavorited(_ favorited: Bool) {
 		let imageName = favorited ? "heart.fill" : "heart"
-		self.favoriteImageView.image = UIImage(systemName: imageName)
-		self.favoriteImageView.accessibilityLabel = favorited ? "Remove \(self.venue.name) from favorites" : "Add \(self.venue.name) to favorites"
+		favoriteImageView.image = UIImage(systemName: imageName)
+		favoriteImageView.accessibilityLabel = favorited ? "Remove \(venue.name) from favorites" : "Add \(venue.name) to favorites"
 	}
 
 	@objc
 	private func favoriteTapped() {
-		self.delegate?.venueCellDidTapFavorite(self)
+		delegate?.venueCellDidTapFavorite(self)
 	}
 }

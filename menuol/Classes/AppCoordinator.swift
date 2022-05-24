@@ -17,17 +17,17 @@ final class AppCoordinator {
 
 	init(window: UIWindow?) {
 		self.window = window
-		self.navigationController = UINavigationController()
-		self.venueManager = VenueManager()
-		self.window?.rootViewController = self.navigationController
+		navigationController = UINavigationController()
+		venueManager = VenueManager()
+		self.window?.rootViewController = navigationController
 	}
 
 	// MARK: - Public
 
 	func start() {
-		let vc = VenuesTableViewController(venueManager: self.venueManager)
+		let vc = VenuesTableViewController(venueManager: venueManager)
 		vc.coordinatorDelegate = self
-		self.navigationController.pushViewController(vc, animated: false)
+		navigationController.pushViewController(vc, animated: false)
 	}
 }
 
@@ -35,7 +35,7 @@ final class AppCoordinator {
 
 extension AppCoordinator: VenuesViewControllerDelegate {
 	func didSelect(venue: Venue) {
-		let vc = MenuTableViewController(venue: venue, venueManager: self.venueManager)
-		self.navigationController.pushViewController(vc, animated: true)
+		let vc = MenuTableViewController(venue: venue, venueManager: venueManager)
+		navigationController.pushViewController(vc, animated: true)
 	}
 }

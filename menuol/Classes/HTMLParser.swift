@@ -30,10 +30,10 @@ final class HTMLParser {
 		let day = DateFormatter.dateOnlyString(from: date)
 		var result = [Venue]()
 		for element in html.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
-			if let venue = self.venue(from: element) {
+			if let venue = venue(from: element) {
 				result.append(venue)
 				if let table = element.xpath("./table").first {
-					let items = self.menuItems(from: table)
+					let items = menuItems(from: table)
 					for item in items {
 						item.day = day
 					}
@@ -60,7 +60,7 @@ final class HTMLParser {
 				let date = Calendar.current.date(from: components)!
 				let day = DateFormatter.dateOnlyString(from: date)
 				if let table = header.xpath("following-sibling::table").first {
-					let items = self.menuItems(from: table)
+					let items = menuItems(from: table)
 					for item in items {
 						item.day = day
 					}

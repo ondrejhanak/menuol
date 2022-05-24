@@ -29,7 +29,7 @@ final class VenueManager {
 
 	/// Fetches list of venues along with menu for given day.
 	func updateVenuesAndMenu(for date: Date, callback: ((Result<Void, VenueError>) -> Void)? = nil) {
-		self.pageFetcher.fetchVenuePage(for: date) { result in
+		pageFetcher.fetchVenuePage(for: date) { result in
 			switch result {
 			case let .success(html):
 				let result = self.htmlParser.venuesWithMenuItems(from: html)
@@ -51,11 +51,11 @@ final class VenueManager {
 
 	/// Fetchches whole week menu for given venue.
 	func updateMenu(slug: String, callback: @escaping (_ success: Bool) -> Void) {
-		guard let venue = self.find(slug: slug) else {
+		guard let venue = find(slug: slug) else {
 			callback(false)
 			return
 		}
-		self.pageFetcher.fetchMenuPage(slug: slug) { result in
+		pageFetcher.fetchMenuPage(slug: slug) { result in
 			switch result {
 			case let .success(html):
 				let items = self.htmlParser.menuItems(from: html)
@@ -69,7 +69,7 @@ final class VenueManager {
 
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
-		var venues = self.allVenues
+		var venues = allVenues
 		if name.isEmpty == false {
 			venues = venues.filter { $0.name.localizedCaseInsensitiveContains(name) }
 		}
@@ -88,17 +88,17 @@ final class VenueManager {
 		if venue.isFavorited {
 			venue.isFavorited = false
 			if let index = favoriteVenues.firstIndex(of: venue.slug) {
-				self.favoriteVenues.remove(at: index)
+				favoriteVenues.remove(at: index)
 			}
 		} else {
 			venue.isFavorited = true
-			self.favoriteVenues.append(venue.slug)
+			favoriteVenues.append(venue.slug)
 		}
 	}
 
 	// MARK: - Private
 
 	private func find(slug: String) -> Venue? {
-		self.allVenues.first { $0.slug == slug }
+		allVenues.first { $0.slug == slug }
 	}
 }

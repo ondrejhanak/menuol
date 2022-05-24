@@ -21,13 +21,13 @@ final class PageFetcher {
 	// MARK: - Public
 
 	func fetchVenuePage(for date: Date, callback: @escaping HTTPClient.HTTPCallback) {
-		let url = self.venueURL(date: date)
-		self.httpClient.get(url: url, callback: callback)
+		let url = venueURL(date: date)
+		httpClient.get(url: url, callback: callback)
 	}
 
 	func fetchMenuPage(slug: String, callback: @escaping HTTPClient.HTTPCallback) {
-		let url = self.venueMenuURL(slug: slug)
-		self.httpClient.get(url: url, callback: callback)
+		let url = venueMenuURL(slug: slug)
+		httpClient.get(url: url, callback: callback)
 	}
 
 	// MARK: - Private

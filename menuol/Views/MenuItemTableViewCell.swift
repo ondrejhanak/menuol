@@ -36,7 +36,7 @@ final class MenuItemTableViewCell: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		self.setupUI()
+		setupUI()
 	}
 
 	@available(*, unavailable)
@@ -46,23 +46,23 @@ final class MenuItemTableViewCell: UITableViewCell {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		self.titleLabel.text = nil
-		self.priceLabel.text = nil
+		titleLabel.text = nil
+		priceLabel.text = nil
 	}
 
 	// MARK: - Private
 
 	private func setupUI() {
-		self.contentView.addSubview(self.titleLabel)
-		self.contentView.addSubview(self.priceLabel)
+		contentView.addSubview(titleLabel)
+		contentView.addSubview(priceLabel)
 
-		self.titleLabel.snp.makeConstraints { make in
+		titleLabel.snp.makeConstraints { make in
 			make.leading.equalTo(self.contentView.layoutMarginsGuide)
 			make.top.bottom.equalToSuperview().inset(8)
 			make.centerY.equalToSuperview()
 		}
 
-		self.priceLabel.snp.makeConstraints { make in
+		priceLabel.snp.makeConstraints { make in
 			make.leading.greaterThanOrEqualTo(self.titleLabel.snp.trailing).offset(10)
 			make.trailing.equalTo(self.contentView.layoutMarginsGuide)
 			make.centerY.equalToSuperview()
@@ -72,12 +72,12 @@ final class MenuItemTableViewCell: UITableViewCell {
 	// MARK: - Public
 
 	func setup(menuItem: MenuItem) {
-		self.titleLabel.text = menuItem.title
-		self.priceLabel.text = menuItem.priceDescription
+		titleLabel.text = menuItem.title
+		priceLabel.text = menuItem.priceDescription
 	}
 
 	func setupWithNoData() {
-		self.titleLabel.text = MenuItemTableViewCell.noDataText
-		self.priceLabel.text = nil
+		titleLabel.text = MenuItemTableViewCell.noDataText
+		priceLabel.text = nil
 	}
 }

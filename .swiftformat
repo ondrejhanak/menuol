@@ -5,6 +5,5 @@
 --tabwidth 2
 
 # rules https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
---disable redundantSelf
 --disable unusedArguments
 --disable specifiers

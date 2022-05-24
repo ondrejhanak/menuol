@@ -23,7 +23,7 @@ final class PageFetcherTests: XCTestCase {
 				XCTFail("Venue HTML fetching unexpectedly failed.")
 			}
 		}
-		self.wait(for: [expectation], timeout: kNetworkTimeout)
+		wait(for: [expectation], timeout: kNetworkTimeout)
 	}
 
 	func testMenuVenueHTML() {
@@ -37,6 +37,6 @@ final class PageFetcherTests: XCTestCase {
 				XCTFail("Menu HTML fetching unexpectedly failed.")
 			}
 		}
-		self.wait(for: [expectation], timeout: kNetworkTimeout)
+		wait(for: [expectation], timeout: kNetworkTimeout)
 	}
 }
