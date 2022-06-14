@@ -15,3 +15,9 @@ struct Venue {
 	var menuTimeDescription: String?
 	var menuItems: [MenuItem] = []
 }
+
+extension Venue: Equatable {
+	static func ==(lhs: Venue, rhs: Venue) -> Bool {
+		lhs.slug == rhs.slug
+	}
+}

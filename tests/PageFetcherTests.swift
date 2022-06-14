@@ -15,7 +15,7 @@ final class PageFetcherTests: XCTestCase {
 	func testFetchVenueHTML() {
 		let expectation = XCTestExpectation(description: "Fetching venue HTML")
 		let fetcher = PageFetcher()
-		fetcher.fetchVenuePage(for: Date()) { result in
+		fetcher.fetchVenuePage { result in
 			switch result {
 			case .success:
 				expectation.fulfill()
