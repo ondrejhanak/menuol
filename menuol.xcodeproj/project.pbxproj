@@ -151,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				EEFB9CDC2066EEED0035542B /* Models */,
-				EEBBF6A5210755BE00DA58BA /* Views */,
 				EEFB9CDD2066EEFD0035542B /* Controllers */,
 				EEFB9CDE2066EF340035542B /* Classes */,
 				EEA597B32023CB87004E2B79 /* Extensions */,
@@ -168,6 +167,24 @@
 				EE3DECB9212ED455002791E9 /* Venues.html */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE89DA662858DE87004353C7 /* Venues */ = {
+			isa = PBXGroup;
+			children = (
+				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
+				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
+			);
+			path = Venues;
+			sourceTree = "<group>";
+		};
+		EE89DA672858DEB1004353C7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
+				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		EEA597B32023CB87004E2B79 /* Extensions */ = {
@@ -188,15 +205,6 @@
 				EE48EEC51F1E132E004DA56D /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		EEBBF6A5210755BE00DA58BA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EE48EEDC1F1E423E004DA56D /* VenueTableViewCell.swift */,
-				EE99C1C61F1F7CA500C324AE /* MenuItemTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		EEBBF6AE21085C2300DA58BA /* Support */ = {
@@ -222,8 +230,8 @@
 		EEFB9CDD2066EEFD0035542B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE48EED61F1E3946004DA56D /* VenuesTableViewController.swift */,
-				EE99C1C41F1F7C5B00C324AE /* MenuTableViewController.swift */,
+				EE89DA662858DE87004353C7 /* Venues */,
+				EE89DA672858DEB1004353C7 /* Menu */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
