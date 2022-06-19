@@ -9,8 +9,7 @@
 import UIKit
 
 final class MenuTableViewController: UITableViewController {
-	var venue: Venue
-	private var date = Date()
+	private(set) var venue: Venue
 
 	// MARK: - Lifecycle
 
@@ -41,7 +40,7 @@ final class MenuTableViewController: UITableViewController {
 	}
 
 	private func loadData() {
-		title = DateFormatter.czechDateString(from: date).capitalizingFirstLetter()
+		title = DateFormatter.czechDateString(from: Date()).capitalizingFirstLetter()
 		tableView.reloadDataAnimated()
 	}
 
