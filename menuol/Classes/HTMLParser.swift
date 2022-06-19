@@ -19,10 +19,10 @@ final class HTMLParser {
 		var result: [Venue] = []
 		for element in html.xpath("//div[@id='kmBox']/div[contains(@class, 'restaurace')]") {
 			if var venue = venue(from: element) {
-				result.append(venue)
 				if let table = element.xpath("./table").first {
 					venue.menuItems = menuItems(from: table)
 				}
+				result.append(venue)
 			}
 		}
 		return result
