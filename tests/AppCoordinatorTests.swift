@@ -23,12 +23,4 @@ final class AppCoordinatorTests: XCTestCase {
 		let topVC = coordinator.navigationController.topViewController
 		XCTAssertTrue(topVC is VenuesTableViewController)
 	}
-
-	func testVenue() {
-		let venue = Venue()
-		let coordinator = AppCoordinator(window: UIWindow())
-		coordinator.didSelect(venue: venue)
-		let topVC = coordinator.navigationController.topViewController as? MenuTableViewController
-		XCTAssertEqual(topVC?.venue, venue)
-	}
 }

@@ -26,13 +26,11 @@ final class VenueManager {
 	// MARK: - Public
 
 	/// Fetches list of venues along with menu.
-	func fetchVenues() async throws {
+	func fetchVenues() async throws -> [Venue] {
 		let html = try await httpClient.getVenuesPage()
-		let result = self.htmlParser.venuesWithMenuItems(from: html)
-		self.allVenues.removeAll()
-		for new in result {
-			self.allVenues.append(new)
-		}
+		let venues = self.htmlParser.venuesWithMenuItems(from: html)
+		allVenues = venues
+		return venues
 	}
 
 	/// Finds venues partially matching given name.
