@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct Venue {
+struct Venue: Identifiable {
+	var id: String {
+		slug
+	}
 	var slug = ""
 	var name = ""
 	var imageURL: URL?

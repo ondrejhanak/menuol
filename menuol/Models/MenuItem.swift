@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct MenuItem {
+struct MenuItem: Identifiable {
+	let id = UUID()
 	let title: String
 	let order: Int
 	let priceDescription: String?
