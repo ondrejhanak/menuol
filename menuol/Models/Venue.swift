@@ -24,3 +24,9 @@ extension Venue: Equatable {
 		lhs.slug == rhs.slug
 	}
 }
+
+extension Venue {
+	static var demoVenueImage = Venue(slug: "image", name: "Venue + image", imageURL: URL(string: "https://picsum.photos/id/1060/200/150"), menuTimeDescription: nil, menuItems: [])
+	static var demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [])
+	static var demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
+}
