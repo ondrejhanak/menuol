@@ -38,7 +38,9 @@ final class VenuesTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupUI()
-		fetchData()
+		Task {
+			await fetchData()
+		}
 	}
 
 	// MARK: - UITableViewDataSource
@@ -83,16 +85,13 @@ final class VenuesTableViewController: UITableViewController {
 		result[indexPath.row]
 	}
 
-	private func fetchData() {
-		venueManager.fetchVenues { result in
-			self.refreshControl?.endRefreshing()
-			switch result {
-			case .success:
-				self.loadData()
-			case .failure:
-				let alert = AlertFactory.makeGeneralNetworkingError()
-				self.present(alert, animated: true, completion: nil)
-			}
+	private func fetchData() async {
+		do {
+			try await venueManager.fetchVenues()
+			self.loadData()
+		} catch {
+			let alert = AlertFactory.makeGeneralNetworkingError()
+			self.present(alert, animated: true, completion: nil)
 		}
 	}
 
@@ -104,7 +103,9 @@ final class VenuesTableViewController: UITableViewController {
 
 	@objc
 	private func refreshData() {
-		fetchData()
+		Task {
+			await fetchData()
+		}
 	}
 }
 

@@ -9,11 +9,6 @@
 import Foundation
 
 final class HTTPClient {
-	struct HTTPError: Error, Equatable {}
-
-	typealias HTTPResult = Result<String, HTTPError>
-	typealias HTTPCallback = (HTTPResult) -> Void
-
 	private var session: URLSession
 
 	// MARK: - Lifecycle
@@ -24,18 +19,15 @@ final class HTTPClient {
 
 	// MARK: - Public
 
-	func get(url: URL, callback: @escaping HTTPCallback) {
-		let task = session.dataTask(with: url) { data, _, error in
-			guard error == nil, let data = data, let html = String(data: data, encoding: .utf8) else {
-				DispatchQueue.main.async {
-					callback(.failure(HTTPError()))
-				}
-				return
-			}
-			DispatchQueue.main.async {
-				callback(.success(html))
-			}
-		}
-		task.resume()
+	func get(url: URL) async throws -> String {
+		let (data, _) = try await session.data(from: url)
+		let html = String(decoding: data, as: UTF8.self)
+		return html
+	}
+
+	func getVenuesPage() async throws -> String {
+		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
+		let html = try await get(url: url)
+		return html
 	}
 }

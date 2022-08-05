@@ -11,9 +11,7 @@ import Foundation
 private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 final class VenueManager {
-	struct VenueError: Error {}
-
-	private var pageFetcher = PageFetcher()
+	private var httpClient = HTTPClient()
 	private var htmlParser = HTMLParser()
 	private var allVenues = [Venue]()
 	private var favoriteVenues: [String] {
@@ -28,23 +26,12 @@ final class VenueManager {
 	// MARK: - Public
 
 	/// Fetches list of venues along with menu.
-	func fetchVenues(callback: ((Result<Void, VenueError>) -> Void)? = nil) {
-		pageFetcher.fetchVenuePage { result in
-			switch result {
-			case let .success(html):
-				let result = self.htmlParser.venuesWithMenuItems(from: html)
-				self.allVenues.removeAll()
-				for new in result {
-					self.allVenues.append(new)
-				}
-				if let callback = callback {
-					callback(.success(()))
-				}
-			case .failure:
-				if let callback = callback {
-					callback(.failure(VenueError()))
-				}
-			}
+	func fetchVenues() async throws {
+		let html = try await httpClient.getVenuesPage()
+		let result = self.htmlParser.venuesWithMenuItems(from: html)
+		self.allVenues.removeAll()
+		for new in result {
+			self.allVenues.append(new)
 		}
 	}
 
