@@ -21,11 +21,13 @@ struct VenueItemView: View {
 						.overlay(
 							Image(systemName: "camera")
 								.foregroundColor(.gray)
+								.accessibility(hidden: true)
 						)
 				}
 				.resizable()
 				.aspectRatio(contentMode: .fit)
 				.frame(width: 50, height: 50)
+				.accessibility(hidden: true)
 			VStack(alignment: .leading, spacing: 2) {
 				Text(venue.name)
 					.font(.system(.body))
@@ -44,6 +46,7 @@ struct VenueItemView: View {
 				Image(systemName: imageName)
 					.foregroundColor(.black.opacity(0.8))
 					.frame(width: 44, height: 44)
+					.accessibilityLabel("Toggle favorite.")
 			}
 			.buttonStyle(.borderless) // otherwise whole wiew triggers tap action
 		}
