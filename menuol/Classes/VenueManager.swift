@@ -10,10 +10,14 @@ import Foundation
 
 private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
-final class VenueManager {
+@MainActor
+final class VenueManager: ObservableObject {
 	private var httpClient = HTTPClient()
 	private var htmlParser = HTMLParser()
-	private var allVenues = [Venue]()
+	private var parsedVenues: [Venue] = []
+	@Published var visibleVenues: [Venue] = []
+	@Published var isLoading = false
+
 	private var favoriteVenues: [String] {
 		get {
 			UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap { String(describing: $0) } ?? []
@@ -26,16 +30,17 @@ final class VenueManager {
 	// MARK: - Public
 
 	/// Fetches list of venues along with menu.
-	func fetchVenues() async throws -> [Venue] {
+	func fetchVenues() async throws {
+		isLoading = true
 		let html = try await httpClient.getVenuesPage()
-		let venues = self.htmlParser.venuesWithMenuItems(from: html)
-		allVenues = venues
-		return venues
+		parsedVenues = self.htmlParser.venuesWithMenuItems(from: html)
+		updateVisibleVenues()
+		isLoading = false
 	}
 
 	/// Finds venues partially matching given name.
 	func find(name: String) -> [Venue] {
-		var venues = allVenues
+		var venues = visibleVenues
 		if name.isEmpty == false {
 			venues = venues.filter { $0.name.localizedCaseInsensitiveContains(name) }
 		}
@@ -58,9 +63,27 @@ final class VenueManager {
 		} else {
 			favoriteVenues.append(venue.slug)
 		}
+		updateVisibleVenues()
 	}
 
-	func isFavourited(_ venue: Venue) -> Bool {
+	// MARK: - Private
+
+	private func isFavourited(_ venue: Venue) -> Bool {
 		favoriteVenues.contains(venue.slug)
+	}
+
+	private func updateVisibleVenues() {
+		let processedVenues = parsedVenues.map { venue in
+			var newVenue = venue
+			newVenue.isFavorited = isFavourited(venue)
+			return newVenue
+		}
+		let sortedVenues = processedVenues.sorted { v1, v2 in
+			if v1.isFavorited == v2.isFavorited {
+				return v1.name < v2.name
+			}
+			return v1.isFavorited
+		}
+		visibleVenues = sortedVenues
 	}
 }

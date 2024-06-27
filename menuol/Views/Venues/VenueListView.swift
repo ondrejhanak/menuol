@@ -9,25 +9,50 @@
 import SwiftUI
 
 struct VenueListView: View {
-	var venues: [Venue]
+	@ObservedObject var manager = VenueManager()
+	@Environment(\.scenePhase) var scenePhase
 
 	var body: some View {
-		NavigationView {
-			List(venues) { venue in
-				NavigationLink(destination: MenuListView(venue: venue)) {
-					VenueItemView(venue: venue) { venue in
-						print("favorite tap")
+		ZStack {
+			NavigationView {
+				List(manager.visibleVenues) { venue in
+					NavigationLink(destination: MenuListView(venue: venue)) {
+						VenueItemView(venue: venue) { venue in
+							toggleFavourite(venue)
+						}
 					}
 				}
+				.listStyle(.grouped)
+				.navigationTitle("Polední menu")
 			}
-			.listStyle(.grouped)
-			.navigationTitle("Polední menu")
+			if manager.isLoading {
+				ProgressView()
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
+					.background(Color.white)
+			}
+		}
+		.onChange(of: scenePhase) { newPhase in
+			if newPhase == .active {
+				fetchData()
+			}
+		}
+	}
+
+	// MARK: - Private
+
+	private func toggleFavourite(_ venue: Venue) {
+		manager.toggleFavorite(venue)
+	}
+
+	private func fetchData() {
+		Task {
+			try? await manager.fetchVenues()
 		}
 	}
 }
 
 struct VenueListView_Previews: PreviewProvider {
 	static var previews: some View {
-		VenueListView(venues: Venue.demoItems)
+		VenueListView()
 	}
 }
