@@ -17,6 +17,7 @@ struct Venue: Identifiable {
 	var imageURL: URL?
 	var menuTimeDescription: String?
 	var menuItems: [MenuItem] = []
+	var isFavorited = false
 }
 
 extension Venue: Equatable {

@@ -40,7 +40,8 @@ struct VenueItemView: View {
 			Button {
 				favoriteCallback(venue)
 			} label: {
-				Image(systemName: "heart")
+				let imageName = venue.isFavorited ? "heart.fill" : "heart"
+				Image(systemName: imageName)
 					.foregroundColor(.black.opacity(0.8))
 					.frame(width: 44, height: 44)
 			}
