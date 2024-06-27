@@ -31,8 +31,6 @@ struct MenuItemView: View {
 	}
 }
 
-struct MenuItemView_Previews: PreviewProvider {
-	static var previews: some View {
-		MenuItemView(menuItem: MenuItem.demoItems[0])
-	}
+#Preview {
+	MenuItemView(menuItem: MenuItem.demoItems[0])
 }

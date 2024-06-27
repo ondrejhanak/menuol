@@ -60,8 +60,6 @@ struct VenueListView: View {
 	}
 }
 
-struct VenueListView_Previews: PreviewProvider {
-	static var previews: some View {
-		VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
-	}
+#Preview {
+	VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
 }

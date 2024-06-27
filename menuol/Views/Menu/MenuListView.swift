@@ -27,15 +27,13 @@ struct MenuListView: View {
 	}
 }
 
-struct MenuListView_Previews: PreviewProvider {
-	static var previews: some View {
-		Group {
-			NavigationView {
-				MenuListView(venue: Venue(name: "Menu items", menuItems: MenuItem.demoItems))
-			}
-			NavigationView {
-				MenuListView(venue: Venue(name: "Empty menu", menuItems: []))
-			}
+#Preview {
+	Group {
+		NavigationView {
+			MenuListView(venue: Venue(name: "Populated menu", menuItems: MenuItem.demoItems))
+		}
+		NavigationView {
+			MenuListView(venue: Venue(name: "Empty menu", menuItems: []))
 		}
 	}
 }

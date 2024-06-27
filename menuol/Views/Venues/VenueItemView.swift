@@ -53,11 +53,9 @@ struct VenueItemView: View {
 	}
 }
 
-struct VenueItemView_Previews: PreviewProvider {
-	static var previews: some View {
-		Group {
-			VenueItemView(venue: Venue.demoVenueImage) { _ in }
-			VenueItemView(venue: Venue.demoVenueNoImage) { _ in }
-		}
+#Preview {
+	Group {
+		VenueItemView(venue: Venue.demoVenueImage) { _ in }
+		VenueItemView(venue: Venue.demoVenueNoImage) { _ in }
 	}
 }
