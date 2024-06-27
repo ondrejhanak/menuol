@@ -11,6 +11,7 @@ import SwiftUI
 struct VenueListView: View {
 	@ObservedObject var manager = VenueManager()
 	@Environment(\.scenePhase) var scenePhase
+	@State private var searchPhrase = ""
 
 	var body: some View {
 		ZStack {
@@ -36,12 +37,20 @@ struct VenueListView: View {
 				fetchData()
 			}
 		}
+		.searchable(text: $searchPhrase)
+		.onChange(of: searchPhrase) { _ in
+			searchVenues()
+		}
 	}
 
 	// MARK: - Private
 
 	private func toggleFavourite(_ venue: Venue) {
 		manager.toggleFavorite(venue)
+	}
+
+	private func searchVenues() {
+		manager.applySearchPhrase(searchPhrase)
 	}
 
 	private func fetchData() {

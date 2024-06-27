@@ -15,6 +15,7 @@ final class VenueManager: ObservableObject {
 	private var httpClient = HTTPClient()
 	private var htmlParser = HTMLParser()
 	private var parsedVenues: [Venue] = []
+	private var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
 	@Published var isLoading = false
 
@@ -38,22 +39,9 @@ final class VenueManager: ObservableObject {
 		isLoading = false
 	}
 
-	/// Finds venues partially matching given name.
-	func find(name: String) -> [Venue] {
-		var venues = visibleVenues
-		if name.isEmpty == false {
-			venues = venues.filter { $0.name.localizedCaseInsensitiveContains(name) }
-		}
-		let favourites = venues.map { isFavourited($0) }
-		let pairs = zip(favourites, venues)
-		let result = pairs.sorted { pair1, pair2 in
-			// sort by (favourited, venue.name)
-			if pair1.0 == pair2.0 {
-				return pair1.1.name.lowercased() < pair2.1.name.lowercased()
-			}
-			return pair1.0 && !pair2.0
-		}
-		return result.map { $0.1 }
+	func applySearchPhrase(_ phrase: String) {
+		searchPhrase = phrase
+		updateVisibleVenues()
 	}
 
 	/// Toggles favorite state of given venue.
@@ -73,7 +61,10 @@ final class VenueManager: ObservableObject {
 	}
 
 	private func updateVisibleVenues() {
-		let processedVenues = parsedVenues.map { venue in
+		let filteredVenues = parsedVenues.filter { venue in
+			searchPhrase.isEmpty || venue.name.localizedStandardContains(searchPhrase)
+		}
+		let processedVenues = filteredVenues.map { venue in
 			var newVenue = venue
 			newVenue.isFavorited = isFavourited(venue)
 			return newVenue
