@@ -37,6 +37,7 @@ struct VenueListView: View {
 				fetchData()
 			}
 		}
+		.animation(.easeInOut(duration: 0.2), value: venueManager.visibleVenues)
 		.searchable(text: $searchPhrase)
 		.onChange(of: searchPhrase) { _ in
 			searchVenues()
