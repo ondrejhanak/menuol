@@ -1,6 +1,6 @@
 //
 //  HTTPClientTests.swift
-//  unittests
+//  tests
 //
 //  Created by Ondřej Hanák on 04. 02. 2020.
 //  Copyright © 2020 Ondrej Hanak. All rights reserved.
@@ -9,59 +9,40 @@
 @testable import menuol
 import XCTest
 
-class URLSessionDataTaskMock: URLSessionDataTask {
-	private let closure: () -> Void
-
-	init(closure: @escaping () -> Void) {
-		self.closure = closure
-	}
-
-	override func resume() {
-		closure()
-	}
-}
-
-class URLSessionMock: URLSession {
-	typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-
-	var data: Data?
-	var error: Error?
-
-	override func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask {
-		URLSessionDataTaskMock { completionHandler(self.data, nil, self.error) }
-	}
-}
-
 final class HTTPClientTests: XCTestCase {
-	func testSuccess() {
+	private var testingURLSession: URLSession {
+		let config: URLSessionConfiguration = .ephemeral
+		config.protocolClasses = [MockURLProtocol.self]
+		let session = URLSession(configuration: config)
+		return session
+	}
+
+	func testSuccess() async {
 		let string = "hello"
 		let data = string.data(using: .utf8)!
-		let session = URLSessionMock()
-		session.data = data
-		let client = HTTPClient(session: session)
-		let url = URL(string: "localhost")!
-		let expectation = XCTestExpectation(description: "")
-		var r: HTTPClient.HTTPResult?
-		client.get(url: url) { result in
-			r = result
-			expectation.fulfill()
+		MockURLProtocol.error = nil
+		MockURLProtocol.requestHandler = { request in
+			let response = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+			return (response, data)
 		}
-		wait(for: [expectation], timeout: 1)
-		XCTAssertEqual(r, HTTPClient.HTTPResult.success(string))
+		let client = HTTPClient(session: testingURLSession)
+		let url = URL(string: "localhost")!
+		do {
+			let result = try await client.get(url: url)
+			XCTAssertEqual(result, string)
+		} catch {
+			XCTFail("Should have not throw.")
+		}
 	}
 
-	func testFailure() {
-		let session = URLSessionMock()
-		session.data = nil
-		let client = HTTPClient(session: session)
+	func testFailure() async {
+		MockURLProtocol.error = NSError(domain: "test", code: 1)
+		let client = HTTPClient(session: testingURLSession)
 		let url = URL(string: "localhost")!
-		let expectation = XCTestExpectation(description: "")
-		var r: HTTPClient.HTTPResult?
-		client.get(url: url) { result in
-			r = result
-			expectation.fulfill()
+		do {
+			_ = try await client.get(url: url)
+			XCTFail("Should have thrown.")
+		} catch {
 		}
-		wait(for: [expectation], timeout: 1)
-		XCTAssertEqual(r, HTTPClient.HTTPResult.failure(HTTPClient.HTTPError()))
 	}
 }

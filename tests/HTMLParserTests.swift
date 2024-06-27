@@ -1,6 +1,6 @@
 //
 //  HTMLParserTests.swift
-//  unit tests
+//  tests
 //
 //  Created by Ondřej Hanák on 23. 08. 2018.
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
