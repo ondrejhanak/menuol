@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct VenueListView: View {
-	@ObservedObject var manager = VenueManager()
+	@ObservedObject var venueManager: VenueManager
 	@Environment(\.scenePhase) var scenePhase
 	@State private var searchPhrase = ""
 
 	var body: some View {
 		ZStack {
 			NavigationView {
-				List(manager.visibleVenues) { venue in
+				List(venueManager.visibleVenues) { venue in
 					NavigationLink(destination: MenuListView(venue: venue)) {
 						VenueItemView(venue: venue) { venue in
 							toggleFavourite(venue)
@@ -26,7 +26,7 @@ struct VenueListView: View {
 				.listStyle(.grouped)
 				.navigationTitle("Polední menu")
 			}
-			if manager.isLoading {
+			if venueManager.isLoading {
 				ProgressView()
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 					.background(Color.white)
@@ -46,22 +46,22 @@ struct VenueListView: View {
 	// MARK: - Private
 
 	private func toggleFavourite(_ venue: Venue) {
-		manager.toggleFavorite(venue)
+		venueManager.toggleFavorite(venue)
 	}
 
 	private func searchVenues() {
-		manager.applySearchPhrase(searchPhrase)
+		venueManager.applySearchPhrase(searchPhrase)
 	}
 
 	private func fetchData() {
 		Task {
-			try? await manager.fetchVenues()
+			try? await venueManager.fetchVenues()
 		}
 	}
 }
 
 struct VenueListView_Previews: PreviewProvider {
 	static var previews: some View {
-		VenueListView()
+		VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
 	}
 }

@@ -12,8 +12,8 @@ private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 
 @MainActor
 final class VenueManager: ObservableObject {
-	private var httpClient = HTTPClient()
-	private var htmlParser = HTMLParser()
+	private var httpClient: HTTPClient
+	private var htmlParser: HTMLParser
 	private var parsedVenues: [Venue] = []
 	private var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
@@ -26,6 +26,13 @@ final class VenueManager: ObservableObject {
 		set {
 			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
 		}
+	}
+
+	// MARK: - Lifecycle
+
+	init(httpClient: HTTPClient, htmlParser: HTMLParser) {
+		self.httpClient = httpClient
+		self.htmlParser = htmlParser
 	}
 
 	// MARK: - Public

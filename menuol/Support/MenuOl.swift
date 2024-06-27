@@ -13,7 +13,7 @@ struct MenuOl: App {
 
 	var body: some Scene {
 		WindowGroup {
-			VenueListView()
+			VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
 		}
 	}
 }
