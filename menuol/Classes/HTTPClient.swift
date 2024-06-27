@@ -24,10 +24,4 @@ final class HTTPClient {
 		let html = String(decoding: data, as: UTF8.self)
 		return html
 	}
-
-	func getVenuesPage() async throws -> String {
-		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
-		let html = try await get(url: url)
-		return html
-	}
 }

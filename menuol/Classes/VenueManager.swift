@@ -33,7 +33,8 @@ final class VenueManager: ObservableObject {
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {
 		isLoading = true
-		let html = try await httpClient.getVenuesPage()
+		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
+		let html = try await httpClient.get(url: url)
 		parsedVenues = self.htmlParser.venuesWithMenuItems(from: html)
 		updateVisibleVenues()
 		isLoading = false
