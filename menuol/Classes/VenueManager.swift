@@ -42,7 +42,7 @@ final class VenueManager: ObservableObject {
 		isLoading = true
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
-		parsedVenues = self.htmlParser.venuesWithMenuItems(from: html)
+		parsedVenues = htmlParser.venuesWithMenuItems(from: html)
 		updateVisibleVenues()
 		isLoading = false
 	}

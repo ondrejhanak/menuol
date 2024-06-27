@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  TestingAppDelegate.swift
 //  menuol
 //
 //  Created by Ondrej Hanak on 22/08/2018.

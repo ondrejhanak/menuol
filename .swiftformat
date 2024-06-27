@@ -1,9 +1,27 @@
 --swiftversion 5
+--exclude iOS/Models/CoreData/Generated,iOS/Resources/Generated,iOS/Extras
 
 # formating options
 --indent tab
 --tabwidth 2
 
-# rules https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+# rules list: https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+# disable default rules
 --disable unusedArguments
---disable specifiers
+--disable initCoderUnavailable
+
+# enable opt-in rules
+#--enable acronyms
+--enable blankLineAfterImports
+--enable blankLinesBetweenChainedFunctions
+--enable blankLinesBetweenImports
+--enable blockComments
+#--enable docComments
+--enable isEmpty
+#--enable markTypes
+#--enable organizeDeclarations
+--enable sortSwitchCases
+#--enable wrapConditionalBodies
+--enable wrapEnumCases
+#--enable wrapSwitchCases

@@ -18,6 +18,6 @@ struct MenuItem: Identifiable {
 extension MenuItem {
 	static var demoItems = [
 		MenuItem(title: "Lorem ipsum", order: 1, priceDescription: "125 Kč"),
-		MenuItem(title: "Dolor sit amet", order: 2, priceDescription: "135 Kč")
+		MenuItem(title: "Dolor sit amet", order: 2, priceDescription: "135 Kč"),
 	]
 }

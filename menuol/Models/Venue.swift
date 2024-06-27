@@ -12,6 +12,7 @@ struct Venue: Identifiable {
 	var id: String {
 		slug
 	}
+
 	var slug = ""
 	var name = ""
 	var imageURL: URL?
@@ -21,7 +22,7 @@ struct Venue: Identifiable {
 }
 
 extension Venue: Equatable {
-	static func ==(lhs: Venue, rhs: Venue) -> Bool {
+	static func == (lhs: Venue, rhs: Venue) -> Bool {
 		lhs.slug == rhs.slug
 	}
 }
