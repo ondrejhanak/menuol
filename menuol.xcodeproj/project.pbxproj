@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE16A8BF2C2D860800817842 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16A8BE2C2D860800817842 /* MockURLProtocol.swift */; };
+		EE16A8C12C2DC72A00817842 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16A8C02C2DC72A00817842 /* Debouncer.swift */; };
 		EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */; };
 		EE3DECBA212ED455002791E9 /* Venues.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECB9212ED455002791E9 /* Venues.html */; };
 		EE3DECC2212FF65A002791E9 /* Menu.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECC1212FF65A002791E9 /* Menu.html */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		EE16A8BE2C2D860800817842 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		EE16A8C02C2DC72A00817842 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserTests.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				EE79CC9F23E994C50074AB3D /* HTTPClient.swift */,
+				EE16A8C02C2DC72A00817842 /* Debouncer.swift */,
 				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
 				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
 			);
@@ -338,6 +341,7 @@
 				EE842CC2289C64BC00F5F30C /* MenuOl.swift in Sources */,
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
 				EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */,
+				EE16A8C12C2DC72A00817842 /* Debouncer.swift in Sources */,
 				EE89DA692859AD9A004353C7 /* MenuItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
