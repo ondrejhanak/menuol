@@ -43,6 +43,7 @@ struct VenueItemView: View {
 					.foregroundColor(.black.opacity(0.8))
 					.frame(width: 44, height: 44)
 			}
+			.buttonStyle(.borderless) // otherwise whole wiew triggers tap action
 		}
 	}
 }
