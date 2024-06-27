@@ -11,6 +11,7 @@ import Kingfisher
 
 struct VenueItemView: View {
 	var venue: Venue
+	var favoriteCallback: (Venue)->Void
 
 	var body: some View {
 		HStack(spacing: 10) {
@@ -37,7 +38,7 @@ struct VenueItemView: View {
 			}
 			Spacer()
 			Button {
-				print("tapped")
+				favoriteCallback(venue)
 			} label: {
 				Image(systemName: "heart")
 					.foregroundColor(.black.opacity(0.8))
@@ -51,8 +52,8 @@ struct VenueItemView: View {
 struct VenueItemView_Previews: PreviewProvider {
 	static var previews: some View {
 		Group {
-			VenueItemView(venue: Venue.demoVenueImage)
-			VenueItemView(venue: Venue.demoVenueNoImage)
+			VenueItemView(venue: Venue.demoVenueImage) { _ in }
+			VenueItemView(venue: Venue.demoVenueNoImage) { _ in }
 		}
 	}
 }

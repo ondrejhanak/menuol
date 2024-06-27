@@ -15,7 +15,9 @@ struct VenueListView: View {
 		NavigationView {
 			List(venues) { venue in
 				NavigationLink(destination: MenuListView(venue: venue)) {
-					VenueItemView(venue: venue)
+					VenueItemView(venue: venue) { venue in
+						print("favorite tap")
+					}
 				}
 			}
 			.listStyle(.grouped)
