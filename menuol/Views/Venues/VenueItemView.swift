@@ -6,12 +6,12 @@
 //  Copyright © 2022 Ondrej Hanak. All rights reserved.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct VenueItemView: View {
 	var venue: Venue
-	var favoriteCallback: (Venue)->Void
+	var favoriteCallback: (Venue) -> Void
 
 	var body: some View {
 		HStack(spacing: 10) {

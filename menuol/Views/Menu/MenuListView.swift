@@ -39,5 +39,3 @@ struct MenuListView_Previews: PreviewProvider {
 		}
 	}
 }
-
-
