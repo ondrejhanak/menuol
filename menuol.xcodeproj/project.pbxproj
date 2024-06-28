@@ -25,7 +25,6 @@
 		EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItem.swift */; };
 		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
 		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
-		EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */; };
 		EEE015DE28958E390019FC7E /* VenueItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DD28958E390019FC7E /* VenueItemView.swift */; };
 		EEE015E0289599A10019FC7E /* VenueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DF289599A10019FC7E /* VenueListView.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		EE89DA682859AD9A004353C7 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		EE91293328892F1500172F67 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		EE99C1C21F1F689E00C324AE /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		EEE015DD28958E390019FC7E /* VenueItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueItemView.swift; sourceTree = "<group>"; };
 		EEE015DF289599A10019FC7E /* VenueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				EE842CC1289C64BC00F5F30C /* MenuOl.swift */,
-				EEB612EF212D7FA900AA0C90 /* TestingAppDelegate.swift */,
 				EE48EECA1F1E132F004DA56D /* Info.plist */,
 			);
 			path = Support;
@@ -323,7 +320,6 @@
 			files = (
 				EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */,
 				EE79CCA223E99AAF0074AB3D /* HTTPClientTests.swift in Sources */,
-				EEB612F0212D7FA900AA0C90 /* TestingAppDelegate.swift in Sources */,
 				EE16A8BF2C2D860800817842 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
