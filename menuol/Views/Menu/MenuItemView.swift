@@ -27,6 +27,9 @@ struct MenuItemView: View {
 			Text(menuItem?.priceDescription ?? "")
 				.foregroundColor(.primary)
 				.font(.caption)
+				.padding(5)
+				.background(Color(.systemGray5))
+				.cornerRadius(5)
 		}
 	}
 }
