@@ -44,7 +44,7 @@ struct VenueItemView: View {
 			} label: {
 				let imageName = venue.isFavorited ? "heart.fill" : "heart"
 				Image(systemName: imageName)
-					.foregroundColor(.black.opacity(0.8))
+					.foregroundColor(.primary.opacity(0.75))
 					.frame(width: 44, height: 44)
 					.accessibilityLabel("Toggle favorite.")
 			}
