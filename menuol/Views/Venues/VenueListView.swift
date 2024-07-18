@@ -11,7 +11,7 @@ import SwiftUI
 struct VenueListView: View {
 	@ObservedObject var venueManager: VenueManager
 	@Environment(\.scenePhase) var scenePhase
-	@ObservedObject var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
+	@StateObject var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 
 	var body: some View {
 		ZStack {
