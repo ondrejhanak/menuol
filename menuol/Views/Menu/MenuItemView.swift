@@ -24,12 +24,14 @@ struct MenuItemView: View {
 			Text(title)
 				.foregroundColor(.primary)
 			Spacer()
-			Text(menuItem?.priceDescription ?? "")
-				.foregroundColor(.primary)
-				.font(.caption)
-				.padding(5)
-				.background(Color(.systemGray5))
-				.cornerRadius(5)
+			if let price = menuItem?.priceDescription, !price.isEmpty {
+				Text(price)
+					.foregroundColor(.primary)
+					.font(.caption)
+					.padding(5)
+					.background(Color(.systemGray5))
+					.cornerRadius(5)
+			}
 		}
 	}
 }
