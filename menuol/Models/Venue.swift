@@ -28,7 +28,7 @@ extension Venue: Equatable {
 }
 
 extension Venue {
-	static var demoVenueImage = Venue(slug: "image", name: "Venue + image", imageURL: URL(string: "https://picsum.photos/id/1060/200/150"), menuTimeDescription: nil, menuItems: MenuItem.demoItems)
-	static var demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [], isFavorited: true)
-	static var demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
+	static let demoVenueImage = Venue(slug: "image", name: "Venue + image", imageURL: URL(string: "https://picsum.photos/id/1060/200/150"), menuTimeDescription: nil, menuItems: MenuItem.demoItems)
+	static let demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [], isFavorited: true)
+	static let demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
 }
