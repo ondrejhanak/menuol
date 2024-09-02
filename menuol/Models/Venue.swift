@@ -23,7 +23,7 @@ struct Venue: Identifiable {
 
 extension Venue: Equatable {
 	static func == (lhs: Venue, rhs: Venue) -> Bool {
-		lhs.slug == rhs.slug
+		lhs.id == rhs.id
 	}
 }
 
