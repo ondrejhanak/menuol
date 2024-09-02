@@ -8,10 +8,9 @@
 
 import Foundation
 
-private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
-
 @MainActor
 final class VenueManager: ObservableObject {
+	private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 	private var httpClient: HTTPClient
 	private var htmlParser: HTMLParser
 	private var parsedVenues: [Venue] = []
