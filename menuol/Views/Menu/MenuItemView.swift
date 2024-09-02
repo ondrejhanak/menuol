@@ -12,8 +12,8 @@ struct MenuItemView: View {
 	var menuItem: MenuItem?
 
 	var title: String {
-		if let item = menuItem {
-			return item.title
+		if let menuItem {
+			return menuItem.title
 		} else {
 			return "Restaurace nedodala aktuální údaje"
 		}
