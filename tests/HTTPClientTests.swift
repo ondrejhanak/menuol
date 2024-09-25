@@ -42,7 +42,6 @@ final class HTTPClientTests: XCTestCase {
 		do {
 			_ = try await client.get(url: url)
 			XCTFail("Should have thrown.")
-		} catch {
-		}
+		} catch {}
 	}
 }
