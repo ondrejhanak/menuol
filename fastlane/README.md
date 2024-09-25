@@ -61,6 +61,14 @@ Searches unused code.
 
 Lists logest source files.
 
+### updatef
+
+```sh
+[bundle exec] fastlane updatef
+```
+
+Updates Fastlane and plugins.
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

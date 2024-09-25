@@ -59,3 +59,9 @@ desc "Lists logest source files."
 lane :longs do
 	sh("find ../menuol \\( -name '*.swift' -o -name '*.m' -o -name '*.h' \\) -type f -print0 | xargs -0 wc -l | sort -rn | head -n 20")
 end
+
+desc "Updates Fastlane and plugins."
+lane :updatef do
+	sh("bundle update fastlane")
+	sh("bundle exec fastlane update_plugins")
+end
