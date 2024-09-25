@@ -29,7 +29,7 @@ lane :test do
 		code_coverage: true,
 		thread_sanitizer: true,
 		open_report: true,
-		devices: ["iPhone 11 Pro"],
+		devices: ["iPhone 15 Pro"],
 		clean: false
 	)
 end
