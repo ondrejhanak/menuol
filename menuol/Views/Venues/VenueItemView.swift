@@ -15,41 +15,53 @@ struct VenueItemView: View {
 
 	var body: some View {
 		HStack(spacing: 10) {
-			KFImage(venue.imageURL)
-				.placeholder {
-					Color.gray.opacity(0.3)
-						.overlay(
-							Image(systemName: "camera")
-								.foregroundColor(.gray)
-								.accessibility(hidden: true)
-						)
-				}
-				.resizable()
-				.aspectRatio(contentMode: .fit)
-				.frame(width: 50, height: 50)
-				.accessibility(hidden: true)
-			VStack(alignment: .leading, spacing: 2) {
-				Text(venue.name)
-					.font(.system(.body))
-					.foregroundColor(.primary)
-				if let description = venue.menuTimeDescription {
-					Text(description)
-						.font(.system(.caption))
-						.foregroundColor(.primary)
-				}
-			}
+			image
+			description
 			Spacer()
-			Button {
-				favoriteCallback(venue)
-			} label: {
-				let imageName = venue.isFavorited ? "heart.fill" : "heart"
-				Image(systemName: imageName)
-					.foregroundColor(.primary.opacity(0.75))
-					.frame(width: 44, height: 44)
-					.accessibilityLabel("Toggle favorite.")
-			}
-			.buttonStyle(.borderless) // otherwise whole wiew triggers tap action
+			favoriteButton
 		}
+	}
+
+	private var image: some View {
+		KFImage(venue.imageURL)
+			.placeholder {
+				Color.gray.opacity(0.3)
+					.overlay(
+						Image(systemName: "camera")
+							.foregroundColor(.gray)
+							.accessibility(hidden: true)
+					)
+			}
+			.resizable()
+			.aspectRatio(contentMode: .fit)
+			.frame(width: 50, height: 50)
+			.accessibility(hidden: true)
+	}
+
+	private var description: some View {
+		VStack(alignment: .leading, spacing: 2) {
+			Text(venue.name)
+				.font(.system(.body))
+				.foregroundColor(.primary)
+			if let description = venue.menuTimeDescription {
+				Text(description)
+					.font(.system(.caption))
+					.foregroundColor(.primary)
+			}
+		}
+	}
+
+	private var favoriteButton: some View {
+		Button {
+			favoriteCallback(venue)
+		} label: {
+			let imageName = venue.isFavorited ? "heart.fill" : "heart"
+			Image(systemName: imageName)
+				.foregroundColor(.primary.opacity(0.75))
+				.frame(width: 44, height: 44)
+				.accessibilityLabel("Toggle favorite.")
+		}
+		.buttonStyle(.borderless) // otherwise whole wiew triggers tap action
 	}
 }
 
