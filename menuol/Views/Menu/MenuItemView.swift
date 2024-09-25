@@ -9,22 +9,14 @@
 import SwiftUI
 
 struct MenuItemView: View {
-	var menuItem: MenuItem?
-
-	var title: String {
-		if let menuItem {
-			return menuItem.title
-		} else {
-			return "Restaurace nedodala aktuální údaje"
-		}
-	}
+	var menuItem: MenuItem
 
 	var body: some View {
 		HStack {
-			Text(title)
+			Text(menuItem.title)
 				.foregroundColor(.primary)
 			Spacer()
-			if let price = menuItem?.priceDescription, !price.isEmpty {
+			if let price = menuItem.priceDescription, !price.isEmpty {
 				Text(price)
 					.foregroundColor(.primary)
 					.font(.caption)
