@@ -10,9 +10,11 @@ import SwiftUI
 
 @main
 struct MenuOl: App {
+	@StateObject private var venueManager = VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser())
+
 	var body: some Scene {
 		WindowGroup {
-			VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
+			VenueListView(venueManager: venueManager)
 		}
 	}
 }
