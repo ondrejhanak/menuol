@@ -25,6 +25,7 @@
 		EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItem.swift */; };
 		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
 		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
+		EED333BB2CA54E510029CFC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED333BA2CA54E510029CFC4 /* LoadingView.swift */; };
 		EEE015DE28958E390019FC7E /* VenueItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DD28958E390019FC7E /* VenueItemView.swift */; };
 		EEE015E0289599A10019FC7E /* VenueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DF289599A10019FC7E /* VenueListView.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		EE89DA682859AD9A004353C7 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		EE91293328892F1500172F67 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		EE99C1C21F1F689E00C324AE /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		EED333BA2CA54E510029CFC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EEE015DD28958E390019FC7E /* VenueItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueItemView.swift; sourceTree = "<group>"; };
 		EEE015DF289599A10019FC7E /* VenueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				EEE015DF289599A10019FC7E /* VenueListView.swift */,
+				EED333BA2CA54E510029CFC4 /* LoadingView.swift */,
 				EEE015DD28958E390019FC7E /* VenueItemView.swift */,
 			);
 			path = Venues;
@@ -333,6 +336,7 @@
 				EEE015DE28958E390019FC7E /* VenueItemView.swift in Sources */,
 				EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */,
 				EEE015E0289599A10019FC7E /* VenueListView.swift in Sources */,
+				EED333BB2CA54E510029CFC4 /* LoadingView.swift in Sources */,
 				EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */,
 				EE842CC2289C64BC00F5F30C /* MenuOl.swift in Sources */,
 				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,

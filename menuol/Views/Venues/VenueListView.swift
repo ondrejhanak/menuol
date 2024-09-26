@@ -27,9 +27,7 @@ struct VenueListView: View {
 				.navigationTitle("Polední menu")
 			}
 			if venueManager.isLoading {
-				ProgressView()
-					.frame(maxWidth: .infinity, maxHeight: .infinity)
-					.background(Color.white)
+				LoadingView()
 			}
 		}
 		.onChange(of: scenePhase) { newPhase in
