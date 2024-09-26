@@ -15,6 +15,7 @@ struct Venue: Identifiable {
 
 	var slug: String
 	var name: String
+	var address: String?
 	var imageURL: URL?
 	var menuTimeDescription: String?
 	var menuItems: [MenuItem] = []

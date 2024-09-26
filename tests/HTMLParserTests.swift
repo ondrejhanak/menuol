@@ -24,6 +24,7 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(venue.name, "Blues Rock CAFE")
 		XCTAssertEqual(venue.imageURL, URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
 		XCTAssertEqual(venue.menuTimeDescription, "11:00 - 14:00")
+		XCTAssertEqual(venue.address, "Bořivojova 1, 772 00 Olomouc")
 
 		// first venue menu items
 		XCTAssertEqual(venue.menuItems.count, 6)
