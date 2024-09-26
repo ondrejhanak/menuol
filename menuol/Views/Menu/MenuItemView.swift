@@ -19,8 +19,10 @@ struct MenuItemView: View {
 			if let price = menuItem.priceDescription, !price.isEmpty {
 				Text(price)
 					.foregroundColor(.primary)
-					.font(.caption)
-					.padding(5)
+					.font(.subheadline)
+					.fontWeight(.semibold )
+					.padding(.vertical, 6)
+					.padding(.horizontal, 8)
 					.background(Color(.systemGray5))
 					.cornerRadius(5)
 			}
