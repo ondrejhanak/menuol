@@ -33,15 +33,10 @@ final class HTMLParser {
 	private func venue(from element: XMLElement) -> Venue? {
 		let slug = element["class"]?.components(separatedBy: " ").last
 		let name = element.xpath(".//h3/a").first?.text
+		guard let slug, let name else { return nil }
+		let imageURL = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"].flatMap { URL(string: $0) }
 		let menuTimeDescription = element.xpath(".//span[@class='vydejmenu']").first?.text
-		guard slug != nil, name != nil else { return nil }
-		var venue = Venue()
-		venue.slug = slug!
-		venue.name = name!
-		if let imageURLString = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"] {
-			venue.imageURL = URL(string: imageURLString)
-		}
-		venue.menuTimeDescription = menuTimeDescription
+		let venue = Venue(slug: slug, name: name, imageURL: imageURL, menuTimeDescription: menuTimeDescription)
 		return venue
 	}
 

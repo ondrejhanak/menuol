@@ -30,10 +30,10 @@ struct MenuListView: View {
 #Preview {
 	Group {
 		NavigationView {
-			MenuListView(venue: Venue(name: "Populated menu", menuItems: MenuItem.demoItems))
+			MenuListView(venue: Venue(slug: "", name: "Populated menu", menuItems: MenuItem.demoItems))
 		}
 		NavigationView {
-			MenuListView(venue: Venue(name: "Empty menu", menuItems: []))
+			MenuListView(venue: Venue(slug: "", name: "Empty menu", menuItems: []))
 		}
 	}
 }
