@@ -47,7 +47,12 @@ struct VenueItemView: View {
 			if let description = venue.menuTimeDescription {
 				Text(description)
 					.font(.system(.caption))
-					.foregroundColor(.primary)
+					.foregroundColor(.secondary)
+			}
+			if let street = venue.street {
+				Text(street)
+					.font(.system(.caption))
+					.foregroundColor(.secondary)
 			}
 		}
 	}

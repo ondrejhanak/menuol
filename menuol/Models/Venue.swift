@@ -20,6 +20,10 @@ struct Venue: Identifiable {
 	var menuTimeDescription: String?
 	var menuItems: [MenuItem] = []
 	var isFavorited = false
+
+	var street: String? {
+		address?.components(separatedBy: ",").first
+	}
 }
 
 extension Venue: Equatable {
@@ -30,6 +34,6 @@ extension Venue: Equatable {
 
 extension Venue {
 	static let demoVenueImage = Venue(slug: "image", name: "Venue + image", imageURL: URL(string: "https://picsum.photos/id/1060/200/150"), menuTimeDescription: nil, menuItems: MenuItem.demoItems)
-	static let demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [], isFavorited: true)
+	static let demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", address: "Street 123, City", imageURL: nil, menuTimeDescription: "time description", menuItems: [], isFavorited: true)
 	static let demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
 }
