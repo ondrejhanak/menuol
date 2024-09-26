@@ -14,7 +14,7 @@ struct MenuOl: App {
 
 	var body: some Scene {
 		WindowGroup {
-			NavigationView {
+			NavigationStack {
 				VenueListView(venueManager: venueManager)
 			}
 		}

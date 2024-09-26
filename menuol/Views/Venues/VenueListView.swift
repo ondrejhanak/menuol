@@ -58,7 +58,7 @@ struct VenueListView: View {
 }
 
 #Preview {
-	NavigationView {
+	NavigationStack {
 		VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
 	}
 }
