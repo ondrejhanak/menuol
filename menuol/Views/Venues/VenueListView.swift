@@ -14,17 +14,15 @@ struct VenueListView: View {
 	@StateObject var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 
 	var body: some View {
-		NavigationView {
-			List(venueManager.visibleVenues) { venue in
-				NavigationLink(destination: MenuListView(venue: venue)) {
-					VenueItemView(venue: venue) { venue in
-						toggleFavourite(venue)
-					}
+		List(venueManager.visibleVenues) { venue in
+			NavigationLink(destination: MenuListView(venue: venue)) {
+				VenueItemView(venue: venue) { venue in
+					toggleFavourite(venue)
 				}
 			}
-			.listStyle(.grouped)
-			.navigationTitle("Polední menu")
 		}
+		.listStyle(.grouped)
+		.navigationTitle("Polední menu")
 		.overlay {
 			if venueManager.isLoading {
 				LoadingView()
@@ -60,5 +58,7 @@ struct VenueListView: View {
 }
 
 #Preview {
-	VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
+	NavigationView {
+		VenueListView(venueManager: VenueManager(httpClient: HTTPClient(), htmlParser: HTMLParser()))
+	}
 }
