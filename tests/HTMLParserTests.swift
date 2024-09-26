@@ -16,7 +16,7 @@ final class HTMLParserTests: XCTestCase {
 
 		// venues count
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssertEqual(venues.count, 155)
+		XCTAssertEqual(venues.count, 107)
 
 		// first venue details
 		let venue = venues[0]
@@ -30,22 +30,22 @@ final class HTMLParserTests: XCTestCase {
 
 		// first menu item
 		let firstItem = venue.menuItems.first!
-		XCTAssertEqual(firstItem.title, "Kmínová s vejcem")
+		XCTAssertEqual(firstItem.title, "0,33 l Špenátová")
 		XCTAssertEqual(firstItem.order, 0)
-		XCTAssertEqual(firstItem.priceDescription, "")
+		XCTAssertEqual(firstItem.priceDescription, "25 Kč") // nbsp
 
 		// last menu item
 		let lastItem = venue.menuItems.last!
-		XCTAssertEqual(lastItem.title, "Těstovinový salát s kuřecím masem")
+		XCTAssertEqual(lastItem.title, "300 g  Míchaný salát s vařeným vejcem,olivami a balkánským sýrem")
 		XCTAssertEqual(lastItem.order, 5)
-		XCTAssertEqual(lastItem.priceDescription, "98 Kč") // hard space
+		XCTAssertEqual(lastItem.priceDescription, "145 Kč") // nbsp
 
-		// restaurant without menu info
-		XCTAssertEqual(venues[8].menuItems.count, 0)
+		// restaurant without menu info "MacLaren's Pub"
+		XCTAssertEqual(venues.last!.menuItems.count, 0)
 
 		// restaurant witht footer info
-		XCTAssertEqual(venues[4].menuItems.count, 6)
-		XCTAssertEqual(venues[4].menuItems[5].title, "Eva a Vašek, KONCERT v sále u Sklenářů 12. října 2018")
+		XCTAssertEqual(venues[2].menuItems.count, 9)
+		XCTAssertEqual(venues[2].menuItems[8].title, "K polednímu menu Vám nabízíme 0,3l Kofolu, nebo Rajec za 25,- Kč")
 	}
 
 	func testVenuesParsing_wrongStructure() {
