@@ -14,18 +14,18 @@ struct VenueListView: View {
 	@StateObject var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 
 	var body: some View {
-		ZStack {
-			NavigationView {
-				List(venueManager.visibleVenues) { venue in
-					NavigationLink(destination: MenuListView(venue: venue)) {
-						VenueItemView(venue: venue) { venue in
-							toggleFavourite(venue)
-						}
+		NavigationView {
+			List(venueManager.visibleVenues) { venue in
+				NavigationLink(destination: MenuListView(venue: venue)) {
+					VenueItemView(venue: venue) { venue in
+						toggleFavourite(venue)
 					}
 				}
-				.listStyle(.grouped)
-				.navigationTitle("Polední menu")
 			}
+			.listStyle(.grouped)
+			.navigationTitle("Polední menu")
+		}
+		.overlay {
 			if venueManager.isLoading {
 				LoadingView()
 			}
