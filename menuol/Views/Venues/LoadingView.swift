@@ -15,10 +15,10 @@ struct LoadingView: View {
 				.controlSize(.large)
 			Text("Loading")
 				.font(.body)
-				.foregroundStyle(.gray)
 		}
+		.foregroundStyle(.gray)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.white)
+		.background(.background)
 	}
 }
 
