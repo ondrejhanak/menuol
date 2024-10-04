@@ -8,8 +8,8 @@
 
 import Foundation
 
-final class HTTPClient {
-	private var session: URLSession
+final class HTTPClient: Sendable {
+	private let session: URLSession
 
 	// MARK: - Lifecycle
 
