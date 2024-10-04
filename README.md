@@ -4,11 +4,18 @@ Simple helper app that fetches local lunch menu specials in my home city Olomouc
 
 Project was created for personal usage.
 
+
 ## Tech
 
 - Swift 5
+- Strict Concurrency Checking: `Complete`
 - SwiftUI for user interface
 - [Kanna](https://github.com/tid-kijyun/Kanna) library for HTML parsing
 - Fastlane for running configured `swiftlint` and `swiftformat`
 - `automatic` code signing setup because of personal nature of the project
 - basic unit tests for HTTP fetcher and HTML parser
+
+
+## Preview
+
+![Venues list](screenshot_venues.png) ![Menu items](screenshot_menu.png)
