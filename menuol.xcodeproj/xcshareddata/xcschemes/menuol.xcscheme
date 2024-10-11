@@ -48,16 +48,6 @@
                ReferencedContainer = "container:menuol.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE172F8421367C8C0045B016"
-               BuildableName = "ui tests.xctest"
-               BlueprintName = "ui tests"
-               ReferencedContainer = "container:menuol.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
