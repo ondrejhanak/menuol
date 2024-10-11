@@ -8,22 +8,33 @@
 
 import SwiftUI
 
+@MainActor
 struct MenuListView: View {
 	var venue: Venue
 
 	var body: some View {
-		List {
+		Group {
 			if venue.menuItems.isEmpty {
-				Text("Restaurace nedodala aktuální údaje.")
+				noDetailsView
 			} else {
-				ForEach(venue.menuItems) { item in
-					MenuItemView(menuItem: item)
-				}
+				listView
 			}
 		}
 		.listStyle(.grouped)
 		.navigationTitle(venue.name)
 		.navigationBarTitleDisplayMode(.inline)
+	}
+
+	private var listView: some View {
+		List {
+			ForEach(venue.menuItems) { item in
+				MenuItemView(menuItem: item)
+			}
+		}
+	}
+
+	private var noDetailsView: some View {
+		Text("Restaurace nedodala aktuální údaje.")
 	}
 }
 
