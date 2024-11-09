@@ -23,9 +23,5 @@ struct LoadingView: View {
 }
 
 #Preview {
-	Group {
-		LoadingView()
-	}
-	.frame(maxWidth: .infinity, maxHeight: .infinity)
-	.background(.yellow)
+	LoadingView()
 }
