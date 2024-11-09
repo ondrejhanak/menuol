@@ -7,27 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE16A8BF2C2D860800817842 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16A8BE2C2D860800817842 /* MockURLProtocol.swift */; };
-		EE16A8C12C2DC72A00817842 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE16A8C02C2DC72A00817842 /* Debouncer.swift */; };
-		EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */; };
-		EE3DECBA212ED455002791E9 /* Venues.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECB9212ED455002791E9 /* Venues.html */; };
-		EE3DECC2212FF65A002791E9 /* Menu.html in Resources */ = {isa = PBXBuildFile; fileRef = EE3DECC1212FF65A002791E9 /* Menu.html */; };
-		EE48EEC61F1E132E004DA56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE48EEC51F1E132E004DA56D /* Assets.xcassets */; };
-		EE48EEC91F1E132F004DA56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */; };
-		EE48EED31F1E3795004DA56D /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED21F1E3795004DA56D /* Venue.swift */; };
-		EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED41F1E3877004DA56D /* VenueManager.swift */; };
-		EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48EED81F1E3988004DA56D /* HTMLParser.swift */; };
-		EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79CC9F23E994C50074AB3D /* HTTPClient.swift */; };
-		EE79CCA223E99AAF0074AB3D /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */; };
-		EE842CC2289C64BC00F5F30C /* MenuOl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE842CC1289C64BC00F5F30C /* MenuOl.swift */; };
-		EE89DA692859AD9A004353C7 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89DA682859AD9A004353C7 /* MenuItemView.swift */; };
-		EE91293428892F1500172F67 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91293328892F1500172F67 /* MenuListView.swift */; };
-		EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99C1C21F1F689E00C324AE /* MenuItem.swift */; };
 		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
 		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
-		EED333BB2CA54E510029CFC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED333BA2CA54E510029CFC4 /* LoadingView.swift */; };
-		EEE015DE28958E390019FC7E /* VenueItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DD28958E390019FC7E /* VenueItemView.swift */; };
-		EEE015E0289599A10019FC7E /* VenueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE015DF289599A10019FC7E /* VenueListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,30 +22,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE16A8BE2C2D860800817842 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		EE16A8C02C2DC72A00817842 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		EE172F5F211C1A690045B016 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE172F63211C1A690045B016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserTests.swift; sourceTree = "<group>"; };
-		EE3DECB9212ED455002791E9 /* Venues.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Venues.html; sourceTree = "<group>"; };
-		EE3DECC1212FF65A002791E9 /* Menu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Menu.html; sourceTree = "<group>"; };
 		EE48EEBB1F1E132E004DA56D /* menuol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menuol.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE48EEC51F1E132E004DA56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE48EEC81F1E132F004DA56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE48EECA1F1E132F004DA56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE48EED21F1E3795004DA56D /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
-		EE48EED41F1E3877004DA56D /* VenueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueManager.swift; sourceTree = "<group>"; };
-		EE48EED81F1E3988004DA56D /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
-		EE79CC9F23E994C50074AB3D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
-		EE842CC1289C64BC00F5F30C /* MenuOl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOl.swift; sourceTree = "<group>"; };
-		EE89DA682859AD9A004353C7 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
-		EE91293328892F1500172F67 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
-		EE99C1C21F1F689E00C324AE /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		EED333BA2CA54E510029CFC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		EEE015DD28958E390019FC7E /* VenueItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueItemView.swift; sourceTree = "<group>"; };
-		EEE015DF289599A10019FC7E /* VenueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EE2664A62CDFB41900A333A3 /* Exceptions for "menuol" folder in "menuol" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Support/Info.plist,
+			);
+			target = EE48EEBA1F1E132E004DA56D /* menuol */;
+		};
+		EE2664B52CDFB42100A333A3 /* Exceptions for "tests" folder in "tests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EE172F5E211C1A690045B016 /* tests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EE2664962CDFB41800A333A3 /* menuol */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EE2664A62CDFB41900A333A3 /* Exceptions for "menuol" folder in "menuol" target */,
+			);
+			path = menuol;
+			sourceTree = "<group>";
+		};
+		EE2664AE2CDFB42100A333A3 /* tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EE2664B52CDFB42100A333A3 /* Exceptions for "tests" folder in "tests" target */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EE172F5C211C1A690045B016 /* Frameworks */ = {
@@ -86,22 +82,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE172F60211C1A690045B016 /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				EE73B8B523E9A31800541E42 /* Resources */,
-				EE79CCA123E99AAF0074AB3D /* HTTPClientTests.swift */,
-				EE3DECB7212ED180002791E9 /* HTMLParserTests.swift */,
-				EE172F63211C1A690045B016 /* Info.plist */,
-			);
-			path = tests;
-			sourceTree = "<group>";
-		};
 		EE48EEB21F1E132E004DA56D = {
 			isa = PBXGroup;
 			children = (
-				EE48EEBD1F1E132E004DA56D /* menuol */,
-				EE172F60211C1A690045B016 /* tests */,
+				EE2664962CDFB41800A333A3 /* menuol */,
+				EE2664AE2CDFB42100A333A3 /* tests */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 			);
 			indentWidth = 2;
@@ -116,94 +101,6 @@
 				EE172F5F211C1A690045B016 /* tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EE48EEBD1F1E132E004DA56D /* menuol */ = {
-			isa = PBXGroup;
-			children = (
-				EEFB9CDC2066EEED0035542B /* Models */,
-				EEFB9CDD2066EEFD0035542B /* Views */,
-				EEFB9CDE2066EF340035542B /* Classes */,
-				EEBBF6AE21085C2300DA58BA /* Support */,
-				EEA597B42023CB9C004E2B79 /* Resources */,
-			);
-			path = menuol;
-			sourceTree = "<group>";
-		};
-		EE73B8B523E9A31800541E42 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EE3DECC1212FF65A002791E9 /* Menu.html */,
-				EE3DECB9212ED455002791E9 /* Venues.html */,
-				EE16A8BE2C2D860800817842 /* MockURLProtocol.swift */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		EE89DA662858DE87004353C7 /* Venues */ = {
-			isa = PBXGroup;
-			children = (
-				EEE015DF289599A10019FC7E /* VenueListView.swift */,
-				EED333BA2CA54E510029CFC4 /* LoadingView.swift */,
-				EEE015DD28958E390019FC7E /* VenueItemView.swift */,
-			);
-			path = Venues;
-			sourceTree = "<group>";
-		};
-		EE89DA672858DEB1004353C7 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				EE91293328892F1500172F67 /* MenuListView.swift */,
-				EE89DA682859AD9A004353C7 /* MenuItemView.swift */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
-		EEA597B42023CB9C004E2B79 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */,
-				EE48EEC51F1E132E004DA56D /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		EEBBF6AE21085C2300DA58BA /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				EE842CC1289C64BC00F5F30C /* MenuOl.swift */,
-				EE48EECA1F1E132F004DA56D /* Info.plist */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		EEFB9CDC2066EEED0035542B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EE48EED21F1E3795004DA56D /* Venue.swift */,
-				EE99C1C21F1F689E00C324AE /* MenuItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EEFB9CDD2066EEFD0035542B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EE89DA662858DE87004353C7 /* Venues */,
-				EE89DA672858DEB1004353C7 /* Menu */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		EEFB9CDE2066EF340035542B /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				EE79CC9F23E994C50074AB3D /* HTTPClient.swift */,
-				EE16A8C02C2DC72A00817842 /* Debouncer.swift */,
-				EE48EED81F1E3988004DA56D /* HTMLParser.swift */,
-				EE48EED41F1E3877004DA56D /* VenueManager.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +119,9 @@
 			dependencies = (
 				EE172F65211C1A690045B016 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				EE2664AE2CDFB42100A333A3 /* tests */,
+			);
 			name = tests;
 			productName = "menuol unit tests";
 			productReference = EE172F5F211C1A690045B016 /* tests.xctest */;
@@ -238,6 +138,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EE2664962CDFB41800A333A3 /* menuol */,
 			);
 			name = menuol;
 			packageProductDependencies = (
@@ -300,8 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE3DECBA212ED455002791E9 /* Venues.html in Resources */,
-				EE3DECC2212FF65A002791E9 /* Menu.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE48EEC91F1E132F004DA56D /* LaunchScreen.storyboard in Resources */,
-				EE48EEC61F1E132E004DA56D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,9 +220,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE3DECB8212ED180002791E9 /* HTMLParserTests.swift in Sources */,
-				EE79CCA223E99AAF0074AB3D /* HTTPClientTests.swift in Sources */,
-				EE16A8BF2C2D860800817842 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,18 +227,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE91293428892F1500172F67 /* MenuListView.swift in Sources */,
-				EE48EED31F1E3795004DA56D /* Venue.swift in Sources */,
-				EEE015DE28958E390019FC7E /* VenueItemView.swift in Sources */,
-				EE79CCA023E994C50074AB3D /* HTTPClient.swift in Sources */,
-				EEE015E0289599A10019FC7E /* VenueListView.swift in Sources */,
-				EED333BB2CA54E510029CFC4 /* LoadingView.swift in Sources */,
-				EE99C1C31F1F689E00C324AE /* MenuItem.swift in Sources */,
-				EE842CC2289C64BC00F5F30C /* MenuOl.swift in Sources */,
-				EE48EED91F1E3988004DA56D /* HTMLParser.swift in Sources */,
-				EE48EED51F1E3877004DA56D /* VenueManager.swift in Sources */,
-				EE16A8C12C2DC72A00817842 /* Debouncer.swift in Sources */,
-				EE89DA692859AD9A004353C7 /* MenuItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,17 +239,6 @@
 			targetProxy = EE172F64211C1A690045B016 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EE48EEC71F1E132E004DA56D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE48EEC81F1E132F004DA56D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EE172F66211C1A690045B016 /* Debug */ = {
