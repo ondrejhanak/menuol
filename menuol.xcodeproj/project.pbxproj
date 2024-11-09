@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -273,7 +273,6 @@
 				};
 			};
 			buildConfigurationList = EE48EEB61F1E132E004DA56D /* Build configuration list for PBXProject "menuol" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -285,6 +284,7 @@
 				EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */,
 				EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = EE48EEBC1F1E132E004DA56D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
