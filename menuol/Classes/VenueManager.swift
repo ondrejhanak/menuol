@@ -8,16 +8,31 @@
 
 import Foundation
 import Factory
+import Combine
 
 @MainActor
 final class VenueManager: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
 	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs
+	private var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 	private var parsedVenues: [Venue] = []
-	private var searchPhrase = ""
+	private var bag: Set<AnyCancellable> = []
+	@Published var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
 	@Published var isLoading = false
+
+	// MARK: - Init
+
+	init() {
+		$searchPhrase
+			.assign(to: &searchDebouncer.$value)
+		searchDebouncer.$debouncedValue
+			.sink { [weak self] phrase in
+				self?.updateVisibleVenues(phrase: phrase)
+			}
+			.store(in: &bag)
+	}
 
 	// MARK: - Public
 
@@ -27,13 +42,8 @@ final class VenueManager: ObservableObject {
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
 		parsedVenues = htmlParser.venuesWithMenuItems(from: html)
-		updateVisibleVenues()
+		updateVisibleVenues(phrase: searchDebouncer.debouncedValue)
 		isLoading = false
-	}
-
-	func applySearchPhrase(_ phrase: String) {
-		searchPhrase = phrase
-		updateVisibleVenues()
 	}
 
 	/// Toggles favorite state of given venue.
@@ -43,7 +53,7 @@ final class VenueManager: ObservableObject {
 		} else {
 			favoriteVenueSlugs.save(venue.slug)
 		}
-		updateVisibleVenues()
+		updateVisibleVenues(phrase: searchDebouncer.debouncedValue)
 	}
 
 	// MARK: - Private
@@ -52,9 +62,10 @@ final class VenueManager: ObservableObject {
 		favoriteVenueSlugs.contains(venue.slug)
 	}
 
-	private func updateVisibleVenues() {
+	private func updateVisibleVenues(phrase: String?) {
+		let search = phrase ?? searchPhrase
 		let filteredVenues = parsedVenues.filter { venue in
-			searchPhrase.isEmpty || venue.name.localizedStandardContains(searchPhrase)
+			searchPhrase.isEmpty || venue.name.localizedStandardContains(search)
 		}
 		let processedVenues = filteredVenues.map { venue in
 			var newVenue = venue

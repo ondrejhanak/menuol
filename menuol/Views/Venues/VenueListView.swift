@@ -11,7 +11,6 @@ import SwiftUI
 struct VenueListView: View {
 	@ObservedObject var venueManager: VenueManager
 	@Environment(\.scenePhase) var scenePhase
-	@StateObject var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 
 	var body: some View {
 		List(venueManager.visibleVenues) { venue in
@@ -34,20 +33,13 @@ struct VenueListView: View {
 			}
 		}
 		.animation(.easeInOut(duration: 0.2), value: venueManager.visibleVenues)
-		.searchable(text: $searchDebouncer.value)
-		.onChange(of: searchDebouncer.debouncedValue) { phrase in
-			searchVenues(phrase: phrase)
-		}
+		.searchable(text: $venueManager.searchPhrase)
 	}
 
 	// MARK: - Private
 
 	private func toggleFavourite(_ venue: Venue) {
 		venueManager.toggleFavorite(venue)
-	}
-
-	private func searchVenues(phrase: String) {
-		venueManager.applySearchPhrase(phrase)
 	}
 
 	private func fetchData() {
