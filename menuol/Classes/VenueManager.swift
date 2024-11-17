@@ -7,23 +7,17 @@
 //
 
 import Foundation
+import Factory
 
 @MainActor
 final class VenueManager: ObservableObject {
-	private var httpClient: HTTPClient
-	private var htmlParser: HTMLParser
+	@Injected(\.httpClient) private var httpClient
+	@Injected(\.htmlParser) private var htmlParser
+	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs
 	private var parsedVenues: [Venue] = []
 	private var searchPhrase = ""
-	private var favoriteVenueSlugs = StringStorage(key: "FavoriteVenueSlugs")
 	@Published var visibleVenues: [Venue] = []
 	@Published var isLoading = false
-
-	// MARK: - Lifecycle
-
-	init(httpClient: HTTPClient, htmlParser: HTMLParser) {
-		self.httpClient = httpClient
-		self.htmlParser = htmlParser
-	}
 
 	// MARK: - Public
 

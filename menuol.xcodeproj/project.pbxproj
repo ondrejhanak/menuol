@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE8E415C2CEA4469001710EE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = EE8E415B2CEA4469001710EE /* Factory */; };
 		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
 		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8E415C2CEA4469001710EE /* Factory in Frameworks */,
 				EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */,
 				EEADFE1C275424E000D21622 /* Kanna in Frameworks */,
 			);
@@ -87,6 +89,7 @@
 			children = (
 				EE2664962CDFB41800A333A3 /* menuol */,
 				EE2664AE2CDFB42100A333A3 /* tests */,
+				EE8E415A2CEA4469001710EE /* Frameworks */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 			);
 			indentWidth = 2;
@@ -101,6 +104,13 @@
 				EE172F5F211C1A690045B016 /* tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EE8E415A2CEA4469001710EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +156,7 @@
 			packageProductDependencies = (
 				EEADFE1B275424E000D21622 /* Kanna */,
 				EEADFE1E275424F000D21622 /* Kingfisher */,
+				EE8E415B2CEA4469001710EE /* Factory */,
 			);
 			productName = menuol;
 			productReference = EE48EEBB1F1E132E004DA56D /* menuol.app */;
@@ -186,6 +197,7 @@
 			packageReferences = (
 				EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */,
 				EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE48EEBC1F1E132E004DA56D /* Products */;
@@ -493,6 +505,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
 		EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
@@ -512,6 +532,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EE8E415B2CEA4469001710EE /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
 		EEADFE1B275424E000D21622 /* Kanna */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */;
