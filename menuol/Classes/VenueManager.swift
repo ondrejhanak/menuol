@@ -10,22 +10,13 @@ import Foundation
 
 @MainActor
 final class VenueManager: ObservableObject {
-	private let kFavoriteVenuesKey = "kFavoriteVenuesKey"
 	private var httpClient: HTTPClient
 	private var htmlParser: HTMLParser
 	private var parsedVenues: [Venue] = []
 	private var searchPhrase = ""
+	private var favoriteVenueSlugs = StringStorage(key: "FavoriteVenueSlugs")
 	@Published var visibleVenues: [Venue] = []
 	@Published var isLoading = false
-
-	private var favoriteVenues: [String] {
-		get {
-			UserDefaults.standard.array(forKey: kFavoriteVenuesKey)?.compactMap { String(describing: $0) } ?? []
-		}
-		set {
-			UserDefaults.standard.set(newValue, forKey: kFavoriteVenuesKey)
-		}
-	}
 
 	// MARK: - Lifecycle
 
@@ -53,10 +44,10 @@ final class VenueManager: ObservableObject {
 
 	/// Toggles favorite state of given venue.
 	func toggleFavorite(_ venue: Venue) {
-		if let index = favoriteVenues.firstIndex(of: venue.slug) {
-			favoriteVenues.remove(at: index)
+		if isFavourited(venue) {
+			favoriteVenueSlugs.remove(venue.slug)
 		} else {
-			favoriteVenues.append(venue.slug)
+			favoriteVenueSlugs.save(venue.slug)
 		}
 		updateVisibleVenues()
 	}
@@ -64,7 +55,7 @@ final class VenueManager: ObservableObject {
 	// MARK: - Private
 
 	private func isFavourited(_ venue: Venue) -> Bool {
-		favoriteVenues.contains(venue.slug)
+		favoriteVenueSlugs.contains(venue.slug)
 	}
 
 	private func updateVisibleVenues() {
