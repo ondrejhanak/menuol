@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@MainActor
 struct MenuListView: View {
 	var venue: Venue
 
