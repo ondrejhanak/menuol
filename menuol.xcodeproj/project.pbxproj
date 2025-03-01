@@ -92,9 +92,9 @@
 				EE8E415A2CEA4469001710EE /* Frameworks */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 			usesTabs = 1;
 		};
 		EE48EEBC1F1E132E004DA56D /* Products */ = {
