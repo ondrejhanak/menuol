@@ -89,7 +89,6 @@
 			children = (
 				EE2664962CDFB41800A333A3 /* menuol */,
 				EE2664AE2CDFB42100A333A3 /* tests */,
-				EE8E415A2CEA4469001710EE /* Frameworks */,
 				EE48EEBC1F1E132E004DA56D /* Products */,
 			);
 			indentWidth = 4;
@@ -104,13 +103,6 @@
 				EE172F5F211C1A690045B016 /* tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EE8E415A2CEA4469001710EE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
