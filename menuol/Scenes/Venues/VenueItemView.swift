@@ -62,7 +62,7 @@ struct VenueItemView: View {
 				.frame(width: 44, height: 44)
 				.accessibilityLabel("Toggle favorite.")
 		}
-		.buttonStyle(.borderless) // otherwise whole wiew triggers tap action
+		.buttonStyle(.borderless) // otherwise whole view triggers tap action
 	}
 }
 
