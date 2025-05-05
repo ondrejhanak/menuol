@@ -11,7 +11,7 @@ import Factory
 import Combine
 
 @MainActor
-final class VenueManager: ObservableObject {
+final class VenueListViewModel: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
 	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs

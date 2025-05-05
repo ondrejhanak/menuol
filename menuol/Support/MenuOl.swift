@@ -10,12 +10,10 @@ import SwiftUI
 
 @main
 struct MenuOl: App {
-	@StateObject private var venueManager = VenueManager()
-
 	var body: some Scene {
 		WindowGroup {
 			NavigationStack {
-				VenueListView(venueManager: venueManager)
+				VenueListView(viewModel: .init())
 			}
 		}
 	}

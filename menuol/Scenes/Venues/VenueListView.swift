@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct VenueListView: View {
-	@ObservedObject var venueManager: VenueManager
+	@StateObject var viewModel: VenueListViewModel
 	@Environment(\.scenePhase) var scenePhase
 
 	var body: some View {
-		List(venueManager.visibleVenues) { venue in
+		List(viewModel.visibleVenues) { venue in
 			NavigationLink(destination: MenuListView(venue: venue)) {
 				VenueItemView(venue: venue) { venue in
 					toggleFavourite(venue)
@@ -23,7 +23,7 @@ struct VenueListView: View {
 		.listStyle(.grouped)
 		.navigationTitle("Polední menu")
 		.overlay {
-			if venueManager.isLoading {
+			if viewModel.isLoading {
 				LoadingView()
 			}
 		}
@@ -32,25 +32,25 @@ struct VenueListView: View {
 				fetchData()
 			}
 		}
-		.animation(.easeInOut(duration: 0.2), value: venueManager.visibleVenues)
-		.searchable(text: $venueManager.searchPhrase)
+		.animation(.easeInOut(duration: 0.2), value: viewModel.visibleVenues)
+		.searchable(text: $viewModel.searchPhrase)
 	}
 
 	// MARK: - Private
 
 	private func toggleFavourite(_ venue: Venue) {
-		venueManager.toggleFavorite(venue)
+		viewModel.toggleFavorite(venue)
 	}
 
 	private func fetchData() {
 		Task {
-			try? await venueManager.fetchVenues()
+			try? await viewModel.fetchVenues()
 		}
 	}
 }
 
 #Preview {
 	NavigationStack {
-		VenueListView(venueManager: VenueManager())
+		VenueListView(viewModel: .init())
 	}
 }
