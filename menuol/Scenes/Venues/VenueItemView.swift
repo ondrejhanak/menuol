@@ -22,7 +22,6 @@ struct VenueItemView: View {
 		}
 	}
 
-	@MainActor
 	private var image: some View {
 		KFImage(venue.imageURL)
 			.placeholder {
