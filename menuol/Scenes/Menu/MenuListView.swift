@@ -37,13 +37,14 @@ struct MenuListView: View {
 	}
 }
 
-#Preview {
-	Group {
-		NavigationView {
-			MenuListView(venue: Venue(slug: "", name: "Populated menu", menuItems: MenuItem.demoItems))
-		}
-		NavigationView {
-			MenuListView(venue: Venue(slug: "", name: "Empty menu", menuItems: []))
-		}
+#Preview("Items") {
+	NavigationView {
+		MenuListView(venue: .init(slug: "", name: "Populated menu", menuItems: MenuItem.demoItems))
+	}
+}
+
+#Preview("Empty") {
+	NavigationView {
+		MenuListView(venue: .init(slug: "", name: "Empty menu", menuItems: []))
 	}
 }
