@@ -39,11 +39,13 @@ final class VenueListViewModel: ObservableObject {
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {
 		isLoading = true
+		defer {
+			isLoading = false
+		}
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
 		parsedVenues = htmlParser.venuesWithMenuItems(from: html)
 		updateVisibleVenues(phrase: searchDebouncer.debouncedValue)
-		isLoading = false
 	}
 
 	/// Toggles favorite state of given venue.
