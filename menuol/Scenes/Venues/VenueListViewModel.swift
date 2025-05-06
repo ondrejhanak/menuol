@@ -48,7 +48,7 @@ final class VenueListViewModel: ObservableObject {
 
 	/// Toggles favorite state of given venue.
 	func toggleFavorite(_ venue: Venue) {
-		if isFavourited(venue) {
+		if isFavorited(venue) {
 			favoriteVenueSlugs.remove(venue.slug)
 		} else {
 			favoriteVenueSlugs.save(venue.slug)
@@ -58,7 +58,7 @@ final class VenueListViewModel: ObservableObject {
 
 	// MARK: - Private
 
-	private func isFavourited(_ venue: Venue) -> Bool {
+	private func isFavorited(_ venue: Venue) -> Bool {
 		favoriteVenueSlugs.contains(venue.slug)
 	}
 
@@ -69,7 +69,7 @@ final class VenueListViewModel: ObservableObject {
 		}
 		let processedVenues = filteredVenues.map { venue in
 			var newVenue = venue
-			newVenue.isFavorited = isFavourited(venue)
+			newVenue.isFavorited = isFavorited(venue)
 			return newVenue
 		}
 		let sortedVenues = processedVenues.sorted { v1, v2 in

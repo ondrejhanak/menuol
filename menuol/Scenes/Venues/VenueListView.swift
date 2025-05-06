@@ -16,7 +16,7 @@ struct VenueListView: View {
 		List(viewModel.visibleVenues) { venue in
 			NavigationLink(destination: MenuListView(venue: venue)) {
 				VenueItemView(venue: venue) { venue in
-					toggleFavourite(venue)
+					toggleFavorite(venue)
 				}
 			}
 		}
@@ -38,7 +38,7 @@ struct VenueListView: View {
 
 	// MARK: - Private
 
-	private func toggleFavourite(_ venue: Venue) {
+	private func toggleFavorite(_ venue: Venue) {
 		viewModel.toggleFavorite(venue)
 	}
 
