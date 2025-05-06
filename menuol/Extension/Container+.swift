@@ -10,11 +10,11 @@ import Foundation
 import Factory
 
 extension Container {
-	var htmlParser: Factory<HTMLParser> {
+	var htmlParser: Factory<HTMLParserType> {
 		self { HTMLParser() }
 	}
 
-	var httpClient: Factory<HTTPClient> {
+	var httpClient: Factory<HTTPClientType> {
 		self { HTTPClient() }
 	}
 

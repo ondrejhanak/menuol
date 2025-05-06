@@ -9,7 +9,11 @@
 import Foundation
 import Kanna
 
-final class HTMLParser {
+protocol HTMLParserType {
+	func venuesWithMenuItems(from string: String) -> [Venue]
+}
+
+final class HTMLParser: HTMLParserType {
 	// MARK: - Public
 
 	func venuesWithMenuItems(from string: String) -> [Venue] {
@@ -58,5 +62,11 @@ final class HTMLParser {
 			result.append(menuItem)
 		}
 		return result
+	}
+}
+
+final class HTMLParserMock: HTMLParserType {
+	func venuesWithMenuItems(from string: String) -> [Venue] {
+		Venue.demoItems
 	}
 }

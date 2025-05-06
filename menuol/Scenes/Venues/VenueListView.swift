@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Factory
 
 struct VenueListView: View {
 	@StateObject var viewModel: VenueListViewModel
@@ -27,13 +28,16 @@ struct VenueListView: View {
 				LoadingView()
 			}
 		}
-		.onChange(of: scenePhase) { newPhase in
-			if newPhase == .active {
+		.onChange(of: scenePhase) { old, new in
+			if new == .active {
 				fetchData()
 			}
 		}
 		.animation(.easeInOut(duration: 0.2), value: viewModel.visibleVenues)
 		.searchable(text: $viewModel.searchPhrase)
+		.task {
+			fetchData()
+		}
 	}
 
 	// MARK: - Private
@@ -50,6 +54,8 @@ struct VenueListView: View {
 }
 
 #Preview {
+	let _ = Container.shared.htmlParser.register { HTMLParserMock() }
+	let _ = Container.shared.httpClient.register { HTTPClientMock() }
 	NavigationStack {
 		VenueListView(viewModel: .init())
 	}

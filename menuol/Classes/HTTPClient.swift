@@ -8,7 +8,11 @@
 
 import Foundation
 
-final class HTTPClient: Sendable {
+protocol HTTPClientType: Sendable {
+	func get(url: URL) async throws -> String
+}
+
+final class HTTPClient: HTTPClientType {
 	private let session: URLSession
 
 	// MARK: - Lifecycle
@@ -23,5 +27,11 @@ final class HTTPClient: Sendable {
 		let (data, _) = try await session.data(from: url)
 		let html = String(decoding: data, as: UTF8.self)
 		return html
+	}
+}
+
+final class HTTPClientMock: HTTPClientType {
+	func get(url: URL) async throws -> String {
+		""
 	}
 }
