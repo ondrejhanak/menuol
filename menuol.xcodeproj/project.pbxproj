@@ -500,7 +500,7 @@
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.1;
+				minimumVersion = 2.5.0;
 			};
 		};
 		EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */ = {
@@ -508,7 +508,7 @@
 			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 6.0.0;
 			};
 		};
 		EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
