@@ -15,6 +15,7 @@ final class VenueListViewModel: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
 	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs
+	@Injected(\.appCoordinator) private var appCoordinator
 	private var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
 	private var parsedVenues: [Venue] = []
 	private var bag: Set<AnyCancellable> = []
@@ -35,6 +36,10 @@ final class VenueListViewModel: ObservableObject {
 	}
 
 	// MARK: - Public
+
+	func showMenu(ofVenue venue: Venue) {
+		appCoordinator.showMenu(ofVenue: venue)
+	}
 
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {

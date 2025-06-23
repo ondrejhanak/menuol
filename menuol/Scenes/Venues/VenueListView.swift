@@ -10,14 +10,13 @@ import SwiftUI
 import Factory
 
 struct VenueListView: View {
-	@EnvironmentObject private var coordinator: AppCoordinator
 	@StateObject var viewModel: VenueListViewModel
 	@Environment(\.scenePhase) var scenePhase
 
 	var body: some View {
 		List(viewModel.visibleVenues) { venue in
 			Button {
-				coordinator.showMenu(ofVenue: venue)
+				viewModel.showMenu(ofVenue: venue)
 			} label: {
 				VenueItemView(venue: venue) { venue in
 					toggleFavorite(venue)

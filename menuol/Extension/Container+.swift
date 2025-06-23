@@ -22,4 +22,10 @@ extension Container {
 		self { StringStorage(key: "FavoriteVenueSlugs") }
 			.cached
 	}
+
+	@MainActor
+	var appCoordinator: Factory<AppCoordinator> {
+		self { @MainActor in AppCoordinator() }
+			.singleton
+	}
 }

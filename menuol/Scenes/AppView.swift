@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import Factory
 
 struct AppView: View {
-	@StateObject private var coordinator = AppCoordinator()
+	@StateObject private var coordinator = Container.shared.appCoordinator()
 
 	var body: some View {
 		NavigationStack(path: $coordinator.path) {
@@ -18,6 +19,5 @@ struct AppView: View {
 					coordinator.view(forRoute: route)
 				}
 		}
-		.environmentObject(coordinator)
 	}
 }
