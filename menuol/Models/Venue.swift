@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Venue: Identifiable {
+struct Venue: Identifiable, Hashable {
 	var id: String {
 		slug
 	}

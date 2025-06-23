@@ -10,12 +10,15 @@ import SwiftUI
 import Factory
 
 struct VenueListView: View {
+	@EnvironmentObject private var coordinator: AppCoordinator
 	@StateObject var viewModel: VenueListViewModel
 	@Environment(\.scenePhase) var scenePhase
 
 	var body: some View {
 		List(viewModel.visibleVenues) { venue in
-			NavigationLink(destination: MenuListView(venue: venue)) {
+			Button {
+				coordinator.showMenu(ofVenue: venue)
+			} label: {
 				VenueItemView(venue: venue) { venue in
 					toggleFavorite(venue)
 				}
@@ -28,7 +31,7 @@ struct VenueListView: View {
 				LoadingView()
 			}
 		}
-		.onChange(of: scenePhase) { old, new in
+		.onChange(of: scenePhase) { new in
 			if new == .active {
 				fetchData()
 			}

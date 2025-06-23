@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MenuItem: Identifiable {
+struct MenuItem: Identifiable, Hashable {
 	let id = UUID()
 	let title: String
 	let order: Int

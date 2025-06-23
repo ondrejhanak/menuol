@@ -12,9 +12,7 @@ import SwiftUI
 struct MenuOl: App {
 	var body: some Scene {
 		WindowGroup {
-			NavigationStack {
-				VenueListView(viewModel: .init())
-			}
+			AppView()
 		}
 	}
 }
