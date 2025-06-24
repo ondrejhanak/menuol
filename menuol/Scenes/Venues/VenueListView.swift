@@ -31,6 +31,9 @@ struct VenueListView: View {
 		}
 		.animation(.easeInOut(duration: 0.2), value: viewModel.visibleVenues)
 		.searchable(text: $viewModel.searchPhrase)
+		.task {
+			try? await viewModel.fetchVenues()
+		}
 	}
 }
 

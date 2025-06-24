@@ -17,9 +17,8 @@ final class VenueListViewModel: ObservableObject {
 	@Injected(\.htmlParser) private var htmlParser
 	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs
 	@Injected(\.appCoordinator) private var appCoordinator
-	private var searchDebouncer = Debouncer<String>(initialValue: "", delay: 0.2)
-	private var parsedVenues: [Venue] = []
-	private var bag: Set<AnyCancellable> = []
+	private var cancellables: Set<AnyCancellable> = []
+	@Published private var parsedVenues: [Venue] = []
 	@Published var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
 	@Published var isLoading = false
@@ -27,14 +26,15 @@ final class VenueListViewModel: ObservableObject {
 	// MARK: - Init
 
 	init() {
-		$searchPhrase
-			.assign(to: &searchDebouncer.$value)
-
-		searchDebouncer.$debouncedValue
-			.sink { [weak self] phrase in
-				self?.updateVisibleVenues(phrase: phrase)
-			}
-			.store(in: &bag)
+		Publishers.CombineLatest(
+			$parsedVenues,
+			$searchPhrase
+				.debounce(for: .seconds(0.3), scheduler: RunLoop.main)
+		)
+		.sink { [weak self] venues, phrase in
+			self?.updateVisibleVenues(phrase: phrase)
+		}
+		.store(in: &cancellables)
 
 		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
 			.sink { _ in
@@ -42,7 +42,7 @@ final class VenueListViewModel: ObservableObject {
 					try? await self?.fetchVenues()
 				}
 			}
-			.store(in: &bag)
+			.store(in: &cancellables)
 	}
 
 	// MARK: - Public
@@ -60,7 +60,6 @@ final class VenueListViewModel: ObservableObject {
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
 		parsedVenues = htmlParser.venuesWithMenuItems(from: html)
-		updateVisibleVenues(phrase: searchDebouncer.debouncedValue)
 	}
 
 	/// Toggles favorite state of given venue.
@@ -70,7 +69,7 @@ final class VenueListViewModel: ObservableObject {
 		} else {
 			favoriteVenueSlugs.save(venue.slug)
 		}
-		updateVisibleVenues(phrase: searchDebouncer.debouncedValue)
+		updateVisibleVenues(phrase: searchPhrase)
 	}
 
 	// MARK: - Private
@@ -79,10 +78,9 @@ final class VenueListViewModel: ObservableObject {
 		favoriteVenueSlugs.contains(venue.slug)
 	}
 
-	private func updateVisibleVenues(phrase: String?) {
-		let search = phrase ?? searchPhrase
+	private func updateVisibleVenues(phrase: String) {
 		let filteredVenues = parsedVenues.filter { venue in
-			searchPhrase.isEmpty || venue.name.localizedStandardContains(search)
+			phrase.isEmpty || venue.name.localizedStandardContains(phrase)
 		}
 		let processedVenues = filteredVenues.map { venue in
 			var newVenue = venue
