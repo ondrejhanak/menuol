@@ -18,7 +18,6 @@ struct Venue: Identifiable, Hashable {
 	var imageURL: URL?
 	var menuTimeDescription: String?
 	var menuItems: [MenuItem] = []
-	var isFavorited = false
 }
 
 extension Venue: Equatable {
@@ -29,6 +28,6 @@ extension Venue: Equatable {
 
 extension Venue {
 	static let demoVenueImage = Venue(slug: "image", name: "Venue + image", imageURL: URL(string: "https://picsum.photos/id/1060/200/150"), menuTimeDescription: nil, menuItems: MenuItem.demoItems)
-	static let demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [], isFavorited: true)
+	static let demoVenueNoImage = Venue(slug: "noimage", name: "Venue + description", imageURL: nil, menuTimeDescription: "time description", menuItems: [])
 	static let demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
 }

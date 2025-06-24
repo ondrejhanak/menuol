@@ -15,26 +15,44 @@ import UIKit
 final class VenueListViewModel: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
-	@Injected(\.favoriteSlugsStorage) private var favoriteVenueSlugs
+	@Injected(\.favoriteSlugsStorage) private var favoriteSlugsStorage
 	@Injected(\.appCoordinator) private var appCoordinator
 	private var cancellables: Set<AnyCancellable> = []
 	@Published private var parsedVenues: [Venue] = []
 	@Published var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
 	@Published var showSpinner = false
+	@Published var favoriteSlugs: Set<String> = []
 
 	// MARK: - Init
 
 	init() {
+		favoriteSlugs = Set(favoriteSlugsStorage.values)
+
 		Publishers.CombineLatest(
 			$parsedVenues,
 			$searchPhrase
 				.debounce(for: .seconds(0.3), scheduler: RunLoop.main)
 		)
-		.sink { [weak self] venues, phrase in
-			self?.updateVisibleVenues(phrase: phrase)
+		.map { venues, searchPhrase in
+			// search filter
+			venues.filter { venue in
+				searchPhrase.isEmpty || venue.name.localizedStandardContains(searchPhrase)
+			}
 		}
-		.store(in: &cancellables)
+		.combineLatest($favoriteSlugs)
+		.map { venues, favorites in
+			// favorites first
+			venues.sorted { lhs, rhs in
+				let lhsIsFavorited = favorites.contains(lhs.slug)
+				let rhsIsFavorited = favorites.contains(rhs.slug)
+				if lhsIsFavorited == rhsIsFavorited {
+					return lhs.name < rhs.name
+				}
+				return lhsIsFavorited
+			}
+		}
+		.assign(to: &$visibleVenues)
 
 		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
 			.sink { _ in
@@ -46,6 +64,10 @@ final class VenueListViewModel: ObservableObject {
 	}
 
 	// MARK: - Public
+
+	func isFavorited(_ venue: Venue) -> Bool {
+		favoriteSlugs.contains(venue.slug)
+	}
 
 	func showMenu(ofVenue venue: Venue) {
 		appCoordinator.showMenu(ofVenue: venue)
@@ -64,35 +86,11 @@ final class VenueListViewModel: ObservableObject {
 
 	/// Toggles favorite state of given venue.
 	func toggleFavorite(_ venue: Venue) {
-		if isFavorited(venue) {
-			favoriteVenueSlugs.remove(venue.slug)
+		if favoriteSlugs.contains(venue.slug) {
+			favoriteSlugs.remove(venue.slug)
 		} else {
-			favoriteVenueSlugs.save(venue.slug)
+			favoriteSlugs.insert(venue.slug)
 		}
-		updateVisibleVenues(phrase: searchPhrase)
-	}
-
-	// MARK: - Private
-
-	private func isFavorited(_ venue: Venue) -> Bool {
-		favoriteVenueSlugs.contains(venue.slug)
-	}
-
-	private func updateVisibleVenues(phrase: String) {
-		let filteredVenues = parsedVenues.filter { venue in
-			phrase.isEmpty || venue.name.localizedStandardContains(phrase)
-		}
-		let processedVenues = filteredVenues.map { venue in
-			var newVenue = venue
-			newVenue.isFavorited = isFavorited(venue)
-			return newVenue
-		}
-		let sortedVenues = processedVenues.sorted { v1, v2 in
-			if v1.isFavorited == v2.isFavorited {
-				return v1.name < v2.name
-			}
-			return v1.isFavorited
-		}
-		visibleVenues = sortedVenues
+		favoriteSlugsStorage.values = Array(favoriteSlugs)
 	}
 }

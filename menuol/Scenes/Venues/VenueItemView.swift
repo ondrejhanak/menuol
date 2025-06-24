@@ -11,6 +11,7 @@ import SwiftUI
 
 struct VenueItemView: View {
 	var venue: Venue
+	var isFavorited: Bool
 	var favoriteCallback: (Venue) -> Void
 
 	var body: some View {
@@ -55,7 +56,7 @@ struct VenueItemView: View {
 		Button {
 			favoriteCallback(venue)
 		} label: {
-			let imageName = venue.isFavorited ? "heart.fill" : "heart"
+			let imageName = isFavorited ? "heart.fill" : "heart"
 			Image(systemName: imageName)
 				.foregroundColor(.primary.opacity(0.75))
 				.frame(width: 44, height: 44)
@@ -67,8 +68,8 @@ struct VenueItemView: View {
 
 #Preview {
 	VStack {
-		VenueItemView(venue: Venue.demoVenueImage) { _ in }
-		VenueItemView(venue: Venue.demoVenueNoImage) { _ in }
+		VenueItemView(venue: Venue.demoVenueImage, isFavorited: true) { _ in }
+		VenueItemView(venue: Venue.demoVenueNoImage, isFavorited: false) { _ in }
 	}
 	.padding()
 }

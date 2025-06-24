@@ -15,7 +15,7 @@ final class StringStorage {
 		self.key = key
 	}
 
-	private var favoriteVenues: [String] {
+	var values: [String] {
 		get {
 			UserDefaults.standard.array(forKey: key)?.compactMap { String(describing: $0) } ?? []
 		}
@@ -25,16 +25,16 @@ final class StringStorage {
 	}
 
 	func save(_ string: String) {
-		favoriteVenues.append(string)
+		values.append(string)
 	}
 
 	func remove(_ string: String) {
-		if let index = favoriteVenues.firstIndex(of: string) {
-			favoriteVenues.remove(at: index)
+		if let index = values.firstIndex(of: string) {
+			values.remove(at: index)
 		}
 	}
 
 	func contains(_ string: String) -> Bool {
-		favoriteVenues.contains(string)
+		values.contains(string)
 	}
 }

@@ -17,7 +17,7 @@ struct VenueListView: View {
 			Button {
 				viewModel.showMenu(ofVenue: venue)
 			} label: {
-				VenueItemView(venue: venue) { venue in
+				VenueItemView(venue: venue, isFavorited: viewModel.isFavorited(venue)) { venue in
 					viewModel.toggleFavorite(venue)
 				}
 			}
