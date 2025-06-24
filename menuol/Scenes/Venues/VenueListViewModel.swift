@@ -9,6 +9,7 @@
 import Foundation
 import Factory
 import Combine
+import UIKit
 
 @MainActor
 final class VenueListViewModel: ObservableObject {
@@ -28,9 +29,18 @@ final class VenueListViewModel: ObservableObject {
 	init() {
 		$searchPhrase
 			.assign(to: &searchDebouncer.$value)
+
 		searchDebouncer.$debouncedValue
 			.sink { [weak self] phrase in
 				self?.updateVisibleVenues(phrase: phrase)
+			}
+			.store(in: &bag)
+
+		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+			.sink { _ in
+				Task { [weak self] in
+					try? await self?.fetchVenues()
+				}
 			}
 			.store(in: &bag)
 	}

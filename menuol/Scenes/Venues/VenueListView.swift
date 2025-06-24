@@ -11,7 +11,6 @@ import Factory
 
 struct VenueListView: View {
 	@StateObject var viewModel: VenueListViewModel
-	@Environment(\.scenePhase) var scenePhase
 
 	var body: some View {
 		List(viewModel.visibleVenues) { venue in
@@ -19,7 +18,7 @@ struct VenueListView: View {
 				viewModel.showMenu(ofVenue: venue)
 			} label: {
 				VenueItemView(venue: venue) { venue in
-					toggleFavorite(venue)
+					viewModel.toggleFavorite(venue)
 				}
 			}
 		}
@@ -30,28 +29,8 @@ struct VenueListView: View {
 				LoadingView()
 			}
 		}
-		.onChange(of: scenePhase) { new in
-			if new == .active {
-				fetchData()
-			}
-		}
 		.animation(.easeInOut(duration: 0.2), value: viewModel.visibleVenues)
 		.searchable(text: $viewModel.searchPhrase)
-		.task {
-			fetchData()
-		}
-	}
-
-	// MARK: - Private
-
-	private func toggleFavorite(_ venue: Venue) {
-		viewModel.toggleFavorite(venue)
-	}
-
-	private func fetchData() {
-		Task {
-			try? await viewModel.fetchVenues()
-		}
 	}
 }
 
