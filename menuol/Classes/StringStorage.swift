@@ -7,31 +7,31 @@
 //
 
 import Foundation
+import Combine
 
 final class StringStorage {
+	private var cancellables: Set<AnyCancellable> = []
 	private var key: String
+	private var userDefaults: UserDefaults
+	@Published var values: Set<String> = []
 
-	init(key: String) {
+	init(key: String, userDefaults: UserDefaults = .standard) {
 		self.key = key
-	}
-
-	var values: [String] {
-		get {
-			UserDefaults.standard.array(forKey: key)?.compactMap { String(describing: $0) } ?? []
-		}
-		set {
-			UserDefaults.standard.set(newValue, forKey: key)
-		}
+		self.userDefaults = userDefaults
+		values = Set(userDefaults.array(forKey: key)?.compactMap { String(describing: $0) } ?? [])
+		$values
+			.sink { [weak self] values in
+				self?.userDefaults.set(Array(values), forKey: key)
+			}
+			.store(in: &cancellables)
 	}
 
 	func save(_ string: String) {
-		values.append(string)
+		values.insert(string)
 	}
 
 	func remove(_ string: String) {
-		if let index = values.firstIndex(of: string) {
-			values.remove(at: index)
-		}
+		values.remove(string)
 	}
 
 	func contains(_ string: String) -> Bool {

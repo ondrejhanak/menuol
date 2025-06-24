@@ -22,13 +22,10 @@ final class VenueListViewModel: ObservableObject {
 	@Published var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
 	@Published var showSpinner = false
-	@Published var favoriteSlugs: Set<String> = []
 
 	// MARK: - Init
 
 	init() {
-		favoriteSlugs = Set(favoriteSlugsStorage.values)
-
 		Publishers.CombineLatest(
 			$parsedVenues,
 			$searchPhrase
@@ -40,7 +37,7 @@ final class VenueListViewModel: ObservableObject {
 				searchPhrase.isEmpty || venue.name.localizedStandardContains(searchPhrase)
 			}
 		}
-		.combineLatest($favoriteSlugs)
+		.combineLatest(favoriteSlugsStorage.$values)
 		.map { venues, favorites in
 			// favorites first
 			venues.sorted { lhs, rhs in
@@ -66,7 +63,7 @@ final class VenueListViewModel: ObservableObject {
 	// MARK: - Public
 
 	func isFavorited(_ venue: Venue) -> Bool {
-		favoriteSlugs.contains(venue.slug)
+		favoriteSlugsStorage.contains(venue.slug)
 	}
 
 	func showMenu(ofVenue venue: Venue) {
@@ -86,11 +83,10 @@ final class VenueListViewModel: ObservableObject {
 
 	/// Toggles favorite state of given venue.
 	func toggleFavorite(_ venue: Venue) {
-		if favoriteSlugs.contains(venue.slug) {
-			favoriteSlugs.remove(venue.slug)
+		if favoriteSlugsStorage.contains(venue.slug) {
+			favoriteSlugsStorage.remove(venue.slug)
 		} else {
-			favoriteSlugs.insert(venue.slug)
+			favoriteSlugsStorage.save(venue.slug)
 		}
-		favoriteSlugsStorage.values = Array(favoriteSlugs)
 	}
 }
