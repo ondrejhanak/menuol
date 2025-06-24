@@ -7,10 +7,10 @@ Project was created for personal usage.
 
 ## Tech
 
-- Swift 5
-- Strict Concurrency Checking: `Complete`
-- SwiftUI for user interface
-- [Kanna](https://github.com/tid-kijyun/Kanna) library for HTML parsing
+- Swift 5 with strict concurrency checking
+- SwiftUI and Combine
+- [Kanna](https://github.com/tid-kijyun/Kanna) package for HTML parsing
+- [Factory](https://github.com/hmlongco/Factory) package for DI
 - Fastlane for running configured `swiftlint` and `swiftformat`
 - `automatic` code signing setup because of personal nature of the project
 - basic unit tests for HTTP fetcher and HTML parser
