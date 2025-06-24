@@ -30,21 +30,21 @@ extension Venue: Equatable {
 }
 
 extension Venue {
-	static let demoVenueImage = Venue(
+	static let stubFilled = Venue(
 		slug: "image",
-		name: "Venue + image",
+		name: "Venue with data",
 		imageURL: URL(string: "https://picsum.photos/id/1060/200/150"),
-		menuTimeDescription: nil,
+		menuTimeDescription: "11:00 - 14:00",
 		address: "Some Nice Place",
 		menuItems: MenuItem.demoItems
 	)
-	static let demoVenueNoImage = Venue(
+	static let stubEmpty = Venue(
 		slug: "noimage",
-		name: "Venue + description",
+		name: "Venue almost empty",
 		imageURL: nil,
-		menuTimeDescription: "time description",
+		menuTimeDescription: "",
 		address: "",
 		menuItems: []
 	)
-	static let demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]
+	static let demoItems = [Self.stubFilled, Self.stubEmpty]
 }

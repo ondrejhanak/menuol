@@ -68,8 +68,8 @@ struct VenueItemView: View {
 
 #Preview {
 	VStack {
-		VenueItemView(venue: Venue.demoVenueImage, isFavorited: true) { _ in }
-		VenueItemView(venue: Venue.demoVenueNoImage, isFavorited: false) { _ in }
+		VenueItemView(venue: Venue.stubFilled, isFavorited: true) { _ in }
+		VenueItemView(venue: Venue.stubEmpty, isFavorited: false) { _ in }
 	}
 	.padding()
 }

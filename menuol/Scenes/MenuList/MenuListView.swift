@@ -46,12 +46,12 @@ struct MenuListView: View {
 
 #Preview("Items") {
 	NavigationStack {
-		MenuListView(viewModel: .init(venue: .init(slug: "", name: "Populated menu", address: "Some Nice place", menuItems: MenuItem.demoItems)))
+		MenuListView(viewModel: .init(venue: Venue.stubFilled))
 	}
 }
 
 #Preview("Empty") {
 	NavigationStack {
-		MenuListView(viewModel: .init(venue: .init(slug: "", name: "Empty menu", address: "", menuItems: [])))
+		MenuListView(viewModel: .init(venue: Venue.stubEmpty))
 	}
 }
