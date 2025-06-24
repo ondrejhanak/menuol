@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct Venue: Identifiable, Hashable {
-	var id: String {
-		slug
-	}
-
+struct Venue: Hashable {
 	var slug: String
 	var name: String
 	var imageURL: URL?
@@ -20,9 +16,15 @@ struct Venue: Identifiable, Hashable {
 	var menuItems: [MenuItem] = []
 }
 
+extension Venue: Identifiable {
+	var id: String {
+		slug
+	}
+}
+
 extension Venue: Equatable {
 	static func == (lhs: Venue, rhs: Venue) -> Bool {
-		lhs.id == rhs.id
+		lhs.slug == rhs.slug
 	}
 }
 

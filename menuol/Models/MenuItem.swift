@@ -8,11 +8,16 @@
 
 import Foundation
 
-struct MenuItem: Identifiable, Hashable {
-	let id = UUID()
+struct MenuItem: Hashable {
 	let title: String
 	let order: Int
 	let priceDescription: String?
+}
+
+extension MenuItem: Identifiable {
+	var id: String {
+		title
+	}
 }
 
 extension MenuItem {
