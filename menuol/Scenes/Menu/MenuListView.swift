@@ -38,13 +38,13 @@ struct MenuListView: View {
 }
 
 #Preview("Items") {
-	NavigationView {
+	NavigationStack {
 		MenuListView(venue: .init(slug: "", name: "Populated menu", menuItems: MenuItem.demoItems))
 	}
 }
 
 #Preview("Empty") {
-	NavigationView {
+	NavigationStack {
 		MenuListView(venue: .init(slug: "", name: "Empty menu", menuItems: []))
 	}
 }

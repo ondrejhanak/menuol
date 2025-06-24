@@ -32,4 +32,5 @@ struct MenuItemView: View {
 
 #Preview {
 	MenuItemView(menuItem: MenuItem.demoItems[0])
+		.padding()
 }

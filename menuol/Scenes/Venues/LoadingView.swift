@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoadingView: View {
 	var body: some View {
-		VStack(spacing: 20) {
+		VStack(spacing: 15) {
 			ProgressView()
 				.controlSize(.large)
 			Text("Loading")

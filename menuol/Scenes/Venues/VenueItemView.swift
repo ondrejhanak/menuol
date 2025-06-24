@@ -66,8 +66,9 @@ struct VenueItemView: View {
 }
 
 #Preview {
-	Group {
+	VStack {
 		VenueItemView(venue: Venue.demoVenueImage) { _ in }
 		VenueItemView(venue: Venue.demoVenueNoImage) { _ in }
 	}
+	.padding()
 }
