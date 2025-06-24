@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MenuListView: View {
 	var venue: Venue
@@ -19,9 +20,10 @@ struct MenuListView: View {
 				listView
 			}
 		}
-		.listStyle(.grouped)
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.navigationTitle(venue.name)
 		.navigationBarTitleDisplayMode(.inline)
+		.background(Color(UIColor.systemGroupedBackground))
 	}
 
 	private var listView: some View {
@@ -30,6 +32,7 @@ struct MenuListView: View {
 				MenuItemView(menuItem: item)
 			}
 		}
+		.listStyle(.plain)
 	}
 
 	private var noDetailsView: some View {
