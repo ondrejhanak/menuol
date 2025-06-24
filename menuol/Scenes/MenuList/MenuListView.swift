@@ -26,8 +26,12 @@ struct MenuListView: View {
 		.background(Color(UIColor.systemGroupedBackground))
 	}
 
+	@ViewBuilder
 	private var listView: some View {
 		List {
+			Text(venue.address)
+				.padding(.vertical)
+				.foregroundStyle(.secondary)
 			ForEach(venue.menuItems) { item in
 				MenuItemView(menuItem: item)
 			}
@@ -42,12 +46,12 @@ struct MenuListView: View {
 
 #Preview("Items") {
 	NavigationStack {
-		MenuListView(venue: .init(slug: "", name: "Populated menu", menuItems: MenuItem.demoItems))
+		MenuListView(venue: .init(slug: "", name: "Populated menu", address: "Some Nice place", menuItems: MenuItem.demoItems))
 	}
 }
 
 #Preview("Empty") {
 	NavigationStack {
-		MenuListView(venue: .init(slug: "", name: "Empty menu", menuItems: []))
+		MenuListView(venue: .init(slug: "", name: "Empty menu", address: "", menuItems: []))
 	}
 }

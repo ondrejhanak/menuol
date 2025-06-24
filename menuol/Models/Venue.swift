@@ -13,6 +13,7 @@ struct Venue: Hashable {
 	var name: String
 	var imageURL: URL?
 	var menuTimeDescription: String?
+	var address: String
 	var menuItems: [MenuItem] = []
 }
 
@@ -34,6 +35,7 @@ extension Venue {
 		name: "Venue + image",
 		imageURL: URL(string: "https://picsum.photos/id/1060/200/150"),
 		menuTimeDescription: nil,
+		address: "Some Nice Place",
 		menuItems: MenuItem.demoItems
 	)
 	static let demoVenueNoImage = Venue(
@@ -41,6 +43,7 @@ extension Venue {
 		name: "Venue + description",
 		imageURL: nil,
 		menuTimeDescription: "time description",
+		address: "",
 		menuItems: []
 	)
 	static let demoItems = [Self.demoVenueImage, Self.demoVenueNoImage]

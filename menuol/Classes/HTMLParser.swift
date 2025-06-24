@@ -38,9 +38,10 @@ final class HTMLParser: HTMLParserType {
 		let slug = element["class"]?.components(separatedBy: " ").last
 		let name = element.xpath(".//h3/a").first?.text
 		guard let slug, let name else { return nil }
+		let address = element.xpath(".//p[@class='restadresa']").first?.text ?? ""
 		let imageURL = element.xpath("./div[@class='nazev-restaurace']//img").first?["src"].flatMap { URL(string: $0) }
 		let menuTimeDescription = element.xpath(".//span[@class='vydejmenu']").first?.text
-		let venue = Venue(slug: slug, name: name, imageURL: imageURL, menuTimeDescription: menuTimeDescription)
+		let venue = Venue(slug: slug, name: name, imageURL: imageURL, menuTimeDescription: menuTimeDescription, address: address)
 		return venue
 	}
 
