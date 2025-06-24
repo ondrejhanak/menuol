@@ -25,7 +25,7 @@ struct VenueListView: View {
 		.listStyle(.grouped)
 		.navigationTitle("Polední menu")
 		.overlay {
-			if viewModel.isLoading {
+			if viewModel.showSpinner {
 				LoadingView()
 			}
 		}

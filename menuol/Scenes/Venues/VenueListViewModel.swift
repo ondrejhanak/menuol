@@ -21,7 +21,7 @@ final class VenueListViewModel: ObservableObject {
 	@Published private var parsedVenues: [Venue] = []
 	@Published var searchPhrase = ""
 	@Published var visibleVenues: [Venue] = []
-	@Published var isLoading = false
+	@Published var showSpinner = false
 
 	// MARK: - Init
 
@@ -53,9 +53,9 @@ final class VenueListViewModel: ObservableObject {
 
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {
-		isLoading = true
+		showSpinner = parsedVenues.isEmpty
 		defer {
-			isLoading = false
+			showSpinner = false
 		}
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
