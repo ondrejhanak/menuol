@@ -28,4 +28,9 @@ extension Container {
 		self { @MainActor in AppCoordinator() }
 			.singleton
 	}
+	
+	var venueRepository: Factory<VenueRepository> {
+		self { VenueRepository() }
+			.cached
+	}
 }

@@ -13,7 +13,7 @@ struct VenueListView: View {
 	@StateObject var viewModel: VenueListViewModel
 
 	var body: some View {
-		List(viewModel.visibleVenues) { venue in
+		List(viewModel.venues) { venue in
 			Button {
 				viewModel.showMenu(ofVenue: venue)
 			} label: {
@@ -29,7 +29,7 @@ struct VenueListView: View {
 				LoadingView()
 			}
 		}
-		.animation(.easeInOut(duration: 0.2), value: viewModel.visibleVenues)
+		.animation(.easeInOut(duration: 0.2), value: viewModel.venues)
 		.searchable(text: $viewModel.searchPhrase)
 		.task {
 			try? await viewModel.fetchVenues()

@@ -13,21 +13,19 @@ import UIKit
 
 @MainActor
 final class VenueListViewModel: ObservableObject {
-	@Injected(\.httpClient) private var httpClient
-	@Injected(\.htmlParser) private var htmlParser
+	@Injected(\.venueRepository) private var venueRepository
 	@Injected(\.favoriteSlugsStorage) private var favoriteSlugsStorage
 	@Injected(\.appCoordinator) private var appCoordinator
 	private var cancellables: Set<AnyCancellable> = []
-	@Published private var parsedVenues: [Venue] = []
 	@Published var searchPhrase = ""
-	@Published var visibleVenues: [Venue] = []
+	@Published var venues: [Venue] = []
 	@Published var showSpinner = false
 
 	// MARK: - Init
 
 	init() {
 		Publishers.CombineLatest(
-			$parsedVenues,
+			venueRepository.$venues,
 			$searchPhrase
 				.debounce(for: .seconds(0.3), scheduler: RunLoop.main)
 		)
@@ -49,7 +47,8 @@ final class VenueListViewModel: ObservableObject {
 				return lhsIsFavorited
 			}
 		}
-		.assign(to: &$visibleVenues)
+		.receive(on: RunLoop.main)
+		.assign(to: &$venues)
 
 		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
 			.sink { _ in
@@ -72,13 +71,11 @@ final class VenueListViewModel: ObservableObject {
 
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {
-		showSpinner = parsedVenues.isEmpty
+		showSpinner = venues.isEmpty
 		defer {
 			showSpinner = false
 		}
-		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
-		let html = try await httpClient.get(url: url)
-		parsedVenues = htmlParser.venuesWithMenuItems(from: html)
+		try await venueRepository.fetch()
 	}
 
 	/// Toggles favorite state of given venue.
