@@ -10,18 +10,18 @@ import SwiftUI
 import UIKit
 
 struct MenuListView: View {
-	var venue: Venue
+	@StateObject var viewModel: MenuListViewModel
 
 	var body: some View {
 		Group {
-			if venue.menuItems.isEmpty {
+			if viewModel.venue.menuItems.isEmpty {
 				noDetailsView
 			} else {
 				listView
 			}
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.navigationTitle(venue.name)
+		.navigationTitle(viewModel.venue.name)
 		.navigationBarTitleDisplayMode(.inline)
 		.background(Color(UIColor.systemGroupedBackground))
 	}
@@ -29,10 +29,10 @@ struct MenuListView: View {
 	@ViewBuilder
 	private var listView: some View {
 		List {
-			Text(venue.address)
+			Text(viewModel.venue.address)
 				.padding(.vertical)
 				.foregroundStyle(.secondary)
-			ForEach(venue.menuItems) { item in
+			ForEach(viewModel.venue.menuItems) { item in
 				MenuItemView(menuItem: item)
 			}
 		}
@@ -46,12 +46,12 @@ struct MenuListView: View {
 
 #Preview("Items") {
 	NavigationStack {
-		MenuListView(venue: .init(slug: "", name: "Populated menu", address: "Some Nice place", menuItems: MenuItem.demoItems))
+		MenuListView(viewModel: .init(venue: .init(slug: "", name: "Populated menu", address: "Some Nice place", menuItems: MenuItem.demoItems)))
 	}
 }
 
 #Preview("Empty") {
 	NavigationStack {
-		MenuListView(venue: .init(slug: "", name: "Empty menu", address: "", menuItems: []))
+		MenuListView(viewModel: .init(venue: .init(slug: "", name: "Empty menu", address: "", menuItems: [])))
 	}
 }

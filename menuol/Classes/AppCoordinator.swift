@@ -28,7 +28,7 @@ final class AppCoordinator: ObservableObject {
 		case .venues:
 			VenueListView(viewModel: .init())
 		case .menu(let venue):
-			MenuListView(venue: venue)
+			MenuListView(viewModel: .init(venue: venue))
 		}
 	}
 }
