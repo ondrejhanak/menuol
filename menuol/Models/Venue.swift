@@ -14,6 +14,7 @@ struct Venue: Hashable {
 	var imageURL: URL?
 	var menuTimeDescription: String?
 	var address: String
+	var note: String
 	var menuItems: [MenuItem] = []
 }
 
@@ -36,6 +37,7 @@ extension Venue {
 		imageURL: URL(string: "https://picsum.photos/id/1060/200/150"),
 		menuTimeDescription: "11:00 - 14:00",
 		address: "Some Nice Place",
+		note: "Lorem ipsum dolor sit amet.",
 		menuItems: MenuItem.demoItems
 	)
 	static let stubEmpty = Venue(
@@ -44,6 +46,7 @@ extension Venue {
 		imageURL: nil,
 		menuTimeDescription: "",
 		address: "",
+		note: "",
 		menuItems: []
 	)
 	static let demoItems = [Self.stubFilled, Self.stubEmpty]

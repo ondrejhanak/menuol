@@ -38,7 +38,18 @@ struct MenuListView: View {
 				.listRowSeparator(.hidden)
 				.listRowInsets(EdgeInsets())
 			Text(viewModel.venue.address)
+				.font(.footnote)
 				.foregroundStyle(.secondary)
+			if viewModel.venue.note.isEmpty == false {
+				Text(viewModel.venue.note)
+					.font(.footnote)
+					.frame(maxWidth: .infinity, alignment: .leading)
+					.padding(.horizontal, 20)
+					.padding(.vertical, 12)
+					.background(.accentBackground)
+					.listRowSeparator(.hidden)
+					.listRowInsets(EdgeInsets())
+			}
 			ForEach(viewModel.venue.menuItems) { item in
 				MenuItemView(menuItem: item)
 			}
