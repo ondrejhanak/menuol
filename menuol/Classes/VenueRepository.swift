@@ -10,7 +10,7 @@ import Combine
 import Factory
 import Foundation
 
-final class VenueRepository {
+final class VenueRepository: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
 	private var cancellables: Set<AnyCancellable> = []
