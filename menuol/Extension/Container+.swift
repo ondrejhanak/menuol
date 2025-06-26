@@ -33,4 +33,9 @@ extension Container {
 		self { VenueRepository() }
 			.cached
 	}
+
+	var geocoder: Factory<Geocoder> {
+		self { Geocoder() }
+			.singleton
+	}
 }
