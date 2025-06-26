@@ -9,7 +9,11 @@
 import Foundation
 import CoreLocation
 
-actor Geocoder {
+protocol GeocoderType {
+	func coordinate(for address: String) async throws -> CLLocationCoordinate2D
+}
+
+actor Geocoder: GeocoderType {
 	private let geocoder = CLGeocoder()
 	private var cache: [String: CLLocationCoordinate2D] = [:]
 
@@ -38,5 +42,11 @@ actor Geocoder {
 				}
 			}
 		}
+	}
+}
+
+final class GeocoderMock: GeocoderType {
+	func coordinate(for address: String) async throws -> CLLocationCoordinate2D {
+		.init(latitude: 49.5940214, longitude: 17.2514789)
 	}
 }

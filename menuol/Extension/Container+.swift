@@ -34,7 +34,7 @@ extension Container {
 			.cached
 	}
 
-	var geocoder: Factory<Geocoder> {
+	var geocoder: Factory<GeocoderType> {
 		self { Geocoder() }
 			.singleton
 	}
