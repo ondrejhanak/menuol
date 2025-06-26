@@ -8,7 +8,7 @@ Project was created for personal usage.
 ## Tech
 
 - Swift 5 with strict concurrency checking
-- SwiftUI and Combine
+- SwiftUI, Combine and MVVM-C architecture
 - [Kanna](https://github.com/tid-kijyun/Kanna) package for HTML parsing
 - [Factory](https://github.com/hmlongco/Factory) package for DI
 - Fastlane for running configured `swiftlint` and `swiftformat`
@@ -18,4 +18,4 @@ Project was created for personal usage.
 
 ## Preview
 
-![Venues list](screenshot_venues.png) ![Menu items](screenshot_menu.png)
+![Venue list](screenshot1.png) ![Menu items](screenshot2.png)
