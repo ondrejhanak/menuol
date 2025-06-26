@@ -19,5 +19,6 @@ struct AppView: View {
 					coordinator.view(forRoute: route)
 				}
 		}
+		.tint(.accent)
 	}
 }

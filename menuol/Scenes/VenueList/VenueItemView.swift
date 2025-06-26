@@ -15,7 +15,7 @@ struct VenueItemView: View {
 	var favoriteCallback: (Venue) -> Void
 
 	var body: some View {
-		HStack(spacing: 10) {
+		HStack(spacing: 14) {
 			image
 			description
 			Spacer()
@@ -40,14 +40,14 @@ struct VenueItemView: View {
 	}
 
 	private var description: some View {
-		VStack(alignment: .leading, spacing: 2) {
+		VStack(alignment: .leading, spacing: 4) {
 			Text(venue.name)
 				.font(.system(.body))
 				.foregroundColor(.primary)
 			if let description = venue.menuTimeDescription {
 				Text(description)
 					.font(.system(.caption))
-					.foregroundColor(.primary)
+					.foregroundColor(.secondary)
 			}
 		}
 	}
@@ -56,11 +56,11 @@ struct VenueItemView: View {
 		Button {
 			favoriteCallback(venue)
 		} label: {
-			let imageName = isFavorited ? "heart.fill" : "heart"
-			Image(systemName: imageName)
-				.foregroundColor(.primary.opacity(0.75))
+			let color = isFavorited ? Color.accent : Color.secondary
+			Image(systemName: "heart")
 				.frame(width: 44, height: 44)
 				.accessibilityLabel("Toggle favorite.")
+				.tint(color)
 		}
 		.buttonStyle(.borderless) // otherwise whole view triggers tap action
 	}

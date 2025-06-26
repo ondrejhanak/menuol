@@ -20,10 +20,10 @@ struct MenuItemView: View {
 				Text(price)
 					.foregroundColor(.primary)
 					.font(.subheadline)
-					.fontWeight(.semibold )
+					.fontWeight(.semibold)
 					.padding(.vertical, 6)
 					.padding(.horizontal, 8)
-					.background(Color(.systemGray5))
+					.background(.accentBackground)
 					.cornerRadius(5)
 			}
 		}
