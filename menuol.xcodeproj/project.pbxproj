@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE7D9C5C2E0EE26100CAB0EA /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = EE7D9C5B2E0EE26100CAB0EA /* ViewInspector */; };
 		EE8E415C2CEA4469001710EE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = EE8E415B2CEA4469001710EE /* Factory */; };
 		EEADFE1C275424E000D21622 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1B275424E000D21622 /* Kanna */; };
 		EEADFE1F275424F000D21622 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEADFE1E275424F000D21622 /* Kingfisher */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7D9C5C2E0EE26100CAB0EA /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +192,7 @@
 				EEADFE1A275424E000D21622 /* XCRemoteSwiftPackageReference "Kanna" */,
 				EEADFE1D275424F000D21622 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */,
+				EE7D9C5A2E0EE26100CAB0EA /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE48EEBC1F1E132E004DA56D /* Products */;
@@ -489,6 +492,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EE7D9C5A2E0EE26100CAB0EA /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.2;
+			};
+		};
 		EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
@@ -516,6 +527,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EE7D9C5B2E0EE26100CAB0EA /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE7D9C5A2E0EE26100CAB0EA /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
 		EE8E415B2CEA4469001710EE /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE8E41592CEA4432001710EE /* XCRemoteSwiftPackageReference "Factory" */;
