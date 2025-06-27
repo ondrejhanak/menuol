@@ -13,7 +13,6 @@ import Foundation
 final class VenueRepository: ObservableObject {
 	@Injected(\.httpClient) private var httpClient
 	@Injected(\.htmlParser) private var htmlParser
-	private var cancellables: Set<AnyCancellable> = []
 	@Published private(set) var venues: [Venue] = []
 
 	func fetch() async throws {

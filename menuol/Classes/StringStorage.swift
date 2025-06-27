@@ -11,12 +11,10 @@ import Foundation
 
 final class StringStorage {
 	private var cancellables: Set<AnyCancellable> = []
-	private var key: String
 	private var userDefaults: UserDefaults
 	@Published var values: Set<String> = []
 
 	init(key: String, userDefaults: UserDefaults = .standard) {
-		self.key = key
 		self.userDefaults = userDefaults
 		values = Set(userDefaults.array(forKey: key)?.compactMap { String(describing: $0) } ?? [])
 		$values
