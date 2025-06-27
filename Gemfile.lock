@@ -115,6 +115,7 @@ GEM
     fastlane-plugin-appicon (0.16.0)
       json
       mini_magick (>= 4.9.4, < 5.0.0)
+    fastlane-plugin-periphery (0.2.2)
     fastlane-sirp (1.0.0)
       sysrandom (~> 1.0)
     gh_inspector (1.1.3)
@@ -225,6 +226,7 @@ PLATFORMS
 DEPENDENCIES
   fastlane
   fastlane-plugin-appicon
+  fastlane-plugin-periphery
 
 BUNDLED WITH
    2.4.19

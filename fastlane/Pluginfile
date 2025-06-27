@@ -1,1 +1,2 @@
 gem 'fastlane-plugin-appicon'
+gem 'fastlane-plugin-periphery'

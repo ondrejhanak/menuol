@@ -1,0 +1,5 @@
+# verbose: true
+relative_results: true
+project: menuol.xcodeproj
+schemes:
+- menuol

@@ -46,16 +46,21 @@ lane :app_icons do
 	)
 end
 
-desc "Searches unused code."
+desc "Searches for unused code."
 lane :unused do
-	sh("periphery scan \
-  --workspace \"../menuol.xcworkspace/\" \
-  --schemes \"menuol\" \
-  --targets \"menuol\" \
-  --no-retain-public")
+	periphery(config: ".periphery.yml")
+	results = lane_context[SharedValues::PERIPHERY_RESULTS] || []
+  if results.empty?
+    UI.success "✅ No unused code found."
+  else
+    results.each do |r|
+      UI.message("#{r.location}: #{r.kind} \"#{r.name}\" #{r.hints}")
+    end
+    UI.error("🚨 Found #{results.count} unused declarations.")
+  end
 end
 
-desc "Lists logest source files."
+desc "Lists longest source files."
 lane :longs do
 	sh("find ../menuol \\( -name '*.swift' -o -name '*.m' -o -name '*.h' \\) -type f -print0 | xargs -0 wc -l | sort -rn | head -n 20")
 end
