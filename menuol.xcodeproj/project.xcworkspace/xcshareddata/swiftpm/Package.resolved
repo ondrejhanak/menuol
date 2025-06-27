@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tid-kijyun/Kanna.git",
       "state" : {
-        "revision" : "b268172556b01770424271db3df63768e18d1f19",
-        "version" : "6.0.0"
+        "revision" : "a23a4584f8e7de07cab420ae4d51eee553dd988d",
+        "version" : "6.0.1"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "33696a71dd4d71f1b0f781ade11a48ba5549581a",
-        "version" : "8.0.3"
+        "revision" : "010a06c4387cea2d13606222b6c08e0454e6dd2d",
+        "version" : "8.3.3"
       }
     }
   ],
