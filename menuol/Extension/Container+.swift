@@ -6,8 +6,8 @@
 //  Copyright © 2024 Ondrej Hanak. All rights reserved.
 //
 
-import Foundation
 import Factory
+import Foundation
 
 extension Container {
 	var htmlParser: Factory<HTMLParserType> {
@@ -28,7 +28,7 @@ extension Container {
 		self { @MainActor in AppCoordinator() }
 			.singleton
 	}
-	
+
 	var venueRepository: Factory<VenueRepository> {
 		self { VenueRepository() }
 			.cached

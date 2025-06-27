@@ -6,8 +6,8 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 enum AppRoute: Hashable {
 	case venues
@@ -27,7 +27,7 @@ final class AppCoordinator: ObservableObject {
 		switch route {
 		case .venues:
 			VenueListView(viewModel: .init())
-		case .menu(let venue):
+		case let .menu(venue):
 			MenuListView(viewModel: .init(venue: venue))
 		}
 	}

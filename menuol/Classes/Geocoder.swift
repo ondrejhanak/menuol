@@ -6,8 +6,8 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 protocol GeocoderType {
 	func coordinate(for address: String) async throws -> CLLocationCoordinate2D

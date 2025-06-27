@@ -6,8 +6,8 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import SwiftUI
 import Factory
+import SwiftUI
 
 struct AppView: View {
 	@StateObject private var coordinator = Container.shared.appCoordinator()

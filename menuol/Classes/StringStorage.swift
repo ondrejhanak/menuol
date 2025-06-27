@@ -6,8 +6,8 @@
 //  Copyright © 2024 Ondrej Hanak. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 final class StringStorage {
 	private var cancellables: Set<AnyCancellable> = []
