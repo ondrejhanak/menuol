@@ -24,6 +24,8 @@ final class HTMLParserTests: XCTestCase {
 		XCTAssertEqual(venue.name, "Blues Rock CAFE")
 		XCTAssertEqual(venue.imageURL, URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
 		XCTAssertEqual(venue.menuTimeDescription, "11:00 - 14:00")
+		XCTAssertEqual(venue.address, "Bořivojova 1, 772 00 Olomouc")
+		XCTAssertEqual(venue.note, "Testovaci poznaka.")
 
 		// first venue menu items
 		XCTAssertEqual(venue.menuItems.count, 6)
@@ -43,7 +45,7 @@ final class HTMLParserTests: XCTestCase {
 		// restaurant without menu info "MacLaren's Pub"
 		XCTAssertEqual(venues.last!.menuItems.count, 0)
 
-		// restaurant witht footer info
+		// restaurant with footer info
 		XCTAssertEqual(venues[2].menuItems.count, 9)
 		XCTAssertEqual(venues[2].menuItems[8].title, "K polednímu menu Vám nabízíme 0,3l Kofolu, nebo Rajec za 25,- Kč")
 	}
