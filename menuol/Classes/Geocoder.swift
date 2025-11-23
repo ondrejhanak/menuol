@@ -22,8 +22,8 @@ actor Geocoder: GeocoderType {
 			return cached
 		}
 
-		let placemarks = try await geocodeAddressString(address)
-		guard let location = placemarks.first?.location else {
+		let placeMarks = try await geocodeAddressString(address)
+		guard let location = placeMarks.first?.location else {
 			throw CLError(.geocodeFoundNoResult)
 		}
 
