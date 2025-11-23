@@ -13,7 +13,7 @@ protocol GeocoderType {
 	func coordinate(for address: String) async throws -> CLLocationCoordinate2D
 }
 
-actor Geocoder: GeocoderType {
+final actor Geocoder: GeocoderType {
 	private let geocoder = CLGeocoder()
 	private var cache: [String: CLLocationCoordinate2D] = [:]
 
