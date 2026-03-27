@@ -7,18 +7,18 @@
 //
 
 import Combine
-import Factory
 import MapKit
 
 @MainActor
 final class MenuListViewModel: ObservableObject {
-	@Injected(\.geocoder) var geocoder
+	let geocoder: GeocoderType
 	@Published var mapRegion: MKCoordinateRegion?
 	@Published var mapError: Error?
 	let venue: Venue
 
-	init(venue: Venue) {
+	init(venue: Venue, geocoder: GeocoderType) {
 		self.venue = venue
+		self.geocoder = geocoder
 	}
 
 	func loadMapRegion() async {

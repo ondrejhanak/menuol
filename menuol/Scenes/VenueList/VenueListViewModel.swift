@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import Factory
 import Combine
 import UIKit
 
 @MainActor
 final class VenueListViewModel: ObservableObject {
-	@Injected(\.venueRepository) private var venueRepository
-	@Injected(\.favoriteSlugsStorage) private var favoriteSlugsStorage
-	@Injected(\.appCoordinator) private var appCoordinator
+	private let venueRepository: VenueRepository
+	private let favoriteSlugsStorage: StringStorage
+	private let onShowMenu: (Venue) -> Void
 	private var cancellables: Set<AnyCancellable> = []
 	@Published var searchPhrase = ""
 	@Published var venues: [Venue] = []
@@ -23,7 +22,10 @@ final class VenueListViewModel: ObservableObject {
 
 	// MARK: - Init
 
-	init() {
+	init(venueRepository: VenueRepository, favoriteSlugsStorage: StringStorage, onShowMenu: @escaping (Venue) -> Void) {
+		self.venueRepository = venueRepository
+		self.favoriteSlugsStorage = favoriteSlugsStorage
+		self.onShowMenu = onShowMenu
 		Publishers.CombineLatest(
 			venueRepository.$venues,
 			$searchPhrase
@@ -66,7 +68,7 @@ final class VenueListViewModel: ObservableObject {
 	}
 
 	func showMenu(ofVenue venue: Venue) {
-		appCoordinator.showMenu(ofVenue: venue)
+		onShowMenu(venue)
 	}
 
 	/// Fetches list of venues along with menu.

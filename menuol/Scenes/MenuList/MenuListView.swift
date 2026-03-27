@@ -9,7 +9,6 @@
 import SwiftUI
 import UIKit
 import MapKit
-import Factory
 
 struct MenuListView: View {
 	@StateObject var viewModel: MenuListViewModel
@@ -86,14 +85,13 @@ struct MenuListView: View {
 }
 
 #Preview("Items") {
-	let _ = Container.shared.geocoder.register { GeocoderMock() }
 	NavigationStack {
-		MenuListView(viewModel: .init(venue: Venue.stubFilled))
+		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubFilled, geocoder: GeocoderMock()))
 	}
 }
 
 #Preview("Empty") {
 	NavigationStack {
-		MenuListView(viewModel: .init(venue: Venue.stubEmpty))
+		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubEmpty, geocoder: GeocoderMock()))
 	}
 }

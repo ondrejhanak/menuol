@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Factory
 
 struct VenueListView: View {
 	@StateObject var viewModel: VenueListViewModel
@@ -38,9 +37,11 @@ struct VenueListView: View {
 }
 
 #Preview {
-	let _ = Container.shared.htmlParser.register { HTMLParserMock() }
-	let _ = Container.shared.httpClient.register { HTTPClientMock() }
 	NavigationStack {
-		VenueListView(viewModel: .init())
+		VenueListView(viewModel: VenueListViewModel(
+			venueRepository: VenueRepository(httpClient: HTTPClientMock(), htmlParser: HTMLParserMock()),
+			favoriteSlugsStorage: StringStorage(key: "PreviewFavorites"),
+			onShowMenu: { _ in }
+		))
 	}
 }

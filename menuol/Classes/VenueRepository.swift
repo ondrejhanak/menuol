@@ -7,13 +7,17 @@
 //
 
 import Combine
-import Factory
 import Foundation
 
 final class VenueRepository: ObservableObject {
-	@Injected(\.httpClient) private var httpClient
-	@Injected(\.htmlParser) private var htmlParser
+	private let httpClient: HTTPClientType
+	private let htmlParser: HTMLParserType
 	@Published private(set) var venues: [Venue] = []
+
+	init(httpClient: HTTPClientType, htmlParser: HTMLParserType) {
+		self.httpClient = httpClient
+		self.htmlParser = htmlParser
+	}
 
 	func fetch() async throws {
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!

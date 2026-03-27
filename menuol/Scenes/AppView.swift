@@ -6,11 +6,14 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import Factory
 import SwiftUI
 
 struct AppView: View {
-	@StateObject private var coordinator = Container.shared.appCoordinator()
+	@StateObject private var coordinator = AppCoordinator(
+		venueRepository: VenueRepository(httpClient: HTTPClient(), htmlParser: HTMLParser()),
+		favoriteSlugsStorage: StringStorage(key: "FavoriteVenueSlugs"),
+		geocoder: Geocoder()
+	)
 
 	var body: some View {
 		NavigationStack(path: $coordinator.path) {

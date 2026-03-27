@@ -18,6 +18,16 @@ enum AppRoute: Hashable {
 final class AppCoordinator: ObservableObject {
 	@Published var path = NavigationPath()
 
+	private let venueRepository: VenueRepository
+	private let favoriteSlugsStorage: StringStorage
+	private let geocoder: GeocoderType
+
+	init(venueRepository: VenueRepository, favoriteSlugsStorage: StringStorage, geocoder: GeocoderType) {
+		self.venueRepository = venueRepository
+		self.favoriteSlugsStorage = favoriteSlugsStorage
+		self.geocoder = geocoder
+	}
+
 	func showMenu(ofVenue venue: Venue) {
 		path.append(AppRoute.menu(venue: venue))
 	}
@@ -26,9 +36,13 @@ final class AppCoordinator: ObservableObject {
 	func view(forRoute route: AppRoute) -> some View {
 		switch route {
 		case .venues:
-			VenueListView(viewModel: .init())
+			VenueListView(viewModel: VenueListViewModel(
+				venueRepository: self.venueRepository,
+				favoriteSlugsStorage: self.favoriteSlugsStorage,
+				onShowMenu: { [weak self] venue in self?.showMenu(ofVenue: venue) }
+			))
 		case let .menu(venue):
-			MenuListView(viewModel: .init(venue: venue))
+			MenuListView(viewModel: MenuListViewModel(venue: venue, geocoder: self.geocoder))
 		}
 	}
 }
