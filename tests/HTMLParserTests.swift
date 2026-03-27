@@ -6,62 +6,63 @@
 //  Copyright © 2018 Ondrej Hanak. All rights reserved.
 //
 
+import Foundation
 @testable import menuol
-import XCTest
+import Testing
 
-final class HTMLParserTests: XCTestCase {
-	func testVenuesParsing_correct() {
+final class HTMLParserTests {
+	@Test func venuesParsing_correct() {
 		let parser = HTMLParser()
 		let html = loadHTML(from: "Venues.html")
 
 		// venues count
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssertEqual(venues.count, 107)
+		#expect(venues.count == 107)
 
 		// first venue details
 		let venue = venues[0]
-		XCTAssertEqual(venue.slug, "Blues-Rock-CAFE-id1207")
-		XCTAssertEqual(venue.name, "Blues Rock CAFE")
-		XCTAssertEqual(venue.imageURL, URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
-		XCTAssertEqual(venue.menuTimeDescription, "11:00 - 14:00")
-		XCTAssertEqual(venue.address, "Bořivojova 1, 772 00 Olomouc")
-		XCTAssertEqual(venue.note, "Testovaci poznaka.")
+		#expect(venue.slug == "Blues-Rock-CAFE-id1207")
+		#expect(venue.name == "Blues Rock CAFE")
+		#expect(venue.imageURL == URL(string: "https://www.olomouc.cz/images/katalog/1207.gif"))
+		#expect(venue.menuTimeDescription == "11:00 - 14:00")
+		#expect(venue.address == "Bořivojova 1, 772 00 Olomouc")
+		#expect(venue.note == "Testovaci poznaka.")
 
 		// first venue menu items
-		XCTAssertEqual(venue.menuItems.count, 6)
+		#expect(venue.menuItems.count == 6)
 
 		// first menu item
 		let firstItem = venue.menuItems.first!
-		XCTAssertEqual(firstItem.title, "0,33 l Špenátová")
-		XCTAssertEqual(firstItem.order, 0)
-		XCTAssertEqual(firstItem.priceDescription, "25 Kč") // nbsp
+		#expect(firstItem.title == "0,33 l Špenátová")
+		#expect(firstItem.order == 0)
+		#expect(firstItem.priceDescription == "25\u{00A0}Kč") // nbsp
 
 		// last menu item
 		let lastItem = venue.menuItems.last!
-		XCTAssertEqual(lastItem.title, "300 g  Míchaný salát s vařeným vejcem,olivami a balkánským sýrem")
-		XCTAssertEqual(lastItem.order, 5)
-		XCTAssertEqual(lastItem.priceDescription, "145 Kč") // nbsp
+		#expect(lastItem.title == "300 g  Míchaný salát s vařeným vejcem,olivami a balkánským sýrem")
+		#expect(lastItem.order == 5)
+		#expect(lastItem.priceDescription == "145\u{00A0}Kč") // nbsp
 
 		// restaurant without menu info "MacLaren's Pub"
-		XCTAssertEqual(venues.last!.menuItems.count, 0)
+		#expect(venues.last!.menuItems.count == 0)
 
 		// restaurant with footer info
-		XCTAssertEqual(venues[2].menuItems.count, 9)
-		XCTAssertEqual(venues[2].menuItems[8].title, "K polednímu menu Vám nabízíme 0,3l Kofolu, nebo Rajec za 25,- Kč")
+		#expect(venues[2].menuItems.count == 9)
+		#expect(venues[2].menuItems[8].title == "K polednímu menu Vám nabízíme 0,3l Kofolu, nebo Rajec za 25,- Kč")
 	}
 
-	func testVenuesParsing_wrongStructure() {
+	@Test func venuesParsing_wrongStructure() {
 		let parser = HTMLParser()
 		let html = "HTML without proper structure"
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssertEqual(venues.count, 0)
+		#expect(venues.count == 0)
 	}
 
-	func testVenuesParsing_notHTML() {
+	@Test func venuesParsing_notHTML() {
 		let parser = HTMLParser()
 		let html = ""
 		let venues = parser.venuesWithMenuItems(from: html)
-		XCTAssertEqual(venues.count, 0)
+		#expect(venues.count == 0)
 	}
 
 	// MARK: - Private

@@ -8,11 +8,11 @@
 
 import SwiftUI
 @testable import menuol
-import XCTest
+import Testing
 import ViewInspector
 
 @MainActor
-final class AppCoordinatorTests: XCTestCase {
+struct AppCoordinatorTests {
 	private func makeSUT() -> AppCoordinator {
 		AppCoordinator(
 			venueRepository: VenueRepository(httpClient: HTTPClientMock(), htmlParser: HTMLParserMock()),
@@ -21,21 +21,21 @@ final class AppCoordinatorTests: XCTestCase {
 		)
 	}
 
-	func test_startEmpty() {
+	@Test func startEmpty() {
 		let sut = makeSUT()
-		XCTAssertTrue(sut.path.isEmpty)
+		#expect(sut.path.isEmpty)
 	}
 
-	func test_showMenu() {
+	@Test func showMenu() {
 		let sut = makeSUT()
 		let venue = Venue.stubFilled
 		let expectedPath = NavigationPath([AppRoute.menu(venue: venue)])
-		XCTAssertNotEqual(sut.path, expectedPath)
+		#expect(sut.path != expectedPath)
 		sut.showMenu(ofVenue: venue)
-		XCTAssertEqual(sut.path, expectedPath)
+		#expect(sut.path == expectedPath)
 	}
 
-	func test_viewTypes() throws {
+	@Test func viewTypes() throws {
 		let sut = makeSUT()
 		let venue = Venue.stubFilled
 

@@ -6,10 +6,12 @@
 //  Copyright © 2020 Ondrej Hanak. All rights reserved.
 //
 
+import Foundation
 @testable import menuol
-import XCTest
+import Testing
 
-final class HTTPClientTests: XCTestCase {
+@Suite(.serialized)
+struct HTTPClientTests {
 	private var testingURLSession: URLSession {
 		let config: URLSessionConfiguration = .ephemeral
 		config.protocolClasses = [MockURLProtocol.self]
@@ -17,7 +19,7 @@ final class HTTPClientTests: XCTestCase {
 		return session
 	}
 
-	func testSuccess() async {
+	@Test func success() async throws {
 		let string = "hello"
 		let data = string.data(using: .utf8)!
 		MockURLProtocol.error = nil
@@ -27,21 +29,16 @@ final class HTTPClientTests: XCTestCase {
 		}
 		let client = HTTPClient(session: testingURLSession)
 		let url = URL(string: "localhost")!
-		do {
-			let result = try await client.get(url: url)
-			XCTAssertEqual(result, string)
-		} catch {
-			XCTFail("Should have not throw.")
-		}
+		let result = try await client.get(url: url)
+		#expect(result == string)
 	}
 
-	func testFailure() async {
+	@Test func failure() async {
 		MockURLProtocol.error = NSError(domain: "test", code: 1)
 		let client = HTTPClient(session: testingURLSession)
 		let url = URL(string: "localhost")!
-		do {
+		await #expect(throws: (any Error).self) {
 			_ = try await client.get(url: url)
-			XCTFail("Should have thrown.")
-		} catch {}
+		}
 	}
 }
