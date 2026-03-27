@@ -51,7 +51,7 @@ Creates app icons.
 [bundle exec] fastlane unused
 ```
 
-Searches unused code.
+Searches for unused code.
 
 ### longs
 
@@ -59,7 +59,7 @@ Searches unused code.
 [bundle exec] fastlane longs
 ```
 
-Lists logest source files.
+Lists longest source files.
 
 ### updatef
 
