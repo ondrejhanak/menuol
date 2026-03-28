@@ -13,7 +13,7 @@ import UIKit
 @MainActor
 final class VenueListViewModel {
 	private let venueRepository: VenueRepository
-	private let favoriteSlugsStorage: StringStorage
+	private let favoriteSlugsStorage: FavoritesStorageType
 	private let onShowMenu: (Venue) -> Void
 	@ObservationIgnored nonisolated(unsafe) private var foregroundTask: Task<Void, Never>?
 	var searchPhrase = ""
@@ -34,7 +34,7 @@ final class VenueListViewModel {
 
 	// MARK: - Init
 
-	init(venueRepository: VenueRepository, favoriteSlugsStorage: StringStorage, onShowMenu: @escaping (Venue) -> Void) {
+	init(venueRepository: VenueRepository, favoriteSlugsStorage: FavoritesStorageType, onShowMenu: @escaping (Venue) -> Void) {
 		self.venueRepository = venueRepository
 		self.favoriteSlugsStorage = favoriteSlugsStorage
 		self.onShowMenu = onShowMenu

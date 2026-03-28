@@ -19,12 +19,12 @@ final class AppCoordinator {
 	var path = NavigationPath()
 
 	private let venueRepository: VenueRepository
-	private let favoriteSlugsStorage: StringStorage
+	private let favoritesStorage: FavoritesStorageType
 	private let geocoder: GeocoderType
 
-	init(venueRepository: VenueRepository, favoriteSlugsStorage: StringStorage, geocoder: GeocoderType) {
+	init(venueRepository: VenueRepository, favoritesStorage: FavoritesStorageType, geocoder: GeocoderType) {
 		self.venueRepository = venueRepository
-		self.favoriteSlugsStorage = favoriteSlugsStorage
+		self.favoritesStorage = favoritesStorage
 		self.geocoder = geocoder
 	}
 
@@ -38,7 +38,7 @@ final class AppCoordinator {
 		case .venues:
 			VenueListView(viewModel: VenueListViewModel(
 				venueRepository: self.venueRepository,
-				favoriteSlugsStorage: self.favoriteSlugsStorage,
+				favoriteSlugsStorage: self.favoritesStorage,
 				onShowMenu: { [weak self] venue in self?.showMenu(ofVenue: venue) }
 			))
 		case let .menu(venue):

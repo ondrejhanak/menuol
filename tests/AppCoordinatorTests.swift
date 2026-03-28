@@ -16,7 +16,7 @@ struct AppCoordinatorTests {
 	private func makeSUT() -> AppCoordinator {
 		AppCoordinator(
 			venueRepository: VenueRepository(httpClient: HTTPClientMock(), htmlParser: HTMLParserMock()),
-			favoriteSlugsStorage: StringStorage(key: "Test"),
+			favoritesStorage: FavoritesStorageMock(),
 			geocoder: GeocoderMock()
 		)
 	}

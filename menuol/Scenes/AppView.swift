@@ -11,7 +11,7 @@ import SwiftUI
 struct AppView: View {
 	@State private var coordinator = AppCoordinator(
 		venueRepository: VenueRepository(httpClient: HTTPClient(), htmlParser: HTMLParser()),
-		favoriteSlugsStorage: StringStorage(key: "FavoriteVenueSlugs"),
+		favoritesStorage: FavoritesStorage(userDefaults: UserDefaults.standard),
 		geocoder: Geocoder()
 	)
 
