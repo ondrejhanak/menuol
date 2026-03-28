@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class VenueFetcher: Sendable {
+struct VenueFetcher: Sendable {
 	private let httpClient: HTTPClientType
 	private let htmlParser: HTMLParserType
 

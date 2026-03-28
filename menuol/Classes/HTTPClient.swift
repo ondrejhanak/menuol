@@ -12,7 +12,7 @@ protocol HTTPClientType: Sendable {
 	func get(url: URL) async throws -> String
 }
 
-final class HTTPClient: HTTPClientType {
+struct HTTPClient: HTTPClientType {
 	private let session: URLSession
 
 	// MARK: - Lifecycle
@@ -30,7 +30,7 @@ final class HTTPClient: HTTPClientType {
 	}
 }
 
-final class MockHTTPClient: HTTPClientType {
+struct MockHTTPClient: HTTPClientType {
 	func get(url: URL) async throws -> String {
 		""
 	}

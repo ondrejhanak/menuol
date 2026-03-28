@@ -9,7 +9,7 @@
 import CoreLocation
 import Foundation
 
-protocol GeocoderType {
+protocol GeocoderType: Sendable {
 	func coordinate(for address: String) async throws -> CLLocationCoordinate2D
 }
 
@@ -45,7 +45,7 @@ final actor Geocoder: GeocoderType {
 	}
 }
 
-final class MockGeocoder: GeocoderType {
+struct MockGeocoder: GeocoderType {
 	func coordinate(for address: String) async throws -> CLLocationCoordinate2D {
 		.init(latitude: 49.5940214, longitude: 17.2514789)
 	}

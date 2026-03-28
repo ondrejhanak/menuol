@@ -9,11 +9,11 @@
 import Foundation
 import Kanna
 
-protocol HTMLParserType {
+protocol HTMLParserType: Sendable {
 	func venuesWithMenuItems(from string: String) -> [Venue]
 }
 
-final class HTMLParser: HTMLParserType {
+struct HTMLParser: HTMLParserType {
 	// MARK: - Public
 
 	func venuesWithMenuItems(from string: String) -> [Venue] {
@@ -74,7 +74,7 @@ final class HTMLParser: HTMLParserType {
 	}
 }
 
-final class MockHTMLParser: HTMLParserType {
+struct MockHTMLParser: HTMLParserType {
 	func venuesWithMenuItems(from string: String) -> [Venue] {
 		Venue.demoItems
 	}
