@@ -59,14 +59,9 @@ struct MenuListView: View {
 	private var map: some View {
 		Group {
 			if let mapRegion = viewModel.mapRegion {
-				Map(
-					coordinateRegion: .constant(mapRegion),
-					interactionModes: [],
-					annotationItems: [
-						MapAnnotation(id: viewModel.venue.id, coordinate: mapRegion.center)
-					]
-				) { pin in
-					MapMarker(coordinate: pin.coordinate, tint: .red)
+				Map(position: .constant(.region(mapRegion)), interactionModes: []) {
+					Marker(viewModel.venue.name, coordinate: mapRegion.center)
+						.tint(.red)
 				}
 			} else if viewModel.mapError != nil {
 				Text("Unable to load map.")
