@@ -9,7 +9,7 @@ import Foundation
 
 final class MockURLProtocol: URLProtocol {
 	private static let lock = NSLock()
-	private static var registry: [String: (URLRequest) throws -> (HTTPURLResponse, Data)] = [:]
+	private nonisolated(unsafe) static var registry: [String: (URLRequest) throws -> (HTTPURLResponse, Data)] = [:]
 	private static let sessionIDHeader = "X-Mock-Session-ID"
 
 	static func makeSession(handler: @escaping (URLRequest) throws -> (HTTPURLResponse, Data)) -> URLSession {
