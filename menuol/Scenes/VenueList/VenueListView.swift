@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct VenueListView: View {
-	@StateObject var viewModel: VenueListViewModel
+	let viewModel: VenueListViewModel
 
 	var body: some View {
+		@Bindable var viewModel = viewModel
 		List(viewModel.venues) { venue in
 			Button {
 				viewModel.showMenu(ofVenue: venue)

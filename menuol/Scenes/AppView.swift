@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct AppView: View {
-	@StateObject private var coordinator = AppCoordinator(
+	@State private var coordinator = AppCoordinator(
 		venueRepository: VenueRepository(httpClient: HTTPClient(), htmlParser: HTMLParser()),
 		favoriteSlugsStorage: StringStorage(key: "FavoriteVenueSlugs"),
 		geocoder: Geocoder()
 	)
 
 	var body: some View {
+		@Bindable var coordinator = coordinator
 		NavigationStack(path: $coordinator.path) {
 			coordinator.view(forRoute: .venues)
 				.navigationDestination(for: AppRoute.self) { route in

@@ -6,7 +6,6 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import Combine
 import SwiftUI
 
 enum AppRoute: Hashable {
@@ -14,9 +13,10 @@ enum AppRoute: Hashable {
 	case menu(venue: Venue)
 }
 
+@Observable
 @MainActor
-final class AppCoordinator: ObservableObject {
-	@Published var path = NavigationPath()
+final class AppCoordinator {
+	var path = NavigationPath()
 
 	private let venueRepository: VenueRepository
 	private let favoriteSlugsStorage: StringStorage

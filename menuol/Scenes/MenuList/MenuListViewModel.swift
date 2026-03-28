@@ -6,14 +6,14 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import Combine
 import MapKit
 
+@Observable
 @MainActor
-final class MenuListViewModel: ObservableObject {
+final class MenuListViewModel {
 	let geocoder: GeocoderType
-	@Published var mapRegion: MKCoordinateRegion?
-	@Published var mapError: Error?
+	var mapRegion: MKCoordinateRegion?
+	var mapError: Error?
 	let venue: Venue
 
 	init(venue: Venue, geocoder: GeocoderType) {

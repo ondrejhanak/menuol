@@ -7,18 +7,30 @@
 //
 
 import Foundation
-import Combine
 import UIKit
 
+@Observable
 @MainActor
-final class VenueListViewModel: ObservableObject {
+final class VenueListViewModel {
 	private let venueRepository: VenueRepository
 	private let favoriteSlugsStorage: StringStorage
 	private let onShowMenu: (Venue) -> Void
-	private var cancellables: Set<AnyCancellable> = []
-	@Published var searchPhrase = ""
-	@Published var venues: [Venue] = []
-	@Published var showSpinner = false
+	@ObservationIgnored nonisolated(unsafe) private var foregroundTask: Task<Void, Never>?
+	var searchPhrase = ""
+	var showSpinner = false
+
+	var venues: [Venue] {
+		venueRepository.venues
+			.filter { searchPhrase.isEmpty || $0.name.localizedStandardContains(searchPhrase) }
+			.sorted { lhs, rhs in
+				let lhsIsFavorited = favoriteSlugsStorage.contains(lhs.slug)
+				let rhsIsFavorited = favoriteSlugsStorage.contains(rhs.slug)
+				if lhsIsFavorited == rhsIsFavorited {
+					return lhs.name < rhs.name
+				}
+				return lhsIsFavorited
+			}
+	}
 
 	// MARK: - Init
 
@@ -26,39 +38,15 @@ final class VenueListViewModel: ObservableObject {
 		self.venueRepository = venueRepository
 		self.favoriteSlugsStorage = favoriteSlugsStorage
 		self.onShowMenu = onShowMenu
-		Publishers.CombineLatest(
-			venueRepository.$venues,
-			$searchPhrase
-				.debounce(for: .seconds(0.3), scheduler: RunLoop.main)
-		)
-		.map { venues, searchPhrase in
-			// search filter
-			venues.filter { venue in
-				searchPhrase.isEmpty || venue.name.localizedStandardContains(searchPhrase)
+		foregroundTask = Task { [weak self] in
+			for await _ in NotificationCenter.default.notifications(named: UIApplication.didBecomeActiveNotification) {
+				try? await self?.fetchVenues()
 			}
 		}
-		.combineLatest(favoriteSlugsStorage.$values)
-		.map { venues, favorites in
-			// favorites first
-			venues.sorted { lhs, rhs in
-				let lhsIsFavorited = favorites.contains(lhs.slug)
-				let rhsIsFavorited = favorites.contains(rhs.slug)
-				if lhsIsFavorited == rhsIsFavorited {
-					return lhs.name < rhs.name
-				}
-				return lhsIsFavorited
-			}
-		}
-		.receive(on: RunLoop.main)
-		.assign(to: &$venues)
+	}
 
-		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-			.sink { _ in
-				Task { [weak self] in
-					try? await self?.fetchVenues()
-				}
-			}
-			.store(in: &cancellables)
+	deinit {
+		foregroundTask?.cancel()
 	}
 
 	// MARK: - Public

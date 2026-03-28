@@ -6,22 +6,23 @@
 //  Copyright © 2024 Ondrej Hanak. All rights reserved.
 //
 
-import Combine
 import Foundation
 
+@Observable
 final class StringStorage {
-	private var cancellables: Set<AnyCancellable> = []
-	private var userDefaults: UserDefaults
-	@Published var values: Set<String> = []
+	private let userDefaults: UserDefaults
+	private let key: String
+
+	var values: Set<String> = [] {
+		didSet {
+			userDefaults.set(Array(values), forKey: key)
+		}
+	}
 
 	init(key: String, userDefaults: UserDefaults = .standard) {
+		self.key = key
 		self.userDefaults = userDefaults
 		values = Set(userDefaults.array(forKey: key)?.compactMap { String(describing: $0) } ?? [])
-		$values
-			.sink { [weak self] values in
-				self?.userDefaults.set(Array(values), forKey: key)
-			}
-			.store(in: &cancellables)
 	}
 
 	func save(_ string: String) {

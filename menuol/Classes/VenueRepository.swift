@@ -6,13 +6,13 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import Combine
 import Foundation
 
-final class VenueRepository: ObservableObject {
+@Observable
+final class VenueRepository {
 	private let httpClient: HTTPClientType
 	private let htmlParser: HTMLParserType
-	@Published private(set) var venues: [Venue] = []
+	private(set) var venues: [Venue] = []
 
 	init(httpClient: HTTPClientType, htmlParser: HTMLParserType) {
 		self.httpClient = httpClient
