@@ -1,5 +1,5 @@
 //
-//  VenueRepository.swift
+//  VenueFetcher.swift
 //  menuol
 //
 //  Created by Ondrej Hanak on 24.06.2025.
@@ -8,20 +8,18 @@
 
 import Foundation
 
-@Observable
-final class VenueRepository {
+final class VenueFetcher: Sendable {
 	private let httpClient: HTTPClientType
 	private let htmlParser: HTMLParserType
-	private(set) var venues: [Venue] = []
 
 	init(httpClient: HTTPClientType, htmlParser: HTMLParserType) {
 		self.httpClient = httpClient
 		self.htmlParser = htmlParser
 	}
 
-	func fetch() async throws {
+	func fetch() async throws -> [Venue] {
 		let url = URL(string: "https://www.olomouc.cz/poledni-menu")!
 		let html = try await httpClient.get(url: url)
-		venues = htmlParser.venuesWithMenuItems(from: html)
+		return htmlParser.venuesWithMenuItems(from: html)
 	}
 }

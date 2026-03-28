@@ -18,12 +18,12 @@ enum AppRoute: Hashable {
 final class AppCoordinator {
 	var path = NavigationPath()
 
-	private let venueRepository: VenueRepository
+	private let venueFetcher: VenueFetcher
 	private let favoritesStorage: FavoritesStorageType
 	private let geocoder: GeocoderType
 
-	init(venueRepository: VenueRepository, favoritesStorage: FavoritesStorageType, geocoder: GeocoderType) {
-		self.venueRepository = venueRepository
+	init(venueFetcher: VenueFetcher, favoritesStorage: FavoritesStorageType, geocoder: GeocoderType) {
+		self.venueFetcher = venueFetcher
 		self.favoritesStorage = favoritesStorage
 		self.geocoder = geocoder
 	}
@@ -37,7 +37,7 @@ final class AppCoordinator {
 		switch route {
 		case .venues:
 			VenueListView(viewModel: VenueListViewModel(
-				venueRepository: self.venueRepository,
+				venueFetcher: self.venueFetcher,
 				favoriteSlugsStorage: self.favoritesStorage,
 				onShowMenu: { [weak self] venue in self?.showMenu(ofVenue: venue) }
 			))

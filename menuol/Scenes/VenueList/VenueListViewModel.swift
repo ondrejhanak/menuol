@@ -12,15 +12,16 @@ import UIKit
 @Observable
 @MainActor
 final class VenueListViewModel {
-	private let venueRepository: VenueRepository
+	private let venueFetcher: VenueFetcher
 	private let favoriteSlugsStorage: FavoritesStorageType
 	private let onShowMenu: (Venue) -> Void
 	@ObservationIgnored nonisolated(unsafe) private var foregroundTask: Task<Void, Never>?
 	var searchPhrase = ""
 	var showSpinner = false
+	private(set) var allVenues: [Venue] = []
 
 	var venues: [Venue] {
-		venueRepository.venues
+		allVenues
 			.filter { searchPhrase.isEmpty || $0.name.localizedStandardContains(searchPhrase) }
 			.sorted { lhs, rhs in
 				let lhsIsFavorited = favoriteSlugsStorage.contains(lhs.slug)
@@ -34,8 +35,8 @@ final class VenueListViewModel {
 
 	// MARK: - Init
 
-	init(venueRepository: VenueRepository, favoriteSlugsStorage: FavoritesStorageType, onShowMenu: @escaping (Venue) -> Void) {
-		self.venueRepository = venueRepository
+	init(venueFetcher: VenueFetcher, favoriteSlugsStorage: FavoritesStorageType, onShowMenu: @escaping (Venue) -> Void) {
+		self.venueFetcher = venueFetcher
 		self.favoriteSlugsStorage = favoriteSlugsStorage
 		self.onShowMenu = onShowMenu
 		foregroundTask = Task { [weak self] in
@@ -61,11 +62,11 @@ final class VenueListViewModel {
 
 	/// Fetches list of venues along with menu.
 	func fetchVenues() async throws {
-		showSpinner = venues.isEmpty
+		showSpinner = allVenues.isEmpty
 		defer {
 			showSpinner = false
 		}
-		try await venueRepository.fetch()
+		allVenues = try await venueFetcher.fetch()
 	}
 
 	/// Toggles favorite state of given venue.
