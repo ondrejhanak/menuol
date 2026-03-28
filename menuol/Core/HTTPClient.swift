@@ -29,9 +29,3 @@ struct HTTPClient: HTTPClientType {
 		return html
 	}
 }
-
-struct MockHTTPClient: HTTPClientType {
-	func get(url: URL) async throws -> String {
-		""
-	}
-}

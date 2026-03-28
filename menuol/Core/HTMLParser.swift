@@ -73,9 +73,3 @@ struct HTMLParser: HTMLParserType {
 		return result
 	}
 }
-
-struct MockHTMLParser: HTMLParserType {
-	func venuesWithMenuItems(from string: String) -> [Venue] {
-		Venue.demoItems
-	}
-}

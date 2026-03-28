@@ -14,17 +14,3 @@ protocol UserDefaultsType {
 }
 
 extension UserDefaults: UserDefaultsType {}
-
-#if DEBUG
-final class MockUserDefaults: UserDefaultsType {
-	private var storage: [String: Any] = [:]
-
-	func set(_ value: Any?, forKey defaultName: String) {
-		storage[defaultName] = value
-	}
-
-	func array(forKey defaultName: String) -> [Any]? {
-		storage[defaultName] as? [Any]
-	}
-}
-#endif
