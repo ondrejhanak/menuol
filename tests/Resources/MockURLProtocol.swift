@@ -8,28 +8,34 @@
 import Foundation
 
 final class MockURLProtocol: URLProtocol {
-	static var error: Error?
-	static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))?
+	private static let lock = NSLock()
+	private static var registry: [String: (URLRequest) throws -> (HTTPURLResponse, Data)] = [:]
+	private static let sessionIDHeader = "X-Mock-Session-ID"
 
-	override static func canInit(with request: URLRequest) -> Bool {
-		return true
+	static func makeSession(handler: @escaping (URLRequest) throws -> (HTTPURLResponse, Data)) -> URLSession {
+		let id = UUID().uuidString
+		lock.withLock { registry[id] = handler }
+		let config = URLSessionConfiguration.ephemeral
+		config.protocolClasses = [MockURLProtocol.self]
+		config.httpAdditionalHeaders = [sessionIDHeader: id]
+		return URLSession(configuration: config)
 	}
 
-	override static func canonicalRequest(for request: URLRequest) -> URLRequest {
-		return request
+	static func makeSession(error: Error) -> URLSession {
+		makeSession { _ in throw error }
 	}
+
+	override static func canInit(with request: URLRequest) -> Bool { true }
+	override static func canonicalRequest(for request: URLRequest) -> URLRequest { request }
 
 	override func startLoading() {
-		if let error = MockURLProtocol.error {
-			client?.urlProtocol(self, didFailWithError: error)
+		guard
+			let id = request.value(forHTTPHeaderField: Self.sessionIDHeader),
+			let handler = Self.lock.withLock({ Self.registry[id] })
+		else {
+			client?.urlProtocol(self, didFailWithError: URLError(.unknown))
 			return
 		}
-
-		guard let handler = MockURLProtocol.requestHandler else {
-			assertionFailure("Unexpected state with no handler or error set.")
-			return
-		}
-
 		do {
 			let (response, data) = try handler(request)
 			client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)

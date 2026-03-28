@@ -10,35 +10,21 @@ import Foundation
 @testable import menuol
 import Testing
 
-@Suite(.serialized)
 struct HTTPClientTests {
-	private var testingURLSession: URLSession {
-		let config: URLSessionConfiguration = .ephemeral
-		config.protocolClasses = [MockURLProtocol.self]
-		let session = URLSession(configuration: config)
-		return session
-	}
-
 	@Test func success() async throws {
-		let string = "hello"
-		let data = string.data(using: .utf8)!
-		MockURLProtocol.error = nil
-		MockURLProtocol.requestHandler = { request in
+		let data = "hello".data(using: .utf8)!
+		let session = MockURLProtocol.makeSession { _ in
 			let response = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
 			return (response, data)
 		}
-		let client = HTTPClient(session: testingURLSession)
-		let url = URL(string: "localhost")!
-		let result = try await client.get(url: url)
-		#expect(result == string)
+		let result = try await HTTPClient(session: session).get(url: URL(string: "localhost")!)
+		#expect(result == "hello")
 	}
 
 	@Test func failure() async {
-		MockURLProtocol.error = NSError(domain: "test", code: 1)
-		let client = HTTPClient(session: testingURLSession)
-		let url = URL(string: "localhost")!
+		let session = MockURLProtocol.makeSession(error: NSError(domain: "test", code: 1))
 		await #expect(throws: (any Error).self) {
-			_ = try await client.get(url: url)
+			_ = try await HTTPClient(session: session).get(url: URL(string: "localhost")!)
 		}
 	}
 }
