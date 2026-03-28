@@ -16,7 +16,7 @@ protocol UserDefaultsType {
 extension UserDefaults: UserDefaultsType {}
 
 #if DEBUG
-final class UserDefaultsMock: UserDefaultsType {
+final class MockUserDefaults: UserDefaultsType {
 	private var storage: [String: Any] = [:]
 
 	func set(_ value: Any?, forKey defaultName: String) {

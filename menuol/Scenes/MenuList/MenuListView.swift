@@ -86,12 +86,12 @@ struct MenuListView: View {
 
 #Preview("Items") {
 	NavigationStack {
-		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubFilled, geocoder: GeocoderMock()))
+		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubFilled, geocoder: MockGeocoder()))
 	}
 }
 
 #Preview("Empty") {
 	NavigationStack {
-		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubEmpty, geocoder: GeocoderMock()))
+		MenuListView(viewModel: MenuListViewModel(venue: Venue.stubEmpty, geocoder: MockGeocoder()))
 	}
 }

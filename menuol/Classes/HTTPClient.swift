@@ -30,7 +30,7 @@ final class HTTPClient: HTTPClientType {
 	}
 }
 
-final class HTTPClientMock: HTTPClientType {
+final class MockHTTPClient: HTTPClientType {
 	func get(url: URL) async throws -> String {
 		""
 	}

@@ -40,8 +40,8 @@ struct VenueListView: View {
 #Preview {
 	NavigationStack {
 		VenueListView(viewModel: VenueListViewModel(
-			venueRepository: VenueRepository(httpClient: HTTPClientMock(), htmlParser: HTMLParserMock()),
-			favoriteSlugsStorage: FavoritesStorage(userDefaults: UserDefaultsMock()),
+			venueRepository: VenueRepository(httpClient: MockHTTPClient(), htmlParser: MockHTMLParser()),
+			favoriteSlugsStorage: FavoritesStorage(userDefaults: MockUserDefaults()),
 			onShowMenu: { _ in }
 		))
 	}

@@ -15,9 +15,9 @@ import ViewInspector
 struct AppCoordinatorTests {
 	private func makeSUT() -> AppCoordinator {
 		AppCoordinator(
-			venueRepository: VenueRepository(httpClient: HTTPClientMock(), htmlParser: HTMLParserMock()),
-			favoritesStorage: FavoritesStorageMock(),
-			geocoder: GeocoderMock()
+			venueRepository: VenueRepository(httpClient: MockHTTPClient(), htmlParser: MockHTMLParser()),
+			favoritesStorage: MockFavoritesStorage(),
+			geocoder: MockGeocoder()
 		)
 	}
 

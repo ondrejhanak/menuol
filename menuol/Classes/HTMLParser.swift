@@ -74,7 +74,7 @@ final class HTMLParser: HTMLParserType {
 	}
 }
 
-final class HTMLParserMock: HTMLParserType {
+final class MockHTMLParser: HTMLParserType {
 	func venuesWithMenuItems(from string: String) -> [Venue] {
 		Venue.demoItems
 	}
