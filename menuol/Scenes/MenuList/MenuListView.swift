@@ -11,7 +11,11 @@ import UIKit
 import MapKit
 
 struct MenuListView: View {
-	let viewModel: MenuListViewModel
+	@State private var viewModel: MenuListViewModel
+
+	init(viewModel: MenuListViewModel) {
+		_viewModel = State(initialValue: viewModel)
+	}
 
 	var body: some View {
 		Group {

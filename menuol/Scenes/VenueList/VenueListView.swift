@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct VenueListView: View {
-	let viewModel: VenueListViewModel
+	@State private var viewModel: VenueListViewModel
+
+	init(viewModel: VenueListViewModel) {
+		_viewModel = State(initialValue: viewModel)
+	}
 
 	var body: some View {
 		@Bindable var viewModel = viewModel
