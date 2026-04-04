@@ -45,8 +45,7 @@ struct VenueListView: View {
 	NavigationStack {
 		VenueListView(viewModel: VenueListViewModel(
 			venueFetcher: VenueFetcher(httpClient: Preview.MockHTTPClient(), htmlParser: Preview.MockHTMLParser()),
-			favoriteSlugsStorage: FavoritesStorage(userDefaults: Preview.MockUserDefaults()),
-			onShowMenu: { _ in }
-		))
+			favoriteSlugsStorage: FavoritesStorage(userDefaults: Preview.MockUserDefaults())
+		) { _ in })
 	}
 }

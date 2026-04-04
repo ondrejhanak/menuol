@@ -25,7 +25,7 @@ struct HTTPClient: HTTPClientType {
 
 	func get(url: URL) async throws -> String {
 		let (data, _) = try await session.data(from: url)
-		let html = String(decoding: data, as: UTF8.self)
+		let html = String(bytes: data, encoding: .utf8) ?? ""
 		return html
 	}
 }

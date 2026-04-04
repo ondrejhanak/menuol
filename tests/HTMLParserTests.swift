@@ -50,7 +50,7 @@ final class HTMLParserTests {
 		#expect(lastItem.priceDescription == "145\u{00A0}Kč") // nbsp
 
 		// restaurant without menu info "MacLaren's Pub"
-		#expect(venues.last?.menuItems.count == 0)
+		#expect(venues.last?.menuItems.isEmpty)
 
 		// restaurant with footer info
 		#expect(venues[2].menuItems.count == 9)
@@ -62,9 +62,9 @@ final class HTMLParserTests {
 		let parser = HTMLParser()
 		let html = """
 		<div id="kmBox">
-		  <div class="restaurace NoNameVenue-id1">
-		    <div class="nazev-restaurace"><h3></h3></div>
-		  </div>
+			<div class="restaurace NoNameVenue-id1">
+				<div class="nazev-restaurace"><h3></h3></div>
+			</div>
 		</div>
 		"""
 		let venues = parser.venuesWithMenuItems(from: html)
@@ -75,9 +75,9 @@ final class HTMLParserTests {
 		let parser = HTMLParser()
 		let html = """
 		<div id="kmBox">
-		  <div class="restaurace NoImage-id1">
-		    <div class="nazev-restaurace"><h3><a>No Image Restaurant</a></h3></div>
-		  </div>
+			<div class="restaurace NoImage-id1">
+				<div class="nazev-restaurace"><h3><a>No Image Restaurant</a></h3></div>
+			</div>
 		</div>
 		"""
 		let venue = try #require(parser.venuesWithMenuItems(from: html).first)
@@ -88,9 +88,9 @@ final class HTMLParserTests {
 		let parser = HTMLParser()
 		let html = """
 		<div id="kmBox">
-		  <div class="restaurace NoTime-id1">
-		    <div class="nazev-restaurace"><h3><a>No Time Restaurant</a></h3></div>
-		  </div>
+			<div class="restaurace NoTime-id1">
+				<div class="nazev-restaurace"><h3><a>No Time Restaurant</a></h3></div>
+			</div>
 		</div>
 		"""
 		let venue = try #require(parser.venuesWithMenuItems(from: html).first)
@@ -101,21 +101,21 @@ final class HTMLParserTests {
 		let parser = HTMLParser()
 		let html = """
 		<div id="kmBox">
-		  <div class="restaurace TwoCol-id1">
-		    <div class="nazev-restaurace"><h3><a>Test Restaurant</a></h3></div>
-		    <table><tr><td>1</td><td>Soup of the day</td></tr></table>
-		  </div>
+			<div class="restaurace TwoCol-id1">
+				<div class="nazev-restaurace"><h3><a>Test Restaurant</a></h3></div>
+				<table><tr><td>1</td><td>Soup of the day</td></tr></table>
+			</div>
 		</div>
 		"""
 		let venue = try #require(parser.venuesWithMenuItems(from: html).first)
 		let item = try #require(venue.menuItems.first)
 		#expect(item.title == "Soup of the day")
-		#expect(item.priceDescription == "")
+		#expect(item.priceDescription?.isEmpty)
 	}
 
 	// MARK: - Private
 
-	private func loadHTML(from file: String) throws -> String{
+	private func loadHTML(from file: String) throws -> String {
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: file, ofType: nil)!
 		let html = try String(contentsOfFile: path)

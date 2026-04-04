@@ -6,8 +6,8 @@
 //  Copyright © 2025 Ondrej Hanak. All rights reserved.
 //
 
-import SwiftUI
 @testable import menuol
+import SwiftUI
 import Testing
 import ViewInspector
 

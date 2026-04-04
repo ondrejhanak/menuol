@@ -38,9 +38,10 @@ final class AppCoordinator {
 		case .venues:
 			VenueListView(viewModel: VenueListViewModel(
 				venueFetcher: self.venueFetcher,
-				favoriteSlugsStorage: self.favoritesStorage,
-				onShowMenu: { [weak self] venue in self?.showMenu(ofVenue: venue) }
-			))
+				favoriteSlugsStorage: self.favoritesStorage
+			) { [weak self] venue in
+				self?.showMenu(ofVenue: venue)
+			})
 		case let .menu(venue):
 			MenuListView(viewModel: MenuListViewModel(venue: venue, geocoder: self.geocoder))
 		}

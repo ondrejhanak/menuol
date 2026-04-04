@@ -12,7 +12,7 @@ import Testing
 
 struct HTTPClientTests {
 	@Test func success() async throws {
-		let data = "hello".data(using: .utf8)!
+		let data = Data("hello".utf8)
 		let session = MockURLProtocol.makeSession { _ in
 			let response = HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
 			return (response, data)

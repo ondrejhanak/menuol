@@ -6,9 +6,9 @@
 //  Copyright © 2022 Ondrej Hanak. All rights reserved.
 //
 
+import MapKit
 import SwiftUI
 import UIKit
-import MapKit
 
 struct MenuListView: View {
 	@State private var viewModel: MenuListViewModel
