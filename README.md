@@ -7,7 +7,7 @@ Project was created for personal usage.
 
 ## Tech
 
-- Swift 5 with strict concurrency checking
+- Swift 6 language
 - SwiftUI, `@Observable` and MVVM-C architecture
 - [Kanna](https://github.com/tid-kijyun/Kanna) package for HTML parsing
 - Manual protocols based constructor injection
