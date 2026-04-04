@@ -11,7 +11,7 @@ Project was created for personal usage.
 - SwiftUI, `@Observable` and MVVM-C architecture
 - [Kanna](https://github.com/tid-kijyun/Kanna) package for HTML parsing
 - Manual protocols based constructor injection
-- Fastlane for running configured `swiftlint` and `swiftformat`
+- Makefile for running `swiftlint`, `swiftformat`, tests and more
 - `automatic` code signing setup because of personal nature of the project
 - Unit tests
 

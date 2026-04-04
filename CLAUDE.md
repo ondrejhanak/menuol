@@ -4,16 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-All dev commands run via Fastlane (requires `bundle exec` prefix):
-
 ```bash
-bundle exec fastlane lint       # Run SwiftLint (output: swiftlint.html)
-bundle exec fastlane format     # Run SwiftFormat on all Swift files
-bundle exec fastlane test       # Run unit tests with thread sanitizer on iPhone 15 Pro
-bundle exec fastlane unused     # Find unused code via Periphery
+make lint       # Run SwiftLint (output: swiftlint.html)
+make lint-json  # Run SwiftLint (output: swiftlint.json, for programmatic processing)
+make format     # Run SwiftFormat on all Swift files
+make test       # Run unit tests with thread sanitizer on iPhone 15 Pro
+make unused     # Find unused code via Periphery
 ```
 
-To run tests directly via xcodebuild (single test class):
+To fix linter issues, run `make lint-json` first, then read `swiftlint.json`.
+
+To run a single test class:
 ```bash
 xcodebuild test -scheme menuol -destination 'platform=iOS Simulator,name=iPhone 15 Pro' -only-testing:tests/HTMLParserTests
 ```
