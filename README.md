@@ -8,12 +8,12 @@ Project was created for personal usage.
 ## Tech
 
 - Swift 5 with strict concurrency checking
-- SwiftUI, Combine and MVVM-C architecture
+- SwiftUI, `@Observable` and MVVM-C architecture
 - [Kanna](https://github.com/tid-kijyun/Kanna) package for HTML parsing
-- [Factory](https://github.com/hmlongco/Factory) package for DI
+- Manual protocols based constructor injection
 - Fastlane for running configured `swiftlint` and `swiftformat`
 - `automatic` code signing setup because of personal nature of the project
-- basic unit tests for HTTP fetcher and HTML parser
+- Unit tests
 
 
 ## Preview
