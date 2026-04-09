@@ -41,7 +41,7 @@ struct MenuListView: View {
 				.listRowSeparator(.hidden)
 				.listRowInsets(EdgeInsets())
 			Text(viewModel.venue.address)
-				.font(.footnote)
+				.font(.subheadline)
 				.foregroundStyle(.secondary)
 			if viewModel.venue.note.isEmpty == false {
 				Text(viewModel.venue.note)
