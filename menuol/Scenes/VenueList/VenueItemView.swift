@@ -40,6 +40,7 @@ struct VenueItemView: View {
 			.resizable()
 			.aspectRatio(contentMode: .fit)
 			.frame(width: 50, height: 50)
+			.accessibilityIgnoresInvertColors()
 			.accessibility(hidden: true)
 	}
 
