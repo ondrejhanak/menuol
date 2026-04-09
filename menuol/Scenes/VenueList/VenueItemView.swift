@@ -14,9 +14,13 @@ struct VenueItemView: View {
 	var isFavorited: Bool
 	var favoriteCallback: (Venue) -> Void
 
+	@Environment(\.dynamicTypeSize) private var typeSize
+
 	var body: some View {
 		HStack(spacing: 14) {
-			image
+			if !typeSize.isAccessibilitySize {
+				image
+			}
 			description
 			Spacer()
 			favoriteButton

@@ -12,20 +12,35 @@ struct MenuItemView: View {
 	var menuItem: MenuItem
 
 	var body: some View {
-		HStack {
-			Text(menuItem.title)
-				.foregroundColor(.primary)
-			Spacer()
-			if let price = menuItem.priceDescription, !price.isEmpty {
-				Text(price)
-					.foregroundColor(.primary)
-					.font(.subheadline)
-					.fontWeight(.semibold)
-					.padding(.vertical, 6)
-					.padding(.horizontal, 8)
-					.background(.accentBackground)
-					.cornerRadius(5)
+		ViewThatFits(in: .horizontal) {
+			HStack {
+				titleText
+				Spacer()
+				priceTag
 			}
+			VStack(alignment: .leading, spacing: 6) {
+				titleText
+				priceTag
+			}
+		}
+	}
+
+	private var titleText: some View {
+		Text(menuItem.title)
+			.foregroundColor(.primary)
+	}
+
+	@ViewBuilder
+	private var priceTag: some View {
+		if let price = menuItem.priceDescription, !price.isEmpty {
+			Text(price)
+				.foregroundColor(.primary)
+				.font(.subheadline)
+				.fontWeight(.semibold)
+				.padding(.vertical, 6)
+				.padding(.horizontal, 8)
+				.background(.accentBackground)
+				.cornerRadius(5)
 		}
 	}
 }

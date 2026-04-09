@@ -12,6 +12,7 @@ import UIKit
 
 struct MenuListView: View {
 	@State private var viewModel: MenuListViewModel
+	@Environment(\.dynamicTypeSize) private var typeSize
 
 	init(viewModel: MenuListViewModel) {
 		_viewModel = State(initialValue: viewModel)
@@ -37,9 +38,11 @@ struct MenuListView: View {
 	@ViewBuilder
 	private var listView: some View {
 		List {
-			map
-				.listRowSeparator(.hidden)
-				.listRowInsets(EdgeInsets())
+			if !typeSize.isAccessibilitySize {
+				map
+					.listRowSeparator(.hidden)
+					.listRowInsets(EdgeInsets())
+			}
 			Text(viewModel.venue.address)
 				.font(.subheadline)
 				.foregroundStyle(.secondary)
