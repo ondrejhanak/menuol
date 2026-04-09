@@ -60,8 +60,9 @@ struct VenueItemView: View {
 		Button {
 			favoriteCallback(venue)
 		} label: {
+			let symbol = isFavorited ? "heart.fill" : "heart"
 			let color = isFavorited ? Color.accent : Color.secondary
-			Image(systemName: "heart")
+			Image(systemName: symbol)
 				.frame(width: 44, height: 44)
 				.accessibilityLabel("Toggle favorite.")
 				.tint(color)
