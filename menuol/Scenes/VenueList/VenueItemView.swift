@@ -33,7 +33,7 @@ struct VenueItemView: View {
 				Color.gray.opacity(0.3)
 					.overlay(
 						Image(systemName: "camera")
-							.foregroundColor(.gray)
+							.foregroundStyle(.gray)
 							.accessibility(hidden: true)
 					)
 			}
@@ -48,11 +48,11 @@ struct VenueItemView: View {
 		VStack(alignment: .leading, spacing: 4) {
 			Text(venue.name)
 				.font(.system(.body))
-				.foregroundColor(.primary)
+				.foregroundStyle(Color.primary)
 			if let description = venue.menuTimeDescription {
 				Text(description)
 					.font(.system(.footnote))
-					.foregroundColor(.secondary)
+					.foregroundStyle(Color.secondary)
 			}
 		}
 	}

@@ -8,7 +8,6 @@
 
 import MapKit
 import SwiftUI
-import UIKit
 
 struct MenuListView: View {
 	@State private var viewModel: MenuListViewModel
@@ -29,7 +28,7 @@ struct MenuListView: View {
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.navigationTitle(viewModel.venue.name)
 		.navigationBarTitleDisplayMode(.inline)
-		.background(Color(UIColor.systemGroupedBackground))
+		.background(Color(.systemGroupedBackground))
 		.task {
 			await viewModel.loadMapRegion()
 		}
@@ -72,7 +71,7 @@ struct MenuListView: View {
 				}
 			} else if viewModel.mapError != nil {
 				Text("Unable to load map.")
-					.foregroundColor(.secondary)
+					.foregroundStyle(.secondary)
 			} else {
 				ProgressView("načítám mapu")
 			}

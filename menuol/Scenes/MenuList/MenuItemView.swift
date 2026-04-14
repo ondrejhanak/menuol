@@ -27,20 +27,20 @@ struct MenuItemView: View {
 
 	private var titleText: some View {
 		Text(menuItem.title)
-			.foregroundColor(.primary)
+			.foregroundStyle(.primary)
 	}
 
 	@ViewBuilder
 	private var priceTag: some View {
 		if let price = menuItem.priceDescription, !price.isEmpty {
 			Text(price)
-				.foregroundColor(.primary)
+				.foregroundStyle(.primary)
 				.font(.subheadline)
 				.fontWeight(.semibold)
 				.padding(.vertical, 6)
 				.padding(.horizontal, 8)
 				.background(.accentBackground)
-				.cornerRadius(5)
+				.clipShape(.rect(cornerRadius: 5))
 		}
 	}
 }
