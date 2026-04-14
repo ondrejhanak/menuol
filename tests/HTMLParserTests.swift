@@ -50,7 +50,7 @@ final class HTMLParserTests {
 		#expect(lastItem.priceDescription == "145\u{00A0}Kč") // nbsp
 
 		// restaurant without menu info "MacLaren's Pub"
-		#expect(venues.last?.menuItems.isEmpty)
+		#expect(venues.last?.menuItems.isEmpty == true)
 
 		// restaurant with footer info
 		#expect(venues[2].menuItems.count == 9)
@@ -110,7 +110,7 @@ final class HTMLParserTests {
 		let venue = try #require(parser.venuesWithMenuItems(from: html).first)
 		let item = try #require(venue.menuItems.first)
 		#expect(item.title == "Soup of the day")
-		#expect(item.priceDescription?.isEmpty)
+		#expect(item.priceDescription?.isEmpty == true)
 	}
 
 	// MARK: - Private
